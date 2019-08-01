@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Interfaces Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
-    <VersionPrefix>0.0.2</VersionPrefix>
+    <VersionPrefix>0.1.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Platform.Interfaces</AssemblyName>
@@ -21,6 +21,12 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReleaseNotes>ICreteriaMatcher interface renamed to ICriterionMatcher. (Breaking change)
+IPropertyOperator interface renamed to IPropertiesOperator.  (Breaking change)
+ISpecificPropertyOperator interface renamed to IPropertyOperator. (Breaking change)
+Added comments to interfaces.
+Added new tags to package.
+Issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
