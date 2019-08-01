@@ -1,0 +1,248 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/travis/build/linksplatform/Interfaces",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "l8cmTmPfMNkShWTZdgBmkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IConverter-1.html",
+          "hash": "owVQIBaSadU0WcAGF8iXyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IConverter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IConverter-2.html",
+          "hash": "O8SjIuhg7OkGqbDex9QLeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.ICounter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.ICounter-1.html",
+          "hash": "GwVrQ+bEMI9cmVwuJEpfvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.ICounter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.ICounter-2.html",
+          "hash": "DaVAVTslekmCBZMf5RjsHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.ICriterionMatcher-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.ICriterionMatcher-1.html",
+          "hash": "hHGwWO8UuzEuZqUM2jKkaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IFactory-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IFactory-1.html",
+          "hash": "/4mwrbvFvZZjXgOSbJ+4Kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IIncrementer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IIncrementer-1.html",
+          "hash": "o7CVw+czQ3wazx1mf4UQzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IPropertiesOperator-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IPropertiesOperator-3.html",
+          "hash": "gP5lKNpavXZeZGbIvVXwKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IPropertyOperator-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IPropertyOperator-2.html",
+          "hash": "TcpbS46gON6IW8bSo2PmOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IProvider-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IProvider-1.html",
+          "hash": "BEXT3tHM50zkpGCCeIaZRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IProvider-2.html",
+          "hash": "zdBDKjiv38Cn0TgSq6L9bg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.html",
+          "hash": "32AEiYoIo/iJMb7hOdM64g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "gUzOBbY6KgMaWQzevCOzFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "zOcyoOV4bj27WmHcgCrQHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 12,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
