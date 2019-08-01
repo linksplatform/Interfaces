@@ -5,7 +5,7 @@
     /// Определяет объект который проверяет соответствие критерию и содержащий конкретный метод определения, соответствует ли аргумент критерию или нет.
     /// </summary>
     /// <typeparam name="TArgument">Argument type. Тип аргумента.</typeparam>
-    public interface ICriterionMatcher<TArgument>
+    public interface ICriterionMatcher<in TArgument>
     {
         /// <summary>
         /// Determines whether the argument matches the criterion.

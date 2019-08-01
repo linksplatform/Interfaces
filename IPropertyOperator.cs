@@ -6,7 +6,7 @@
     /// </summary>
     /// <typeparam name="TObject">Object type. Тип объекта.</typeparam>
     /// <typeparam name="TValue">Property value type. Тип значения свойства.</typeparam>
-    public interface IPropertyOperator<TObject, TValue> : IProvider<TValue, TObject>
+    public interface IPropertyOperator<in TObject, TValue> : IProvider<TValue, TObject>
     {
         /// <summary>
         /// Sets the value of a specific property in the specified object.

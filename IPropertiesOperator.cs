@@ -7,7 +7,7 @@
     /// <typeparam name="TObject">Object type. Тип объекта.</typeparam>
     /// <typeparam name="TProperty">Property reference type. Тип ссылки на свойство.</typeparam>
     /// <typeparam name="TValue">Property value type. Тип значения свойства.</typeparam>
-    public interface IPropertiesOperator<TObject, TProperty, TValue>
+    public interface IPropertiesOperator<in TObject, in TProperty, TValue>
     {
         /// <summary>
         /// Gets the value of the property in the specified object.

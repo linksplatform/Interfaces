@@ -6,7 +6,7 @@
     /// </summary>
     /// <typeparam name="TSource">Source type of conversion. Исходный тип конверсии.</typeparam>
     /// <typeparam name="TTarget">Target type of conversion. Целевой тип конверсии.</typeparam>
-    public interface IConverter<TSource, TTarget>
+    public interface IConverter<in TSource, out TTarget>
     {
         /// <summary>
         /// Converts the value of the source type (TSource) to the value of the target type.

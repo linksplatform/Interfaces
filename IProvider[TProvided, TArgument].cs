@@ -6,7 +6,7 @@
     /// </summary>
     /// <typeparam name="TProvided">Type of provided objects. Тип предоставляемых объектов.</typeparam>
     /// <typeparam name="TArgument">Argument type. Тип аргумента.</typeparam>
-    public interface IProvider<TProvided, TArgument>
+    public interface IProvider<out TProvided, in TArgument>
     {
         /// <summary>
         /// Provides an object.

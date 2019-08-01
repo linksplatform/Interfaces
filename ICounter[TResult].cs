@@ -5,7 +5,7 @@
     /// Определяет счетчик.
     /// </summary>
     /// <typeparam name="TResult">The count result type. Тип результата подсчета.</typeparam>
-    public interface ICounter<TResult>
+    public interface ICounter<out TResult>
     {
         /// <summary>
         /// Performs a count.

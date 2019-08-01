@@ -5,7 +5,7 @@
     /// Определяет поставщика объектов.
     /// </summary>
     /// <typeparam name="TProvided">Type of provided object. Тип предоставляемого объекта.</typeparam>
-    public interface IProvider<TProvided>
+    public interface IProvider<out TProvided>
     {
         /// <summary>
         /// Provides an object.
