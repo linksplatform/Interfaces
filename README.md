@@ -16,4 +16,10 @@ NuGet package: [Platform.Interfaces](https://www.nuget.org/packages/Platform.Int
 
 ## [Documentation](https://linksplatform.github.io/Interfaces/)
 
-Interface [IFactory\<TLink, TConstants\>](https://linksplatform.github.io/Interfaces/api/Platform.Interfaces.IFactory-1.html).
+Interface [IFactory\<TProduct\>](https://linksplatform.github.io/Interfaces/api/Platform.Interfaces.IFactory-1.html).
+
+## Dependent libraries
+
+* [Platform.Timestamps](https://github.com/linksplatform/Timestamps)
+* [Platform.Collections](https://github.com/linksplatform/Collections)
+* [Platform.Reflection.Sigil](https://github.com/linksplatform/Reflection.Sigil)
