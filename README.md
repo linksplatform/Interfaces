@@ -14,7 +14,7 @@ Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers](https://github.com
 
 NuGet package: [Platform.Interfaces](https://www.nuget.org/packages/Platform.Interfaces)
 
-## [Documentation](https://linksplatform.github.io/Interfaces/)
+## [Documentation](https://linksplatform.github.io/Interfaces)
 *   Interface [IFactory\<TProduct\>](https://linksplatform.github.io/Interfaces/api/Platform.Interfaces.IFactory-1.html).
 
 [PDF file](https://linksplatform.github.io/Interfaces/Platform.Interfaces.pdf) with code for e-readers.
