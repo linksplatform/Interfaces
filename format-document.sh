@@ -6,26 +6,26 @@ wget https://raw.githubusercontent.com/gpoore/fvextra/cc1c0c5f7b92023cfec67084e2
 
 printf """
 \\documentclass[11pt,a4paper,fleqn]{report}
-\\\\usepackage[left=5mm,top=5mm,right=5mm,bottom=5mm]{geometry}
+\\\usepackage[left=5mm,top=5mm,right=5mm,bottom=5mm]{geometry}
 \\textwidth=200mm
-\\\\usepackage[utf8]{inputenc}
-\\\\usepackage[T1]{fontenc}
-\\\\usepackage[T2A]{fontenc}
-\\\\usepackage{fvextra}
-\\\\usepackage{minted}
-\\\\usemintedstyle{vs}
-\\\\usepackage{makeidx}
-\\\\usepackage[columns=1]{idxlayout}
+\\\usepackage[utf8]{inputenc}
+\\\usepackage[T1]{fontenc}
+\\\usepackage[T2A]{fontenc}
+\\\usepackage{fvextra}
+\\\usepackage{minted}
+\\\usemintedstyle{vs}
+\\\usepackage{makeidx}
+\\\usepackage[columns=1]{idxlayout}
 \\makeindex
 \\renewcommand{\\thesection}{\\arabic{chapter}.\\arabic{section}}
 \\setcounter{chapter}{1}
 \\setcounter{section}{0}
-\\\\usepackage[tiny]{titlesec}
+\\\usepackage[tiny]{titlesec}
 \\titlespacing\\chapter{0mm}{0mm}{0mm}
 \\titlespacing\\section{0mm}{0mm}{0mm}
 \\DeclareUnicodeCharacter{221E}{\\ensuremath{\\infty}}
 \\DeclareUnicodeCharacter{FFFD}{\\ensuremath{ }}
-\\\\usepackage{fancyhdr}
+\\\usepackage{fancyhdr}
 \\pagestyle{fancy}
 \\fancyhf{}
 \\fancyfoot[C]{\\thepage}
