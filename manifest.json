@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "l/1Q49V4rpUSwCejkT6xAw=="
+          "hash": "SV5H3O15MGwC9gozjsKK8Q=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.IConverter-1.html",
-          "hash": "B/hyWLil2ACEUngvGbsXhg=="
+          "hash": "ZIfPA3smgNKZGq1UWE2Rcw=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.IConverter-2.html",
-          "hash": "q3exlTQVVy5ofmXxsH1ysQ=="
+          "hash": "GhJ+Z/uAKljHHmPrRhQPyg=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.ICounter-1.html",
-          "hash": "31aPwhlCwTROgNzEnyz1ag=="
+          "hash": "lv2odTti8zTy1FBGmNPbdQ=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.ICounter-2.html",
-          "hash": "FVjJ5aLArBZwrN19PbIS3A=="
+          "hash": "T+0ofu0FMwDmtqWf8Aqjqg=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.ICriterionMatcher-1.html",
-          "hash": "blHGGIq48fuAd5E89KeqmA=="
+          "hash": "xJM9brg9sM7N/N3yixBAEQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.IFactory-1.html",
-          "hash": "TtxnqjF1PvazWk07ytk+fg=="
+          "hash": "FDcZEj8bfniow4IZFk6U4Q=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.IIncrementer-1.html",
-          "hash": "xnNkwW5WGjNYtsXoenxfJw=="
+          "hash": "7YiRV823SvOBqoaOQGH00w=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.IPropertiesOperator-3.html",
-          "hash": "Od1v+68cfMbKHtzTjiDzkQ=="
+          "hash": "E1Ilm3Rs3RzEQAyJx7wcBA=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.IPropertyOperator-2.html",
-          "hash": "+W+sSqTGkOIukPqx9pdPmg=="
+          "hash": "rfSDAZON8DACCtQa+q4LTA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.IProvider-1.html",
-          "hash": "Mzo/ZS4L9CEdcNxI+2sL1g=="
+          "hash": "wW3wlDWQ3c7N8tbzeJx7mQ=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Interfaces.IProvider-2.html",
-          "hash": "v1im77rNKZT0s4+mUEIFqQ=="
+          "hash": "QzqCRcXK8JlGfKfrMi8AXg=="
         }
       },
       "is_incremental": false,
