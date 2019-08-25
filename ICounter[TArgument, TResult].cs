@@ -1,19 +1,19 @@
 ﻿namespace Platform.Interfaces
 {
     /// <summary>
-    /// Defines a counter that requires passing an argument to perform a count.
-    /// Определяет счетчик, который требует передачи аргумента для выполнения подсчёта.
+    /// <para>Defines a counter that requires passing an argument to perform a count.</para>
+    /// <para>Определяет счетчик, который требует передачи аргумента для выполнения подсчёта.</para>
     /// </summary>
-    /// <typeparam name="TArgument">The argument type. Тип аргумента.</typeparam>
-    /// <typeparam name="TResult">The count result type. Тип результата подсчета.</typeparam>
+    /// <typeparam name="TArgument"><para>The argument type.</para><para>Тип аргумента.</para></typeparam>
+    /// <typeparam name="TResult"><para>The count result type.</para><para>Тип результата подсчета.</para></typeparam>
     public interface ICounter<in TArgument, out TResult>
     {
         /// <summary>
-        /// Performs a count that requires passing an argument.
-        /// Выполняет посчёт, для которого требуется передача аргумент.
+        /// <para>Performs a count that requires passing an argument.</para>
+        /// <para>Выполняет посчёт, для которого требуется передача аргумент.</para>
         /// </summary>
-        /// <param name="argument">The argument. Аргумент.</param>
-        /// <returns>The count result. Результат подсчёта.</returns>
+        /// <param name="argument"><para>The argument.</para><para>Аргумент.</para></param>
+        /// <returns><para>The count result.</para><para>Результат подсчёта.</para></returns>
         TResult Count(TArgument argument);
     }
 }

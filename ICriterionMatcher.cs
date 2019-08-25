@@ -1,18 +1,18 @@
 ﻿namespace Platform.Interfaces
 {
     /// <summary>
-    /// Defines a criterion matcher, that contains a specific method of determining whether the argument matches criterion or not.
-    /// Определяет объект который проверяет соответствие критерию и содержащий конкретный метод определения, соответствует ли аргумент критерию или нет.
+    /// <para>Defines a criterion matcher, that contains a specific method of determining whether the argument matches criterion or not.</para>
+    /// <para>Определяет объект который проверяет соответствие критерию и содержащий конкретный метод определения, соответствует ли аргумент критерию или нет.</para>
     /// </summary>
-    /// <typeparam name="TArgument">Argument type. Тип аргумента.</typeparam>
+    /// <typeparam name="TArgument"><para>Argument type.</para><para>Тип аргумента.</para></typeparam>
     public interface ICriterionMatcher<in TArgument>
     {
         /// <summary>
-        /// Determines whether the argument matches the criterion.
-        /// Определяет, соответствует ли аргумент критерию.
+        /// <para>Determines whether the argument matches the criterion.</para>
+        /// <para>Определяет, соответствует ли аргумент критерию.</para>
         /// </summary>
-        /// <param name="argument">The argument. Аргумент.</param>
-        /// <returns>A value that determines whether the argument matches the criterion. Значение, определяющие соответствует ли аргумент критерию.</returns>
+        /// <param name="argument"><para>The argument.</para><para>Аргумент.</para></param>
+        /// <returns><para>A value that determines whether the argument matches the criterion.</para><para>Значение, определяющие соответствует ли аргумент критерию.</para></returns>
         bool IsMatched(TArgument argument);
     }
 }

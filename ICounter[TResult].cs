@@ -1,17 +1,17 @@
 ﻿namespace Platform.Interfaces
 {
     /// <summary>
-    /// Defines a counter.
-    /// Определяет счетчик.
+    /// <para>Defines a counter.</para>
+    /// <para>Определяет счетчик.</para>
     /// </summary>
-    /// <typeparam name="TResult">The count result type. Тип результата подсчета.</typeparam>
+    /// <typeparam name="TResult"><para>The count result type.</para><para>Тип результата подсчета.</para></typeparam>
     public interface ICounter<out TResult>
     {
         /// <summary>
-        /// Performs a count.
-        /// Выполняет посчёт.
+        /// <para>Performs a count.</para>
+        /// <para>Выполняет посчёт.</para>
         /// </summary>
-        /// <returns>The count result. Результат подсчёта.</returns>
+        /// <returns><para>The count result.</para><para>Результат подсчёта.</para></returns>
         TResult Count();
     }
 }

@@ -1,19 +1,19 @@
 ﻿namespace Platform.Interfaces
 {
     /// <summary>
-    /// Defines a specific property operator that is able to get or set values of that property.
-    /// Определяет оператор определённого свойства, который может получать или установливать его значения.
+    /// <para>Defines a specific property operator that is able to get or set values of that property.</para>
+    /// <para>Определяет оператор определённого свойства, который может получать или установливать его значения.</para>
     /// </summary>
-    /// <typeparam name="TObject">Object type. Тип объекта.</typeparam>
-    /// <typeparam name="TValue">Property value type. Тип значения свойства.</typeparam>
+    /// <typeparam name="TObject"><para>Object type.</para><para>Тип объекта.</para></typeparam>
+    /// <typeparam name="TValue"><para>Property value type.</para><para>Тип значения свойства.</para></typeparam>
     public interface IPropertyOperator<in TObject, TValue> : IProvider<TValue, TObject>
     {
         /// <summary>
-        /// Sets the value of a specific property in the specified object.
-        /// Устанавливает значение определённого свойства в указанном объекте.
+        /// <para>Sets the value of a specific property in the specified object.</para>
+        /// <para>Устанавливает значение определённого свойства в указанном объекте.</para>
         /// </summary>
-        /// <param name="object">The object reference. Ссылка на объект.</param>
-        /// <param name="value">The value. Значение.</param>
+        /// <param name="object"><para>The object reference.</para><para>Ссылка на объект.</para></param>
+        /// <param name="value"><para>The value.</para><para>Значение.</para></param>
         void Set(TObject @object, TValue value);
     }
 }

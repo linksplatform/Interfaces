@@ -1,16 +1,16 @@
 ﻿namespace Platform.Interfaces
 {
     /// <summary>
-    /// Defines the provider of objects.
-    /// Определяет поставщика объектов.
+    /// <para>Defines the provider of objects.</para>
+    /// <para>Определяет поставщика объектов.</para>
     /// </summary>
-    /// <typeparam name="TProvided">Type of provided object. Тип предоставляемого объекта.</typeparam>
+    /// <typeparam name="TProvided"><para>Type of provided object.</para><para>Тип предоставляемого объекта.</para></typeparam>
     public interface IProvider<out TProvided>
     {
         /// <summary>
-        /// Provides an object.
+        /// <para>Provides an object.</para>
         /// </summary>
-        /// <returns>The provided object.</returns>
+        /// <returns><para>The provided object.</para></returns>
         TProvided Get();
     }
 }

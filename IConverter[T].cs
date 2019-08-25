@@ -1,10 +1,10 @@
 ﻿namespace Platform.Interfaces
 {
     /// <summary>
-    /// Defines a converter between two values of the same type.
-    /// Определяет конвертер между двумя значениями одного типа.
+    /// <para>Defines a converter between two values of the same type.</para>
+    /// <para>Определяет конвертер между двумя значениями одного типа.</para>
     /// </summary>
-    /// <typeparam name="T">Type of value to convert. Тип преобразуемого значения.</typeparam>
+    /// <typeparam name="T"><para>Type of value to convert.</para><para>Тип преобразуемого значения.</para></typeparam>
     public interface IConverter<T> : IConverter<T, T>
     {
     }
