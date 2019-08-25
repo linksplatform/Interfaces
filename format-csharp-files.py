@@ -16,4 +16,4 @@ for line in sys.stdin.readlines():
     print(c)
     print("\\end{minted}")
     print("\\end{section}")
-    print
+    print("\n")

@@ -4,7 +4,7 @@ set -e # Exit with nonzero exit code if anything fails
 # Download fvextra package
 wget https://raw.githubusercontent.com/gpoore/fvextra/cc1c0c5f7b92023cfec67084e2a87bdac520414c/fvextra/fvextra.sty
 
-echo """
+printf """
 \\documentclass[11pt,a4paper,fleqn]{report}
 \\usepackage[left=5mm,top=5mm,right=5mm,bottom=5mm]{geometry}
 \\textwidth=200mm
@@ -44,7 +44,7 @@ find ./obj -type f -iname "*.cs" -delete
 #find * -type f -iname '*.cs' -exec sh -c 'enconv "{}"' \;
 find . -type f -iname '*.cs' | sort -b | python format-csharp-files.py
 
-echo """
+printf """
 \\printindex
 \\end{document}
 """
