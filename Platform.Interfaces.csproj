@@ -6,7 +6,8 @@
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;net461</TargetFrameworks>
+    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netcoreapp2.0</TargetFramework>
     <AssemblyName>Platform.Interfaces</AssemblyName>
     <PackageId>Platform.Interfaces</PackageId>
     <PackageTags>LinksPlatform;Interfaces;IConverter;ICounter;IFactory;IProvider;ICriterionMatcher;IIncrementer;IPropertiesOperator;IPropertyOperator</PackageTags>
