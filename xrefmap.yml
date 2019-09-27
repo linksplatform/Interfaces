@@ -7,41 +7,6 @@ references:
   commentId: N:Platform.Interfaces
   fullName: Platform.Interfaces
   nameWithType: Platform.Interfaces
-- uid: Platform.Interfaces.IConverter`1
-  name: IConverter<T>
-  href: api/Platform.Interfaces.IConverter-1.html
-  commentId: T:Platform.Interfaces.IConverter`1
-  name.vb: IConverter(Of T)
-  fullName: Platform.Interfaces.IConverter<T>
-  fullName.vb: Platform.Interfaces.IConverter(Of T)
-  nameWithType: IConverter<T>
-  nameWithType.vb: IConverter(Of T)
-- uid: Platform.Interfaces.IConverter`2
-  name: IConverter<TSource, TTarget>
-  href: api/Platform.Interfaces.IConverter-2.html
-  commentId: T:Platform.Interfaces.IConverter`2
-  name.vb: IConverter(Of TSource, TTarget)
-  fullName: Platform.Interfaces.IConverter<TSource, TTarget>
-  fullName.vb: Platform.Interfaces.IConverter(Of TSource, TTarget)
-  nameWithType: IConverter<TSource, TTarget>
-  nameWithType.vb: IConverter(Of TSource, TTarget)
-- uid: Platform.Interfaces.IConverter`2.Convert(`0)
-  name: Convert(TSource)
-  href: api/Platform.Interfaces.IConverter-2.html#Platform_Interfaces_IConverter_2_Convert__0_
-  commentId: M:Platform.Interfaces.IConverter`2.Convert(`0)
-  fullName: Platform.Interfaces.IConverter<TSource, TTarget>.Convert(TSource)
-  fullName.vb: Platform.Interfaces.IConverter(Of TSource, TTarget).Convert(TSource)
-  nameWithType: IConverter<TSource, TTarget>.Convert(TSource)
-  nameWithType.vb: IConverter(Of TSource, TTarget).Convert(TSource)
-- uid: Platform.Interfaces.IConverter`2.Convert*
-  name: Convert
-  href: api/Platform.Interfaces.IConverter-2.html#Platform_Interfaces_IConverter_2_Convert_
-  commentId: Overload:Platform.Interfaces.IConverter`2.Convert
-  isSpec: "True"
-  fullName: Platform.Interfaces.IConverter<TSource, TTarget>.Convert
-  fullName.vb: Platform.Interfaces.IConverter(Of TSource, TTarget).Convert
-  nameWithType: IConverter<TSource, TTarget>.Convert
-  nameWithType.vb: IConverter(Of TSource, TTarget).Convert
 - uid: Platform.Interfaces.ICounter`1
   name: ICounter<TResult>
   href: api/Platform.Interfaces.ICounter-1.html
