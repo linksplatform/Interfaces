@@ -40,3 +40,16 @@ jobs:
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         bash ./publish-release.sh
+        
+  pushNuGetToGitHub:
+    needs: buildAndDeploy
+    if: github.event_name == 'push'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: warrenbuckley/Setup-Nuget@v1
+      - name: Publish to GPR
+        run: |
+          dotnet pack -c Release
+          nuget source Add -Name "GPR" -Source "https://nuget.pkg.github.com/mono/index.json" -UserName mono -Password ${{ secrets.GITHUB_TOKEN }}
+          nuget push packages\**\*.nupkg -Source "GPR" -SkipDuplicate
