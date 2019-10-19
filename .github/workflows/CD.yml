@@ -38,7 +38,7 @@ jobs:
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         bash ./publish-release.sh
-        
+
   pushNuGetToGitHub:
     needs: buildAndDeploy
     if: github.event_name == 'push'
