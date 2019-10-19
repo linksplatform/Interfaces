@@ -49,5 +49,5 @@ jobs:
       - name: Publish to GPR
         run: |
           dotnet pack -c Release
-          nuget sources add -name "GitHub" -Source "https://nuget.pkg.github.com/linksplatform/index.json" -Username linksplatform -Password $GITHUB_TOKEN
+          nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/linksplatform/index.json" -UserName linksplatform -Password ${{ secrets.GITHUB_TOKEN }}
           nuget push **/*.nupkg -Source "GitHub" -SkipDuplicate
