@@ -9,7 +9,7 @@
     <TargetFrameworks>net471;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Interfaces</AssemblyName>
     <PackageId>Platform.Interfaces</PackageId>
-    <PackageTags>LinksPlatform;Interfaces;IConverter;ICounter;IFactory;IProvider;ICriterionMatcher;IIncrementer;IPropertiesOperator;IPropertyOperator</PackageTags>
+    <PackageTags>LinksPlatform;Interfaces;ICounter;ICriterionMatcher;IFactory;IProperties;IProperty;IProvider;ISetter</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Interfaces</PackageProjectUrl>
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
