@@ -111,32 +111,6 @@ references:
   fullName.vb: Platform.Interfaces.IFactory(Of TProduct).Create
   nameWithType: IFactory<TProduct>.Create
   nameWithType.vb: IFactory(Of TProduct).Create
-- uid: Platform.Interfaces.IIncrementer`1
-  name: IIncrementer<TNumber>
-  href: api/Platform.Interfaces.IIncrementer-1.html
-  commentId: T:Platform.Interfaces.IIncrementer`1
-  name.vb: IIncrementer(Of TNumber)
-  fullName: Platform.Interfaces.IIncrementer<TNumber>
-  fullName.vb: Platform.Interfaces.IIncrementer(Of TNumber)
-  nameWithType: IIncrementer<TNumber>
-  nameWithType.vb: IIncrementer(Of TNumber)
-- uid: Platform.Interfaces.IIncrementer`1.Increment(`0)
-  name: Increment(TNumber)
-  href: api/Platform.Interfaces.IIncrementer-1.html#Platform_Interfaces_IIncrementer_1_Increment__0_
-  commentId: M:Platform.Interfaces.IIncrementer`1.Increment(`0)
-  fullName: Platform.Interfaces.IIncrementer<TNumber>.Increment(TNumber)
-  fullName.vb: Platform.Interfaces.IIncrementer(Of TNumber).Increment(TNumber)
-  nameWithType: IIncrementer<TNumber>.Increment(TNumber)
-  nameWithType.vb: IIncrementer(Of TNumber).Increment(TNumber)
-- uid: Platform.Interfaces.IIncrementer`1.Increment*
-  name: Increment
-  href: api/Platform.Interfaces.IIncrementer-1.html#Platform_Interfaces_IIncrementer_1_Increment_
-  commentId: Overload:Platform.Interfaces.IIncrementer`1.Increment
-  isSpec: "True"
-  fullName: Platform.Interfaces.IIncrementer<TNumber>.Increment
-  fullName.vb: Platform.Interfaces.IIncrementer(Of TNumber).Increment
-  nameWithType: IIncrementer<TNumber>.Increment
-  nameWithType.vb: IIncrementer(Of TNumber).Increment
 - uid: Platform.Interfaces.IPropertiesOperator`3
   name: IPropertiesOperator<TObject, TProperty, TValue>
   href: api/Platform.Interfaces.IPropertiesOperator-3.html
