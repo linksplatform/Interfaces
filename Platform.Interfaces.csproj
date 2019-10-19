@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Interfaces Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
-    <VersionPrefix>0.1.1</VersionPrefix>
+    <VersionPrefix>0.2.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net471;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Interfaces</AssemblyName>
@@ -24,10 +24,21 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Added support fot net461 (.NET Framework 4.6.1).
-XML documentation file generation turned on.
-Travis CI connected.
-Issues fix.</PackageReleaseNotes>
+    <PackageReleaseNotes>The lowest supported version of .NET Framework is now 4.7.1.
+IPropertiesOperator renamed to IProperties.
+IPropertyOperator renamed to IProperty.
+Added ISetter interfaces.
+IProperty interface now uses ISetter and IProvider as base interfaces.
+IIncrementer interface moved to Platform.Incrementers library.
+IConverter interfaces moved to Platform.Converters library.
+Type parameters in the ICounter interface reordered.
+Travis CI disconnected.
+GitHub Actions connected.
+Automatic NuGet publishing enabled.
+Source link enabled.
+Refactoring, issues fix.
+
+This release is not backward compatible with the previous 0.1.1 release.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
