@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.com/linksplatform/Interfaces.svg?branch=master)](https://travis-ci.com/linksplatform/Interfaces)
+[![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces)](https://www.nuget.org/packages/Platform.Interfaces)
+[![Actions Status](https://github.com/linksplatform/Interfaces/workflows/CD/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=CD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/561cf283804d4624b03a731acbdbe532)](https://app.codacy.com/app/drakonard/Interfaces?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Interfaces&utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/interfaces/badge)](https://www.codefactor.io/repository/github/linksplatform/interfaces)
 
@@ -25,10 +26,10 @@ NuGet package: [Platform.Interfaces](https://www.nuget.org/packages/Platform.Int
 *   [Platform.Reflection.Sigil](https://github.com/linksplatform/Reflection.Sigil)
 
 ## Mystery files
-*   [.travis.yml](https://github.com/linksplatform/Interfaces/blob/master/.travis.yml) - Travis CI build configuration.
-*   [docfx.json](https://github.com/linksplatform/Interfaces/blob/master/docfx.json) and [toc.yml](https://github.com/linksplatform/Interfaces/blob/master/toc.yml) - DocFX build configuration.
-*   [format-document.sh](https://github.com/linksplatform/Interfaces/blob/master/format-document.sh) - script for formatting `tex` file for generating PDF from it.
+*   [docfx.json](https://github.com/linksplatform/Interfaces/blob/master/docfx.json) and [toc.yml](https://github.com/linksplatform/Interfaces/blob/master/toc.yml) - [DocFX](https://dotnet.github.io/docfx) build configuration.
 *   [format-csharp-files.py](https://github.com/linksplatform/Interfaces/blob/master/format-csharp-files.py) - script for formatting `.cs` files as a part of `tex` file.
+*   [format-document.sh](https://github.com/linksplatform/Interfaces/blob/master/format-document.sh) - script for formatting `tex` file for generating PDF from it.
 *   [generate-pdf.sh](https://github.com/linksplatform/Interfaces/blob/master/generate-pdf.sh) - script that generates PDF with code for e-readers.
-*   [publish-docs.sh](https://github.com/linksplatform/Interfaces/blob/master/publish-docs.sh) - script that publishes generated documentation and PDF with code for e-readers to `gh-pages` branch.
-*   [push-nuget.bat](https://github.com/linksplatform/Interfaces/blob/master/push-nuget.bat) - Windows script for publishing current version of NuGet package.
+*   [publish-docs.sh](https://github.com/linksplatform/Interfaces/blob/master/publish-docs.sh) - script that publishes generated documentation and PDF with code for e-readers to [gh-pages](https://github.com/linksplatform/Interfaces/tree/gh-pages) branch.
+*   [publish-release.sh](https://github.com/linksplatform/Interfaces/blob/master/publish-release.sh) - script for publishing release of current package version on [GitHub](https://github.com/).
+*   [push-nuget.sh](https://github.com/linksplatform/Interfaces/blob/master/push-nuget.sh) - script for publishing current version of [NuGet](https://www.nuget.org) package.
