@@ -6,8 +6,7 @@
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
     <VersionPrefix>0.1.1</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
-    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;netstandard2.1;net471</TargetFrameworks>
-    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netstandard2.1</TargetFramework>
+    <TargetFrameworks>net471;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Interfaces</AssemblyName>
     <PackageId>Platform.Interfaces</PackageId>
     <PackageTags>LinksPlatform;Interfaces;IConverter;ICounter;IFactory;IProvider;ICriterionMatcher;IIncrementer;IPropertiesOperator;IPropertyOperator</PackageTags>
@@ -29,6 +28,10 @@ XML documentation file generation turned on.
 Travis CI connected.
 Issues fix.</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2" PrivateAssets="All" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All"/>
