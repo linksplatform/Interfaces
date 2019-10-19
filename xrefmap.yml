@@ -111,75 +111,58 @@ references:
   fullName.vb: Platform.Interfaces.IFactory(Of TProduct).Create
   nameWithType: IFactory<TProduct>.Create
   nameWithType.vb: IFactory(Of TProduct).Create
-- uid: Platform.Interfaces.IPropertiesOperator`3
-  name: IPropertiesOperator<TObject, TProperty, TValue>
-  href: api/Platform.Interfaces.IPropertiesOperator-3.html
-  commentId: T:Platform.Interfaces.IPropertiesOperator`3
-  name.vb: IPropertiesOperator(Of TObject, TProperty, TValue)
-  fullName: Platform.Interfaces.IPropertiesOperator<TObject, TProperty, TValue>
-  fullName.vb: Platform.Interfaces.IPropertiesOperator(Of TObject, TProperty, TValue)
-  nameWithType: IPropertiesOperator<TObject, TProperty, TValue>
-  nameWithType.vb: IPropertiesOperator(Of TObject, TProperty, TValue)
-- uid: Platform.Interfaces.IPropertiesOperator`3.GetValue(`0,`1)
+- uid: Platform.Interfaces.IProperties`3
+  name: IProperties<TObject, TProperty, TValue>
+  href: api/Platform.Interfaces.IProperties-3.html
+  commentId: T:Platform.Interfaces.IProperties`3
+  name.vb: IProperties(Of TObject, TProperty, TValue)
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue)
+  nameWithType: IProperties<TObject, TProperty, TValue>
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue)
+- uid: Platform.Interfaces.IProperties`3.GetValue(`0,`1)
   name: GetValue(TObject, TProperty)
-  href: api/Platform.Interfaces.IPropertiesOperator-3.html#Platform_Interfaces_IPropertiesOperator_3_GetValue__0__1_
-  commentId: M:Platform.Interfaces.IPropertiesOperator`3.GetValue(`0,`1)
-  fullName: Platform.Interfaces.IPropertiesOperator<TObject, TProperty, TValue>.GetValue(TObject, TProperty)
-  fullName.vb: Platform.Interfaces.IPropertiesOperator(Of TObject, TProperty, TValue).GetValue(TObject, TProperty)
-  nameWithType: IPropertiesOperator<TObject, TProperty, TValue>.GetValue(TObject, TProperty)
-  nameWithType.vb: IPropertiesOperator(Of TObject, TProperty, TValue).GetValue(TObject, TProperty)
-- uid: Platform.Interfaces.IPropertiesOperator`3.GetValue*
+  href: api/Platform.Interfaces.IProperties-3.html#Platform_Interfaces_IProperties_3_GetValue__0__1_
+  commentId: M:Platform.Interfaces.IProperties`3.GetValue(`0,`1)
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>.GetValue(TObject, TProperty)
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue).GetValue(TObject, TProperty)
+  nameWithType: IProperties<TObject, TProperty, TValue>.GetValue(TObject, TProperty)
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue).GetValue(TObject, TProperty)
+- uid: Platform.Interfaces.IProperties`3.GetValue*
   name: GetValue
-  href: api/Platform.Interfaces.IPropertiesOperator-3.html#Platform_Interfaces_IPropertiesOperator_3_GetValue_
-  commentId: Overload:Platform.Interfaces.IPropertiesOperator`3.GetValue
+  href: api/Platform.Interfaces.IProperties-3.html#Platform_Interfaces_IProperties_3_GetValue_
+  commentId: Overload:Platform.Interfaces.IProperties`3.GetValue
   isSpec: "True"
-  fullName: Platform.Interfaces.IPropertiesOperator<TObject, TProperty, TValue>.GetValue
-  fullName.vb: Platform.Interfaces.IPropertiesOperator(Of TObject, TProperty, TValue).GetValue
-  nameWithType: IPropertiesOperator<TObject, TProperty, TValue>.GetValue
-  nameWithType.vb: IPropertiesOperator(Of TObject, TProperty, TValue).GetValue
-- uid: Platform.Interfaces.IPropertiesOperator`3.SetValue(`0,`1,`2)
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>.GetValue
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue).GetValue
+  nameWithType: IProperties<TObject, TProperty, TValue>.GetValue
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue).GetValue
+- uid: Platform.Interfaces.IProperties`3.SetValue(`0,`1,`2)
   name: SetValue(TObject, TProperty, TValue)
-  href: api/Platform.Interfaces.IPropertiesOperator-3.html#Platform_Interfaces_IPropertiesOperator_3_SetValue__0__1__2_
-  commentId: M:Platform.Interfaces.IPropertiesOperator`3.SetValue(`0,`1,`2)
-  fullName: Platform.Interfaces.IPropertiesOperator<TObject, TProperty, TValue>.SetValue(TObject, TProperty, TValue)
-  fullName.vb: Platform.Interfaces.IPropertiesOperator(Of TObject, TProperty, TValue).SetValue(TObject, TProperty, TValue)
-  nameWithType: IPropertiesOperator<TObject, TProperty, TValue>.SetValue(TObject, TProperty, TValue)
-  nameWithType.vb: IPropertiesOperator(Of TObject, TProperty, TValue).SetValue(TObject, TProperty, TValue)
-- uid: Platform.Interfaces.IPropertiesOperator`3.SetValue*
+  href: api/Platform.Interfaces.IProperties-3.html#Platform_Interfaces_IProperties_3_SetValue__0__1__2_
+  commentId: M:Platform.Interfaces.IProperties`3.SetValue(`0,`1,`2)
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>.SetValue(TObject, TProperty, TValue)
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue).SetValue(TObject, TProperty, TValue)
+  nameWithType: IProperties<TObject, TProperty, TValue>.SetValue(TObject, TProperty, TValue)
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue).SetValue(TObject, TProperty, TValue)
+- uid: Platform.Interfaces.IProperties`3.SetValue*
   name: SetValue
-  href: api/Platform.Interfaces.IPropertiesOperator-3.html#Platform_Interfaces_IPropertiesOperator_3_SetValue_
-  commentId: Overload:Platform.Interfaces.IPropertiesOperator`3.SetValue
+  href: api/Platform.Interfaces.IProperties-3.html#Platform_Interfaces_IProperties_3_SetValue_
+  commentId: Overload:Platform.Interfaces.IProperties`3.SetValue
   isSpec: "True"
-  fullName: Platform.Interfaces.IPropertiesOperator<TObject, TProperty, TValue>.SetValue
-  fullName.vb: Platform.Interfaces.IPropertiesOperator(Of TObject, TProperty, TValue).SetValue
-  nameWithType: IPropertiesOperator<TObject, TProperty, TValue>.SetValue
-  nameWithType.vb: IPropertiesOperator(Of TObject, TProperty, TValue).SetValue
-- uid: Platform.Interfaces.IPropertyOperator`2
-  name: IPropertyOperator<TObject, TValue>
-  href: api/Platform.Interfaces.IPropertyOperator-2.html
-  commentId: T:Platform.Interfaces.IPropertyOperator`2
-  name.vb: IPropertyOperator(Of TObject, TValue)
-  fullName: Platform.Interfaces.IPropertyOperator<TObject, TValue>
-  fullName.vb: Platform.Interfaces.IPropertyOperator(Of TObject, TValue)
-  nameWithType: IPropertyOperator<TObject, TValue>
-  nameWithType.vb: IPropertyOperator(Of TObject, TValue)
-- uid: Platform.Interfaces.IPropertyOperator`2.Set(`0,`1)
-  name: Set(TObject, TValue)
-  href: api/Platform.Interfaces.IPropertyOperator-2.html#Platform_Interfaces_IPropertyOperator_2_Set__0__1_
-  commentId: M:Platform.Interfaces.IPropertyOperator`2.Set(`0,`1)
-  fullName: Platform.Interfaces.IPropertyOperator<TObject, TValue>.Set(TObject, TValue)
-  fullName.vb: Platform.Interfaces.IPropertyOperator(Of TObject, TValue).Set(TObject, TValue)
-  nameWithType: IPropertyOperator<TObject, TValue>.Set(TObject, TValue)
-  nameWithType.vb: IPropertyOperator(Of TObject, TValue).Set(TObject, TValue)
-- uid: Platform.Interfaces.IPropertyOperator`2.Set*
-  name: Set
-  href: api/Platform.Interfaces.IPropertyOperator-2.html#Platform_Interfaces_IPropertyOperator_2_Set_
-  commentId: Overload:Platform.Interfaces.IPropertyOperator`2.Set
-  isSpec: "True"
-  fullName: Platform.Interfaces.IPropertyOperator<TObject, TValue>.Set
-  fullName.vb: Platform.Interfaces.IPropertyOperator(Of TObject, TValue).Set
-  nameWithType: IPropertyOperator<TObject, TValue>.Set
-  nameWithType.vb: IPropertyOperator(Of TObject, TValue).Set
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>.SetValue
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue).SetValue
+  nameWithType: IProperties<TObject, TProperty, TValue>.SetValue
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue).SetValue
+- uid: Platform.Interfaces.IProperty`2
+  name: IProperty<TObject, TValue>
+  href: api/Platform.Interfaces.IProperty-2.html
+  commentId: T:Platform.Interfaces.IProperty`2
+  name.vb: IProperty(Of TObject, TValue)
+  fullName: Platform.Interfaces.IProperty<TObject, TValue>
+  fullName.vb: Platform.Interfaces.IProperty(Of TObject, TValue)
+  nameWithType: IProperty<TObject, TValue>
+  nameWithType.vb: IProperty(Of TObject, TValue)
 - uid: Platform.Interfaces.IProvider`1
   name: IProvider<TProvided>
   href: api/Platform.Interfaces.IProvider-1.html
@@ -232,3 +215,55 @@ references:
   fullName.vb: Platform.Interfaces.IProvider(Of TProvided, TArgument).Get
   nameWithType: IProvider<TProvided, TArgument>.Get
   nameWithType.vb: IProvider(Of TProvided, TArgument).Get
+- uid: Platform.Interfaces.ISetter`1
+  name: ISetter<TValue>
+  href: api/Platform.Interfaces.ISetter-1.html
+  commentId: T:Platform.Interfaces.ISetter`1
+  name.vb: ISetter(Of TValue)
+  fullName: Platform.Interfaces.ISetter<TValue>
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue)
+  nameWithType: ISetter<TValue>
+  nameWithType.vb: ISetter(Of TValue)
+- uid: Platform.Interfaces.ISetter`1.Set(`0)
+  name: Set(TValue)
+  href: api/Platform.Interfaces.ISetter-1.html#Platform_Interfaces_ISetter_1_Set__0_
+  commentId: M:Platform.Interfaces.ISetter`1.Set(`0)
+  fullName: Platform.Interfaces.ISetter<TValue>.Set(TValue)
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue).Set(TValue)
+  nameWithType: ISetter<TValue>.Set(TValue)
+  nameWithType.vb: ISetter(Of TValue).Set(TValue)
+- uid: Platform.Interfaces.ISetter`1.Set*
+  name: Set
+  href: api/Platform.Interfaces.ISetter-1.html#Platform_Interfaces_ISetter_1_Set_
+  commentId: Overload:Platform.Interfaces.ISetter`1.Set
+  isSpec: "True"
+  fullName: Platform.Interfaces.ISetter<TValue>.Set
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue).Set
+  nameWithType: ISetter<TValue>.Set
+  nameWithType.vb: ISetter(Of TValue).Set
+- uid: Platform.Interfaces.ISetter`2
+  name: ISetter<TValue, TArgument>
+  href: api/Platform.Interfaces.ISetter-2.html
+  commentId: T:Platform.Interfaces.ISetter`2
+  name.vb: ISetter(Of TValue, TArgument)
+  fullName: Platform.Interfaces.ISetter<TValue, TArgument>
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue, TArgument)
+  nameWithType: ISetter<TValue, TArgument>
+  nameWithType.vb: ISetter(Of TValue, TArgument)
+- uid: Platform.Interfaces.ISetter`2.Set(`1,`0)
+  name: Set(TArgument, TValue)
+  href: api/Platform.Interfaces.ISetter-2.html#Platform_Interfaces_ISetter_2_Set__1__0_
+  commentId: M:Platform.Interfaces.ISetter`2.Set(`1,`0)
+  fullName: Platform.Interfaces.ISetter<TValue, TArgument>.Set(TArgument, TValue)
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue, TArgument).Set(TArgument, TValue)
+  nameWithType: ISetter<TValue, TArgument>.Set(TArgument, TValue)
+  nameWithType.vb: ISetter(Of TValue, TArgument).Set(TArgument, TValue)
+- uid: Platform.Interfaces.ISetter`2.Set*
+  name: Set
+  href: api/Platform.Interfaces.ISetter-2.html#Platform_Interfaces_ISetter_2_Set_
+  commentId: Overload:Platform.Interfaces.ISetter`2.Set
+  isSpec: "True"
+  fullName: Platform.Interfaces.ISetter<TValue, TArgument>.Set
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue, TArgument).Set
+  nameWithType: ISetter<TValue, TArgument>.Set
+  nameWithType.vb: ISetter(Of TValue, TArgument).Set

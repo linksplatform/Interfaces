@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IProvider&lt;TProvided, TArgument&gt;
+    <title>Interface ISetter&lt;TValue&gt;
    | LinksPlatform's Platform.Interfaces Library </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IProvider&lt;TProvided, TArgument&gt;
+    <meta name="title" content="Interface ISetter&lt;TValue&gt;
    | LinksPlatform's Platform.Interfaces Library ">
     <meta name="generator" content="docfx 2.46.0.0">
     
@@ -78,20 +78,20 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Platform.Interfaces.IProvider`2">
+            <article class="content wrap" id="_content" data-uid="Platform.Interfaces.ISetter`1">
   
   
-  <h1 id="Platform_Interfaces_IProvider_2" data-uid="Platform.Interfaces.IProvider`2" class="text-break">Interface IProvider&lt;TProvided, TArgument&gt;
+  <h1 id="Platform_Interfaces_ISetter_1" data-uid="Platform.Interfaces.ISetter`1" class="text-break">Interface ISetter&lt;TValue&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Defines the provider of objects for which an argument must be specified.</p>
-<p>Определяет поставщика объектов, для получения которых необходимо указать аргумент.</p>
+  <div class="markdown level0 summary"><p>Defines an setter that sets the passed value as a new state.</p>
+<p>Определяет установщик, который устанавливает переданное значение в качестве нового состояния.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Platform.Interfaces.html">Platform.Interfaces</a></h6>
   <h6><strong>Assembly</strong>: Platform.Interfaces.dll</h6>
-  <h5 id="Platform_Interfaces_IProvider_2_syntax">Syntax</h5>
+  <h5 id="Platform_Interfaces_ISetter_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IProvider&lt;out TProvided, in TArgument&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ISetter&lt;in TValue&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -103,13 +103,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="parametername">TProvided</span></td>
-        <td><p>Type of provided objects.</p><p>Тип предоставляемых объектов.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TArgument</span></td>
-        <td><p>Argument type.</p><p>Тип аргумента.</p>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>Type of setted value.</p><p>Тип устанавливаемого значения.</p>
 </td>
       </tr>
     </tbody>
@@ -118,20 +113,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/linksplatform/Interfaces/new/master/apiSpec/new?filename=Platform_Interfaces_IProvider_2_Get__1_.md&amp;value=---%0Auid%3A%20Platform.Interfaces.IProvider%602.Get(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/linksplatform/Interfaces/new/master/apiSpec/new?filename=Platform_Interfaces_ISetter_1_Set__0_.md&amp;value=---%0Auid%3A%20Platform.Interfaces.ISetter%601.Set(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/linksplatform/Interfaces/blob/5e9ce50ffce8b7cd872e9982ece970b2e8d144f4/IProvider[TProvided, TArgument].cs/#L17">View Source</a>
+    <a href="https://github.com/linksplatform/Interfaces/blob/5e9ce50ffce8b7cd872e9982ece970b2e8d144f4/ISetter[TValue].cs/#L15">View Source</a>
   </span>
-  <a id="Platform_Interfaces_IProvider_2_Get_" data-uid="Platform.Interfaces.IProvider`2.Get*"></a>
-  <h4 id="Platform_Interfaces_IProvider_2_Get__1_" data-uid="Platform.Interfaces.IProvider`2.Get(`1)">Get(TArgument)</h4>
-  <div class="markdown level1 summary"><p>Provides an object.</p>
-<p>Предоставляет объект.</p>
+  <a id="Platform_Interfaces_ISetter_1_Set_" data-uid="Platform.Interfaces.ISetter`1.Set*"></a>
+  <h4 id="Platform_Interfaces_ISetter_1_Set__0_" data-uid="Platform.Interfaces.ISetter`1.Set(`0)">Set(TValue)</h4>
+  <div class="markdown level1 summary"><p>Sets the value of a specific property in the specified object.</p>
+<p>Устанавливает значение определённого свойства в указанном объекте.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TProvided Get(TArgument argument)</code></pre>
+    <pre><code class="lang-csharp hljs">void Set(TValue value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,25 +139,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TArgument</span></td>
-        <td><span class="parametername">argument</span></td>
-        <td><p>The argument required to acquire the object.</p><p>Аргумент, необходимый для получения объекта.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TProvided</span></td>
-        <td><p>The object.</p><p>Объект.</p>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p><p>Значение.</p>
 </td>
       </tr>
     </tbody>
@@ -175,10 +154,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/linksplatform/Interfaces/new/master/apiSpec/new?filename=Platform_Interfaces_IProvider_2.md&amp;value=---%0Auid%3A%20Platform.Interfaces.IProvider%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/linksplatform/Interfaces/new/master/apiSpec/new?filename=Platform_Interfaces_ISetter_1.md&amp;value=---%0Auid%3A%20Platform.Interfaces.ISetter%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/linksplatform/Interfaces/blob/5e9ce50ffce8b7cd872e9982ece970b2e8d144f4/IProvider[TProvided, TArgument].cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/linksplatform/Interfaces/blob/5e9ce50ffce8b7cd872e9982ece970b2e8d144f4/ISetter[TValue].cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
