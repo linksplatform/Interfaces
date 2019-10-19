@@ -23,6 +23,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <LangVersion>latest</LangVersion>
     <PackageReleaseNotes>Added support fot net461 (.NET Framework 4.6.1).
 XML documentation file generation turned on.
 Travis CI connected.
