@@ -6,7 +6,7 @@
     /// </summary>
     /// <typeparam name="TArgument"><para>The argument type.</para><para>Тип аргумента.</para></typeparam>
     /// <typeparam name="TResult"><para>The count result type.</para><para>Тип результата подсчета.</para></typeparam>
-    public interface ICounter<in TArgument, out TResult>
+    public interface ICounter<out TResult, in TArgument>
     {
         /// <summary>
         /// <para>Performs a count that requires passing an argument.</para>
