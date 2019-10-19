@@ -34,31 +34,31 @@ references:
   nameWithType: ICounter<TResult>.Count
   nameWithType.vb: ICounter(Of TResult).Count
 - uid: Platform.Interfaces.ICounter`2
-  name: ICounter<TArgument, TResult>
+  name: ICounter<TResult, TArgument>
   href: api/Platform.Interfaces.ICounter-2.html
   commentId: T:Platform.Interfaces.ICounter`2
-  name.vb: ICounter(Of TArgument, TResult)
-  fullName: Platform.Interfaces.ICounter<TArgument, TResult>
-  fullName.vb: Platform.Interfaces.ICounter(Of TArgument, TResult)
-  nameWithType: ICounter<TArgument, TResult>
-  nameWithType.vb: ICounter(Of TArgument, TResult)
-- uid: Platform.Interfaces.ICounter`2.Count(`0)
+  name.vb: ICounter(Of TResult, TArgument)
+  fullName: Platform.Interfaces.ICounter<TResult, TArgument>
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult, TArgument)
+  nameWithType: ICounter<TResult, TArgument>
+  nameWithType.vb: ICounter(Of TResult, TArgument)
+- uid: Platform.Interfaces.ICounter`2.Count(`1)
   name: Count(TArgument)
-  href: api/Platform.Interfaces.ICounter-2.html#Platform_Interfaces_ICounter_2_Count__0_
-  commentId: M:Platform.Interfaces.ICounter`2.Count(`0)
-  fullName: Platform.Interfaces.ICounter<TArgument, TResult>.Count(TArgument)
-  fullName.vb: Platform.Interfaces.ICounter(Of TArgument, TResult).Count(TArgument)
-  nameWithType: ICounter<TArgument, TResult>.Count(TArgument)
-  nameWithType.vb: ICounter(Of TArgument, TResult).Count(TArgument)
+  href: api/Platform.Interfaces.ICounter-2.html#Platform_Interfaces_ICounter_2_Count__1_
+  commentId: M:Platform.Interfaces.ICounter`2.Count(`1)
+  fullName: Platform.Interfaces.ICounter<TResult, TArgument>.Count(TArgument)
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult, TArgument).Count(TArgument)
+  nameWithType: ICounter<TResult, TArgument>.Count(TArgument)
+  nameWithType.vb: ICounter(Of TResult, TArgument).Count(TArgument)
 - uid: Platform.Interfaces.ICounter`2.Count*
   name: Count
   href: api/Platform.Interfaces.ICounter-2.html#Platform_Interfaces_ICounter_2_Count_
   commentId: Overload:Platform.Interfaces.ICounter`2.Count
   isSpec: "True"
-  fullName: Platform.Interfaces.ICounter<TArgument, TResult>.Count
-  fullName.vb: Platform.Interfaces.ICounter(Of TArgument, TResult).Count
-  nameWithType: ICounter<TArgument, TResult>.Count
-  nameWithType.vb: ICounter(Of TArgument, TResult).Count
+  fullName: Platform.Interfaces.ICounter<TResult, TArgument>.Count
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult, TArgument).Count
+  nameWithType: ICounter<TResult, TArgument>.Count
+  nameWithType.vb: ICounter(Of TResult, TArgument).Count
 - uid: Platform.Interfaces.ICriterionMatcher`1
   name: ICriterionMatcher<TArgument>
   href: api/Platform.Interfaces.ICriterionMatcher-1.html
