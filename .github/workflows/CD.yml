@@ -51,4 +51,3 @@ jobs:
           dotnet pack -c Release
           nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/linksplatform/index.json" -UserName linksplatform -Password ${{ secrets.GITHUB_TOKEN }}
           nuget push **/*.snupkg -Source "GitHub" -SkipDuplicate
-          #nuget push **/*.nupkg -Source "GitHub" -SkipDuplicate
