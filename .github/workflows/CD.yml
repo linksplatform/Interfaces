@@ -40,7 +40,7 @@ jobs:
         bash ./publish-release.sh
 
   pushNuGetToGitHub:
-    #needs: buildAndDeploy
+    needs: buildAndDeploy
     if: github.event_name == 'push'
     runs-on: windows-latest
     steps:
