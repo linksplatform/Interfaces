@@ -4,10 +4,6 @@ set -e # Exit with nonzero exit code if anything fails
 # Pack NuGet package
 dotnet pack -c Release
 
-#dotnet nuget push ./**/*.nupkg -s "https://nuget.pkg.github.com/linksplatform/index.json" -k "${GITHUB_TOKEN}"
-#nuget sources add -name "GitHub" -Source "https://nuget.pkg.github.com/linksplatform/index.json" -Username linksplatform -Password $GITHUB_TOKEN
-#nuget push ./**/*.nupkg -Source "GitHub" -SkipDuplicate
-
 # Get version string
 PackageFileNamePrefix="bin/Release/Platform.$REPOSITORY_NAME."
 PackageFileNameSuffix=".nupkg"
