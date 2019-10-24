@@ -30,6 +30,9 @@ jobs:
       if: github.event_name == 'push'
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
+        wget https://raw.githubusercontent.com/linksplatform/Scripts/master/SingleProjectRepository/docfx.json
+        wget https://raw.githubusercontent.com/linksplatform/Scripts/master/SingleProjectRepository/toc.yml
+        wget https://raw.githubusercontent.com/linksplatform/Scripts/master/SingleProjectRepository/publish-docs.sh
         bash ./publish-docs.sh
     - name: Publish NuGet package
       if: github.event_name == 'push'
