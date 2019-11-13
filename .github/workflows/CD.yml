@@ -10,15 +10,15 @@ env:
   TOKEN: ${{ secrets.TOKEN }}
   NUGETTOKEN: ${{ secrets.NUGETTOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/master/SingleProjectRepository
+  SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/master/MultiProjectRepository
 
 jobs:
-  buildAndDeploy:
+  testAndDeploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Build
-      run: dotnet build -c Release
+    - name: Test
+      run: dotnet test -c Release -f netcoreapp3.0
     - name: Generate PDF with code
       if: github.event_name == 'push'
       run: |
@@ -32,6 +32,7 @@ jobs:
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         wget "$SCRIPTS_BASE_URL/docfx.json"
+        wget "$SCRIPTS_BASE_URL/filter.yml"
         wget "$SCRIPTS_BASE_URL/toc.yml"
         wget "$SCRIPTS_BASE_URL/publish-docs.sh"
         bash ./publish-docs.sh
@@ -47,9 +48,8 @@ jobs:
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         wget "$SCRIPTS_BASE_URL/publish-release.sh"
         bash ./publish-release.sh
-
   pushNuGetToGitHubPackageRegistry:
-    needs: buildAndDeploy
+    needs: testAndDeploy
     if: github.event_name == 'push'
     runs-on: windows-latest
     steps:
