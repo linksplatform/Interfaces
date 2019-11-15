@@ -1,7 +1,8 @@
 ﻿namespace Platform::Interfaces
 {
-    interface ICriterionMatcher<in TArgument>
+    template <typename TArgument> class ICriterionMatcher
     {
-        bool IsMatched(TArgument argument);
+    public:
+        virtual bool IsMatched(TArgument argument) = 0;
     }
 }

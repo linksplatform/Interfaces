@@ -1,9 +1,10 @@
 ﻿namespace Platform::Interfaces
 {
-    interface IProperties<in TObject, in TProperty, TValue>
+    template <typename TObject, typename TProperty, typename TValue> class IProperties
     {
-        TValue GetValue(TObject @object, TProperty property);
+    public:
+        virtual TValue GetValue(TObject @object, TProperty property) = 0;
 
-        void SetValue(TObject @object, TProperty property, TValue value);
+        virtual void SetValue(TObject @object, TProperty property, TValue value) = 0;
     }
 }

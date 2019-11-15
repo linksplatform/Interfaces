@@ -1,7 +1,8 @@
 ﻿namespace Platform::Interfaces
 {
-    interface ICounter<out TResult>
+    template <typename TResult> class ICounter
     {
-        TResult Count();
+    public:
+        virtual TResult Count() = 0;
     }
 }

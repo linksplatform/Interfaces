@@ -1,7 +1,8 @@
 ﻿namespace Platform::Interfaces
 {
-    interface ISetter<in TValue, in TArgument>
+    template <typename TValue, typename TArgument> class ISetter
     {
-        void Set(TArgument argument, TValue value);
+    public:
+        virtual void Set(TArgument argument, TValue value) = 0;
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace Platform::Interfaces
 {
-    interface IProperty<in TObject, TValue> : ISetter<TValue, TObject>, IProvider<TValue, TObject>
+    template <typename TObject, typename TValue> class IProperty : public ISetter<TValue, TObject>, public IProvider<TValue, TObject>
     {
+    public:
     }
 }

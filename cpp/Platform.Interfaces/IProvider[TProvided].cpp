@@ -1,7 +1,8 @@
 ﻿namespace Platform::Interfaces
 {
-    interface IProvider<out TProvided>
+    template <typename TProvided> class IProvider
     {
-        TProvided Get();
+    public:
+        virtual TProvided Get() = 0;
     }
 }

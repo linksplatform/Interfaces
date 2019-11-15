@@ -264,6 +264,22 @@ namespace CSharpToCppTranslator
 
         public static readonly IList<ISubstitutionRule> Rules = new List<SubstitutionRule>
         {
+            // protected abstract TElement GetFirst();
+            // virtual TElement GetFirst() = 0;
+            (new Regex(@"([a-zA-Z0-9]+ [a-zA-Z0-9]+\([^\)]*\));"), "virtual $1 = 0;", null, 0),
+            // out TProduct
+            // TProduct
+            (new Regex(@"(?<before>(<|, ))(in|out) (?<typeParameter>[a-zA-Z0-9]+)(?<after>(>|,))"), "${before}${typeParameter}${after}", null, 10),
+            // interface IFactory<out TProduct> {
+            // template <typename TProduct> class IFactory { public:
+            (new Regex(@"interface (?<interface>[a-zA-Z0-9]+)<(?<typeParameters>[a-zA-Z0-9 ,]+)>(?<whitespace>[^{]+){"), "template <typename ${typeParameters}> class ${interface}${whitespace}{" + Environment.NewLine + "    public:", null, 0),
+            // template <typename TObject, TProperty, TValue>
+            // template <typename TObject, typename TProperty, TValue>
+            (new Regex(@"(?<before>template <((, )?typename [a-zA-Z0-9]+)+, )(?<typeParameter>[a-zA-Z0-9]+)(?<after>(,|>))"), "${before}typename ${typeParameter}${after}", null, 10),
+            // class IProperty : ISetter<TValue, TObject>, IProvider<TValue, TObject>
+            // class IProperty : public ISetter<TValue, TObject>, IProvider<TValue, TObject>
+            (new Regex(@"(?<before>class [a-zA-Z0-9]+ : ((public [a-zA-Z0-9]+(<[a-zA-Z0-9 ,]+>)?, )+)?)(?<inheritedType>(?!public)[a-zA-Z0-9]+(<[a-zA-Z0-9 ,]+>)?)(?<after>(, [a-zA-Z0-9]+(?!>)|[ \r\n]+))"), "${before}public ${inheritedType}${after}", null, 10),
+
             // Just delete it in GenericCollectionMethodsBase.cs
             (new Regex(@"virtual TElement GetZero(.|\s)+Increment\(One\)(.|\s)+?}"), "", new Regex(@"GenericCollectionMethodsBase\.cs"), 0),
             // Just delete it in SizedBinaryTreeMethodsBase.cs
