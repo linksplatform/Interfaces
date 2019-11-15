@@ -54,7 +54,7 @@ This release is not backward compatible with the previous 0.1.1 release.</Packag
   </ItemGroup>
 
   <Target Name="CSharpFilesTransform" BeforeTargets="BeforeBuild" Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'netstandard2.1'">
-    <Exec WorkingDirectory="$(ProjectDir)" IgnoreExitCode="true" Command="..\CSharpToCppTranslator\bin\$(Configuration)\netcoreapp3.0\CSharpToCppTranslator.exe %(CSharpFiles.Identity) $(SolutionDir)cpp\Platform.Interfaces\" />
+    <Exec WorkingDirectory="$(ProjectDir)" IgnoreExitCode="true" Command='..\CSharpToCppTranslator\bin\$(Configuration)\netcoreapp3.0\CSharpToCppTranslator.exe "%(CSharpFiles.Identity)" $(SolutionDir)cpp\Platform.Interfaces\' />
   </Target>
 
 </Project>
