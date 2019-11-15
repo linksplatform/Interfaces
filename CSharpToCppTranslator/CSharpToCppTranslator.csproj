@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Platform.IO" Version="0.1.5" />
-    <PackageReference Include="Platform.RegularExpressions.Transformer.CSharpToCpp" Version="0.0.11" />
+    <PackageReference Include="Platform.RegularExpressions.Transformer.CSharpToCpp" Version="0.0.12" />
   </ItemGroup>
 
 </Project>
