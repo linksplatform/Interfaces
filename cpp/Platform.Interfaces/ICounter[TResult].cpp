@@ -4,5 +4,5 @@
     {
     public:
         virtual TResult Count() = 0;
-    }
+    };
 }

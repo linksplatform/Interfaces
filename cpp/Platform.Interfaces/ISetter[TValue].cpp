@@ -4,5 +4,5 @@
     {
     public:
         virtual void Set(TValue value) = 0;
-    }
+    };
 }

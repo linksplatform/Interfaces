@@ -4,5 +4,5 @@
     {
     public:
         virtual TProvided Get(TArgument argument) = 0;
-    }
+    };
 }

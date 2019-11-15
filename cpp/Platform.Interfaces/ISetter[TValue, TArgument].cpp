@@ -4,5 +4,5 @@
     {
     public:
         virtual void Set(TArgument argument, TValue value) = 0;
-    }
+    };
 }

@@ -4,5 +4,5 @@
     {
     public:
         virtual TProduct Create() = 0;
-    }
+    };
 }

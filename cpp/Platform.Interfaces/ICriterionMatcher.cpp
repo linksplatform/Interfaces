@@ -4,5 +4,5 @@
     {
     public:
         virtual bool IsMatched(TArgument argument) = 0;
-    }
+    };
 }
