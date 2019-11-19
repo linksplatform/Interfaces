@@ -1,6 +1,6 @@
 ﻿namespace Platform::Interfaces
 {
-    template <typename TProduct> class IFactory
+    template <typename...> class IFactory; template <typename TProduct> class IFactory<TProduct>
     {
     public:
         virtual TProduct Create() = 0;
