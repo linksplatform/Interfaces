@@ -1,4 +1,9 @@
 {
+  "README.html": {
+    "href": "README.html",
+    "title": "Interfaces | LinksPlatform's Platform.Interfaces Library",
+    "keywords": "Interfaces LinksPlatform's Platform.Interfaces Class Library Contains common interfaces that did not fit in any major category. Namespace: Platform.Interfaces Forked from: Konard/LinksPlatform/Platform/Platform.Helpers NuGet package: Platform.Interfaces Documentation Interface IFactory<TProduct> . PDF file with code for e-readers. Dependent libraries Platform.Timestamps Platform.Collections Platform.Reflection.Sigil"
+  },
   "api/Platform.Interfaces.ICounter-1.html": {
     "href": "api/Platform.Interfaces.ICounter-1.html",
     "title": "Interface ICounter<TResult> | LinksPlatform's Platform.Interfaces Library",
@@ -53,10 +58,5 @@
     "href": "api/Platform.Interfaces.IFactory-1.html",
     "title": "Interface IFactory<TProduct> | LinksPlatform's Platform.Interfaces Library",
     "keywords": "Interface IFactory<TProduct> Defines a factory that produces instances of a specific type. Определяет фабрику, которая производит экземпляры определенного типа. Namespace : Platform.Interfaces Assembly : Platform.Interfaces.dll Syntax public interface IFactory<out TProduct> Type Parameters Name Description TProduct Type of produced instances. Тип производимых экземпляров. Methods | Improve this Doc View Source Create() Creates an instance of TProduct type. Создает экземпляр типа TProduct. Declaration TProduct Create() Returns Type Description TProduct The instance of TProduct type. Экземпляр типа TProduct."
-  },
-  "README.html": {
-    "href": "README.html",
-    "title": "Interfaces | LinksPlatform's Platform.Interfaces Library",
-    "keywords": "Interfaces LinksPlatform's Platform.Interfaces Class Library Contains common interfaces that did not fit in any major category. Namespace: Platform.Interfaces Forked from: Konard/LinksPlatform/Platform/Platform.Helpers NuGet package: Platform.Interfaces Documentation Interface IFactory<TProduct> . PDF file with code for e-readers. Dependent libraries Platform.Timestamps Platform.Collections Platform.Reflection.Sigil"
   }
 }
