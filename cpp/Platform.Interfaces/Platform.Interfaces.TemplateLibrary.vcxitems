@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{2f70a7bd-d0e5-4563-8f71-4bce6916cfe3}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ICounter[TResult, TArgument].cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ICounter[TResult].cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ICriterionMatcher.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)IFactory.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)IProperties.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)IProperty.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)IProvider[TProvided, TArgument].cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)IProvider[TProvided].cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ISetter[TValue, TArgument].cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ISetter[TValue].cpp" />
+  </ItemGroup>
+</Project>
