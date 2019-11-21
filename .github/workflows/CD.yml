@@ -42,6 +42,12 @@ jobs:
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         wget "$SCRIPTS_BASE_URL/push-nuget.sh"
         bash ./push-nuget.sh
+    - name: Publish Cpp NuGet package
+      if: github.event_name == 'push'
+      run: |
+        export REPOSITORY_NAME=$(basename ${{ github.repository }})
+        wget "$SCRIPTS_BASE_URL/push-cpp-nuget.sh"
+        bash ./push-cpp-nuget.sh
     - name: Publish release
       if: github.event_name == 'push'
       run: |
