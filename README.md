@@ -1,7 +1,10 @@
-[![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces)](https://www.nuget.org/packages/Platform.Interfaces)
 [![Actions Status](https://github.com/linksplatform/Interfaces/workflows/CD/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=CD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/561cf283804d4624b03a731acbdbe532)](https://app.codacy.com/app/drakonard/Interfaces?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Interfaces&utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/interfaces/badge)](https://www.codefactor.io/repository/github/linksplatform/interfaces)
+
+| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces)](https://www.nuget.org/packages/Platform.Interfaces) | C# |
+|-|-|
+| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces.TemplateLibrary)](https://www.nuget.org/packages/Platform.Interfaces.TemplateLibrary)  | __C++__  |
 
 # [Interfaces](https://github.com/linksplatform/Interfaces)
 
