@@ -17,6 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Remove cpp projects
+      run: |
+        export REPOSITORY_NAME=$(basename ${{ github.repository }})
+        dotnet sln "Platform.$REPOSITORY_NAME.sln" remove cpp/Platform.$REPOSITORY_NAME.Tests/Platform.$REPOSITORY_NAME.TemplateLibrary.Tests.vcxproj
     - name: Test
       run: dotnet test -c Release -f netcoreapp3.0
     - name: Generate PDF with code
