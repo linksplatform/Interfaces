@@ -17,6 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Init submodules
+      run: |
+        git submodule init 
+        git submodule update
     - name: Remove cpp projects
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
@@ -65,6 +69,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: warrenbuckley/Setup-Nuget@v1
+      - name: Init submodules
+        run: |
+          git submodule init 
+          git submodule update
       - name: Publish to GitHub Package Registry
         run: |
           dotnet pack -c Release
