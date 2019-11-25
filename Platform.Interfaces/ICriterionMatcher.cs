@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// <para>Defines a criterion matcher, that contains a specific method of determining whether the argument matches criterion or not.</para>
-    /// <para>Определяет объект который проверяет соответствие критерию и содержащий конкретный метод определения, соответствует ли аргумент критерию или нет.</para>
+    /// <para>Определяет объект который проверяет соответствие критерию и содержит конкретный метод определения, соответствует ли аргумент критерию или нет.</para>
     /// </summary>
     /// <typeparam name="TArgument"><para>Argument type.</para><para>Тип аргумента.</para></typeparam>
     public interface ICriterionMatcher<in TArgument>
