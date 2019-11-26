@@ -8,10 +8,10 @@
     public interface IFactory<out TProduct>
     {
         /// <summary>
-        /// <para>Creates an instance of TProduct type.</para>
-        /// <para>Создает экземпляр типа TProduct.</para>
+        /// <para>Creates an instance of <typeparamref name="TProduct"/> type.</para>
+        /// <para>Создает экземпляр типа <typeparamref name="TProduct"/>.</para>
         /// </summary>
-        /// <returns><para>The instance of TProduct type.</para><para>Экземпляр типа TProduct.</para></returns>
+        /// <returns><para>The instance of <typeparamref name="TProduct"/> type.</para><para>Экземпляр типа <typeparamref name="TProduct"/>.</para></returns>
         TProduct Create();
     }
 }
