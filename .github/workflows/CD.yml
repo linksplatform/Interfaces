@@ -7,7 +7,6 @@ on:
     branches: master
 
 env:
-  TOKEN: ${{ secrets.TOKEN }}
   NUGETTOKEN: ${{ secrets.NUGETTOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/master/MultiProjectRepository
@@ -17,10 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Init submodules
-      run: |
-        git submodule init 
-        git submodule update
+      with:
+        submodules: true
     - name: Remove cpp projects
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
@@ -68,11 +65,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
+        with:
+          submodules: true
       - uses: warrenbuckley/Setup-Nuget@v1
-      - name: Init submodules
-        run: |
-          git submodule init 
-          git submodule update
       - name: Publish to GitHub Package Registry
         run: |
           dotnet pack -c Release
