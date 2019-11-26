@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Interfaces Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
-    <VersionPrefix>0.2.0</VersionPrefix>
+    <VersionPrefix>0.2.1</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net471;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Interfaces</AssemblyName>
@@ -24,21 +24,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>The lowest supported version of .NET Framework is now 4.7.1.
-IPropertiesOperator renamed to IProperties.
-IPropertyOperator renamed to IProperty.
-Added ISetter interfaces.
-IProperty interface now uses ISetter and IProvider as base interfaces.
-IIncrementer interface moved to Platform.Incrementers library.
-IConverter interfaces moved to Platform.Converters library.
-Type parameters in the ICounter interface reordered.
-Travis CI disconnected.
-GitHub Actions connected.
-Automatic NuGet publishing enabled.
-Source link enabled.
-Refactoring, issues fix.
-
-This release is not backward compatible with the previous 0.1.1 release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Code comments updated.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
@@ -46,7 +32,7 @@ This release is not backward compatible with the previous 0.1.1 release.</Packag
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19554-01" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19554-01" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'netstandard2.1'">
@@ -54,7 +40,7 @@ This release is not backward compatible with the previous 0.1.1 release.</Packag
   </ItemGroup>
 
   <Target Name="CSharpFilesTransform" BeforeTargets="BeforeBuild" Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'netstandard2.1'">
-    <Exec WorkingDirectory="$(ProjectDir)" IgnoreExitCode="true" Command='..\CSharpToCppTranslator\bin\$(Configuration)\netcoreapp3.0\CSharpToCppTranslator.exe "%(CSharpFiles.Identity)" $(SolutionDir)cpp\Platform.Interfaces\' />
+    <Exec WorkingDirectory="$(ProjectDir)" IgnoreExitCode="true" Command="..\CSharpToCppTranslator\bin\$(Configuration)\netcoreapp3.0\CSharpToCppTranslator.exe &quot;%(CSharpFiles.Identity)&quot; $(SolutionDir)cpp\Platform.Interfaces\" />
   </Target>
 
 </Project>
