@@ -9,11 +9,11 @@
     public interface IProvider<out TProvided, in TArgument>
     {
         /// <summary>
-        /// <para>Provides an object/value.</para>
-        /// <para>Предоставляет объект/значение.</para>
+        /// <para>Provides an object(s)/value(s).</para>
+        /// <para>Предоставляет объект(ы)/значение(я).</para>
         /// </summary>
-        /// <param name="argument"><para>The argument required to acquire the object/value.</para><para>Аргумент, необходимый для получения объекта/значения.</para></param>
-        /// <returns><para>The object/value.</para><para>Объект/значение.</para></returns>
+        /// <param name="argument"><para>The argument required to acquire the object(s)/value(s).</para><para>Аргумент, необходимый для получения объекта(ов)/значения(ий).</para></param>
+        /// <returns><para>The object(s)/value(s).</para><para>Объект(ы)/значение(я).</para></returns>
         TProvided Get(TArgument argument);
     }
 }

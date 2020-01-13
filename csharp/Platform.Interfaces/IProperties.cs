@@ -24,7 +24,7 @@
         /// </summary>
         /// <param name="object"><para>The object reference.</para><para>Ссылка на объект.</para></param>
         /// <param name="property"><para>The property reference.</para><para>Ссылка на свойство.</para></param>
-        /// <param name="value"><para>The value.</para><para>Значение</para></param>
+        /// <param name="value"><para>The value.</para><para>Значение.</para></param>
         void SetValue(TObject @object, TProperty property, TValue value);
     }
 }

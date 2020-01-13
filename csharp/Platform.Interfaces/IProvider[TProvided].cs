@@ -8,10 +8,10 @@
     public interface IProvider<out TProvided>
     {
         /// <summary>
-        /// <para>Provides an object/value.</para>
-        /// <para>Предоставляет объект/значение.</para>
+        /// <para>Provides an object(s)/value(s).</para>
+        /// <para>Предоставляет объект(ы)/значение(я).</para>
         /// </summary>
-        /// <returns><para>Object/value.</para><para>Объект/значение.</para></returns>
+        /// <returns><para>The object(s)/value(s).</para><para>Объект(ы)/значение(я).</para></returns>
         TProvided Get();
     }
 }
