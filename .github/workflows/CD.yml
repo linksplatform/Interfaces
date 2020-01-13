@@ -70,6 +70,7 @@ jobs:
       - uses: warrenbuckley/Setup-Nuget@v1
       - name: Publish CSharp NuGet to GitHub Package Registry
         run: |
+          dotnet build -c Release
           dotnet pack -c Release
           nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/linksplatform/index.json" -UserName linksplatform -Password ${{ secrets.GITHUB_TOKEN }}
           nuget push **/*.nupkg -Source "GitHub" -SkipDuplicate
