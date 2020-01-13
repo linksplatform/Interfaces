@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <Target Name="CSharpFilesTransform" BeforeTargets="BeforeBuild" Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'netcoreapp3.0'">
-    <Exec WorkingDirectory="$(ProjectDir)" IgnoreExitCode="true" Command='..\CSharpToCppTranslator\bin\$(Configuration)\netcoreapp3.0\CSharpToCppTranslator.exe "%(CSharpFiles.Identity)" $(SolutionDir)cpp\Platform.Interfaces.Tests\' />
+    <Exec WorkingDirectory="$(ProjectDir)" IgnoreExitCode="true" Command='..\..\CSharpToCppTranslator\bin\$(Configuration)\netcoreapp3.0\CSharpToCppTranslator.exe "%(CSharpFiles.Identity)" $(SolutionDir)cpp\Platform.Interfaces.Tests\' />
   </Target>
 
 </Project>
