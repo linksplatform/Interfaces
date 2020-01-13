@@ -69,8 +69,7 @@ jobs:
           submodules: true
       - name: Remove Cpp projects
         run: |
-          export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          dotnet sln "Platform.$REPOSITORY_NAME.sln" remove cpp/Platform.$REPOSITORY_NAME.Tests/Platform.$REPOSITORY_NAME.TemplateLibrary.Tests.vcxproj
+          dotnet sln "Platform.Interfaces.sln" remove cpp/Platform.Interfaces.Tests/Platform.Interfaces.TemplateLibrary.Tests.vcxproj
       - uses: warrenbuckley/Setup-Nuget@v1
       - name: Publish CSharp NuGet to GitHub Package Registry
         run: |
