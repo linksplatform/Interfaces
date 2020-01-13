@@ -25,6 +25,150 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.ICounter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.ICounter-1.html",
+          "hash": "zyF7JMbfZUoVsD8NnmIczg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.ICounter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.ICounter-2.html",
+          "hash": "z1EjHfeadobAWX4Ivvl/bA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.ICriterionMatcher-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.ICriterionMatcher-1.html",
+          "hash": "WH6xABw7oE6RfOotcVDLag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IFactory-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IFactory-1.html",
+          "hash": "fbZPWIRS8RdQYfaqMzgddQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IProperties-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IProperties-3.html",
+          "hash": "z2LL2Psqx5gwVH/u2RzIEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IProperty-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IProperty-2.html",
+          "hash": "aueaZPHcTvkZ7VXrVOPf1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IProvider-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IProvider-1.html",
+          "hash": "oUoNJyml874QHB4oXY2tIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IProvider-2.html",
+          "hash": "3j8jiOUHtuGRgZvbcyEsYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.ISetter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.ISetter-1.html",
+          "hash": "o2BNLmw92kbbesB4/B4WAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.ISetter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.ISetter-2.html",
+          "hash": "thD+e55sFg0P99X3ySHBmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.html",
+          "hash": "wLc+CCRdH8H9ndYYFQieqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "eXVOt08qX8BCrrLAJhvfYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "log_codes": [
         "InvalidFileLink"
       ],
@@ -33,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "UcwocUijDlBWLVK/YNqr9w=="
+          "hash": "hRLngq6qiHKzGaD8OPWTIA=="
         }
       },
       "is_incremental": false,
@@ -51,17 +195,23 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 0
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 1,
           "skipped_file_count": 0
         }
       }
