@@ -2,8 +2,7 @@
 {
     TEST_CLASS(Interfaces)
     {
-    public:
-        TEST_METHOD(BuildTest)
+        public: TEST_METHOD(BuildTest)
         {
             ICounter<int, int>* c1;
             ICounter<int>* c2;
