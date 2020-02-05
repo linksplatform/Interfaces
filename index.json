@@ -34,10 +34,10 @@
     "title": "Interface ICounter<TResult, TArgument> | LinksPlatform's Platform.Interfaces Library",
     "keywords": "Interface ICounter<TResult, TArgument> Defines a counter that requires passing an argument to perform a count. Определяет счётчик, который требует передачи аргумента для выполнения подсчёта. Namespace : Platform.Interfaces Assembly : Platform.Interfaces.dll Syntax public interface ICounter<out TResult, in TArgument> Type Parameters Name Description TResult The count result type. Тип результата подсчёта. TArgument The argument type. Тип аргумента. Methods | Improve this Doc View Source Count(TArgument) Performs a count that requires passing an argument. Выполняет подсчёт, для которого требуется передача аргумента. Declaration TResult Count(TArgument argument) Parameters Type Name Description TArgument argument The argument. Аргумент. Returns Type Description TResult The count result. Результат подсчёта."
   },
-  "api/Platform.Interfaces.IProvider-1.html": {
-    "href": "api/Platform.Interfaces.IProvider-1.html",
-    "title": "Interface IProvider<TProvided> | LinksPlatform's Platform.Interfaces Library",
-    "keywords": "Interface IProvider<TProvided> Defines the provider of objects/values. Определяет поставщика объектов/значений. Namespace : Platform.Interfaces Assembly : Platform.Interfaces.dll Syntax public interface IProvider<out TProvided> Type Parameters Name Description TProvided Type of provided object/value. Тип предоставляемого объекта/значения. Methods | Improve this Doc View Source Get() Provides an object(s)/value(s). Предоставляет объект(ы)/значение(я). Declaration TProvided Get() Returns Type Description TProvided The object(s)/value(s). Объект(ы)/значение(я)."
+  "api/Platform.Interfaces.ISetter-1.html": {
+    "href": "api/Platform.Interfaces.ISetter-1.html",
+    "title": "Interface ISetter<TValue> | LinksPlatform's Platform.Interfaces Library",
+    "keywords": "Interface ISetter<TValue> Defines an setter that sets the passed value as a new state. Определяет установщик, который устанавливает переданное значение в качестве нового состояния. Namespace : Platform.Interfaces Assembly : Platform.Interfaces.dll Syntax public interface ISetter<in TValue> Type Parameters Name Description TValue Type of setted value. Тип устанавливаемого значения. Methods | Improve this Doc View Source Set(TValue) Sets the value of a specific property in the specified object. Устанавливает значение определённого свойства в указанном объекте. Declaration void Set(TValue value) Parameters Type Name Description TValue value The value. Значение."
   },
   "api/Platform.Interfaces.IProvider-2.html": {
     "href": "api/Platform.Interfaces.IProvider-2.html",
@@ -54,9 +54,9 @@
     "title": "Interface ICounter<TResult> | LinksPlatform's Platform.Interfaces Library",
     "keywords": "Interface ICounter<TResult> Defines a counter. Определяет счётчик. Namespace : Platform.Interfaces Assembly : Platform.Interfaces.dll Syntax public interface ICounter<out TResult> Type Parameters Name Description TResult The count result type. Тип результата подсчёта. Methods | Improve this Doc View Source Count() Performs a count. Выполняет подсчёт. Declaration TResult Count() Returns Type Description TResult The count result. Результат подсчёта."
   },
-  "api/Platform.Interfaces.ISetter-1.html": {
-    "href": "api/Platform.Interfaces.ISetter-1.html",
-    "title": "Interface ISetter<TValue> | LinksPlatform's Platform.Interfaces Library",
-    "keywords": "Interface ISetter<TValue> Defines an setter that sets the passed value as a new state. Определяет установщик, который устанавливает переданное значение в качестве нового состояния. Namespace : Platform.Interfaces Assembly : Platform.Interfaces.dll Syntax public interface ISetter<in TValue> Type Parameters Name Description TValue Type of setted value. Тип устанавливаемого значения. Methods | Improve this Doc View Source Set(TValue) Sets the value of a specific property in the specified object. Устанавливает значение определённого свойства в указанном объекте. Declaration void Set(TValue value) Parameters Type Name Description TValue value The value. Значение."
+  "api/Platform.Interfaces.IProvider-1.html": {
+    "href": "api/Platform.Interfaces.IProvider-1.html",
+    "title": "Interface IProvider<TProvided> | LinksPlatform's Platform.Interfaces Library",
+    "keywords": "Interface IProvider<TProvided> Defines the provider of objects/values. Определяет поставщика объектов/значений. Namespace : Platform.Interfaces Assembly : Platform.Interfaces.dll Syntax public interface IProvider<out TProvided> Type Parameters Name Description TProvided Type of provided object/value. Тип предоставляемого объекта/значения. Methods | Improve this Doc View Source Get() Provides an object(s)/value(s). Предоставляет объект(ы)/значение(я). Declaration TProvided Get() Returns Type Description TProvided The object(s)/value(s). Объект(ы)/значение(я)."
   }
 }
