@@ -4,16 +4,16 @@
     {
         public: TEST_METHOD(BuildTest)
         {
-            ICounter<int, int>* c1;
-            ICounter<int>* c2;
-            ICriterionMatcher<int>* cm1;
-            IFactory<int>* f1;
-            IProperties<int, int, int>* p1;
-            IProperty<int, int>* p2;
-            IProvider<int, int>* p3;
-            IProvider<int>* p4;
-            ISetter<int, int>* s1;
-            ISetter<int>* s2;
+            ICounter<std::int32_t, std::int32_t>* c1;
+            ICounter<std::int32_t>* c2;
+            ICriterionMatcher<std::int32_t>* cm1;
+            IFactory<std::int32_t>* f1;
+            IProperties<std::int32_t, std::int32_t, std::int32_t>* p1;
+            IProperty<std::int32_t, std::int32_t>* p2;
+            IProvider<std::int32_t, std::int32_t>* p3;
+            IProvider<std::int32_t>* p4;
+            ISetter<std::int32_t, std::int32_t>* s1;
+            ISetter<std::int32_t>* s2;
         }
     };
 }
