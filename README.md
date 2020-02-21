@@ -24,6 +24,6 @@ NuGet package: [Platform.Interfaces](https://www.nuget.org/packages/Platform.Int
 [PDF file](https://linksplatform.github.io/Interfaces/Platform.Interfaces.pdf) with code for e-readers.
 
 ## Dependent libraries
-*   [Platform.Timestamps](https://github.com/linksplatform/Timestamps)
 *   [Platform.Collections](https://github.com/linksplatform/Collections)
-*   [Platform.Reflection.Sigil](https://github.com/linksplatform/Reflection.Sigil)
+*   [Platform.Setters](https://github.com/linksplatform/Setters)
+*   [Platform.Timestamps](https://github.com/linksplatform/Timestamps)
