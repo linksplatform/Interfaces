@@ -21,12 +21,8 @@
     <ProjectReference Include="..\Platform.Interfaces\Platform.Interfaces.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'netcoreapp3.0'">
-    <CSharpFiles Include="**\*.cs" />
-  </ItemGroup>
-
-  <Target Name="CSharpFilesTransform" BeforeTargets="BeforeBuild" Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'netcoreapp3.0'">
-    <Exec WorkingDirectory="$(ProjectDir)" IgnoreExitCode="true" Command='..\..\CSharpToCppTranslator\bin\$(Configuration)\netcoreapp3.0\CSharpToCppTranslator.exe "%(CSharpFiles.Identity)" $(SolutionDir)cpp\Platform.Interfaces.Tests\' />
+  <Target Name="CSharpToCppTranslation" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'netstandard2.1'">
+    <Exec Command="..\..\CSharpToCppTranslator\bin\$(Configuration)\netcoreapp3.0\CSharpToCppTranslator.exe $(ProjectDir) $(SolutionDir)cpp\$(ProjectName)\"></Exec>
   </Target>
 
 </Project>
