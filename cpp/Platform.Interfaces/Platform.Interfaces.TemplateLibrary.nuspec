@@ -20,15 +20,15 @@
   <files>
     <file src="Platform.Interfaces.TemplateLibrary.targets" target="build\native\Platform.Interfaces.TemplateLibrary.targets" />
     <file src="Platform.Interfaces.h" target="lib\native\include\Platform.Interfaces.h" />
-    <file src="ICounter[TResult, TArgument].cpp" target="lib\native\include\ICounter[TResult, TArgument].cpp" />
-    <file src="ICounter[TResult].cpp" target="lib\native\include\ICounter[TResult].cpp" />
-    <file src="ICriterionMatcher.cpp" target="lib\native\include\ICriterionMatcher.cpp" />
-    <file src="IFactory.cpp" target="lib\native\include\IFactory.cpp" />
-    <file src="IProperties.cpp" target="lib\native\include\IProperties.cpp" />
-    <file src="IProperty.cpp" target="lib\native\include\IProperty.cpp" />
-    <file src="IProvider[TProvided, TArgument].cpp" target="lib\native\include\IProvider[TProvided, TArgument].cpp" />
-    <file src="IProvider[TProvided].cpp" target="lib\native\include\IProvider[TProvided].cpp" />
-    <file src="ISetter[TValue, TArgument].cpp" target="lib\native\include\ISetter[TValue, TArgument].cpp" />
-    <file src="ISetter[TValue].cpp" target="lib\native\include\ISetter[TValue].cpp" />
+    <file src="ICounter[TResult, TArgument].h" target="lib\native\include\ICounter[TResult, TArgument].h" />
+    <file src="ICounter[TResult].h" target="lib\native\include\ICounter[TResult].h" />
+    <file src="ICriterionMatcher.h" target="lib\native\include\ICriterionMatcher.h" />
+    <file src="IFactory.h" target="lib\native\include\IFactory.h" />
+    <file src="IProperties.h" target="lib\native\include\IProperties.h" />
+    <file src="IProperty.h" target="lib\native\include\IProperty.h" />
+    <file src="IProvider[TProvided, TArgument].h" target="lib\native\include\IProvider[TProvided, TArgument].h" />
+    <file src="IProvider[TProvided].h" target="lib\native\include\IProvider[TProvided].h" />
+    <file src="ISetter[TValue, TArgument].h" target="lib\native\include\ISetter[TValue, TArgument].h" />
+    <file src="ISetter[TValue].h" target="lib\native\include\ISetter[TValue].h" />
   </files>
 </package>
