@@ -9,16 +9,16 @@ namespace Platform.Interfaces.Tests
         [Fact]
         public static void BuildTest()
         {
-            ICounter<int, int> c1;
-            ICounter<int> c2;
-            ICriterionMatcher<int> cm1;
-            IFactory<int> f1;
-            IProperties<int, int, int> p1;
-            IProperty<int, int> p2;
-            IProvider<int, int> p3;
-            IProvider<int> p4;
-            ISetter<int, int> s1;
-            ISetter<int> s2;
+            ICounter<int, int> c1 = null;
+            ICounter<int> c2 = null;
+            ICriterionMatcher<int> cm1 = null;
+            IFactory<int> f1 = null;
+            IProperties<int, int, int> p1 = null;
+            IProperty<int, int> p2 = null;
+            IProvider<int, int> p3 = null;
+            IProvider<int> p4 = null;
+            ISetter<int, int> s1 = null;
+            ISetter<int> s2 = null;
         }
     }
 }
