@@ -1,6 +1,6 @@
 ﻿namespace Platform::Interfaces::Tests
 {
-    TEST_CLASS(Interfaces)
+    TEST_CLASS(InterfacesTests)
     {
         public: TEST_METHOD(BuildTest)
         {
