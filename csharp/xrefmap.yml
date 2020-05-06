@@ -1,3 +1,269 @@
 ### YamlMime:XRefMap
 sorted: true
-references: []
+references:
+- uid: Platform.Interfaces
+  name: Platform.Interfaces
+  href: api/Platform.Interfaces.html
+  commentId: N:Platform.Interfaces
+  fullName: Platform.Interfaces
+  nameWithType: Platform.Interfaces
+- uid: Platform.Interfaces.ICounter`1
+  name: ICounter<TResult>
+  href: api/Platform.Interfaces.ICounter-1.html
+  commentId: T:Platform.Interfaces.ICounter`1
+  name.vb: ICounter(Of TResult)
+  fullName: Platform.Interfaces.ICounter<TResult>
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult)
+  nameWithType: ICounter<TResult>
+  nameWithType.vb: ICounter(Of TResult)
+- uid: Platform.Interfaces.ICounter`1.Count
+  name: Count()
+  href: api/Platform.Interfaces.ICounter-1.html#Platform_Interfaces_ICounter_1_Count
+  commentId: M:Platform.Interfaces.ICounter`1.Count
+  fullName: Platform.Interfaces.ICounter<TResult>.Count()
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult).Count()
+  nameWithType: ICounter<TResult>.Count()
+  nameWithType.vb: ICounter(Of TResult).Count()
+- uid: Platform.Interfaces.ICounter`1.Count*
+  name: Count
+  href: api/Platform.Interfaces.ICounter-1.html#Platform_Interfaces_ICounter_1_Count_
+  commentId: Overload:Platform.Interfaces.ICounter`1.Count
+  isSpec: "True"
+  fullName: Platform.Interfaces.ICounter<TResult>.Count
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult).Count
+  nameWithType: ICounter<TResult>.Count
+  nameWithType.vb: ICounter(Of TResult).Count
+- uid: Platform.Interfaces.ICounter`2
+  name: ICounter<TResult, TArgument>
+  href: api/Platform.Interfaces.ICounter-2.html
+  commentId: T:Platform.Interfaces.ICounter`2
+  name.vb: ICounter(Of TResult, TArgument)
+  fullName: Platform.Interfaces.ICounter<TResult, TArgument>
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult, TArgument)
+  nameWithType: ICounter<TResult, TArgument>
+  nameWithType.vb: ICounter(Of TResult, TArgument)
+- uid: Platform.Interfaces.ICounter`2.Count(`1)
+  name: Count(TArgument)
+  href: api/Platform.Interfaces.ICounter-2.html#Platform_Interfaces_ICounter_2_Count__1_
+  commentId: M:Platform.Interfaces.ICounter`2.Count(`1)
+  fullName: Platform.Interfaces.ICounter<TResult, TArgument>.Count(TArgument)
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult, TArgument).Count(TArgument)
+  nameWithType: ICounter<TResult, TArgument>.Count(TArgument)
+  nameWithType.vb: ICounter(Of TResult, TArgument).Count(TArgument)
+- uid: Platform.Interfaces.ICounter`2.Count*
+  name: Count
+  href: api/Platform.Interfaces.ICounter-2.html#Platform_Interfaces_ICounter_2_Count_
+  commentId: Overload:Platform.Interfaces.ICounter`2.Count
+  isSpec: "True"
+  fullName: Platform.Interfaces.ICounter<TResult, TArgument>.Count
+  fullName.vb: Platform.Interfaces.ICounter(Of TResult, TArgument).Count
+  nameWithType: ICounter<TResult, TArgument>.Count
+  nameWithType.vb: ICounter(Of TResult, TArgument).Count
+- uid: Platform.Interfaces.ICriterionMatcher`1
+  name: ICriterionMatcher<TArgument>
+  href: api/Platform.Interfaces.ICriterionMatcher-1.html
+  commentId: T:Platform.Interfaces.ICriterionMatcher`1
+  name.vb: ICriterionMatcher(Of TArgument)
+  fullName: Platform.Interfaces.ICriterionMatcher<TArgument>
+  fullName.vb: Platform.Interfaces.ICriterionMatcher(Of TArgument)
+  nameWithType: ICriterionMatcher<TArgument>
+  nameWithType.vb: ICriterionMatcher(Of TArgument)
+- uid: Platform.Interfaces.ICriterionMatcher`1.IsMatched(`0)
+  name: IsMatched(TArgument)
+  href: api/Platform.Interfaces.ICriterionMatcher-1.html#Platform_Interfaces_ICriterionMatcher_1_IsMatched__0_
+  commentId: M:Platform.Interfaces.ICriterionMatcher`1.IsMatched(`0)
+  fullName: Platform.Interfaces.ICriterionMatcher<TArgument>.IsMatched(TArgument)
+  fullName.vb: Platform.Interfaces.ICriterionMatcher(Of TArgument).IsMatched(TArgument)
+  nameWithType: ICriterionMatcher<TArgument>.IsMatched(TArgument)
+  nameWithType.vb: ICriterionMatcher(Of TArgument).IsMatched(TArgument)
+- uid: Platform.Interfaces.ICriterionMatcher`1.IsMatched*
+  name: IsMatched
+  href: api/Platform.Interfaces.ICriterionMatcher-1.html#Platform_Interfaces_ICriterionMatcher_1_IsMatched_
+  commentId: Overload:Platform.Interfaces.ICriterionMatcher`1.IsMatched
+  isSpec: "True"
+  fullName: Platform.Interfaces.ICriterionMatcher<TArgument>.IsMatched
+  fullName.vb: Platform.Interfaces.ICriterionMatcher(Of TArgument).IsMatched
+  nameWithType: ICriterionMatcher<TArgument>.IsMatched
+  nameWithType.vb: ICriterionMatcher(Of TArgument).IsMatched
+- uid: Platform.Interfaces.IFactory`1
+  name: IFactory<TProduct>
+  href: api/Platform.Interfaces.IFactory-1.html
+  commentId: T:Platform.Interfaces.IFactory`1
+  name.vb: IFactory(Of TProduct)
+  fullName: Platform.Interfaces.IFactory<TProduct>
+  fullName.vb: Platform.Interfaces.IFactory(Of TProduct)
+  nameWithType: IFactory<TProduct>
+  nameWithType.vb: IFactory(Of TProduct)
+- uid: Platform.Interfaces.IFactory`1.Create
+  name: Create()
+  href: api/Platform.Interfaces.IFactory-1.html#Platform_Interfaces_IFactory_1_Create
+  commentId: M:Platform.Interfaces.IFactory`1.Create
+  fullName: Platform.Interfaces.IFactory<TProduct>.Create()
+  fullName.vb: Platform.Interfaces.IFactory(Of TProduct).Create()
+  nameWithType: IFactory<TProduct>.Create()
+  nameWithType.vb: IFactory(Of TProduct).Create()
+- uid: Platform.Interfaces.IFactory`1.Create*
+  name: Create
+  href: api/Platform.Interfaces.IFactory-1.html#Platform_Interfaces_IFactory_1_Create_
+  commentId: Overload:Platform.Interfaces.IFactory`1.Create
+  isSpec: "True"
+  fullName: Platform.Interfaces.IFactory<TProduct>.Create
+  fullName.vb: Platform.Interfaces.IFactory(Of TProduct).Create
+  nameWithType: IFactory<TProduct>.Create
+  nameWithType.vb: IFactory(Of TProduct).Create
+- uid: Platform.Interfaces.IProperties`3
+  name: IProperties<TObject, TProperty, TValue>
+  href: api/Platform.Interfaces.IProperties-3.html
+  commentId: T:Platform.Interfaces.IProperties`3
+  name.vb: IProperties(Of TObject, TProperty, TValue)
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue)
+  nameWithType: IProperties<TObject, TProperty, TValue>
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue)
+- uid: Platform.Interfaces.IProperties`3.GetValue(`0,`1)
+  name: GetValue(TObject, TProperty)
+  href: api/Platform.Interfaces.IProperties-3.html#Platform_Interfaces_IProperties_3_GetValue__0__1_
+  commentId: M:Platform.Interfaces.IProperties`3.GetValue(`0,`1)
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>.GetValue(TObject, TProperty)
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue).GetValue(TObject, TProperty)
+  nameWithType: IProperties<TObject, TProperty, TValue>.GetValue(TObject, TProperty)
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue).GetValue(TObject, TProperty)
+- uid: Platform.Interfaces.IProperties`3.GetValue*
+  name: GetValue
+  href: api/Platform.Interfaces.IProperties-3.html#Platform_Interfaces_IProperties_3_GetValue_
+  commentId: Overload:Platform.Interfaces.IProperties`3.GetValue
+  isSpec: "True"
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>.GetValue
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue).GetValue
+  nameWithType: IProperties<TObject, TProperty, TValue>.GetValue
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue).GetValue
+- uid: Platform.Interfaces.IProperties`3.SetValue(`0,`1,`2)
+  name: SetValue(TObject, TProperty, TValue)
+  href: api/Platform.Interfaces.IProperties-3.html#Platform_Interfaces_IProperties_3_SetValue__0__1__2_
+  commentId: M:Platform.Interfaces.IProperties`3.SetValue(`0,`1,`2)
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>.SetValue(TObject, TProperty, TValue)
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue).SetValue(TObject, TProperty, TValue)
+  nameWithType: IProperties<TObject, TProperty, TValue>.SetValue(TObject, TProperty, TValue)
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue).SetValue(TObject, TProperty, TValue)
+- uid: Platform.Interfaces.IProperties`3.SetValue*
+  name: SetValue
+  href: api/Platform.Interfaces.IProperties-3.html#Platform_Interfaces_IProperties_3_SetValue_
+  commentId: Overload:Platform.Interfaces.IProperties`3.SetValue
+  isSpec: "True"
+  fullName: Platform.Interfaces.IProperties<TObject, TProperty, TValue>.SetValue
+  fullName.vb: Platform.Interfaces.IProperties(Of TObject, TProperty, TValue).SetValue
+  nameWithType: IProperties<TObject, TProperty, TValue>.SetValue
+  nameWithType.vb: IProperties(Of TObject, TProperty, TValue).SetValue
+- uid: Platform.Interfaces.IProperty`2
+  name: IProperty<TObject, TValue>
+  href: api/Platform.Interfaces.IProperty-2.html
+  commentId: T:Platform.Interfaces.IProperty`2
+  name.vb: IProperty(Of TObject, TValue)
+  fullName: Platform.Interfaces.IProperty<TObject, TValue>
+  fullName.vb: Platform.Interfaces.IProperty(Of TObject, TValue)
+  nameWithType: IProperty<TObject, TValue>
+  nameWithType.vb: IProperty(Of TObject, TValue)
+- uid: Platform.Interfaces.IProvider`1
+  name: IProvider<TProvided>
+  href: api/Platform.Interfaces.IProvider-1.html
+  commentId: T:Platform.Interfaces.IProvider`1
+  name.vb: IProvider(Of TProvided)
+  fullName: Platform.Interfaces.IProvider<TProvided>
+  fullName.vb: Platform.Interfaces.IProvider(Of TProvided)
+  nameWithType: IProvider<TProvided>
+  nameWithType.vb: IProvider(Of TProvided)
+- uid: Platform.Interfaces.IProvider`1.Get
+  name: Get()
+  href: api/Platform.Interfaces.IProvider-1.html#Platform_Interfaces_IProvider_1_Get
+  commentId: M:Platform.Interfaces.IProvider`1.Get
+  fullName: Platform.Interfaces.IProvider<TProvided>.Get()
+  fullName.vb: Platform.Interfaces.IProvider(Of TProvided).Get()
+  nameWithType: IProvider<TProvided>.Get()
+  nameWithType.vb: IProvider(Of TProvided).Get()
+- uid: Platform.Interfaces.IProvider`1.Get*
+  name: Get
+  href: api/Platform.Interfaces.IProvider-1.html#Platform_Interfaces_IProvider_1_Get_
+  commentId: Overload:Platform.Interfaces.IProvider`1.Get
+  isSpec: "True"
+  fullName: Platform.Interfaces.IProvider<TProvided>.Get
+  fullName.vb: Platform.Interfaces.IProvider(Of TProvided).Get
+  nameWithType: IProvider<TProvided>.Get
+  nameWithType.vb: IProvider(Of TProvided).Get
+- uid: Platform.Interfaces.IProvider`2
+  name: IProvider<TProvided, TArgument>
+  href: api/Platform.Interfaces.IProvider-2.html
+  commentId: T:Platform.Interfaces.IProvider`2
+  name.vb: IProvider(Of TProvided, TArgument)
+  fullName: Platform.Interfaces.IProvider<TProvided, TArgument>
+  fullName.vb: Platform.Interfaces.IProvider(Of TProvided, TArgument)
+  nameWithType: IProvider<TProvided, TArgument>
+  nameWithType.vb: IProvider(Of TProvided, TArgument)
+- uid: Platform.Interfaces.IProvider`2.Get(`1)
+  name: Get(TArgument)
+  href: api/Platform.Interfaces.IProvider-2.html#Platform_Interfaces_IProvider_2_Get__1_
+  commentId: M:Platform.Interfaces.IProvider`2.Get(`1)
+  fullName: Platform.Interfaces.IProvider<TProvided, TArgument>.Get(TArgument)
+  fullName.vb: Platform.Interfaces.IProvider(Of TProvided, TArgument).Get(TArgument)
+  nameWithType: IProvider<TProvided, TArgument>.Get(TArgument)
+  nameWithType.vb: IProvider(Of TProvided, TArgument).Get(TArgument)
+- uid: Platform.Interfaces.IProvider`2.Get*
+  name: Get
+  href: api/Platform.Interfaces.IProvider-2.html#Platform_Interfaces_IProvider_2_Get_
+  commentId: Overload:Platform.Interfaces.IProvider`2.Get
+  isSpec: "True"
+  fullName: Platform.Interfaces.IProvider<TProvided, TArgument>.Get
+  fullName.vb: Platform.Interfaces.IProvider(Of TProvided, TArgument).Get
+  nameWithType: IProvider<TProvided, TArgument>.Get
+  nameWithType.vb: IProvider(Of TProvided, TArgument).Get
+- uid: Platform.Interfaces.ISetter`1
+  name: ISetter<TValue>
+  href: api/Platform.Interfaces.ISetter-1.html
+  commentId: T:Platform.Interfaces.ISetter`1
+  name.vb: ISetter(Of TValue)
+  fullName: Platform.Interfaces.ISetter<TValue>
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue)
+  nameWithType: ISetter<TValue>
+  nameWithType.vb: ISetter(Of TValue)
+- uid: Platform.Interfaces.ISetter`1.Set(`0)
+  name: Set(TValue)
+  href: api/Platform.Interfaces.ISetter-1.html#Platform_Interfaces_ISetter_1_Set__0_
+  commentId: M:Platform.Interfaces.ISetter`1.Set(`0)
+  fullName: Platform.Interfaces.ISetter<TValue>.Set(TValue)
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue).Set(TValue)
+  nameWithType: ISetter<TValue>.Set(TValue)
+  nameWithType.vb: ISetter(Of TValue).Set(TValue)
+- uid: Platform.Interfaces.ISetter`1.Set*
+  name: Set
+  href: api/Platform.Interfaces.ISetter-1.html#Platform_Interfaces_ISetter_1_Set_
+  commentId: Overload:Platform.Interfaces.ISetter`1.Set
+  isSpec: "True"
+  fullName: Platform.Interfaces.ISetter<TValue>.Set
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue).Set
+  nameWithType: ISetter<TValue>.Set
+  nameWithType.vb: ISetter(Of TValue).Set
+- uid: Platform.Interfaces.ISetter`2
+  name: ISetter<TValue, TArgument>
+  href: api/Platform.Interfaces.ISetter-2.html
+  commentId: T:Platform.Interfaces.ISetter`2
+  name.vb: ISetter(Of TValue, TArgument)
+  fullName: Platform.Interfaces.ISetter<TValue, TArgument>
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue, TArgument)
+  nameWithType: ISetter<TValue, TArgument>
+  nameWithType.vb: ISetter(Of TValue, TArgument)
+- uid: Platform.Interfaces.ISetter`2.Set(`1,`0)
+  name: Set(TArgument, TValue)
+  href: api/Platform.Interfaces.ISetter-2.html#Platform_Interfaces_ISetter_2_Set__1__0_
+  commentId: M:Platform.Interfaces.ISetter`2.Set(`1,`0)
+  fullName: Platform.Interfaces.ISetter<TValue, TArgument>.Set(TArgument, TValue)
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue, TArgument).Set(TArgument, TValue)
+  nameWithType: ISetter<TValue, TArgument>.Set(TArgument, TValue)
+  nameWithType.vb: ISetter(Of TValue, TArgument).Set(TArgument, TValue)
+- uid: Platform.Interfaces.ISetter`2.Set*
+  name: Set
+  href: api/Platform.Interfaces.ISetter-2.html#Platform_Interfaces_ISetter_2_Set_
+  commentId: Overload:Platform.Interfaces.ISetter`2.Set
+  isSpec: "True"
+  fullName: Platform.Interfaces.ISetter<TValue, TArgument>.Set
+  fullName.vb: Platform.Interfaces.ISetter(Of TValue, TArgument).Set
+  nameWithType: ISetter<TValue, TArgument>.Set
+  nameWithType.vb: ISetter(Of TValue, TArgument).Set
