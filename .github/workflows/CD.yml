@@ -19,7 +19,9 @@ jobs:
       with:
         submodules: true
     - name: Test
-      run: dotnet test -c Release -f netcoreapp3.1
+      run: |
+        dotnet --version
+        dotnet test -c Release -f netcoreapp3.1
     - name: Generate PDF with CSharp code
       if: github.event_name == 'push'
       run: |
