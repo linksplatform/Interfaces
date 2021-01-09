@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// <para>Defines a properties operator that is able to get or set values of properties of a object of a specific type.</para>
-    /// <para>Определяет оператор свойств, который может получать или установливать значения свойств объекта определенного типа.</para>
+    /// <para>Определяет оператор свойств, который может получать или устанавливать значения свойств объекта определенного типа.</para>
     /// </summary>
     /// <typeparam name="TObject"><para>Object type.</para><para>Тип объекта.</para></typeparam>
     /// <typeparam name="TProperty"><para>Property reference type.</para><para>Тип ссылки на свойство.</para></typeparam>

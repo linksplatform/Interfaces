@@ -4,7 +4,7 @@
     /// <para>Defines an setter that sets the passed value as a new state.</para>
     /// <para>Определяет установщик, который устанавливает переданное значение в качестве нового состояния.</para>
     /// </summary>
-    /// <typeparam name="TValue"><para>Type of setted value.</para><para>Тип устанавливаемого значения.</para></typeparam>
+    /// <typeparam name="TValue"><para>Type of set value.</para><para>Тип устанавливаемого значения.</para></typeparam>
     public interface ISetter<in TValue>
     {
         /// <summary>
