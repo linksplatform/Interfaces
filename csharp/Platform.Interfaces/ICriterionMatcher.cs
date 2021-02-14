@@ -11,8 +11,15 @@
         /// <para>Determines whether the argument matches the criterion.</para>
         /// <para>Определяет, соответствует ли аргумент критерию.</para>
         /// </summary>
-        /// <param name="argument"><para>The argument.</para><para>Аргумент.</para></param>
-        /// <returns><para>A value that determines whether the argument matches the criterion.</para><para>Значение, определяющие соответствует ли аргумент критерию.</para></returns>
+        /// <param name="argument">
+        /// <para>The argument.</para>
+        /// <para>Аргумент.</para>
+        /// </param>
+        /// <returns>
+        /// <para>A value that determines whether the argument matches the criterion.</para>
+        /// <para>Значение, определяющие соответствует ли аргумент критерию.</para>
+        /// </returns>
         bool IsMatched(TArgument argument);
     }
 }
+
