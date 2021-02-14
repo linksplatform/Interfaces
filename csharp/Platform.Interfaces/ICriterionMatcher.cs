@@ -25,4 +25,3 @@
         bool IsMatched(TArgument argument);
     }
 }
-
