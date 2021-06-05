@@ -1,9 +1,8 @@
 ﻿namespace Platform::Interfaces
 {
-    template <typename ...> class IFactory;
-    template <typename TProduct> class IFactory<TProduct>
+    template <typename Self, typename TProduct>
+    concept IFactory = requires(Self self)
     {
-    public:
-        virtual TProduct Create() = 0;
+        {self.Create()} -> std::same_as<TProduct>;
     };
 }

@@ -1,9 +1,18 @@
 ﻿namespace Platform::Interfaces
 {
-    template <typename ...> class ICounter;
-    template <typename TResult> class ICounter<TResult>
+    template <typename Self, typename TResult, typename TArgument = Internal::nil>
+    concept ICounter = requires(Self self, TArgument argument)
     {
-    public:
-        virtual TResult Count() = 0;
+        requires
+            requires()
+            {
+                requires std::same_as<TArgument, Internal::nil>;
+                {self.Count()} -> std::same_as<TResult>;
+            }
+            ||
+            requires()
+            {
+                {self.Count(argument)} -> std::same_as<TResult>;
+            };
     };
 }

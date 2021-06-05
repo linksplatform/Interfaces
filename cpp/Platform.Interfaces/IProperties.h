@@ -1,11 +1,10 @@
 ﻿namespace Platform::Interfaces
 {
-    template <typename ...> class IProperties;
-    template <typename TObject, typename TProperty, typename TValue> class IProperties<TObject, TProperty, TValue>
+    template <typename Self, typename TObject, typename TProperty, typename TValue>
+    concept IProperties = requires(Self self, TObject object, TProperty property, TValue value)
     {
-    public:
-        virtual TValue GetValue(TObject object, TProperty property) = 0;
+        {self.GetValue(object, property)} -> std::same_as<TValue>;
 
-        virtual void SetValue(TObject object, TProperty property, TValue value) = 0;
+        {self.SetValue(object, property, value)} -> std::same_as<void>;
     };
 }

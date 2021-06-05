@@ -3,6 +3,15 @@
 #ifndef Platform_Interfaces
 #define Platform_Interfaces
 
+#include <concepts>
+
+namespace Platform::Interfaces::Internal
+{
+    struct nil
+    {
+    };
+}
+
 #include "ICounter[TResult, TArgument].h"
 #include "ICounter[TResult].h"
 #include "ICriterionMatcher.h"
