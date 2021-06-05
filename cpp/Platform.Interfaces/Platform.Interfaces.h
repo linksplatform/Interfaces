@@ -24,4 +24,4 @@ namespace Platform::Interfaces::Internal
 
 #include "IProperty.h" // depend on ISetter and IProvider
 
-#endif // Platform_Collections_Methods
+#endif // Platform_Interfaces

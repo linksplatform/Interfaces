@@ -7,12 +7,12 @@
         requires()
         {
             requires std::same_as<TArgument, Internal::nil>;
-            {self.Get()} -> std::same_as<TProvider>;
+            { self.Get() } -> std::same_as<TProvider>;
         }
         ||
         requires()
         {
-            {self.Get(argument)} -> std::same_as<TProvider>;
+            { self.Get(argument) } -> std::same_as<TProvider>;
         };
     };
 }

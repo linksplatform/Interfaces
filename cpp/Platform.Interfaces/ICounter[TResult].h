@@ -7,12 +7,12 @@
             requires()
             {
                 requires std::same_as<TArgument, Internal::nil>;
-                {self.Count()} -> std::same_as<TResult>;
+                { self.Count() } -> std::same_as<TResult>;
             }
             ||
             requires()
             {
-                {self.Count(argument)} -> std::same_as<TResult>;
+                { self.Count(argument) } -> std::same_as<TResult>;
             };
     };
 }

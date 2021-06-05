@@ -7,12 +7,12 @@
         requires()
         {
             requires std::same_as<TArgument, Internal::nil>;
-            {self.Set(value)} -> std::same_as<void>;
+            { self.Set(value) } -> std::same_as<void>;
         }
         ||
         requires()
         {
-            {self.Set(argument, value)} -> std::same_as<void>;
+            { self.Set(argument, value) } -> std::same_as<void>;
         };
     };
 }
