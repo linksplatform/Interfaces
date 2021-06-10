@@ -4,13 +4,13 @@
     concept IProvider = requires(Self self, TArgument argument)
     {
         requires
-        requires()
+        requires
         {
             requires std::same_as<TArgument, Internal::nil>;
             { self.Get() } -> std::same_as<TProvider>;
         }
         ||
-        requires()
+        requires
         {
             { self.Get(argument) } -> std::same_as<TProvider>;
         };

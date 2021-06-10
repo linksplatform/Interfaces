@@ -4,13 +4,13 @@
     concept ICounter = requires(Self self, TArgument argument)
     {
         requires
-            requires()
+            requires
             {
                 requires std::same_as<TArgument, Internal::nil>;
                 { self.Count() } -> std::same_as<TResult>;
             }
             ||
-            requires()
+            requires
             {
                 { self.Count(argument) } -> std::same_as<TResult>;
             };
