@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef Platform_Interfaces
-#define Platform_Interfaces
+#ifndef PLATFORM_INTERFACES
+#define PLATFORM_INTERFACES
 
 #include <concepts>
 
@@ -17,4 +17,4 @@
 
 #include "IProperty.h" // depend on ISetter and IProvider
 
-#endif // Platform_Interfaces
+#endif // PLATFORM_INTERFACES
