@@ -1,4 +1,1 @@
-﻿namespace Platform::Interfaces
-{
-    // SEE ICounter[TResult, TArgument]
-}
+﻿// SEE ICounter.h

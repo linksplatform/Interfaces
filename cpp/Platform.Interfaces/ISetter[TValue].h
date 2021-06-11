@@ -1,4 +1,1 @@
-﻿namespace Platform::Interfaces
-{
-    // SEE ISetter[TValue, TArgument]
-}
+﻿// SEE ISetter.h

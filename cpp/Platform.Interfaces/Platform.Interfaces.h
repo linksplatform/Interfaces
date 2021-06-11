@@ -5,15 +5,12 @@
 
 #include <concepts>
 
-#include "ICounter[TResult, TArgument].h"
-#include "ICounter[TResult].h"
+#include "ICounter.h"
 #include "ICriterionMatcher.h"
 #include "IFactory.h"
 #include "IProperties.h"
-#include "IProvider[TProvided, TArgument].h"
-#include "IProvider[TProvided].h"
-#include "ISetter[TValue, TArgument].h"
-#include "ISetter[TValue].h"
+#include "IProvider.h"
+#include "ISetter.h"
 
 #include "IProperty.h" // depend on ISetter and IProvider
 
