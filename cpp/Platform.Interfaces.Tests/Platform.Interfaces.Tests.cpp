@@ -3,7 +3,7 @@
 
 namespace Platform::Interfaces::Tests
 {
-    TEST(CompileTests, ICounters)
+    TEST(CompileTests, ICounter)
     {
         struct EmptyCounter
         {
@@ -87,7 +87,7 @@ namespace Platform::Interfaces::Tests
         }
     }
 
-    TEST(CompileTests, IProviders)
+    TEST(CompileTests, IProvider)
     {
         struct EmptyProvider
         {
@@ -115,7 +115,7 @@ namespace Platform::Interfaces::Tests
         }
     }
 
-    TEST(CompileTests, ISetters)
+    TEST(CompileTests, ISetter)
     {
         struct EmptySetter
         {
