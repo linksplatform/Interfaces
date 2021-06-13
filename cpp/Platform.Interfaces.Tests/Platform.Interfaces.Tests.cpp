@@ -13,7 +13,12 @@ namespace Platform::Interfaces::Tests
 
     TEST(Tests, CompileTest)
     {
+        ICounter<int> auto counter = EmptyICounter{};
+
         ASSERT_TRUE((ICounter<EmptyICounter, int>));
         ASSERT_FALSE((ICounter<EmptyICounter, float>));
+
+        ASSERT_TRUE((ICounter<decltype(counter), int>));
+        ASSERT_FALSE((ICounter<decltype(counter), float>));
     }
 }
