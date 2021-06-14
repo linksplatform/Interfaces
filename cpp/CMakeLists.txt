@@ -14,3 +14,5 @@ endmacro()
 
 include_linksplatform_extension(Tests)
 
+enable_testing()
+add_test(${CMAKE_LOCAL_PROJECT_NAME}.Tests ${CMAKE_LOCAL_PROJECT_NAME}.Tests)
