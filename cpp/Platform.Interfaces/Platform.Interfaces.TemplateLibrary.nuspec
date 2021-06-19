@@ -5,9 +5,8 @@
     <title>LinksPlatform's Platform.Interfaces Template Library</title>
     <summary>LinksPlatform's Platform.Interfaces is a Template Library what contains abstract class templates.</summary>
     <description>LinksPlatform's Platform.Interfaces is a Template Library what contains set of C++ abstract class templates. Use Platform.Interfaces.h file to include the library.</description>
-    <releaseNotes>Icon embedded in the package.
-Target framework of the package set to native.</releaseNotes>
-    <version>0.0.3</version>
+    <releaseNotes>All interfaces are transformed to concepts.</releaseNotes>
+    <version>0.1.0</version>
     <authors>Konstantin Diachenko</authors>
     <owners>Konstantin Diachenko</owners>
     <copyright>Konstantin Diachenko</copyright>
@@ -25,15 +24,12 @@ Target framework of the package set to native.</releaseNotes>
     <file src="icon.png" target="images/icon.png" />
     <file src="Platform.Interfaces.TemplateLibrary.targets" target="build\native\Platform.Interfaces.TemplateLibrary.targets" />
     <file src="Platform.Interfaces.h" target="lib\native\include\Platform.Interfaces.h" />
-    <file src="ICounter[TResult, TArgument].h" target="lib\native\include\ICounter[TResult, TArgument].h" />
-    <file src="ICounter[TResult].h" target="lib\native\include\ICounter[TResult].h" />
+    <file src="ICounter.h" target="lib\native\include\ICounter.h" />
     <file src="ICriterionMatcher.h" target="lib\native\include\ICriterionMatcher.h" />
     <file src="IFactory.h" target="lib\native\include\IFactory.h" />
     <file src="IProperties.h" target="lib\native\include\IProperties.h" />
     <file src="IProperty.h" target="lib\native\include\IProperty.h" />
-    <file src="IProvider[TProvided, TArgument].h" target="lib\native\include\IProvider[TProvided, TArgument].h" />
-    <file src="IProvider[TProvided].h" target="lib\native\include\IProvider[TProvided].h" />
-    <file src="ISetter[TValue, TArgument].h" target="lib\native\include\ISetter[TValue, TArgument].h" />
-    <file src="ISetter[TValue].h" target="lib\native\include\ISetter[TValue].h" />
+    <file src="IProvider.h" target="lib\native\include\IProvider.h" />
+    <file src="ISetter.h" target="lib\native\include\ISetter.h" />
   </files>
 </package>
