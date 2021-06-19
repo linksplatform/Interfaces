@@ -5,7 +5,7 @@
     <title>LinksPlatform's Platform.Interfaces Template Library</title>
     <summary>LinksPlatform's Platform.Interfaces is a Template Library what contains common concepts templates.</summary>
     <description>LinksPlatform's Platform.Interfaces is a Template Library what contains set of C++ concepts templates. Use Platform.Interfaces.h file to include the library.</description>
-    <releaseNotes>Moved IEnumerable, IArray and IList from Platform.Collections to this library.</releaseNotes>
+    <releaseNotes>IEnumerable, IArray and IList concepts are moved from Platform.Collections library.</releaseNotes>
     <version>0.1.1</version>
     <authors>Konstantin Diachenko</authors>
     <owners>Konstantin Diachenko</owners>
