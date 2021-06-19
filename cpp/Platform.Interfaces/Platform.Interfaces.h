@@ -5,6 +5,10 @@
 
 #include <concepts>
 
+#include "IEnumerable.h"
+#include "IArray.h"
+#include "IList.h"
+
 #include "ICounter.h"
 #include "ICriterionMatcher.h"
 #include "IFactory.h"

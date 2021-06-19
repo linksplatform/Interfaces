@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.15)
-
 set(CMAKE_LOCAL_PROJECT_NAME Platform.Interfaces)
 project(${CMAKE_LOCAL_PROJECT_NAME})
 
@@ -13,4 +12,3 @@ macro(include_linksplatform_extension EXTENSION_NAME)
 endmacro()
 
 include_linksplatform_extension(Tests)
-
