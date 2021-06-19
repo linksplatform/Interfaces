@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
-
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
+list(APPEND CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR})
 set(CMAKE_LOCAL_PROJECT_NAME Platform.Interfaces)
 project(${CMAKE_LOCAL_PROJECT_NAME})
 
@@ -13,6 +14,3 @@ macro(include_linksplatform_extension EXTENSION_NAME)
 endmacro()
 
 include_linksplatform_extension(Tests)
-
-enable_testing()
-add_test(${CMAKE_LOCAL_PROJECT_NAME}.Tests ${CMAKE_LOCAL_PROJECT_NAME}.Tests)
