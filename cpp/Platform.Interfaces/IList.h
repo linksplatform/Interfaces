@@ -1,6 +1,3 @@
-#ifndef ILIST
-#define ILIST
-
 namespace Platform::Interfaces
 {
     template<typename Self, typename... Item>
@@ -48,5 +45,3 @@ namespace Platform::Interfaces
     template<IList Self>
     struct List : Enumerable<Self> {};
 }
-
-#endif //ILIST

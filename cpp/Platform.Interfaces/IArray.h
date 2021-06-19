@@ -1,6 +1,3 @@
-#ifndef IARRAY
-#define IARRAY
-
 namespace Platform::Interfaces
 {
     template<typename Self, typename... Item>
@@ -29,5 +26,3 @@ namespace Platform::Interfaces
     template<IArray Self>
     struct Array : Enumerable<Self> {};
 }
-
-#endif //IARRAY

@@ -1,6 +1,3 @@
-#ifndef IENUMERABLE
-#define IENUMERABLE
-
 namespace Platform::Interfaces
 {
     template<typename Self>
@@ -14,5 +11,3 @@ namespace Platform::Interfaces
         using Iter = std::ranges::iterator_t<Self>;
     };
 }
-
-#endif //IENUMERABLE
