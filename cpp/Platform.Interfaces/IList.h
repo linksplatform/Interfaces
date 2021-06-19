@@ -8,17 +8,17 @@ namespace Platform::Interfaces
         IArray<Self> &&
         sizeof...(Item) <= 1 &&
     requires
-        (
-            Self self,
-            std::tuple<Item...> items,
+    (
+        Self self,
+        std::tuple<Item...> items,
 
-            std::size_t index,
-            decltype(std::get<0>(items)) item,
+        std::size_t index,
+        decltype(std::get<0>(items)) item,
 
-            std::ranges::range_value_t<Self> generic_item,
+        std::ranges::range_value_t<Self> generic_item,
 
-            std::ranges::iterator_t<const Self> const_iterator
-        )
+        std::ranges::iterator_t<const Self> const_iterator
+    )
     {
         requires
             requires
