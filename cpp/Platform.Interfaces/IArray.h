@@ -10,20 +10,20 @@ namespace Platform::Interfaces
     requires(std::tuple<Item...> items)
     {
         requires
-        requires
-        {
-            requires sizeof...(Item) == 1;
+            requires
+            {
+                requires sizeof...(Item) == 1;
 
-            requires std::same_as<std::ranges::range_value_t<Self>, decltype(std::get<0>(items))>;
-            requires std::ranges::random_access_range<Self>;
-        }
-        ||
-        requires
-        {
-            requires sizeof...(Item) == 0;
+                requires std::same_as<std::ranges::range_value_t<Self>, decltype(std::get<0>(items))>;
+                requires std::ranges::random_access_range<Self>;
+            }
+            ||
+            requires
+            {
+                requires sizeof...(Item) == 0;
 
-            requires std::ranges::random_access_range<Self>;
-        };
+                requires std::ranges::random_access_range<Self>;
+            };
     };
 
     template<IArray Self>

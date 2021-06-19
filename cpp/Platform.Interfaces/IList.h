@@ -21,25 +21,25 @@ namespace Platform::Interfaces
         )
     {
         requires
-        requires
-        {
-            requires sizeof...(Item) == 1;
+            requires
+            {
+                requires sizeof...(Item) == 1;
 
-            { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
-            { self.push_back(item) };
-            { self.insert(const_iterator, item) };
-            { self.erase(const_iterator) };
-        }
-        ||
-        requires
-        {
-            requires sizeof...(Item) == 0;
+                { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+                { self.push_back(item) };
+                { self.insert(const_iterator, item) };
+                { self.erase(const_iterator) };
+            }
+            ||
+            requires
+            {
+                requires sizeof...(Item) == 0;
 
-            { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
-            { self.push_back(generic_item) };
-            { self.insert(const_iterator, generic_item) };
-            { self.erase(const_iterator) };
-        };
+                { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+                { self.push_back(generic_item) };
+                { self.insert(const_iterator, generic_item) };
+                { self.erase(const_iterator) };
+            };
 
         { self.size() } -> std::integral;
         { self.clear() };
