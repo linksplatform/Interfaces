@@ -1,46 +1,54 @@
 namespace Platform::Interfaces
 {
-    template<typename Self, typename... Item>
-    concept IList =
-        IArray<Self> &&
-        sizeof...(Item) <= 1 &&
-    requires
-    (
-        Self self,
-        std::tuple<Item...> items,
-
-        std::size_t index,
-        decltype(std::get<0>(items)) item,
-
-        std::ranges::range_value_t<Self> generic_item,
-
-        std::ranges::iterator_t<const Self> const_iterator
-    )
+    namespace Internal
     {
-        requires
-            requires
+        template<typename Self, typename... Item>
+        consteval bool IListHelpFunction()
+        {
+            if constexpr (sizeof...(Item) == 1)
             {
-                requires sizeof...(Item) == 1;
-
-                { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
-                { self.push_back(item) };
-                { self.insert(const_iterator, item) };
-                { self.erase(const_iterator) };
+                return requires
+                (
+                    Self self,
+                    std::size_t index,
+                    std::tuple<Item...> items,
+                    decltype(std::get<0>(items)) item,
+                    std::ranges::iterator_t<const Self> const_iterator
+                )
+                {
+                    { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+                    { self.push_back(item) };
+                    { self.insert(const_iterator, item) };
+                    { self.erase(const_iterator) };
+                    { self.size() } -> std::integral;
+                    { self.clear() };
+                };
             }
-            ||
-            requires
+            if constexpr (sizeof...(Item) == 0)
             {
-                requires sizeof...(Item) == 0;
+                return requires
+                (
+                    Self self,
+                    std::size_t index,
+                    typename Enumerable<Self>::Item generic_item,
+                    typename Enumerable<const Self>::Iter const_iterator
+                )
+                {
+                    { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+                    { self.push_back(generic_item) };
+                    { self.insert(const_iterator, generic_item) };
+                    { self.erase(const_iterator) };
+                    { self.size() } -> std::integral;
+                    { self.clear() };
+                };
+            }
 
-                { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
-                { self.push_back(generic_item) };
-                { self.insert(const_iterator, generic_item) };
-                { self.erase(const_iterator) };
-            };
+            return false;
+        }
+    }
 
-        { self.size() } -> std::integral;
-        { self.clear() };
-    };
+    template<typename Self, typename... Item>
+    concept IList = IArray<Self> && Internal::IListHelpFunction<Self, Item...>();
 
     template<IList Self>
     struct List : Enumerable<Self> {};

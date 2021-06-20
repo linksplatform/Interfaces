@@ -1,27 +1,28 @@
 namespace Platform::Interfaces
 {
-    template<typename Self, typename... Item>
-    concept IArray =
-        IEnumerable<Self> &&
-        sizeof...(Item) <= 1 &&
-    requires(std::tuple<Item...> items)
+    namespace Internal
     {
-        requires
-            requires
+        template<typename Self, typename... Items>
+        consteval bool IArrayHelpFunction()
+        {
+            if constexpr (sizeof...(Items) == 1)
             {
-                requires sizeof...(Item) == 1;
+                using SelfItem = typename Enumerable<Self>::Item;
+                using RequiredItem = std::remove_reference_t<decltype(std::get<0>(std::declval<std::tuple<Items...>>()))>;
 
-                requires std::same_as<std::ranges::range_value_t<Self>, decltype(std::get<0>(items))>;
-                requires std::ranges::random_access_range<Self>;
+                return std::ranges::random_access_range<Self> && std::same_as<SelfItem, RequiredItem>;
             }
-            ||
-            requires
+            if constexpr (sizeof...(Items) == 0)
             {
-                requires sizeof...(Item) == 0;
+                return std::ranges::random_access_range<Self>;
+            }
 
-                requires std::ranges::random_access_range<Self>;
-            };
-    };
+            return false;
+        }
+    }
+
+    template<typename Self, typename... Item>
+    concept IArray = IEnumerable<Self> && Internal::IArrayHelpFunction<Self, Item...>();
 
     template<IArray Self>
     struct Array : Enumerable<Self> {};
