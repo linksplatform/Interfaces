@@ -5,8 +5,14 @@
     <title>LinksPlatform's Platform.Interfaces Template Library</title>
     <summary>LinksPlatform's Platform.Interfaces is a Template Library what contains common concepts templates.</summary>
     <description>LinksPlatform's Platform.Interfaces is a Template Library what contains set of C++ concepts templates. Use Platform.Interfaces.h file to include the library.</description>
-    <releaseNotes>IEnumerable, IArray and IList concepts are moved from Platform.Collections library.</releaseNotes>
-    <version>0.1.1</version>
+    <releaseNotes>
+        Fixed compile-error bug => (concepts without Item type tried get first type from Items... set)
+        Added more concepts:
+        - Added IDictionary concept (std::map and other dictionary types)
+        - Added ISet concept (std::set and other set types)
+        Moved concepts logic to Internal ConceptHelpFunction
+    </releaseNotes>
+    <version>0.1.2</version>
     <authors>Konstantin Diachenko</authors>
     <owners>Konstantin Diachenko</owners>
     <copyright>Konstantin Diachenko</copyright>
@@ -34,5 +40,7 @@
     <file src="IEnumerable.h" target="lib\native\include\IEnumerable.h" />
     <file src="IArray.h" target="lib\native\include\IArray.h" />
     <file src="IList.h" target="lib\native\include\IList.h" />
+    <file src="IDictionary.h" target="lib\native\include\IDictionary.h" />
+    <file src="ISet.h" target="lib\native\include\ISet.h" />
   </files>
 </package>
