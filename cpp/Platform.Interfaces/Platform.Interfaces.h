@@ -8,6 +8,8 @@
 #include "IEnumerable.h"
 #include "IArray.h"
 #include "IList.h"
+#include "ISet.h"
+#include "IDictionary.h"
 
 #include "ICounter.h"
 #include "ICriterionMatcher.h"
