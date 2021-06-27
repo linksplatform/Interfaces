@@ -5,16 +5,21 @@ namespace Platform::Interfaces
         template<typename Self, typename... Items>
         consteval bool IArrayHelpFunction()
         {
+            constexpr bool member_indexator = requires(Self self, std::size_t index)
+            {
+                { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+            };
+
             if constexpr (sizeof...(Items) == 1)
             {
                 using SelfItem = typename Enumerable<Self>::Item;
                 using RequiredItem = std::remove_reference_t<decltype(std::get<0>(std::declval<std::tuple<Items...>>()))>;
 
-                return std::ranges::random_access_range<Self> && std::same_as<SelfItem, RequiredItem>;
+                return member_indexator && std::ranges::random_access_range<Self> && std::same_as<SelfItem, RequiredItem>;
             }
             if constexpr (sizeof...(Items) == 0)
             {
-                return std::ranges::random_access_range<Self>;
+                return member_indexator &&  std::ranges::random_access_range<Self>;
             }
 
             return false;

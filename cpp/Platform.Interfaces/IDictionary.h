@@ -2,19 +2,24 @@ namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename Self, typename... Args>
+        template<typename RawSelf, typename... Args>
         consteval bool IDictionaryHelpFunction()
         {
+            using Self = std::remove_const_t<RawSelf>;
+
+            using GenericKey = std::remove_reference_t<decltype(std::get<0>(std::declval<typename Enumerable<Self>::Item>()))>;
+            using GenericValue = std::remove_reference_t<decltype(std::get<1>(std::declval<typename Enumerable<Self>::Item>()))>;
+
             if constexpr (sizeof...(Args) == 0)
             {
                 return requires
                 (
                     Self self,
-                    decltype(std::declval<Enumerable<Self>::Item>().first) generic_key,
-                    decltype(std::declval<Enumerable<Self>::Item>().second) generic_value
+                    GenericKey generic_key,
+                    GenericValue generic_value
                 )
                 {
-                    { self[generic_key] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+                    { self[generic_key] } -> std::same_as<GenericValue&>;
                     { self.find(generic_key) } -> std::forward_iterator;
                     { self.contains(generic_key) } -> std::same_as<bool>;
                     { self.insert({generic_key, generic_value}) };
@@ -36,7 +41,7 @@ namespace Platform::Interfaces
                     decltype(std::declval<Enumerable<Self>::Item>().second) generic_value
                 )
                 {
-                    { self[key] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+                    { self[key] } -> std::same_as<GenericValue&>;
                     { self.find(key) } -> std::forward_iterator;
                     { self.contains(key) } -> std::same_as<bool>;
                     { self.insert({key, generic_value}) };
@@ -58,7 +63,7 @@ namespace Platform::Interfaces
                     decltype(std::get<1>(args)) value
                 )
                 {
-                    { self[key] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+                    { self[key] } -> std::same_as<GenericValue&>;
                     { self.find(key) } -> std::forward_iterator;
                     { self.contains(key) } -> std::same_as<bool>;
                     { self.insert({key, value}) };

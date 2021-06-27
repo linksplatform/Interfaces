@@ -2,9 +2,11 @@ namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename Self, typename... Items>
+        template<typename RawSelf, typename... Items>
         consteval bool ISetHelpFunction()
         {
+            using Self = std::remove_const_t<RawSelf>;
+
             if constexpr (sizeof...(Items) == 1)
             {
                 return requires

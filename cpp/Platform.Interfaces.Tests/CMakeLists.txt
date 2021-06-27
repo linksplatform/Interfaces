@@ -16,3 +16,7 @@ endif()
 add_executable(${CMAKE_LOCAL_PROJECT_NAME}.Tests ${CMAKE_LOCAL_PROJECT_NAME}.Tests.cpp)
 target_compile_features(${CMAKE_LOCAL_PROJECT_NAME}.Tests PUBLIC cxx_std_20)
 target_link_libraries(${CMAKE_LOCAL_PROJECT_NAME}.Tests PUBLIC gtest gtest_main)
+
+enable_testing()
+include(GoogleTest)
+gtest_discover_tests(${CMAKE_LOCAL_PROJECT_NAME}.Tests)
