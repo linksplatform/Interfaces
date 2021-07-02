@@ -4,6 +4,7 @@
 #define PLATFORM_INTERFACES
 
 #include <concepts>
+#include <ranges>
 
 #include "IEnumerable.h"
 #include "IArray.h"

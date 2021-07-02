@@ -2,9 +2,11 @@ namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename Self, typename... Item>
+        template<typename RawSelf, typename... Item>
         consteval bool IListHelpFunction()
         {
+            using Self = std::remove_const_t<RawSelf>;
+
             if constexpr (sizeof...(Item) == 1)
             {
                 return requires
@@ -16,7 +18,6 @@ namespace Platform::Interfaces
                     std::ranges::iterator_t<const Self> const_iterator
                 )
                 {
-                    { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
                     { self.push_back(item) };
                     { self.insert(const_iterator, item) };
                     { self.erase(const_iterator) };
@@ -34,7 +35,6 @@ namespace Platform::Interfaces
                     typename Enumerable<const Self>::Iter const_iterator
                 )
                 {
-                    { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
                     { self.push_back(generic_item) };
                     { self.insert(const_iterator, generic_item) };
                     { self.erase(const_iterator) };
