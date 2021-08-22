@@ -1,4 +1,4 @@
-﻿namespace Platform.Interfaces
+namespace Platform.Interfaces
 {
     /// <summary>
     /// <para>Defines a criterion matcher, that contains a specific method for determining whether the argument matches the criterion or not.</para>

@@ -1,4 +1,4 @@
-﻿namespace Platform.Interfaces
+namespace Platform.Interfaces
 {
     /// <summary>
     /// <para>Defines an setter that sets the passed value as a new state.</para>

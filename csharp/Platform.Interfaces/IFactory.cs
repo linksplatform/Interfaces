@@ -1,4 +1,4 @@
-﻿namespace Platform.Interfaces
+namespace Platform.Interfaces
 {
     /// <summary>
     /// <para>Defines a factory that produces instances of a specific type.</para>

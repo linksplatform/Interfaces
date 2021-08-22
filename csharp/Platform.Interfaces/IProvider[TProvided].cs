@@ -1,4 +1,4 @@
-﻿namespace Platform.Interfaces
+namespace Platform.Interfaces
 {
     /// <summary>
     /// <para>Defines the provider of objects/values.</para>
