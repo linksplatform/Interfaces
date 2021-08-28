@@ -27,7 +27,7 @@ namespace Platform::Interfaces
                     { self.size() } -> std::integral;
                     { self.clear() };
 
-                    requires std::ranges::bidirectional_range<Self>;
+                    requires std::ranges::forward_range<Self>;
                 };
             }
             if constexpr (sizeof...(Args) == 1)
@@ -49,7 +49,7 @@ namespace Platform::Interfaces
                     { self.size() } -> std::integral;
                     { self.clear() };
 
-                    requires std::ranges::bidirectional_range<Self>;
+                    requires std::ranges::forward_range<Self>;
                 };
             }
             if constexpr (sizeof...(Args) == 2)
@@ -71,7 +71,7 @@ namespace Platform::Interfaces
                     { self.size() } -> std::integral;
                     { self.clear() };
 
-                    requires std::ranges::bidirectional_range<Self>;
+                    requires std::ranges::forward_range<Self>;
                 };
             }
 
@@ -89,7 +89,7 @@ namespace Platform::Interfaces
         using base = Enumerable<Self>;
 
     public:
-        using Key = decltype(std::declval<base::Item>().first);
-        using Value = decltype(std::declval<base::Item>().second);
+        using Key = decltype(std::get<0>(std::declval<base::Item>()));
+        using Value = decltype(std::get<1>(std::declval<base::Item>()));
     };
 }

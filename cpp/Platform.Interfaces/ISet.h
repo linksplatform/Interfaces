@@ -24,7 +24,7 @@ namespace Platform::Interfaces
                     { self.size() } -> std::integral;
                     { self.clear() };
 
-                    requires std::ranges::bidirectional_range<Self>;
+                    requires std::ranges::forward_range<Self>;
                 };
             }
             if constexpr (sizeof...(Items) == 0)
@@ -43,7 +43,7 @@ namespace Platform::Interfaces
                     { self.size() } -> std::integral;
                     { self.clear() };
 
-                    requires std::ranges::bidirectional_range<Self>;
+                    requires std::ranges::forward_range<Self>;
                 };
             }
 
