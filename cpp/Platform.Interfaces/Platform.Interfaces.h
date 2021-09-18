@@ -21,4 +21,6 @@
 
 #include "IProperty.h" // depend on ISetter and IProvider
 
+#include "Polymorph.h"
+
 #endif // PLATFORM_INTERFACES
