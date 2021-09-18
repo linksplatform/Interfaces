@@ -39,5 +39,6 @@
     <file src="IList.h" target="lib\native\include\IList.h" />
     <file src="IDictionary.h" target="lib\native\include\IDictionary.h" />
     <file src="ISet.h" target="lib\native\include\ISet.h" />
+    <file src="Polymorph.h" target="lib\native\include\Polymorph.h" />
   </files>
 </package>
