@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef PLATFORM_INTERFACES
-#define PLATFORM_INTERFACES
-
 #include <concepts>
 #include <ranges>
 
@@ -22,5 +19,3 @@
 #include "IProperty.h" // depend on ISetter and IProvider
 
 #include "Polymorph.h"
-
-#endif // PLATFORM_INTERFACES
