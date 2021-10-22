@@ -3,19 +3,19 @@
 #include <concepts>
 #include <ranges>
 
-#include "IEnumerable.h"
-#include "IArray.h"
-#include "IList.h"
-#include "ISet.h"
-#include "IDictionary.h"
+#include "CEnumerable.h"
+#include "CArray.h"
+#include "CList.h"
+#include "CSet.h"
+#include "CDictionary.h"
 
-#include "ICounter.h"
-#include "ICriterionMatcher.h"
-#include "IFactory.h"
-#include "IProperties.h"
-#include "IProvider.h"
-#include "ISetter.h"
+#include "CCounter.h"
+#include "CCriterionMatcher.h"
+#include "CFactory.h"
+#include "CProperties.h"
+#include "CProvider.h"
+#include "CSetter.h"
 
-#include "IProperty.h" // depend on ISetter and IProvider
+#include "CProperty.h" // depend on ISetter and IProvider
 
 #include "Polymorph.h"
