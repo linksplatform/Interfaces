@@ -1,12 +1,13 @@
+#pragma once
+
+#include "Macros.h"
+
 namespace Platform::Interfaces
 {
-    template<typename Self>
-    class Polymorph
+    template<typename TSelf, typename ...TBase>
+    class Polymorph : public TBase...
     {
     protected:
-        constexpr auto&& self() & { return static_cast<Self&>(*this); }
-        constexpr auto&& self() && { return static_cast<Self&&>(*this); }
-        constexpr auto&& self() const & { return static_cast<const Self&>(*this); }
-        constexpr auto&& self() const && { return static_cast<const Self&&>(*this); }
+        THIS_REFERENCE_WRAPPER_METHODS(object, TSelf)
     };
 }
