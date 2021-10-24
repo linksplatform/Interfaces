@@ -16,6 +16,6 @@
 #include "CProvider.h"
 #include "CSetter.h"
 
-#include "CProperty.h" // depend on ISetter and IProvider
+#include "CProperty.h" // depends on CSetter and CProvider
 
 #include "Polymorph.h"
