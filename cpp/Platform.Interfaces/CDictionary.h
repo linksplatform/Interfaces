@@ -3,7 +3,7 @@ namespace Platform::Interfaces
     namespace Internal
     {
         template<typename RawSelf, typename... Args>
-        consteval bool IDictionaryHelpFunction()
+        consteval bool CDictionaryHelpFunction()
         {
             using Self = std::remove_const_t<RawSelf>;
 
@@ -80,9 +80,9 @@ namespace Platform::Interfaces
     }
 
     template<typename Self, typename... Args>
-    concept IDictionary = IEnumerable<Self> && Internal::IDictionaryHelpFunction<Self, Args...>();
+    concept CDictionary = CEnumerable<Self> && Internal::CDictionaryHelpFunction<Self, Args...>();
 
-    template<IDictionary Self>
+    template<CDictionary Self>
     struct Dictionary : Enumerable<Self>
     {
     private:

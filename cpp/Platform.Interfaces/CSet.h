@@ -3,7 +3,7 @@ namespace Platform::Interfaces
     namespace Internal
     {
         template<typename RawSelf, typename... Items>
-        consteval bool ISetHelpFunction()
+        consteval bool CSetHelpFunction()
         {
             using Self = std::remove_const_t<RawSelf>;
 
@@ -53,8 +53,8 @@ namespace Platform::Interfaces
     }
 
     template<typename Self, typename... Item>
-    concept ISet = IEnumerable<Self> && Internal::ISetHelpFunction<Self, Item...>();
+    concept CSet = CEnumerable<Self> && Internal::CSetHelpFunction<Self, Item...>();
 
-    template<ISet Self>
+    template<CSet Self>
     struct Set : Enumerable<Self> {};
 }

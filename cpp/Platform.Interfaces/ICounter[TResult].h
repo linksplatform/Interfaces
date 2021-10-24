@@ -1,1 +1,0 @@
-﻿// SEE ICounter.h

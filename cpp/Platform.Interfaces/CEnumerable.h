@@ -1,9 +1,9 @@
 namespace Platform::Interfaces
 {
     template<typename Self>
-    concept IEnumerable = std::ranges::range<Self>;
+    concept CEnumerable = std::ranges::range<Self>;
 
-    template<IEnumerable Self>
+    template<CEnumerable Self>
     struct Enumerable
     {
         using Item = std::ranges::range_value_t<Self>;
