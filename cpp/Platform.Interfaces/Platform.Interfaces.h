@@ -3,6 +3,8 @@
 #include <concepts>
 #include <ranges>
 
+#include "Macros.h"
+
 #include "CEnumerable.h"
 #include "CArray.h"
 #include "CList.h"
