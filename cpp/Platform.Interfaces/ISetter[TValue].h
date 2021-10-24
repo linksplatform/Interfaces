@@ -1,9 +1,12 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+namespace Platform::Interfaces
 {
-    template <typename ...> class ISetter;
-    template <typename TValue> class ISetter<TValue>
+    template <typename ...> struct ISetter;
+    template <typename TValue> struct ISetter<TValue>
     {
-    public:
         virtual void Set(TValue value) = 0;
+        
+        virtual ~ISetter<TValue>() = default;
     };
 }

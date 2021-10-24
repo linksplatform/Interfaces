@@ -1,5 +1,10 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+#include "CSetter.h"
+#include "CProvider.h"
+
+namespace Platform::Interfaces
 {
-    template<typename Self, typename TObject, typename TValue>
-    concept CProperty = CSetter<Self, TValue, TObject> && CProvider<Self, TValue, TObject>;
+    template<typename TSelf, typename TObject, typename TValue>
+    concept CProperty = CSetter<TSelf, TValue, TObject> && CProvider<TSelf, TValue, TObject>;
 }

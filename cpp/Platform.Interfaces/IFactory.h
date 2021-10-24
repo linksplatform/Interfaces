@@ -1,9 +1,12 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+namespace Platform::Interfaces
 {
-    template <typename ...> class IFactory;
-    template <typename TProduct> class IFactory<TProduct>
+    template <typename ...> struct IFactory;
+    template <typename TProduct> struct IFactory<TProduct>
     {
-    public:
         virtual TProduct Create() = 0;
+        
+        virtual ~IFactory<TProduct>() = default;
     };
 }

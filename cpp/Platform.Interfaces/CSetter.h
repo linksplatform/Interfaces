@@ -1,8 +1,10 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+namespace Platform::Interfaces
 {
-    template <typename Self, typename TValue, typename... TArgument>
+    template <typename TSelf, typename TValue, typename... TArgument>
     concept CSetter = sizeof...(TArgument) <= 1 &&
-    requires(Self self, TArgument... argument, TValue value)
+    requires(TSelf self, TArgument... argument, TValue value)
     {
         { self.Set(argument..., value) } -> std::same_as<void>;
     };

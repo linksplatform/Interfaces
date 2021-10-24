@@ -1,7 +1,9 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+namespace Platform::Interfaces
 {
-    template <typename Self, typename TObject, typename TProperty, typename TValue>
-    concept CProperties = requires(Self self, TObject object, TProperty property, TValue value)
+    template <typename TSelf, typename TObject, typename TProperty, typename TValue>
+    concept CProperties = requires(TSelf self, TObject object, TProperty property, TValue value)
     {
         { self.GetValue(object, property) } -> std::same_as<TValue>;
 

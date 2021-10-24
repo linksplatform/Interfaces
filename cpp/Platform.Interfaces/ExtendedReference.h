@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Macros.h"
+#include "ExtendedReferenceBase.h"
 
 namespace Platform::Interfaces
 {

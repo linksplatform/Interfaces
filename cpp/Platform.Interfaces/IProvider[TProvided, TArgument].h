@@ -1,9 +1,12 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+namespace Platform::Interfaces
 {
-    template <typename ...> class IProvider;
-    template <typename TProvided, typename TArgument> class IProvider<TProvided, TArgument>
+    template <typename ...> struct IProvider;
+    template <typename TProvided, typename TArgument> struct IProvider<TProvided, TArgument>
     {
-    public:
         virtual TProvided Get(TArgument argument) = 0;
+        
+        virtual ~IProvider<TProvided, TArgument>() = default;
     };
 }

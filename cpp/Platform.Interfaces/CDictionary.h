@@ -1,3 +1,7 @@
+#pragma once
+
+#include "CEnumerable.h"
+
 namespace Platform::Interfaces
 {
     namespace Internal
@@ -5,16 +9,16 @@ namespace Platform::Interfaces
         template<typename RawSelf, typename... Args>
         consteval bool CDictionaryHelpFunction()
         {
-            using Self = std::remove_const_t<RawSelf>;
+            using TSelf = std::remove_const_t<RawSelf>;
 
-            using GenericKey = std::remove_reference_t<decltype(std::get<0>(std::declval<typename Enumerable<Self>::Item>()))>;
-            using GenericValue = std::remove_reference_t<decltype(std::get<1>(std::declval<typename Enumerable<Self>::Item>()))>;
+            using GenericKey = std::remove_reference_t<decltype(std::get<0>(std::declval<typename Enumerable<TSelf>::Item>()))>;
+            using GenericValue = std::remove_reference_t<decltype(std::get<1>(std::declval<typename Enumerable<TSelf>::Item>()))>;
 
             if constexpr (sizeof...(Args) == 0)
             {
                 return requires
                 (
-                    Self self,
+                    TSelf self,
                     GenericKey generic_key,
                     GenericValue generic_value
                 )
@@ -27,18 +31,18 @@ namespace Platform::Interfaces
                     { self.size() } -> std::integral;
                     { self.clear() };
 
-                    requires std::ranges::forward_range<Self>;
+                    requires std::ranges::forward_range<TSelf>;
                 };
             }
             if constexpr (sizeof...(Args) == 1)
             {
                 return requires
                 (
-                    Self self,
+                    TSelf self,
                     std::tuple<Args...> args,
 
                     decltype(std::get<0>(args)) key,
-                    decltype(std::declval<Enumerable<Self>::Item>().second) generic_value
+                    decltype(std::declval<Enumerable<TSelf>::Item>().second) generic_value
                 )
                 {
                     { self[key] } -> std::same_as<GenericValue&>;
@@ -49,14 +53,14 @@ namespace Platform::Interfaces
                     { self.size() } -> std::integral;
                     { self.clear() };
 
-                    requires std::ranges::forward_range<Self>;
+                    requires std::ranges::forward_range<TSelf>;
                 };
             }
             if constexpr (sizeof...(Args) == 2)
             {
                 return requires
                 (
-                    Self self,
+                    TSelf self,
                     std::tuple<Args...> args,
 
                     decltype(std::get<0>(args)) key,
@@ -71,7 +75,7 @@ namespace Platform::Interfaces
                     { self.size() } -> std::integral;
                     { self.clear() };
 
-                    requires std::ranges::forward_range<Self>;
+                    requires std::ranges::forward_range<TSelf>;
                 };
             }
 
@@ -79,14 +83,14 @@ namespace Platform::Interfaces
         }
     }
 
-    template<typename Self, typename... Args>
-    concept CDictionary = CEnumerable<Self> && Internal::CDictionaryHelpFunction<Self, Args...>();
+    template<typename TSelf, typename... Args>
+    concept CDictionary = CEnumerable<TSelf> && Internal::CDictionaryHelpFunction<TSelf, Args...>();
 
-    template<CDictionary Self>
-    struct Dictionary : Enumerable<Self>
+    template<CDictionary TSelf>
+    struct Dictionary : Enumerable<TSelf>
     {
     private:
-        using base = Enumerable<Self>;
+        using base = Enumerable<TSelf>;
 
     public:
         using Key = decltype(std::get<0>(std::declval<base::Item>()));

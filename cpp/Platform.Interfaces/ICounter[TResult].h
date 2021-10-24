@@ -1,9 +1,12 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+namespace Platform::Interfaces
 {
-    template <typename ...> class ICounter;
-    template <typename TResult> class ICounter<TResult>
+    template <typename ...> struct ICounter;
+    template <typename TResult> struct ICounter<TResult>
     {
-    public:
         virtual TResult Count() = 0;
+        
+        virtual ~ICounter<TResult>() = default;
     };
 }

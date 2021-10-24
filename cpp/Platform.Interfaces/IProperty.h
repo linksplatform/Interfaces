@@ -1,8 +1,13 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+#include "ISetter[TValue, TArgument].h"
+#include "IProvider[TProvided, TArgument].h"
+
+namespace Platform::Interfaces
 {
-    template <typename ...> class IProperty;
-    template <typename TObject, typename TValue> class IProperty<TObject, TValue> : public ISetter<TValue, TObject>, IProvider<TValue, TObject>
+    template <typename ...> struct IProperty;
+    template <typename TObject, typename TValue> struct IProperty<TObject, TValue> : public ISetter<TValue, TObject>, IProvider<TValue, TObject>
     {
-    public:
+        virtual ~IProperty<TObject, TValue>() = default;
     };
 }
