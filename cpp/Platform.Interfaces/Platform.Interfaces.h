@@ -21,3 +21,10 @@
 #include "CProperty.h" // depends on CSetter and CProvider
 
 #include "Polymorph.h"
+
+#include "Extended.h"
+#include "ExtendedBase.h"
+#include "ExtendedContainer.h"
+#include "ExtendedContainerBase.h"
+#include "ExtendedReference.h"
+#include "ExtendedReferenceBase.h"
