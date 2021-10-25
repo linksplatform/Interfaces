@@ -5,7 +5,7 @@
 #include <tuple>
 #include <ranges>
 #include <utility>
-#include <cstdio>
+#include <cstddef>
 
 #include "CEnumerable.h"
 
