@@ -1,7 +1,7 @@
 #pragma once
 
 #include <type_traits>
-#include <cstdio>
+#include <cstddef>
 #include <tuple>
 #include <ranges>
 #include <concepts>
