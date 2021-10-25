@@ -1,8 +1,5 @@
 #pragma once
 
-#include <concepts>
-#include <ranges>
-
 #include "Macros.h"
 
 #include "CEnumerable.h"
@@ -10,15 +7,13 @@
 #include "CList.h"
 #include "CSet.h"
 #include "CDictionary.h"
-
 #include "CCounter.h"
 #include "CCriterionMatcher.h"
 #include "CFactory.h"
 #include "CProperties.h"
 #include "CProvider.h"
 #include "CSetter.h"
-
-#include "CProperty.h" // depends on CSetter and CProvider
+#include "CProperty.h"
 
 #include "ICounter[TResult, TArgument].h"
 #include "ICounter[TResult].h"
