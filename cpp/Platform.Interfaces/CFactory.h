@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+#include <concepts>
+
 namespace Platform::Interfaces
 {
     template <typename TSelf, typename TProduct>

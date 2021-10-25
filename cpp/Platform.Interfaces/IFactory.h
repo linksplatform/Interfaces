@@ -2,11 +2,13 @@
 
 namespace Platform::Interfaces
 {
-    template <typename ...> struct IFactory;
-    template <typename TProduct> struct IFactory<TProduct>
+    template <typename ...>
+    struct IFactory;
+    template <typename TProduct>
+    struct IFactory<TProduct>
     {
         virtual TProduct Create() = 0;
         
-        virtual ~IFactory<TProduct>() = default;
+        virtual ~IFactory() = default;
     };
 }

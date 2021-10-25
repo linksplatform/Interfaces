@@ -1,5 +1,11 @@
 #pragma once
 
+#include <type_traits>
+#include <cstdio>
+#include <tuple>
+#include <ranges>
+#include <concepts>
+
 #include "CEnumerable.h"
 #include "CArray.h"
 

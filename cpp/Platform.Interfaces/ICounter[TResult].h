@@ -7,6 +7,6 @@ namespace Platform::Interfaces
     {
         virtual TResult Count() = 0;
         
-        virtual ~ICounter<TResult>() = default;
+        virtual ~ICounter() = default;
     };
 }

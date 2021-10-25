@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ranges>
+
 namespace Platform::Interfaces
 {
     template<typename TSelf>

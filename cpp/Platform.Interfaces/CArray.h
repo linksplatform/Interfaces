@@ -1,5 +1,12 @@
 #pragma once
 
+#include <concepts>
+#include <type_traits>
+#include <tuple>
+#include <ranges>
+#include <utility>
+#include <cstdio>
+
 #include "CEnumerable.h"
 
 namespace Platform::Interfaces
