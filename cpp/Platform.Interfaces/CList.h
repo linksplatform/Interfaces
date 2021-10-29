@@ -13,20 +13,20 @@ namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename RawSelf, typename... Item>
+        template<typename TRawSelf, typename... TItem>
         consteval bool CListHelpFunction()
         {
-            using TSelf = std::remove_const_t<RawSelf>;
+            using Self = std::remove_const_t<TRawSelf>;
 
-            if constexpr (sizeof...(Item) == 1)
+            if constexpr (sizeof...(TItem) == 1)
             {
                 return requires
                 (
-                    TSelf self,
+                    Self self,
                     std::size_t index,
-                    std::tuple<Item...> items,
+                    std::tuple<TItem...> items,
                     decltype(std::get<0>(items)) item,
-                    std::ranges::iterator_t<const TSelf> const_iterator
+                    std::ranges::iterator_t<const Self> const_iterator
                 )
                 {
                     { self.push_back(item) };
@@ -36,14 +36,14 @@ namespace Platform::Interfaces
                     { self.clear() };
                 };
             }
-            if constexpr (sizeof...(Item) == 0)
+            if constexpr (sizeof...(TItem) == 0)
             {
                 return requires
                 (
-                    TSelf self,
+                    Self self,
                     std::size_t index,
-                    typename Enumerable<TSelf>::Item generic_item,
-                    typename Enumerable<const TSelf>::Iter const_iterator
+                    typename Enumerable<Self>::Item generic_item,
+                    typename Enumerable<const Self>::Iter const_iterator
                 )
                 {
                     { self.push_back(generic_item) };
@@ -58,8 +58,8 @@ namespace Platform::Interfaces
         }
     }
 
-    template<typename TSelf, typename... Item>
-    concept CList = CArray<TSelf> && Internal::CListHelpFunction<TSelf, Item...>();
+    template<typename TSelf, typename... TItem>
+    concept CList = CArray<TSelf> && Internal::CListHelpFunction<TSelf, TItem...>();
 
     template<CList TSelf>
     struct List : Enumerable<TSelf> {};

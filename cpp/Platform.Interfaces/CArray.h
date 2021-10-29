@@ -5,7 +5,7 @@
 #include <tuple>
 #include <ranges>
 #include <utility>
-#include <cstddef>
+#include <cstdio>
 
 #include "CEnumerable.h"
 
@@ -13,7 +13,7 @@ namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename TSelf, typename... Items>
+        template<typename TSelf, typename... TItems>
         consteval bool CArrayHelpFunction()
         {
             constexpr bool member_indexator = requires(TSelf self, std::size_t index)
@@ -21,14 +21,14 @@ namespace Platform::Interfaces
                 { self[index] } -> std::same_as<typename Enumerable<TSelf>::ItemReference>;
             };
 
-            if constexpr (sizeof...(Items) == 1)
+            if constexpr (sizeof...(TItems) == 1)
             {
                 using SelfItem = typename Enumerable<TSelf>::Item;
-                using RequiredItem = std::remove_reference_t<decltype(std::get<0>(std::declval<std::tuple<Items...>>()))>;
+                using RequiredItem = std::remove_reference_t<decltype(std::get<0>(std::declval<std::tuple<TItems...>>()))>;
 
                 return member_indexator && std::ranges::random_access_range<TSelf> && std::same_as<SelfItem, RequiredItem>;
             }
-            if constexpr (sizeof...(Items) == 0)
+            if constexpr (sizeof...(TItems) == 0)
             {
                 return member_indexator &&  std::ranges::random_access_range<TSelf>;
             }
@@ -37,8 +37,8 @@ namespace Platform::Interfaces
         }
     }
 
-    template<typename TSelf, typename... Item>
-    concept CArray = CEnumerable<TSelf> && Internal::CArrayHelpFunction<TSelf, Item...>();
+    template<typename TSelf, typename... TItem>
+    concept CArray = CEnumerable<TSelf> && Internal::CArrayHelpFunction<TSelf, TItem...>();
 
     template<CArray TSelf>
     struct Array : Enumerable<TSelf> {};
