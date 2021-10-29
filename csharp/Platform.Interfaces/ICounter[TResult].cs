@@ -1,4 +1,4 @@
-namespace Platform.Interfaces
+﻿namespace Platform.Interfaces
 {
     /// <summary>
     /// <para>Defines a counter.</para>

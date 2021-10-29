@@ -1,4 +1,4 @@
-namespace Platform.Interfaces
+﻿namespace Platform.Interfaces
 {
     /// <summary>
     /// <para>Defines a properties operator that is able to get or set values of properties of a object of a specific type.</para>
