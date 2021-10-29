@@ -3,7 +3,7 @@ namespace Platform::Interfaces
     namespace Internal
     {
         template<typename RawSelf, typename... Item>
-        consteval bool IListHelpFunction()
+        consteval bool CListHelpFunction()
         {
             using Self = std::remove_const_t<RawSelf>;
 
@@ -48,8 +48,8 @@ namespace Platform::Interfaces
     }
 
     template<typename Self, typename... Item>
-    concept IList = IArray<Self> && Internal::IListHelpFunction<Self, Item...>();
+    concept CList = CArray<Self> && Internal::CListHelpFunction<Self, Item...>();
 
-    template<IList Self>
+    template<CList Self>
     struct List : Enumerable<Self> {};
 }

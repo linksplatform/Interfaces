@@ -1,26 +1,30 @@
 #pragma once
 
-#ifndef PLATFORM_INTERFACES
-#define PLATFORM_INTERFACES
-
 #include <concepts>
 #include <ranges>
 
-#include "IEnumerable.h"
-#include "IArray.h"
-#include "IList.h"
-#include "ISet.h"
-#include "IDictionary.h"
+#include "Macros.h"
 
-#include "ICounter.h"
-#include "ICriterionMatcher.h"
-#include "IFactory.h"
-#include "IProperties.h"
-#include "IProvider.h"
-#include "ISetter.h"
+#include "CEnumerable.h"
+#include "CArray.h"
+#include "CList.h"
+#include "CSet.h"
+#include "CDictionary.h"
 
-#include "IProperty.h" // depend on ISetter and IProvider
+#include "CCounter.h"
+#include "CCriterionMatcher.h"
+#include "CFactory.h"
+#include "CProperties.h"
+#include "CProvider.h"
+#include "CSetter.h"
+
+#include "CProperty.h" // depends on CSetter and CProvider
 
 #include "Polymorph.h"
 
-#endif // PLATFORM_INTERFACES
+#include "Extended.h"
+#include "ExtendedBase.h"
+#include "ExtendedContainer.h"
+#include "ExtendedContainerBase.h"
+#include "ExtendedReference.h"
+#include "ExtendedReferenceBase.h"

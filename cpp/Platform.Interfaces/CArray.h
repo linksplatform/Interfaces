@@ -3,7 +3,7 @@ namespace Platform::Interfaces
     namespace Internal
     {
         template<typename Self, typename... Items>
-        consteval bool IArrayHelpFunction()
+        consteval bool CArrayHelpFunction()
         {
             constexpr bool member_indexator = requires(Self self, std::size_t index)
             {
@@ -27,8 +27,8 @@ namespace Platform::Interfaces
     }
 
     template<typename Self, typename... Item>
-    concept IArray = IEnumerable<Self> && Internal::IArrayHelpFunction<Self, Item...>();
+    concept CArray = CEnumerable<Self> && Internal::CArrayHelpFunction<Self, Item...>();
 
-    template<IArray Self>
+    template<CArray Self>
     struct Array : Enumerable<Self> {};
 }
