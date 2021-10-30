@@ -70,93 +70,95 @@ namespace Platform::Interfaces::Tests
 
     TEST(CompileTests, Properties)
     {
-        struct EmptyProperties: public IProperties<std::string, int, std::byte>
+        struct EmptyProperties: public IProperties<int, int, int>
         {
-            //SetValue
+            void SetValue(int, int, int) {}
+
+            int GetValue(int, int) { return {}; }
         };
-        //static_assert(CProperties<EmptyProperties, std::string, int, std::byte>);
+        static_assert(CProperties<EmptyProperties, int, int, int>);
 
         {
-            //CProperties<std::string, int, std::byte> auto properties = EmptyProperties{};
+            CProperties<int, int, int> auto properties = EmptyProperties{};
 
-            ASSERT_TRUE((CProperties<EmptyProperties, std::string, int, std::byte>));
-            ASSERT_TRUE((CProperties<EmptyProperties, std::string&, int, std::byte>));
-            ASSERT_TRUE((CProperties<EmptyProperties, const std::string&, int, std::byte>));
+            ASSERT_TRUE((CProperties<EmptyProperties, int, int, int>));
+            ASSERT_TRUE((CProperties<EmptyProperties, int&, int, int>));
+            ASSERT_TRUE((CProperties<EmptyProperties, const int&, int, int>));
         }
     }
 
     TEST(CompileTests, Provider)
     {
-    struct EmptyProvider: public IProvider<std::byte>
+        struct EmptyProvider: public IProvider<int>
         {
-            std::byte Get() { return std::byte{}; }
+            int Get() { return {}; }
         };
-        static_assert(CProvider<EmptyProvider, std::byte>);
+        static_assert(CProvider<EmptyProvider, int>);
 
-    struct EmptyIntProvider: public IProvider<std::byte, int>
+        struct EmptyIntProvider: public IProvider<int, int>
         {
-            std::byte Get(int argument) { return std::byte{}; }
+            int Get(int argument) { return {}; }
         };
-        static_assert(CProvider<EmptyIntProvider, std::byte, int>);
+        static_assert(CProvider<EmptyIntProvider, int, int>);
 
         {
-            CProvider<std::byte> auto provider = EmptyProvider{};
+            CProvider<int> auto provider = EmptyProvider{};
 
-            ASSERT_TRUE((CProvider<EmptyProvider, std::byte>));
+            ASSERT_TRUE((CProvider<EmptyProvider, int>));
         }
 
         {
-            CProvider<std::byte, int> auto provider = EmptyIntProvider{};
+            CProvider<int, int> auto provider = EmptyIntProvider{};
 
-            ASSERT_TRUE((CProvider<EmptyIntProvider, std::byte, int>));
-            ASSERT_TRUE((CProvider<EmptyIntProvider, std::byte, float>));
+            ASSERT_TRUE((CProvider<EmptyIntProvider, int, int>));
+            ASSERT_TRUE((CProvider<EmptyIntProvider, int, float>));
         }
     }
 
     TEST(CompileTests, Setter)
     {
-        struct EmptySetter: public ISetter<std::byte>
+        struct EmptySetter: public ISetter<int>
         {
-            void Set(std::byte value) { }
+            void Set(int value) { }
         };
-        static_assert(CSetter<EmptySetter, std::byte>);
+        static_assert(CSetter<EmptySetter, int>);
 
-        struct EmptyIntSetter: public ISetter<std::byte, int>
+        struct EmptyIntSetter: public ISetter<int, int>
         {
-            void Set(int argument, std::byte value) {  }
+            void Set(int argument, int value) {  }
         };
-        static_assert(CSetter<EmptyIntSetter, std::byte, int>);
+        static_assert(CSetter<EmptyIntSetter, int, int>);
 
         {
-            CSetter<std::byte> auto provider = EmptySetter{};
+            CSetter<int> auto provider = EmptySetter{};
 
-            ASSERT_TRUE((CSetter<EmptySetter, std::byte>));
+            ASSERT_TRUE((CSetter<EmptySetter, int>));
         }
 
         {
-            CSetter<std::byte, int> auto provider = EmptyIntSetter{};
+            CSetter<int, int> auto provider = EmptyIntSetter{};
 
-            ASSERT_TRUE((CSetter<EmptyIntSetter, std::byte, int>));
-            ASSERT_TRUE((CSetter<EmptyIntSetter, std::byte, float>));
+            ASSERT_TRUE((CSetter<EmptyIntSetter, int, int>));
+            ASSERT_TRUE((CSetter<EmptyIntSetter, int, float>));
         }
     }
 
     TEST(CompileTests, Property)
     {
-        struct EmptyProperty: public IProperty<std::string&, std::byte> 
+        struct EmptyProperty: public IProperty<int&, int> 
         {
-            void Set(std::string& object, std::byte value) { }
-            std::byte Get(std::string& object) { return {}; }
+            void Set(int& object, int value) { }
+            int Get(int& object) { return {}; }
         };
         // TODO can be use in concepts TObject& instead of TObject
-        static_assert(CProperty<EmptyProperty, std::string&, std::byte>);
+        static_assert(CProperty<EmptyProperty, int&, int>);
 
         {
-            CProperty<std::string&, std::byte> auto provider = EmptyProperty{};
+            CProperty<int&, int> auto provider = EmptyProperty{};
 
-            ASSERT_TRUE((CProperty<EmptyProperty, std::string&, std::byte>));
-            ASSERT_TRUE((CProvider<EmptyProperty, std::byte, std::string&>));
-            ASSERT_TRUE((CSetter<EmptyProperty, std::byte, std::string&>));
+            ASSERT_TRUE((CProperty<EmptyProperty, int&, int>));
+            ASSERT_TRUE((CProvider<EmptyProperty, int, int&>));
+            ASSERT_TRUE((CSetter<EmptyProperty, int, int&>));
         }
     }
 }
