@@ -61,8 +61,8 @@ namespace Platform::Interfaces
 
     }
 
-    template<typename TSelf, typename... TItem>
-    concept CSet = CEnumerable<TSelf> && Internal::CSetHelpFunction<TSelf, TItem...>();
+    template<typename TSelf, typename... TItems>
+    concept CSet = CEnumerable<TSelf> && Internal::CSetHelpFunction<TSelf, TItems...>();
 
     template<CSet TSelf>
     struct Set : Enumerable<TSelf> {};

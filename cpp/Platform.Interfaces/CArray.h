@@ -37,8 +37,8 @@ namespace Platform::Interfaces
         }
     }
 
-    template<typename TSelf, typename... TItem>
-    concept CArray = CEnumerable<TSelf> && Internal::CArrayHelpFunction<TSelf, TItem...>();
+    template<typename TSelf, typename... TItems>
+    concept CArray = CEnumerable<TSelf> && Internal::CArrayHelpFunction<TSelf, TItems...>();
 
     template<CArray TSelf>
     struct Array : Enumerable<TSelf> {};

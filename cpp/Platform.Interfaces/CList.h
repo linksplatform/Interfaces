@@ -13,18 +13,18 @@ namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename TRawSelf, typename... TItem>
+        template<typename TRawSelf, typename... TItems>
         consteval bool CListHelpFunction()
         {
             using Self = std::remove_const_t<TRawSelf>;
 
-            if constexpr (sizeof...(TItem) == 1)
+            if constexpr (sizeof...(TItems) == 1)
             {
                 return requires
                 (
                     Self self,
                     std::size_t index,
-                    std::tuple<TItem...> items,
+                    std::tuple<TItems...> items,
                     decltype(std::get<0>(items)) item,
                     std::ranges::iterator_t<const Self> const_iterator
                 )
@@ -36,7 +36,7 @@ namespace Platform::Interfaces
                     { self.clear() };
                 };
             }
-            if constexpr (sizeof...(TItem) == 0)
+            if constexpr (sizeof...(TItems) == 0)
             {
                 return requires
                 (
@@ -58,8 +58,8 @@ namespace Platform::Interfaces
         }
     }
 
-    template<typename TSelf, typename... TItem>
-    concept CList = CArray<TSelf> && Internal::CListHelpFunction<TSelf, TItem...>();
+    template<typename TSelf, typename... TItems>
+    concept CList = CArray<TSelf> && Internal::CListHelpFunction<TSelf, TItems...>();
 
     template<CList TSelf>
     struct List : Enumerable<TSelf> {};
