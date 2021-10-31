@@ -5,34 +5,32 @@ namespace Platform::Interfaces::Tests
 {
     TEST(CompileTests, Counter)
     {
-        struct EmptyCounter: ICounter<int>
+        struct EmptyCounter1: ICounter<int>
         {
             int Count() { return {}; }
         };
-        // You can use
-        static_assert(CCounter<EmptyCounter, int>);
-        // to avoid mismatching the interface at compile time
+        static_assert(CCounter<EmptyCounter1, int>);
 
-        struct EmptyCounterInt: public ICounter<int, int>
+        struct EmptyCounter2: public ICounter<int, int>
         {
-            int Count(int argument) { return {}; }
+            int Count(int) { return {}; }
         };
-        static_assert(CCounter<EmptyCounterInt, int, int>);
+        static_assert(CCounter<EmptyCounter2, int, int>);
 
         {
-            CCounter<int> auto counter = EmptyCounter{};
+            CCounter<int> auto counter = EmptyCounter1{};
 
-            ASSERT_TRUE((CCounter<EmptyCounter, int>));
-            ASSERT_FALSE((CCounter<EmptyCounter, float>));
+            ASSERT_TRUE((CCounter<EmptyCounter1, int>));
+            ASSERT_FALSE((CCounter<EmptyCounter1, float>));
         }
 
         {
-            CCounter<int, int> auto counter = EmptyCounterInt{};
+            CCounter<int, int> auto counter = EmptyCounter2{};
 
-            ASSERT_TRUE((CCounter<EmptyCounterInt, int, int>));
-            ASSERT_TRUE((CCounter<EmptyCounterInt, int, float>));
-            ASSERT_FALSE((CCounter<EmptyCounterInt, float, int>));
-            ASSERT_FALSE((CCounter<EmptyCounterInt, float, float>));
+            ASSERT_TRUE((CCounter<EmptyCounter2, int, int>));
+            ASSERT_TRUE((CCounter<EmptyCounter2, int, float>));
+            ASSERT_FALSE((CCounter<EmptyCounter2, float, int>));
+            ASSERT_FALSE((CCounter<EmptyCounter2, float, float>));
         }
     }
 
@@ -40,7 +38,7 @@ namespace Platform::Interfaces::Tests
     {
         struct EmptyCriterionMatcher: public ICriterionMatcher<int>
         {
-            bool IsMatched(int argument) { return {}; }
+            bool IsMatched(int) { return {}; }
         };
         static_assert(CCriterionMatcher<EmptyCriterionMatcher, int>);
 
@@ -89,57 +87,57 @@ namespace Platform::Interfaces::Tests
 
     TEST(CompileTests, Provider)
     {
-        struct EmptyProvider: public IProvider<int>
+        struct EmptyProvider1: public IProvider<int>
         {
             int Get() { return {}; }
         };
-        static_assert(CProvider<EmptyProvider, int>);
+        static_assert(CProvider<EmptyProvider1, int>);
 
-        struct EmptyIntProvider: public IProvider<int, int>
+        struct EmptyProvider2: public IProvider<int, int>
         {
-            int Get(int argument) { return {}; }
+            int Get(int) { return {}; }
         };
-        static_assert(CProvider<EmptyIntProvider, int, int>);
+        static_assert(CProvider<EmptyProvider2, int, int>);
 
         {
-            CProvider<int> auto provider = EmptyProvider{};
+            CProvider<int> auto provider = EmptyProvider1{};
 
-            ASSERT_TRUE((CProvider<EmptyProvider, int>));
+            ASSERT_TRUE((CProvider<EmptyProvider1, int>));
         }
 
         {
-            CProvider<int, int> auto provider = EmptyIntProvider{};
+            CProvider<int, int> auto provider = EmptyProvider2{};
 
-            ASSERT_TRUE((CProvider<EmptyIntProvider, int, int>));
-            ASSERT_TRUE((CProvider<EmptyIntProvider, int, float>));
+            ASSERT_TRUE((CProvider<EmptyProvider2, int, int>));
+            ASSERT_TRUE((CProvider<EmptyProvider2, int, float>));
         }
     }
 
     TEST(CompileTests, Setter)
     {
-        struct EmptySetter: public ISetter<int>
+        struct EmptySetter1: public ISetter<int>
         {
-            void Set(int value) { }
+            void Set(int) { }
         };
-        static_assert(CSetter<EmptySetter, int>);
+        static_assert(CSetter<EmptySetter1, int>);
 
-        struct EmptyIntSetter: public ISetter<int, int>
+        struct EmptySetter2: public ISetter<int, int>
         {
-            void Set(int argument, int value) {  }
+            void Set(int, int) {  }
         };
-        static_assert(CSetter<EmptyIntSetter, int, int>);
+        static_assert(CSetter<EmptySetter2, int, int>);
 
         {
-            CSetter<int> auto provider = EmptySetter{};
+            CSetter<int> auto provider = EmptySetter1{};
 
-            ASSERT_TRUE((CSetter<EmptySetter, int>));
+            ASSERT_TRUE((CSetter<EmptySetter1, int>));
         }
 
         {
-            CSetter<int, int> auto provider = EmptyIntSetter{};
+            CSetter<int, int> auto provider = EmptySetter2{};
 
-            ASSERT_TRUE((CSetter<EmptyIntSetter, int, int>));
-            ASSERT_TRUE((CSetter<EmptyIntSetter, int, float>));
+            ASSERT_TRUE((CSetter<EmptySetter2, int, int>));
+            ASSERT_TRUE((CSetter<EmptySetter2, int, float>));
         }
     }
 
@@ -147,8 +145,8 @@ namespace Platform::Interfaces::Tests
     {
         struct EmptyProperty: public IProperty<int&, int> 
         {
-            void Set(int& object, int value) { }
-            int Get(int& object) { return {}; }
+            void Set(int&, int) { }
+            int Get(int&) { return {}; }
         };
         // TODO can be use in concepts TObject& instead of TObject
         static_assert(CProperty<EmptyProperty, int&, int>);
