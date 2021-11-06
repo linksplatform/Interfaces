@@ -148,7 +148,6 @@ namespace Platform::Interfaces::Tests
             void Set(int&, int) { }
             int Get(int&) { return {}; }
         };
-        // TODO can be use in concepts TObject& instead of TObject
         static_assert(CProperty<EmptyProperty, int&, int>);
 
         {
