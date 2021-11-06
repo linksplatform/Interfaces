@@ -1,8 +1,12 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+#include <concepts>
+
+namespace Platform::Interfaces
 {
-    template <typename Self, typename TProvider, typename... TArgument>
+    template <typename TSelf, typename TProvider, typename... TArgument>
     concept CProvider = sizeof...(TArgument) <= 1 &&
-    requires(Self self, TArgument... argument)
+    requires(TSelf self, TArgument... argument)
     {
         { self.Get(argument...) } -> std::same_as<TProvider>;
     };

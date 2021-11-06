@@ -1,7 +1,11 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+#include <concepts>
+
+namespace Platform::Interfaces
 {
-    template <typename Self, typename TArgument>
-    concept CCriterionMatcher = requires(Self self, TArgument argument)
+    template <typename TSelf, typename TArgument>
+    concept CCriterionMatcher = requires(TSelf self, TArgument argument)
     {
         { self.IsMatched(argument) } -> std::same_as<bool>;
     };

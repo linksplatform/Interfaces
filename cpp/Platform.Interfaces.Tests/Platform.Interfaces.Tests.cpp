@@ -3,162 +3,159 @@
 
 namespace Platform::Interfaces::Tests
 {
-    TEST(CompileTests, ICounter)
+    TEST(CompileTests, Counter)
     {
-        struct EmptyCounter
+        struct EmptyCounter1: ICounter<int>
         {
             int Count() { return {}; }
         };
-        // You can use
-        static_assert(ICounter<EmptyCounter, int>);
-        // to avoid mismatching the interface at compile time
+        static_assert(CCounter<EmptyCounter1, int>);
 
-        struct EmptyCounterInt
+        struct EmptyCounter2: public ICounter<int, int>
         {
-            int Count(int argument) { return {}; }
+            int Count(int) { return {}; }
         };
-        static_assert(ICounter<EmptyCounterInt, int, int>);
+        static_assert(CCounter<EmptyCounter2, int, int>);
 
         {
-            ICounter<int> auto counter = EmptyCounter{};
+            CCounter<int> auto counter = EmptyCounter1{};
 
-            ASSERT_TRUE((ICounter<EmptyCounter, int>));
-            ASSERT_FALSE((ICounter<EmptyCounter, float>));
+            ASSERT_TRUE((CCounter<EmptyCounter1, int>));
+            ASSERT_FALSE((CCounter<EmptyCounter1, float>));
         }
 
         {
-            ICounter<int, int> auto counter = EmptyCounterInt{};
+            CCounter<int, int> auto counter = EmptyCounter2{};
 
-            ASSERT_TRUE((ICounter<EmptyCounterInt, int, int>));
-            ASSERT_TRUE((ICounter<EmptyCounterInt, int, float>));
-            ASSERT_FALSE((ICounter<EmptyCounterInt, float, int>));
-            ASSERT_FALSE((ICounter<EmptyCounterInt, float, float>));
+            ASSERT_TRUE((CCounter<EmptyCounter2, int, int>));
+            ASSERT_TRUE((CCounter<EmptyCounter2, int, float>));
+            ASSERT_FALSE((CCounter<EmptyCounter2, float, int>));
+            ASSERT_FALSE((CCounter<EmptyCounter2, float, float>));
         }
     }
 
-    TEST(CompileTests, ICriterionMatcher)
+    TEST(CompileTests, CriterionMatcher)
     {
-        struct EmptyCriterionMatcher
+        struct EmptyCriterionMatcher: public ICriterionMatcher<int>
         {
-            bool IsMatched(int argument) { return {}; }
+            bool IsMatched(int) { return {}; }
         };
-        static_assert(ICriterionMatcher<EmptyCriterionMatcher, int>);
+        static_assert(CCriterionMatcher<EmptyCriterionMatcher, int>);
 
         {
-            ICriterionMatcher<int> auto criterionMatcher = EmptyCriterionMatcher{};
+            CCriterionMatcher<int> auto criterionMatcher = EmptyCriterionMatcher{};
 
-            ASSERT_TRUE((ICriterionMatcher<EmptyCriterionMatcher, int>));
-            ASSERT_TRUE((ICriterionMatcher<EmptyCriterionMatcher, float>));
+            ASSERT_TRUE((CCriterionMatcher<EmptyCriterionMatcher, int>));
+            ASSERT_TRUE((CCriterionMatcher<EmptyCriterionMatcher, float>));
         }
     }
 
-    TEST(CompileTests, IFactory)
+    TEST(CompileTests, Factory)
     {
-        struct EmptyIntFactory
+        struct EmptyIntFactory: public IFactory<int>
         {
             int Create() { return {}; }
         };
-        static_assert(IFactory<EmptyIntFactory, int>);
+        static_assert(CFactory<EmptyIntFactory, int>);
 
         {
-            IFactory<int> auto factory = EmptyIntFactory{};
+            CFactory<int> auto factory = EmptyIntFactory{};
 
-            ASSERT_TRUE((IFactory<EmptyIntFactory, int>));
-            ASSERT_FALSE((IFactory<EmptyIntFactory, float>));
+            ASSERT_TRUE((CFactory<EmptyIntFactory, int>));
+            ASSERT_FALSE((CFactory<EmptyIntFactory, float>));
         }
     }
 
-    TEST(CompileTests, IProperties)
+    TEST(CompileTests, Properties)
     {
-        struct EmptyProperties
+        struct EmptyProperties: public IProperties<int, int, int>
         {
-            void SetValue(std::string object, int argument, std::byte value) {}
+            void SetValue(int, int, int) {}
 
-            std::byte GetValue(const std::string& object, int argument) { return std::byte{}; }
+            int GetValue(int, int) { return {}; }
         };
-        static_assert(IProperties<EmptyProperties, std::string, int, std::byte>);
+        static_assert(CProperties<EmptyProperties, int, int, int>);
 
         {
-            IProperties<std::string, int, std::byte> auto properties = EmptyProperties{};
+            CProperties<int, int, int> auto properties = EmptyProperties{};
 
-            ASSERT_TRUE((IProperties<EmptyProperties, std::string, int, std::byte>));
-            ASSERT_TRUE((IProperties<EmptyProperties, std::string&, int, std::byte>));
-            ASSERT_TRUE((IProperties<EmptyProperties, const std::string&, int, std::byte>));
+            ASSERT_TRUE((CProperties<EmptyProperties, int, int, int>));
+            ASSERT_TRUE((CProperties<EmptyProperties, int&, int, int>));
+            ASSERT_TRUE((CProperties<EmptyProperties, const int&, int, int>));
         }
     }
 
-    TEST(CompileTests, IProvider)
+    TEST(CompileTests, Provider)
     {
-        struct EmptyProvider
+        struct EmptyProvider1: public IProvider<int>
         {
-            std::byte Get() { return std::byte{}; }
+            int Get() { return {}; }
         };
-        static_assert(IProvider<EmptyProvider, std::byte>);
+        static_assert(CProvider<EmptyProvider1, int>);
 
-        struct EmptyIntProvider
+        struct EmptyProvider2: public IProvider<int, int>
         {
-            std::byte Get(int argument) { return std::byte{}; }
+            int Get(int) { return {}; }
         };
-        static_assert(IProvider<EmptyIntProvider, std::byte, int>);
+        static_assert(CProvider<EmptyProvider2, int, int>);
 
         {
-            IProvider<std::byte> auto provider = EmptyProvider{};
+            CProvider<int> auto provider = EmptyProvider1{};
 
-            ASSERT_TRUE((IProvider<EmptyProvider, std::byte>));
+            ASSERT_TRUE((CProvider<EmptyProvider1, int>));
         }
 
         {
-            IProvider<std::byte, int> auto provider = EmptyIntProvider{};
+            CProvider<int, int> auto provider = EmptyProvider2{};
 
-            ASSERT_TRUE((IProvider<EmptyIntProvider, std::byte, int>));
-            ASSERT_TRUE((IProvider<EmptyIntProvider, std::byte, float>));
+            ASSERT_TRUE((CProvider<EmptyProvider2, int, int>));
+            ASSERT_TRUE((CProvider<EmptyProvider2, int, float>));
         }
     }
 
-    TEST(CompileTests, ISetter)
+    TEST(CompileTests, Setter)
     {
-        struct EmptySetter
+        struct EmptySetter1: public ISetter<int>
         {
-            void Set(std::byte value) { }
+            void Set(int) { }
         };
-        static_assert(ISetter<EmptySetter, std::byte>);
+        static_assert(CSetter<EmptySetter1, int>);
 
-        struct EmptyIntSetter
+        struct EmptySetter2: public ISetter<int, int>
         {
-            void Set(int argument, std::byte value) {  }
+            void Set(int, int) {  }
         };
-        static_assert(ISetter<EmptyIntSetter, std::byte, int>);
+        static_assert(CSetter<EmptySetter2, int, int>);
 
         {
-            ISetter<std::byte> auto provider = EmptySetter{};
+            CSetter<int> auto provider = EmptySetter1{};
 
-            ASSERT_TRUE((ISetter<EmptySetter, std::byte>));
+            ASSERT_TRUE((CSetter<EmptySetter1, int>));
         }
 
         {
-            ISetter<std::byte, int> auto provider = EmptyIntSetter{};
+            CSetter<int, int> auto provider = EmptySetter2{};
 
-            ASSERT_TRUE((ISetter<EmptyIntSetter, std::byte, int>));
-            ASSERT_TRUE((ISetter<EmptyIntSetter, std::byte, float>));
+            ASSERT_TRUE((CSetter<EmptySetter2, int, int>));
+            ASSERT_TRUE((CSetter<EmptySetter2, int, float>));
         }
     }
 
-    TEST(CompileTests, IProperty)
+    TEST(CompileTests, Property)
     {
-        struct EmptyProperty
+        struct EmptyProperty: public IProperty<int&, int> 
         {
-            void Set(std::string& object, std::byte value) { }
-            std::byte Get(std::string& object) { return {}; }
+            void Set(int&, int) { }
+            int Get(int&) { return {}; }
         };
-        // TODO can be use in concepts TObject& instead of TObject
-        static_assert(IProperty<EmptyProperty, std::string&, std::byte>);
+        static_assert(CProperty<EmptyProperty, int&, int>);
 
         {
-            IProperty<std::string&, std::byte> auto provider = EmptyProperty{};
+            CProperty<int&, int> auto provider = EmptyProperty{};
 
-            ASSERT_TRUE((IProperty<EmptyProperty, std::string&, std::byte>));
-            ASSERT_TRUE((IProvider<EmptyProperty, std::byte, std::string&>));
-            ASSERT_TRUE((ISetter<EmptyProperty, std::byte, std::string&>));
+            ASSERT_TRUE((CProperty<EmptyProperty, int&, int>));
+            ASSERT_TRUE((CProvider<EmptyProperty, int, int&>));
+            ASSERT_TRUE((CSetter<EmptyProperty, int, int&>));
         }
     }
 }

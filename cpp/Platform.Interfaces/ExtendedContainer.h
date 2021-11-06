@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Macros.h"
+#include "ExtendedContainerBase.h"
 
 namespace Platform::Interfaces
 {

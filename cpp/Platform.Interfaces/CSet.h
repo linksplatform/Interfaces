@@ -1,18 +1,27 @@
+#pragma once
+
+#include <type_traits>
+#include <tuple>
+#include <ranges>
+#include <concepts>
+
+#include "CEnumerable.h"
+
 namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename RawSelf, typename... Items>
+        template<typename TRawSelf, typename... TItems>
         consteval bool CSetHelpFunction()
         {
-            using Self = std::remove_const_t<RawSelf>;
+            using Self = std::remove_const_t<TRawSelf>;
 
-            if constexpr (sizeof...(Items) == 1)
+            if constexpr (sizeof...(TItems) == 1)
             {
                 return requires
                 (
                     Self self,
-                    std::tuple<Items...> items,
+                    std::tuple<TItems...> items,
                     decltype(std::get<0>(items)) item
                 )
                 {
@@ -27,7 +36,7 @@ namespace Platform::Interfaces
                     requires std::ranges::forward_range<Self>;
                 };
             }
-            if constexpr (sizeof...(Items) == 0)
+            if constexpr (sizeof...(TItems) == 0)
             {
                 return requires
                 (
@@ -52,9 +61,9 @@ namespace Platform::Interfaces
 
     }
 
-    template<typename Self, typename... Item>
-    concept CSet = CEnumerable<Self> && Internal::CSetHelpFunction<Self, Item...>();
+    template<typename TSelf, typename... TItems>
+    concept CSet = CEnumerable<TSelf> && Internal::CSetHelpFunction<TSelf, TItems...>();
 
-    template<CSet Self>
-    struct Set : Enumerable<Self> {};
+    template<CSet TSelf>
+    struct Set : Enumerable<TSelf> {};
 }

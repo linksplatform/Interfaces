@@ -1,19 +1,30 @@
+#pragma once
+
+#include <type_traits>
+#include <cstddef>
+#include <tuple>
+#include <ranges>
+#include <concepts>
+
+#include "CEnumerable.h"
+#include "CArray.h"
+
 namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename RawSelf, typename... Item>
+        template<typename TRawSelf, typename... TItems>
         consteval bool CListHelpFunction()
         {
-            using Self = std::remove_const_t<RawSelf>;
+            using Self = std::remove_const_t<TRawSelf>;
 
-            if constexpr (sizeof...(Item) == 1)
+            if constexpr (sizeof...(TItems) == 1)
             {
                 return requires
                 (
                     Self self,
                     std::size_t index,
-                    std::tuple<Item...> items,
+                    std::tuple<TItems...> items,
                     decltype(std::get<0>(items)) item,
                     std::ranges::iterator_t<const Self> const_iterator
                 )
@@ -25,7 +36,7 @@ namespace Platform::Interfaces
                     { self.clear() };
                 };
             }
-            if constexpr (sizeof...(Item) == 0)
+            if constexpr (sizeof...(TItems) == 0)
             {
                 return requires
                 (
@@ -47,9 +58,9 @@ namespace Platform::Interfaces
         }
     }
 
-    template<typename Self, typename... Item>
-    concept CList = CArray<Self> && Internal::CListHelpFunction<Self, Item...>();
+    template<typename TSelf, typename... TItems>
+    concept CList = CArray<TSelf> && Internal::CListHelpFunction<TSelf, TItems...>();
 
-    template<CList Self>
-    struct List : Enumerable<Self> {};
+    template<CList TSelf>
+    struct List : Enumerable<TSelf> {};
 }

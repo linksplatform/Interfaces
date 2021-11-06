@@ -1,7 +1,11 @@
-﻿namespace Platform::Interfaces
+﻿#pragma once
+
+#include <concepts>
+
+namespace Platform::Interfaces
 {
-    template <typename Self, typename TProduct>
-    concept CFactory = requires(Self self)
+    template <typename TSelf, typename TProduct>
+    concept CFactory = requires(TSelf self)
     {
         { self.Create() } -> std::same_as<TProduct>;
     };

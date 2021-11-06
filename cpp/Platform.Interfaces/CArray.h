@@ -1,34 +1,45 @@
+#pragma once
+
+#include <concepts>
+#include <type_traits>
+#include <tuple>
+#include <ranges>
+#include <utility>
+#include <cstdio>
+
+#include "CEnumerable.h"
+
 namespace Platform::Interfaces
 {
     namespace Internal
     {
-        template<typename Self, typename... Items>
+        template<typename TSelf, typename... TItems>
         consteval bool CArrayHelpFunction()
         {
-            constexpr bool member_indexator = requires(Self self, std::size_t index)
+            constexpr bool member_indexator = requires(TSelf self, std::size_t index)
             {
-                { self[index] } -> std::same_as<typename Enumerable<Self>::ItemReference>;
+                { self[index] } -> std::same_as<typename Enumerable<TSelf>::ItemReference>;
             };
 
-            if constexpr (sizeof...(Items) == 1)
+            if constexpr (sizeof...(TItems) == 1)
             {
-                using SelfItem = typename Enumerable<Self>::Item;
-                using RequiredItem = std::remove_reference_t<decltype(std::get<0>(std::declval<std::tuple<Items...>>()))>;
+                using SelfItem = typename Enumerable<TSelf>::Item;
+                using RequiredItem = std::remove_reference_t<decltype(std::get<0>(std::declval<std::tuple<TItems...>>()))>;
 
-                return member_indexator && std::ranges::random_access_range<Self> && std::same_as<SelfItem, RequiredItem>;
+                return member_indexator && std::ranges::random_access_range<TSelf> && std::same_as<SelfItem, RequiredItem>;
             }
-            if constexpr (sizeof...(Items) == 0)
+            if constexpr (sizeof...(TItems) == 0)
             {
-                return member_indexator &&  std::ranges::random_access_range<Self>;
+                return member_indexator &&  std::ranges::random_access_range<TSelf>;
             }
 
             return false;
         }
     }
 
-    template<typename Self, typename... Item>
-    concept CArray = CEnumerable<Self> && Internal::CArrayHelpFunction<Self, Item...>();
+    template<typename TSelf, typename... TItems>
+    concept CArray = CEnumerable<TSelf> && Internal::CArrayHelpFunction<TSelf, TItems...>();
 
-    template<CArray Self>
-    struct Array : Enumerable<Self> {};
+    template<CArray TSelf>
+    struct Array : Enumerable<TSelf> {};
 }
