@@ -2,9 +2,9 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/93857535a2214ba9b512e1a88787d461)](https://app.codacy.com/gh/linksplatform/Interfaces?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Interfaces&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/interfaces/badge)](https://www.codefactor.io/repository/github/linksplatform/interfaces)
 
-| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces)](https://www.nuget.org/packages/Platform.Interfaces) | C# |
+| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces.TemplateLibrary)](https://www.nuget.org/packages/Platform.Interfaces.TemplateLibrary) [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/platform.interfaces.svg)](https://conan.io/center/platform.interfaces) | __C++__  |
 |-|-|
-| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces.TemplateLibrary)](https://www.nuget.org/packages/Platform.Interfaces.TemplateLibrary)  | __C++__  |
+| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces)](https://www.nuget.org/packages/Platform.Interfaces) | C# |
 
 # [Interfaces](https://github.com/linksplatform/Interfaces)
 
