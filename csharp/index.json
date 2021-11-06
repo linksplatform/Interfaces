@@ -57,6 +57,6 @@
   "README.html": {
     "href": "README.html",
     "title": "Interfaces | LinksPlatform's Platform.Interfaces Library",
-    "keywords": "C# C++ Interfaces LinksPlatform's Platform.Interfaces Class Library Contains common interfaces that did not fit in any major category. Namespace: Platform.Interfaces Forked from: Konard/LinksPlatform/Platform/Platform.Helpers NuGet package: Platform.Interfaces Documentation Interface IFactory<TProduct> . PDF file with code for e-readers. Dependent libraries Platform.Collections Platform.Setters Platform.Timestamps"
+    "keywords": "C++ C# Interfaces LinksPlatform's Platform.Interfaces Class Library Contains common interfaces that did not fit in any major category. Namespace: Platform.Interfaces Forked from: Konard/LinksPlatform/Platform/Platform.Helpers NuGet package: Platform.Interfaces Documentation Interface IFactory<TProduct> . PDF file with code for e-readers. Dependent libraries Platform.Collections Platform.Setters Platform.Timestamps"
   }
 }
