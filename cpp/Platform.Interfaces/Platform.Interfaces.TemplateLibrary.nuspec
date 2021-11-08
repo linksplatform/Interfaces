@@ -25,19 +25,36 @@
   <files>
     <file src="icon.png" target="images/icon.png" />
     <file src="Platform.Interfaces.TemplateLibrary.targets" target="build\native\Platform.Interfaces.TemplateLibrary.targets" />
-    <file src="Platform.Interfaces.h" target="lib\native\include\Platform.Interfaces.h" />
-    <file src="ICounter.h" target="lib\native\include\ICounter.h" />
-    <file src="ICriterionMatcher.h" target="lib\native\include\ICriterionMatcher.h" />
-    <file src="IFactory.h" target="lib\native\include\IFactory.h" />
-    <file src="IProperties.h" target="lib\native\include\IProperties.h" />
-    <file src="IProperty.h" target="lib\native\include\IProperty.h" />
-    <file src="IProvider.h" target="lib\native\include\IProvider.h" />
-    <file src="ISetter.h" target="lib\native\include\ISetter.h" />
-    <file src="IEnumerable.h" target="lib\native\include\IEnumerable.h" />
-    <file src="IArray.h" target="lib\native\include\IArray.h" />
-    <file src="IList.h" target="lib\native\include\IList.h" />
-    <file src="IDictionary.h" target="lib\native\include\IDictionary.h" />
-    <file src="ISet.h" target="lib\native\include\ISet.h" />
-    <file src="Polymorph.h" target="lib\native\include\Polymorph.h" />
+    <file src="CArray.h" target="lib\native\include\CArray.h" />
+	<file src="CCounter.h" target="lib\native\include\CCounter.h" />
+	<file src="CCriterionMatcher.h" target="lib\native\include\CCriterionMatcher.h" />
+	<file src="CDictionary.h" target="lib\native\include\CDictionary.h" />
+	<file src="CEnumerable.h" target="lib\native\include\CEnumerable.h" />
+	<file src="CFactory.h" target="lib\native\include\CFactory.h" />
+	<file src="CList.h" target="lib\native\include\CList.h" />
+	<file src="CProperties.h" target="lib\native\include\CProperties.h" />
+	<file src="CProperty.h" target="lib\native\include\CProperty.h" />
+	<file src="CProvider.h" target="lib\native\include\CProvider.h" />
+	<file src="CSet.h" target="lib\native\include\CSet.h" />
+	<file src="CSetter.h" target="lib\native\include\CSetter.h" />
+	<file src="ExtendedBase.h" target="lib\native\include\ExtendedBase.h" />
+	<file src="ExtendedContainerBase.h" target="lib\native\include\ExtendedContainerBase.h" />
+	<file src="ExtendedContainer.h" target="lib\native\include\ExtendedContainer.h" />
+	<file src="Extended.h" target="lib\native\include\Extended.h" />
+	<file src="ExtendedReferenceBase.h" target="lib\native\include\ExtendedReferenceBase.h" />
+	<file src="ExtendedReference.h" target="lib\native\include\ExtendedReference.h" />
+	<file src="ICounter[TResult].h" target="lib\native\include\ICounter[TResult].h" />
+	<file src="ICounter[TResult,TArgument].h" target="lib\native\include\ICounter[TResult,TArgument].h" />
+	<file src="ICriterionMatcher.h" target="lib\native\include\ICriterionMatcher.h" />
+	<file src="IFactory.h" target="lib\native\include\IFactory.h" />
+	<file src="IProperties.h" target="lib\native\include\IProperties.h" />
+	<file src="IProperty.h" target="lib\native\include\IProperty.h" />
+	<file src="IProvider[TProvided].h" target="lib\native\include\IProvider[TProvided].h" />
+	<file src="IProvider[TProvided,TArgument].h" target="lib\native\include\IProvider[TProvided,TArgument].h" />
+	<file src="ISetter[TValue].h" target="lib\native\include\ISetter[TValue].h" />
+	<file src="ISetter[TValue,TArgument].h" target="lib\native\include\ISetter[TValue,TArgument].h" />
+	<file src="Macros.h" target="lib\native\include\Macros.h" />
+	<file src="Platform.Interfaces.h" target="lib\native\include\Platform.Interfaces.h" />
+	<file src="Polymorph.h" target="lib\native\include\Polymorph.h" />
   </files>
 </package>
