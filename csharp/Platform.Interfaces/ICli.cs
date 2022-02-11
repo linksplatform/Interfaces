@@ -4,8 +4,7 @@ namespace Platform.Interfaces;
 /// <para>Defines command line interfaces.</para>
 /// <para>Определяет интерфейс коммандной строки.</para>
 /// </summary>
-/// <typeparam name="TLinkAddress"></typeparam>
-public interface ICli<TLinkAddress>
+public interface ICli
 {
     /// <summary>
     /// <para>Runs command line interface.</para>
