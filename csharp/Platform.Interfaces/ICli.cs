@@ -12,7 +12,7 @@ public interface ICli
     /// </summary>
     /// <param name="args">
     /// <para>Command line arguments.</para>
-    /// <para>Аргументы коммандной строки/</para>
+    /// <para>Аргументы для команды.</para>
     /// </param>
     /// <returns>
     /// <para>Returns an exit code.</para>
