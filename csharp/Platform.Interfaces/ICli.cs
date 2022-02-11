@@ -15,7 +15,7 @@ public interface ICli
     /// <para>Аргументы для команды.</para>
     /// </param>
     /// <returns>
-    /// <para>Returns an command exit code.</para>
+    /// <para>Returns command's exit code.</para>
     /// <para>Возвращает код выхода команды.</para>
     /// </returns>
     int Run(params string[] args);
