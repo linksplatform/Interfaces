@@ -1,7 +1,7 @@
 namespace Platform.Interfaces;
 
 /// <summary>
-/// <para>Defines command line interfaces for command that interacts with an operational system.</para>
+/// <para>Defines command line interfaces for command that interacts with an operating system.</para>
 /// <para>Определяет интерфейс командной строки, для команды взаимодействующей с операционной системой.</para>
 /// </summary>
 public interface ICli
