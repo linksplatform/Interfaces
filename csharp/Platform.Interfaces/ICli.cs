@@ -7,7 +7,7 @@ namespace Platform.Interfaces;
 public interface ICli
 {
     /// <summary>
-    /// <para>Runs command.</para>
+    /// <para>Runs a command.</para>
     /// <para>Запускает команду.</para>
     /// </summary>
     /// <param name="args">
