@@ -14,5 +14,9 @@ public interface ICli
     /// <para>Command line arguments.</para>
     /// <para>Аргументы коммандной строки/</para>
     /// </param>
-    void Run(params string[] args);
+    /// <returns>
+    /// <para>Returns an exit code.</para>
+    /// <para>Возвращает код выхода.</para>
+    /// </returns>
+    int Run(params string[] args);
 }
