@@ -8,7 +8,7 @@ public interface ICli
 {
     /// <summary>
     /// <para>Runs commands.</para>
-    /// <para>Запускает коммандну.</para>
+    /// <para>Запускает команду.</para>
     /// </summary>
     /// <param name="args">
     /// <para>Command line arguments.</para>
