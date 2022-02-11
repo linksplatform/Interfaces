@@ -11,7 +11,7 @@ public interface ICli
     /// <para>Запускает команду.</para>
     /// </summary>
     /// <param name="args">
-    /// <para>Arguments for command.</para>
+    /// <para>Arguments for a command.</para>
     /// <para>Аргументы для команды.</para>
     /// </param>
     /// <returns>
