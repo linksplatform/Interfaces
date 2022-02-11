@@ -2,7 +2,7 @@ namespace Platform.Interfaces;
 
 /// <summary>
 /// <para>Defines command line interfaces.</para>
-/// <para>Определяет интерфейс коммандной строки.</para>
+/// <para>Определяет интерфейс командной строки, для команды взаимодействующей с операционной системой.</para>
 /// </summary>
 public interface ICli
 {
