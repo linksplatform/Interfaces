@@ -7,8 +7,8 @@ namespace Platform.Interfaces;
 public interface ICli
 {
     /// <summary>
-    /// <para>Runs command line interface.</para>
-    /// <para>Запускает интерфейс коммандной строки.</para>
+    /// <para>Runs commands.</para>
+    /// <para>Запускает коммандну.</para>
     /// </summary>
     /// <param name="args">
     /// <para>Command line arguments.</para>
