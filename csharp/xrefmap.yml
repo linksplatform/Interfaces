@@ -7,6 +7,28 @@ references:
   commentId: N:Platform.Interfaces
   fullName: Platform.Interfaces
   nameWithType: Platform.Interfaces
+- uid: Platform.Interfaces.ICli
+  name: ICli
+  href: api/Platform.Interfaces.ICli.html
+  commentId: T:Platform.Interfaces.ICli
+  fullName: Platform.Interfaces.ICli
+  nameWithType: ICli
+- uid: Platform.Interfaces.ICli.Run(System.String[])
+  name: Run(String[])
+  href: api/Platform.Interfaces.ICli.html#Platform_Interfaces_ICli_Run_System_String___
+  commentId: M:Platform.Interfaces.ICli.Run(System.String[])
+  name.vb: Run(String())
+  fullName: Platform.Interfaces.ICli.Run(System.String[])
+  fullName.vb: Platform.Interfaces.ICli.Run(System.String())
+  nameWithType: ICli.Run(String[])
+  nameWithType.vb: ICli.Run(String())
+- uid: Platform.Interfaces.ICli.Run*
+  name: Run
+  href: api/Platform.Interfaces.ICli.html#Platform_Interfaces_ICli_Run_
+  commentId: Overload:Platform.Interfaces.ICli.Run
+  isSpec: "True"
+  fullName: Platform.Interfaces.ICli.Run
+  nameWithType: ICli.Run
 - uid: Platform.Interfaces.ICounter`1
   name: ICounter<TResult>
   href: api/Platform.Interfaces.ICounter-1.html
