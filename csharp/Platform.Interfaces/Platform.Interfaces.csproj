@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Interfaces Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
-    <VersionPrefix>0.4.1</VersionPrefix>
+    <VersionPrefix>0.4.2</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net472;netstandard2.0;netstandard2.1;net5;net6</TargetFrameworks>
     <AssemblyName>Platform.Interfaces</AssemblyName>
@@ -24,8 +24,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Microsoft.SourceLink.GitHub dependency is updated from 1.0.0 to 1.1.1.
-ICli interface is added.</PackageReleaseNotes>
+    <PackageReleaseNotes>Dotnet 6 support is added.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
