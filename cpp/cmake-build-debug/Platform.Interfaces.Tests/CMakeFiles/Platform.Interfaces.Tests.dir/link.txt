@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Platform.Interfaces.Tests.dir/Platform.Interfaces.Tests.cpp.o -o Platform.Interfaces.Tests  ../lib/libgtestd.a ../lib/libgtest_maind.a ../lib/libgtestd.a -lpthread 
