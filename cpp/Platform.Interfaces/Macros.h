@@ -30,6 +30,19 @@ TFirstExtender<                                                                 
     >                                                                                         \
 >
 
+#define FACADED_BASE_TYPE(TExtended, TFacade, TExtendable, TFirstExtender, TExtenders)        \
+TFirstExtender<                                                                               \
+    TFacade,                                                                                  \
+    std::conditional_t<                                                                       \
+        sizeof...(TExtenders) >= 2,                                                           \
+        TExtended<TFacade, TExtendable, TExtenders...>,                                       \
+        std::tuple_element_t<                                                                 \
+            0,                                                                                \
+            std::tuple<TExtenders<TFacade, TExtendable>...>                                   \
+        >                                                                                     \
+    >                                                                                         \
+>
+
 #define USE_ALL_BASE_CONSTRUCTORS(TSelf, TBase)                                               \
     template <typename ...TParams>                                                            \
     TSelf(TParams&&... params) : TBase(std::forward<TParams>(params)...) {}
