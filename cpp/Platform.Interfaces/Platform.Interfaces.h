@@ -34,3 +34,7 @@
 #include "ExtendedContainerBase.h"
 #include "ExtendedReference.h"
 #include "ExtendedReferenceBase.h"
+
+#include "FacadedBase.h"
+#include "FacadedIntermediate.h"
+#include "Facaded.h"
