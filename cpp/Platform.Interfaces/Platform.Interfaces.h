@@ -35,6 +35,6 @@
 #include "ExtendedReference.h"
 #include "ExtendedReferenceBase.h"
 
-#include "FacadedBase.h"
-#include "FacadedIntermediate.h"
-#include "Facaded.h"
+#include "DecoratorBase.h"
+#include "DecoratedBase.h"
+#include "Decorated.h"

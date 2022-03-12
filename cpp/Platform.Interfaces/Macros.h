@@ -30,15 +30,15 @@ TFirstExtender<                                                                 
     >                                                                                         \
 >
 
-#define FACADED_BASE_TYPE(TExtended, TFacade, TExtendable, TFirstExtender, TExtenders)        \
-TFirstExtender<                                                                               \
+#define DECORATED_BASE_TYPE(TDecoratedBase, TFacade, TDecorated, TFirstDecorator, TDecorators)\
+TFirstDecorator<                                                                              \
     TFacade,                                                                                  \
     std::conditional_t<                                                                       \
-        sizeof...(TExtenders) >= 2,                                                           \
-        TExtended<TFacade, TExtendable, TExtenders...>,                                       \
+        sizeof...(TDecorators) >= 2,                                                          \
+        TDecoratedBase<TFacade, TDecorated, TDecorators...>,                                  \
         std::tuple_element_t<                                                                 \
             0,                                                                                \
-            std::tuple<TExtenders<TFacade, TExtendable>...>                                   \
+            std::tuple<TDecorators<TFacade, TDecorated>...>                                   \
         >                                                                                     \
     >                                                                                         \
 >
