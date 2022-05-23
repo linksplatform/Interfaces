@@ -80,7 +80,7 @@ jobs:
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
           wget "$SCRIPTS_BASE_URL/publish-release.sh"
-          bash ./publish-release.sh
+          bash ./csharp-publish-release.sh
   findChangedCsFiles:
     runs-on: ubuntu-latest
     defaults:
