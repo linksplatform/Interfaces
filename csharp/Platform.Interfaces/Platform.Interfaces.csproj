@@ -36,12 +36,6 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
-  <Target Name="CSharpToCppTranslation" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'net5'">
-    <Exec Command="..\..\CSharpToCppTranslator\bin\$(Configuration)\net5\CSharpToCppTranslator.exe $(ProjectDir) $(SolutionDir)cpp\$(ProjectName)\"></Exec>
-  </Target>
 
-  <Target Name="CSharpToCppTranslation" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Unix' AND $(TargetFramework) == 'net5'">
-    <Exec Command="../../CSharpToCppTranslator/bin/$(Configuration)/net5/CSharpToCppTranslator $(ProjectDir) $(SolutionDir)cpp/$(ProjectName)/"></Exec>
-  </Target>
 
 </Project>
