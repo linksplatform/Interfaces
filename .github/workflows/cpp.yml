@@ -18,7 +18,7 @@ defaults:
 
 jobs:
   testCpp:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
         with:
@@ -41,12 +41,12 @@ jobs:
           fi
       - name: Test C++ and scan-build
         run: |
-          CXX=clang++
-          cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DLINKS_PLATFORM_TESTS=TRUE"
-          cmake_build_dir="build"
-          mkdir $cmake_build_dir && cd $cmake_build_dir
-          conan install .. -pr=linksplatform --build=missing
-          cmake .. "$cmake_flags"
+          $CXX=clang++
+          $cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DLINKS_PLATFORM_TESTS=TRUE"
+          $cmake_build_dir="build"
+          cd cpp && mkdir $cmake_build_dir && cd $cmake_build_dir
+          conan install $pwd/.. -pr=linksplatform --build=missing
+          cmake .. $cmake_flags
           cmake --build .
           ls
   pushToNuget:
