@@ -34,8 +34,8 @@ jobs:
           conan profile show linksplatform
       - name: Instll conan packages
         run: |
-          if [ -f "install-conan-dependencies.sh" ]; then
-              echo "install-conan-dependencies.sh exists."
+          if [ -f "install-local-conan-dependencies.sh" ]; then
+              echo "install-local-conan-dependencies.sh exists."
               ./install-conan-dependencies.sh
           fi
       - name: Test C++ and scan-build
