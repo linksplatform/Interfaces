@@ -5,6 +5,7 @@ on:
     branches: main
     paths:
       - 'cpp/**'
+      - '.github/workflows/cpp.yml'
 
 env:
   NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
