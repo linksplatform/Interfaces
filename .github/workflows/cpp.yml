@@ -17,7 +17,7 @@ defaults:
     working-directory: cpp
 
 jobs:
-  setup:
+  testCpp:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -44,12 +44,6 @@ jobs:
               echo "install-local-conan-dependencies.sh exists."
               ./install-conan-dependencies.sh
           fi
-  testCpp:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-        with:
-          submodules: true
       - name: Test C++ and scan-build
         run: |
           cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DLINKS_PLATFORM_TESTS=TRUE"
