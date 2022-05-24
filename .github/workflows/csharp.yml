@@ -9,7 +9,7 @@ on:
 env:
   NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/master/MultiProjectRepository
+  SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/main/MultiProjectRepository
   CSHARP_DIRECTORY_PATH: csharp
 
 jobs:
@@ -76,11 +76,19 @@ jobs:
       - uses: actions/checkout@v1
         with:
           submodules: true
+      - name: Read CSharp project information
+        if: github.event_name == 'push'
+        run: |
+          export REPOSITORY_NAME=$(basename ${{ github.repository }})
+          wget "$SCRIPTS_BASE_URL/read_csharp_package_info.sh"
+          bash ./read_csharp_package_info.sh
       - name: Publish release
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
           wget "$SCRIPTS_BASE_URL/publish-release.sh"
-          bash ./publish-release.sh
+          chmod +x ./publish-release.sh
+          wget "$SCRIPTS_BASE_URL/publish-csharp-release.sh"
+          bash ./publish-csharp-release.sh
   findChangedCsFiles:
     runs-on: ubuntu-latest
     defaults:
