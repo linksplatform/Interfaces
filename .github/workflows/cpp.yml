@@ -40,8 +40,8 @@ jobs:
           fi
       - name: Test C++ and scan-build
         run: |
-          $cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DLINKS_PLATFORM_TESTS=TRUE"
-          $cmake_build_dir="build"
+          cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DLINKS_PLATFORM_TESTS=TRUE"
+          cmake_build_dir="build"
           mkdir $cmake_build_dir && cd $cmake_build_dir
           conan install $pwd/.. -pr=linksplatform --build=missing
           cmake .. "$cmake_flags"
