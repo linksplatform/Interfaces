@@ -30,7 +30,7 @@ jobs:
           conan profile new linksplatform --detect
           conan profile update settings.compiler=clang linksplatform
           conan profile update settings.compiler.libcxx=libstdc++11 linksplatform
-          conan profile update env.CXX=g++ linksplatform
+          conan profile update env.CXX=clang++ linksplatform
           conan profile show linksplatform
       - name: Instll conan packages
         run: |
