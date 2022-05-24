@@ -15,12 +15,6 @@ list(APPEND LINKS_PLATFORM_EXTRA_FLAGS ${CONAN_USER_PLATFORM.HASHING_suggested_f
 
 add_library(${PROJECT_NAME}.Library INTERFACE)
 target_include_directories(${PROJECT_NAME}.Library INTERFACE ${PROJECT_NAME})
-target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.collections.methods)
-target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.collections)
-target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.threading)
-target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.memory)
-target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.data)
-target_include_directories(${PROJECT_NAME}.Library INTERFACE /home/freephoenix888/Documents/Programming/LinksPlatform/Data.Doublets/cpp/Platform.Data.Doublets)
 
 target_compile_options(${PROJECT_NAME}.Library INTERFACE ${LINKS_PLATFORM_EXTRA_FLAGS})
 
