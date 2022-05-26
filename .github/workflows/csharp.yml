@@ -91,11 +91,11 @@ jobs:
     - name: Get changed files using defaults
       id: getIsCsFilesChanged
       run: |
-        isCsFilesChanged = 'false'
+        isCsFilesChanged='false'
         for changedFile in ${{ steps.changed-files.outputs.all_changed_files }}; do
           if [[ $changedFile == *.cs ]]
           then
-            isCsFilesChanged = 'true'
+            isCsFilesChanged='true'
           if
         done
         echo "::set-output name=isCsFilesChanged::${isCsFilesChanged}"
