@@ -107,7 +107,7 @@ jobs:
     needs: [findChangedCsFiles]
     steps:
     - uses: actions/checkout@v1
-      if: needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true'
+      if: contains(needs.findChangedCsFiles.outputs.isCsFilesChanged, 'true')
       with:
         submodules: true
     - name: Generate PDF with CSharp code
@@ -121,7 +121,7 @@ jobs:
   publishDocumentation:
     runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
-    if: ${{ needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
+    if: contains(needs.findChangedCsFiles.outputs.isCsFilesChanged, 'true')
     steps:
     - uses: actions/checkout@v1
       with:
