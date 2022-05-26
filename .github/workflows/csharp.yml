@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     outputs:
-      isCsFilesChanged: contains(steps.changed-files.outputs.modified_files, '*.cs')
+      isCsFilesChanged: endsWith(steps.changed-files.outputs.modified_files, '.cs')
     steps:
     - uses: actions/checkout@v3
       with:
