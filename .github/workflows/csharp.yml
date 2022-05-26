@@ -78,7 +78,7 @@ jobs:
           bash ./publish-csharp-release.sh
   findChangedCsFiles:
     runs-on: ubuntu-latest
-    needs: publiseRelease
+    needs: test
     outputs:
       isCsFilesChanged: steps.findChangesCsFiles.outputs.files_changed == 'true'
     steps:
