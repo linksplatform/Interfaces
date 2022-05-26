@@ -10,35 +10,30 @@ env:
   NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/main/MultiProjectRepository
-  CSHARP_DIRECTORY_PATH: csharp
+  
+defaults:
+  run:
+    working-directory: csharp
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ env.CSHARP_DIRECTORY_PATH }}
     steps:
       - uses: actions/checkout@v1
         with:
           submodules: true
-      - name: Test C#
+      - name: Test
         run: |
           dotnet test -c Release -f net6
-  pushCSharpNuGetToGitHubPackageRegistry:
+  pushNuGetToGitHubPackageRegistry:
     needs: test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ env.CSHARP_DIRECTORY_PATH }}
     steps:
       - uses: actions/checkout@v1
         with:
           submodules: true
       - uses: nuget/setup-nuget@v1
-      - name: Publish CSharp NuGet to GitHub Package Registry
+      - name: Publish NuGet to GitHub Package Registry
         run: |
           dotnet build -c Release
           dotnet pack -c Release
@@ -46,37 +41,29 @@ jobs:
           nuget push **/*.nupkg -Source "GitHub" -SkipDuplicate
   pusnToNuget:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ env.CSHARP_DIRECTORY_PATH }}
     needs: test
     steps:
     - uses: actions/checkout@v1
       with:
         submodules: true
-    - name: Read CSharp project information
+    - name: Read project information
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         wget "$SCRIPTS_BASE_URL/read_csharp_package_info.sh"
         bash ./read_csharp_package_info.sh
-    - name: Publish CSharp NuGet package
+    - name: Publish NuGet package
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         wget "$SCRIPTS_BASE_URL/push-csharp-nuget.sh"
         bash ./push-csharp-nuget.sh
   publiseRelease:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ env.CSHARP_DIRECTORY_PATH }}
     needs: pusnToNuget
     steps:
       - uses: actions/checkout@v1
         with:
           submodules: true
-      - name: Read CSharp project information
+      - name: Read project information
         if: github.event_name == 'push'
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
@@ -91,13 +78,9 @@ jobs:
           bash ./publish-csharp-release.sh
   findChangedCsFiles:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ env.CSHARP_DIRECTORY_PATH }}
     needs: publiseRelease
     outputs:
-      isCsFilesChanged: steps.check_if_csharp_files_changed.outputs.findChangesCsFiles
+      isCsFilesChanged: steps.findChangesCsFiles.outputs.findChangesCsFiles
     steps:
     - uses: actions/checkout@v1
       with:
@@ -108,12 +91,8 @@ jobs:
       with:
         files: |
            *.cs
-  generatePdfWithCsharpCode:
+  generatePdfWithCode:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ env.CSHARP_DIRECTORY_PATH }}
     needs: [findChangedCsFiles]
     if: needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true'
     steps:
@@ -129,17 +108,13 @@ jobs:
         bash ./generate-csharp-pdf.sh
   publishDocumentation:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ env.CSHARP_DIRECTORY_PATH }}
     needs: [findChangedCsFiles]
     if: needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true'
     steps:
     - uses: actions/checkout@v1
       with:
         submodules: true
-    - name: Publish CSharp documentation to gh-pages branch
+    - name: Publish documentation to gh-pages branch
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         wget "$SCRIPTS_BASE_URL/docfx.json"
