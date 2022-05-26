@@ -95,7 +95,6 @@ jobs:
         for changedFile in ${{ steps.changed-files.outputs.all_changed_files }}; do
           echo "Changed file: ${changedFile};
           echo "$changedFile == *.cs: ${${changedFile} == *.cs}"
-          echo "$changedFile endsWith: ${{ endswith(changedFile, ".cs") }}"
           if [[ $changedFile == *.cs ]]
           then
             isCsFilesChanged='true'
