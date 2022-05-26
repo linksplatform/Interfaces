@@ -96,7 +96,7 @@ jobs:
           if [[ $changedFile == *.cs ]]
           then
             isCsFilesChanged='true'
-          if
+          fi
         done
         echo "::set-output name=isCsFilesChanged::${isCsFilesChanged}"
         echo "isCsFilesChanged: ${isCsFilesChanged}"
