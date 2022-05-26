@@ -91,9 +91,9 @@ jobs:
     - name: Get changed files using defaults
       id: aaa
       run: |
-        echo steps.changed-files.outputs.modified_files;
-        echo endsWith(steps.changed-files.outputs.modified_files, '.cs');
-        echo contains(steps.changed-files.outputs.modified_files, '*.cs');
+        echo ${{steps.changed-files.outputs.modified_files}};
+        echo ${{endsWith(steps.changed-files.outputs.modified_files, '.cs')}};
+        echo ${{contains(steps.changed-files.outputs.modified_files, '*.cs')}};
   generatePdfWithCode:
     runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
