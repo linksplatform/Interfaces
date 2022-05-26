@@ -80,17 +80,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     outputs:
-      isCsFilesChanged: steps.findChangesCsFiles.outputs.files_changed == 'true'
+      isCsFilesChanged: contains(steps.changed-files.outputs.modified_files, '*.cs')
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
-        submodules: true
-    - name: Check if cs files are changed
-      uses: tj-actions/verify-changed-files@v5.5
-      id: findChangesCsFiles
-      with:
-        files: |
-           *.cs
+       fetch-depth: 0
+    - name: Get changed files using defaults
+      id: changed-files
+      uses: tj-actions/changed-files@v21
   generatePdfWithCode:
     runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
