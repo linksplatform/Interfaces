@@ -17,7 +17,7 @@ defaults:
     working-directory: cpp
 
 jobs:
-  testCpp:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -56,7 +56,7 @@ jobs:
           ls
   pushToNuget:
     runs-on: ubuntu-latest
-    needs: testCpp
+    needs: test
     steps:
     - uses: actions/checkout@v1
       with:
@@ -73,7 +73,7 @@ jobs:
         bash ./push-cpp-nuget.sh
   publiseRelease:
     runs-on: ubuntu-latest
-    needs: testCpp
+    needs: test
     steps:
       - uses: actions/checkout@v1
         with:
