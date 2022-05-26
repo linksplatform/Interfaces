@@ -58,10 +58,5 @@
     "href": "api/Platform.Interfaces.ISetter-2.html",
     "title": "Interface ISetter<TValue, TArgument> | LinksPlatform's Platform.Interfaces Library",
     "keywords": "Interface ISetter<TValue, TArgument> Defines an setter that requires an argument to set the passed value as a new state. Определяет установщик, которому для установки переданного значения в качестве нового состояния требуется аргумент. Namespace : Platform.Interfaces Assembly : Platform.Interfaces.dll Syntax public interface ISetter<in TValue, in TArgument> Type Parameters Name Description TValue Type of set value. Тип устанавливаемого значения. TArgument The argument type. Тип аргумента. Methods | Improve this Doc View Source Set(TArgument, TValue) Sets the value of a specific property in the specified object. Устанавливает значение определённого свойства в указанном объекте. Declaration void Set(TArgument argument, TValue value) Parameters Type Name Description TArgument argument The argument. Аргумент. TValue value The value. Значение."
-  },
-  "README.html": {
-    "href": "README.html",
-    "title": "Interfaces | LinksPlatform's Platform.Interfaces Library",
-    "keywords": "C++ C# Interfaces LinksPlatform's Platform.Interfaces Class Library Contains common interfaces that did not fit in any major category. Namespace: Platform.Interfaces Forked from: Konard/LinksPlatform/Platform/Platform.Helpers NuGet package: Platform.Interfaces Documentation Interface IFactory<TProduct> . PDF file with code for e-readers. Dependent libraries Platform.Collections Platform.Setters Platform.Timestamps"
   }
 }
