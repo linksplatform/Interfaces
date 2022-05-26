@@ -105,7 +105,6 @@ jobs:
   generatePdfWithCode:
     runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
-    if: ${{  }}
     steps:
     - uses: actions/checkout@v1
       if: needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true'
