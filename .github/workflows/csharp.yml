@@ -93,7 +93,7 @@ jobs:
       run: |
         isCsFilesChanged='false'
         for changedFile in ${{ steps.changed-files.outputs.all_changed_files }}; do
-          echo "Changed file: ${changedFile};
+          echo "Changed file: ${changedFile}";
           echo "$changedFile == *.cs: ${${changedFile} == *.cs}"
           if [[ $changedFile == *.cs ]]
           then
