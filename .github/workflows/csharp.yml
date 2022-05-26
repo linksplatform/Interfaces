@@ -105,12 +105,14 @@ jobs:
   generatePdfWithCode:
     runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
-    if: ${{ needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
+    if: ${{  }}
     steps:
     - uses: actions/checkout@v1
+      if: needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true'
       with:
         submodules: true
     - name: Generate PDF with CSharp code
+      if: needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true'
       run: |
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         wget "$SCRIPTS_BASE_URL/format-csharp-files.py"
