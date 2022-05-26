@@ -42,7 +42,7 @@ jobs:
         run: |
           if [ -f "install-local-conan-dependencies.sh" ]; then
               echo "install-local-conan-dependencies.sh exists."
-              ./install-conan-dependencies.sh
+              ./install-local-conan-dependencies.sh
           fi
       - name: Test and scan-build
         run: |
