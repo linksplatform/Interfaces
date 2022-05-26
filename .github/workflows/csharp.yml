@@ -82,7 +82,7 @@ jobs:
     outputs:
       isCsFilesChanged: steps.findChangesCsFiles.outputs.files_changed == 'true'
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
       with:
         submodules: true
     - name: Check if cs files are changed
