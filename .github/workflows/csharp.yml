@@ -91,7 +91,7 @@ jobs:
     - name: Get changed files using defaults
       id: aaa
       run: |
-        echo "Changed files: ${steps.changed-files.outputs.modified_files}";
+        echo steps.changed-files.outputs.modified_files;
         echo endsWith(steps.changed-files.outputs.modified_files, '.cs');
         echo contains(steps.changed-files.outputs.modified_files, '*.cs');
   generatePdfWithCode:
