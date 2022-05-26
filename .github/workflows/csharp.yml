@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     outputs:
-      isCsFilesChanged: endsWith(steps.changed-files.outputs.modified_files, '.cs')
+      isCsFilesChanged: steps.getIsCsFilesChanged.outputs.isCsFilesChanged
     steps:
     - uses: actions/checkout@v3
       with:
@@ -89,11 +89,17 @@ jobs:
       id: changed-files
       uses: tj-actions/changed-files@v21
     - name: Get changed files using defaults
-      id: aaa
+      id: getIsCsFilesChanged
       run: |
-        echo ${{steps.changed-files.outputs.modified_files}};
-        echo ${{endsWith(steps.changed-files.outputs.modified_files, '.cs')}};
-        echo ${{contains(steps.changed-files.outputs.modified_files, '*.cs')}};
+        isCsFilesChanged = 'false'
+        for changedFile in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          if [[ $changedFile == *.cs ]]
+          then
+            isCsFilesChanged = 'true'
+          if
+        done
+        echo "::set-output name=isCsFilesChanged::${isCsFilesChanged}"
+        echo "isCsFilesChanged: ${isCsFilesChanged}"
   generatePdfWithCode:
     runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
