@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     outputs:
-      isCsFilesChanged: steps.getIsCsFilesChanged.outputs.isCsFilesChanged
+      isCsFilesChanged: steps.setIsCsFilesChangedOutput.outputs.isCsFilesChanged
     steps:
     - uses: actions/checkout@v3
       with:
@@ -88,11 +88,14 @@ jobs:
     - name: Get changed files using defaults
       id: changed-files
       uses: tj-actions/changed-files@v21
-    - name: Get changed files using defaults
-      id: getIsCsFilesChanged
+    - name: Set output isCsFilesChanged
+      id: setIsCsFilesChangedOutput
       run: |
         isCsFilesChanged='false'
         for changedFile in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          echo "Changed file: ${changedFile};
+          echo "$changedFile == *.cs: ${${changedFile} == *.cs}"
+          echo "$changedFile endswith: ${{ endswith(${changedFile}, ".cs") }}"
           if [[ $changedFile == *.cs ]]
           then
             isCsFilesChanged='true'
