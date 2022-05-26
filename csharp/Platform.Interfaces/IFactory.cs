@@ -8,7 +8,7 @@
     /// <para>Type of produced instances.</para>
     /// <para>Тип производимых экземпляров.</para>
     /// </typeparam>
-    public interface IFactory<out TProduct>
+    public interface IFactory<out TProduct> 
     {
         /// <summary>
         /// <para>Creates an instance of <typeparamref name="TProduct"/> type.</para>
