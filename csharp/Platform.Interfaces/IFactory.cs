@@ -1,5 +1,5 @@
 ﻿namespace Platform.Interfaces
-{
+{ 
     /// <summary>
     /// <para>Defines a factory that produces instances of a specific type.</para>
     /// <para>Определяет фабрику, которая производит экземпляры определенного типа.</para>
