@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: publiseRelease
     outputs:
-      isCsFilesChanged: steps.findChangesCsFiles.outputs.findChangesCsFiles
+      isCsFilesChanged: steps.findChangesCsFiles.outputs.files_changed == 'true'
     steps:
     - uses: actions/checkout@v1
       with:
