@@ -12,5 +12,5 @@ scan-build cmake --build .
 binaries=bin/*
 for binary in $binaries
 do
-   ./$binary
+   ./"$binary"
 done
