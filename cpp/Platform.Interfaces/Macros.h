@@ -48,11 +48,10 @@ TFirstDecorator<                                                                
     TSelf(TParams&&... params) : TBase(std::forward<TParams>(params)...) {}
 
 
-#define DirectMethodCall(TClass, ObjectName, MethodName, ...)                                 \
+#define DirectMethodCall(TClass, Object, MethodName, ...)                                 \
     if constexpr(std::is_abstract<TClass>::value) {                                           \
         ObjectName.MethodName(__VA_OPT__(,) __VA_ARGS__)                                      \
-    }                                                                                         \
-    else {                                                                                    \
+    } else {                                                                                  \
         ObjectName.TClass::MethodName(__VA_OPT__(,) __VA_ARGS__)                              \
     }                                                                                         \
 }
