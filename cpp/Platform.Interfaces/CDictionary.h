@@ -96,11 +96,8 @@ namespace Platform::Interfaces
     template<CDictionary TSelf>
     struct Dictionary : Enumerable<TSelf>
     {
-    private:
-        using Base = Enumerable<TSelf>;
-
-    public:
-        using Key = decltype(std::get<0>(std::declval<Base::Item>()));
-        using Value = decltype(std::get<1>(std::declval<Base::Item>()));
+        using base = Enumerable<TSelf>;
+        using Key = decltype(std::get<0>(std::declval<base::Item>()));
+        using Value = decltype(std::get<1>(std::declval<base::Item>()));
     };
 }
