@@ -91,3 +91,25 @@ jobs:
           chmod +x ./publish-release.sh
           wget "$SCRIPTS_BASE_URL/publish-cpp-release.sh"
           bash ./publish-cpp-release.sh
+  pushToConan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Minimonium/conan-request-action@master
+    - name: Publish to the official conan repository
+      with:
+        token: ${{ secrets.PERSONAL_TOKEN }}
+        packageName: "platform.interfaces"
+    - uses: Minimonium/conan-request-action@master
+    - name: Publish to the linksplatform conan repository
+      with:
+        token: ${{ secrets.PERSONAL_TOKEN }}
+        packageName: "platform.interfaces"
+        upstreamOwner: "linksplatform"
+  updateConanDependants:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Minimonium/conan-request-action@master
+    - name: Publish to the official conan repository
+      with:
+        token: ${{ secrets.PERSONAL_TOKEN }}
+        packageName: "platform.interfaces"
