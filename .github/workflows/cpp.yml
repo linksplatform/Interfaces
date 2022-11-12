@@ -1,18 +1,21 @@
 name: cpp
-'on':
+
+on:
   push:
     branches: main
     paths:
-      - cpp/**
-      - .github/workflows/cpp.yml
+      - 'cpp/**'
+      - '.github/workflows/cpp.yml'
+
 env:
-  NUGETTOKEN: '${{ secrets.NUGET_TOKEN }}'
-  GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-  SCRIPTS_BASE_URL: >-
-    https://raw.githubusercontent.com/linksplatform/Scripts/main/MultiProjectRepository
+  NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/main/MultiProjectRepository
+
 defaults:
   run:
     working-directory: cpp
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -28,18 +31,12 @@ jobs:
       - name: Install conan
         run: pip install conan
       - name: Setup conan
-        run: >
+        run: |
           conan profile new linksplatform --detect
-
           conan profile update settings.compiler=clang linksplatform
-
           conan profile update settings.compiler.version=13 linksplatform
-
-          conan profile update settings.compiler.libcxx=libstdc++11
-          linksplatform
-
+          conan profile update settings.compiler.libcxx=libstdc++11 linksplatform
           conan profile update env.CXX=clang++ linksplatform
-
           conan profile show linksplatform
       - name: Instll conan packages
         run: |
@@ -49,22 +46,14 @@ jobs:
               ./install-local-conan-dependencies.sh
           fi
       - name: Test and scan-build
-        run: >
+        run: |
           CXX=clang++
-
-          cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++
-          -DLINKS_PLATFORM_TESTS=TRUE"
-
+          cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DLINKS_PLATFORM_TESTS=TRUE"
           cmake_build_dir="build"
-
           mkdir $cmake_build_dir && cd $cmake_build_dir
-
           conan install .. -pr=linksplatform --build=missing
-
           cmake .. "$cmake_flags"
-
           cmake --build .
-
           ls
   pushToNuget:
     runs-on: ubuntu-latest
