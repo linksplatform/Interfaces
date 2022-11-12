@@ -72,7 +72,7 @@ jobs:
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
           wget "$SCRIPTS_BASE_URL/push-cpp-nuget.sh"
           bash ./push-cpp-nuget.sh
-  publishRelease:
+  publiseRelease:
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -93,7 +93,6 @@ jobs:
           bash ./publish-cpp-release.sh
   getConanPackageInfo:
     runs-on: ubuntu-latest
-    needs: publishRelease
     steps:
       - name: Get package name
         id: getPackageName
@@ -108,8 +107,7 @@ jobs:
           wget "$SCRIPTS_BASE_URL/read_cpp_package_info.sh"
           bash ./read_cpp_package_info.sh
           echo "newPackageVersion=${CPP_PACKAGE_VERSION}" >> $GITHUB_OUTPUT
-    outputs: >-
-      packageName=${{steps.getPackageName.packageName}}
+    outputs: packageName=${{steps.getPackageName.packageName}}
       newPackageVersion=${{steps.getNewPackageVersion.newPackageVersion}}
   pushToConan:
     runs-on: ubuntu-latest
@@ -118,37 +116,29 @@ jobs:
       - uses: Minimonium/conan-request-action@master
       - name: Publish to the official conan repository
         with:
-          token: '${{ secrets.PERSONAL_TOKEN }}'
-          packageName: '${{needs.getConanPackageInfo.outputs.packageName}}'
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          packageName: ${{needs.getConanPackageInfo.outputs.packageName}}
       - uses: Minimonium/conan-request-action@master
       - name: Publish to the linksplatform conan repository
         with:
-          token: '${{ secrets.PERSONAL_TOKEN }}'
-          packageName: '${{needs.getConanPackageInfo.outputs.packageName}}'
-          upstreamOwner: linksplatform
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          packageName: ${{needs.getConanPackageInfo.outputs.packageName}}
+          upstreamOwner: 'linksplatform'
   updateConanDependants:
     runs-on: ubuntu-latest
-    needs:
-      - pushToConan
-      - getConanPackageInfo
+    needs: [pushToConan, getConanPackageInfo]
     outputs:
-      newCppPackageVersion: '${{ needs.getConanPackageInfo.outputs.newPackageVersion }}'
+      newCppPackageVersion: ${{ needs.getConanPackageInfo.outputs.newPackageVersion }}
     steps:
       - name: Update conan dependants in organization
-        uses: >-
-          FreePhoenix888/update-conan-dependants-in-organization-action@v0.0.1-alpha
+        uses: FreePhoenix888/update-conan-dependants-in-organization-action@v0.0.1-alpha
         with:
-          token: '${{ secrets.PERSONAL_TOKEN }}'
-          organizationName: linksplatform
-          conanFilePath: cpp/conanfile.txt
-          commitMessageTemplate: >-
-            Update ${{needs.getConanPackageInfo.outputs.packageName}} dependency
-            from {PREVIOUS_VERSION} to
-            ${{needs.getConanPackageInfo.outputs.newPackageVersion}}
-          sourceBranchName: main
-          destinationBranchName: main
-          conanFileReplaceableRegex: >-
-            ${{needs.getConanPackageInfo.outputs.packageName}}/\(?<PREVIOUS_VERSION>\d\.\d\.\d\)
-          conanFileReplacement: >-
-            ${{needs.getConanPackageInfo.outputs.packageName}}/${{need.getConanPackageInfo.outputs.newCppPackageVersion}}
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          organizationName: 'linksplatform'
+          conanFilePath: 'cpp/conanfile.txt'
+          commitMessageTemplate: 'Update ${{needs.getConanPackageInfo.outputs.packageName}} dependency from {PREVIOUS_VERSION} to ${{needs.getConanPackageInfo.outputs.newPackageVersion}}'
+          sourceBranchName: 'main'
+          destinationBranchName: 'main'
+          conanFileReplaceableRegex: "${{needs.getConanPackageInfo.outputs.packageName}}/\\(?<PREVIOUS_VERSION>\\d\\.\\d\\.\\d\\)"
+          conanFileReplacement: '${{needs.getConanPackageInfo.outputs.packageName}}/${{need.getConanPackageInfo.outputs.newCppPackageVersion}}'
           shouldOpenPullRequest: 'false'
