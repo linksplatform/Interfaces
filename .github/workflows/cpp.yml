@@ -93,6 +93,9 @@ jobs:
           bash ./publish-cpp-release.sh
   getConanPackageInfo:
     runs-on: ubuntu-latest
+    outputs: 
+      packageName: ${{steps.getPackageName.packageName}}
+      newPackageVersion: ${{steps.getNewPackageVersion.newPackageVersion}}
     steps:
       - name: Get package name
         id: getPackageName
@@ -107,8 +110,6 @@ jobs:
           wget "$SCRIPTS_BASE_URL/read_cpp_package_info.sh"
           bash ./read_cpp_package_info.sh
           echo "newPackageVersion=${CPP_PACKAGE_VERSION}" >> $GITHUB_OUTPUT
-    outputs: packageName=${{steps.getPackageName.packageName}}
-      newPackageVersion=${{steps.getNewPackageVersion.newPackageVersion}}
   pushToConan:
     runs-on: ubuntu-latest
     needs: getConanPackageInfo
