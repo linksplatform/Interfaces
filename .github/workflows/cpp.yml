@@ -112,7 +112,7 @@ jobs:
           echo "newPackageVersion=${CPP_PACKAGE_VERSION}" >> $GITHUB_OUTPUT
   pushToConan:
     runs-on: ubuntu-latest
-    needs: getConanPackageInfo
+    needs: [publishRelease, getConanPackageInfo]
     steps:
       - name: Publish to the official conan repository
         uses: Minimonium/conan-request-action@master
