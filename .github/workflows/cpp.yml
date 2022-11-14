@@ -100,8 +100,8 @@ jobs:
       - name: Get package name
         id: getPackageName
         run: |
-          REPOSITORY_NAME=$(basename ${{ github.repository }})
-          PACKAGE_NAME="platform.${REPOSITORY_NAME@L}"
+          export REPOSITORY_NAME=$(basename ${{ github.repository }})
+          export PACKAGE_NAME="platform.${REPOSITORY_NAME@L}"
           echo "packageName=${PACKAGE_NAME}" >> $GITHUB_OUTPUT
       - name: Get new conan package version
         id: getNewPackageVersion
