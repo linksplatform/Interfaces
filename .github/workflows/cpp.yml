@@ -141,5 +141,5 @@ jobs:
           sourceBranchName: 'main'
           destinationBranchName: 'main'
           conanFileReplaceableRegex: "${{needs.getConanPackageInfo.outputs.packageName}}/\\(?<PREVIOUS_VERSION>\\d\\.\\d\\.\\d\\)"
-          conanFileReplacement: '${{needs.getConanPackageInfo.outputs.packageName}}/${{need.getConanPackageInfo.outputs.newCppPackageVersion}}'
+          conanFileReplacement: '${{needs.getConanPackageInfo.outputs.packageName}}/${{needs.getConanPackageInfo.outputs.newCppPackageVersion}}'
           shouldOpenPullRequest: 'false'
