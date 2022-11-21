@@ -104,15 +104,15 @@ jobs:
         id: getPackageName
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          export PACKAGE_NAME="platform.${REPOSITORY_NAME@L}"
-          #echo "packageName=${PACKAGE_NAME}" >> $GITHUB_OUTPUT
+          export PACKAGE_NAME="platform.$(echo $name | tr '[:upper:]' '[:lower:]')"
+          echo "packageName=${PACKAGE_NAME}" >> $GITHUB_OUTPUT
       - name: Get new conan package version
         id: getNewPackageVersion
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          #wget "$SCRIPTS_BASE_URL/read_cpp_package_info.sh"
-          #bash ./read_cpp_package_info.sh
-          #echo "newPackageVersion=${CPP_PACKAGE_VERSION}" >> $GITHUB_OUTPUT
+          wget "$SCRIPTS_BASE_URL/read_cpp_package_info.sh"
+          bash ./read_cpp_package_info.sh
+          echo "newPackageVersion=${CPP_PACKAGE_VERSION}" >> $GITHUB_OUTPUT
   pushToConan:
     runs-on: ubuntu-latest
     needs: [publishRelease, getConanPackageInfo]
