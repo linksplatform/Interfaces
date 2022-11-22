@@ -113,24 +113,6 @@ jobs:
           wget "$SCRIPTS_BASE_URL/read_cpp_package_info.sh"
           bash ./read_cpp_package_info.sh
           echo "newPackageVersion=${CPP_PACKAGE_VERSION}" >> $GITHUB_OUTPUT
-  pushToConan:
-    runs-on: ubuntu-latest
-    needs: [publishRelease, getConanPackageInfo]
-    steps:
-      - uses: actions/checkout@v1
-        with:
-          submodules: true
-      - name: Publish to the official conan repository
-        uses: Minimonium/conan-request-action@master
-        with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
-          packageName: ${{needs.getConanPackageInfo.outputs.packageName}}
-      - name: Publish to the linksplatform conan repository
-        uses: Minimonium/conan-request-action@master
-        with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
-          packageName: ${{needs.getConanPackageInfo.outputs.packageName}}
-          upstreamOwner: 'linksplatform'
   updateConanDependants:
     runs-on: ubuntu-latest
     needs: [pushToConan, getConanPackageInfo]
