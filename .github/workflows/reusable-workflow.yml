@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: "Test"
         run: |
-          echo ${{inputs.github_ref}}
+          echo "Github ref is ${{inputs.github_ref}}"
