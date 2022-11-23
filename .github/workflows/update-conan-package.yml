@@ -4,7 +4,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: linksplatform/Scripts/.github/workflows/get-cpp-conan-package-info.yml@c866b082c36961c1417a23099b9f21678eeb83e6
+    uses: linksplatform/Scripts/.github/workflows/get-cpp-conan-package-info.yml@main
     with:
       github_ref: ${{github.ref}}
 
