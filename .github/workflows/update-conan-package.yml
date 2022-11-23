@@ -3,18 +3,24 @@ on:
     types: [published]
 
 jobs:
-  publish:
-    if: startsWith(github.ref, 'refs/tags/cpp')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Publish to the official conan repository
-        uses: Minimonium/conan-request-action@master
-        with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
-          packageName: ${{needs.getConanPackageInfo.outputs.packageName}}
-      - name: Publish to the linksplatform conan repository
-        uses: Minimonium/conan-request-action@master
-        with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
-          packageName: ${{needs.getConanPackageInfo.outputs.packageName}}
-          upstreamOwner: 'linksplatform'
+  call-workflow:
+    uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      github_ref: github.ref
+
+# jobs:
+#   publish:
+#     if: startsWith(github.ref, 'refs/tags/cpp')
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Publish to the official conan repository
+#         uses: Minimonium/conan-request-action@master
+#         with:
+#           token: ${{ secrets.PERSONAL_TOKEN }}
+#           packageName: ${{needs.getConanPackageInfo.outputs.packageName}}
+#       - name: Publish to the linksplatform conan repository
+#         uses: Minimonium/conan-request-action@master
+#         with:
+#           token: ${{ secrets.PERSONAL_TOKEN }}
+#           packageName: ${{needs.getConanPackageInfo.outputs.packageName}}
+#           upstreamOwner: 'linksplatform'
