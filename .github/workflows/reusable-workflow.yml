@@ -9,5 +9,6 @@ jobs:
   reusable_workflow_job:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v4
-      echo: "Github ref: ${{inputs.github_ref}}"
+      - name: "Test"
+        run: |
+          echo "Github ref: ${{inputs.github_ref}}"
