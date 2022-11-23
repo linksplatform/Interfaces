@@ -5,8 +5,13 @@ on:
 jobs:
   call-workflow:
     uses: linksplatform/Scripts/.github/workflows/get-cpp-conan-package-info.yml@main
-    with:
-      github_ref: ${{github.ref}}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test
+      run: | 
+        echo ${{steps.call-workflow.outputs.package_name}}
+    
 
 # jobs:
 #   publish:
