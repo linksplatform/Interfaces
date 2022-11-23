@@ -1,3 +1,6 @@
 [submodule "Settings"]
 	path = Settings
 	url = https://github.com/linksplatform/Settings.git
+[submodule "Scripts"]
+	path = Scripts
+	url = https://github.com/linksplatform/Scripts
