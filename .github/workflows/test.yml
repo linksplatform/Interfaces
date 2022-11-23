@@ -1,1 +1,14 @@
-./Scripts/.github/workflows/test.yml
+on:
+  release:
+    types: [published]
+
+jobs:
+  call-workflow:
+    uses: linksplatform/Scripts/.github/workflows/get-cpp-conan-package-info.yml@main
+  test:
+    needs: [call-workflow]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test
+      run: | 
+        echo ${{needs.call-workflow.outputs.package_name}}
