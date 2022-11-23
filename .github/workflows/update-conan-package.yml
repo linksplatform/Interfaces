@@ -6,7 +6,7 @@ jobs:
   call-workflow:
     uses: ./.github/workflows/reusable-workflow.yml
     with:
-      github_ref: github.ref
+      github_ref: ${{github.ref}}
 
 # jobs:
 #   publish:
