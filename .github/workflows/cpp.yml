@@ -7,15 +7,6 @@ on:
       - 'cpp/**'
       - '.github/workflows/cpp.yml'
 
-env:
-  NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/main/MultiProjectRepository
-
-defaults:
-  run:
-    working-directory: cpp
-
 jobs:
   main:
     uses: linksplatform/Workflows/.github/workflows/cpp.yml@main
