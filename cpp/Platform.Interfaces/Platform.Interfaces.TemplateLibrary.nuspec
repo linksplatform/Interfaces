@@ -6,7 +6,7 @@
     <summary>LinksPlatform's Platform.Interfaces is a Template Library what contains common concepts templates.</summary>
     <description>LinksPlatform's Platform.Interfaces is a Template Library what contains set of C++ concepts templates. Use Platform.Interfaces.h file to include the library.</description>
     <releaseNotes>Test release for automatic deploy system.</releaseNotes>
-    <version>0.3.8</version>
+    <version>0.3.9</version>
     <authors>konard, uselessgoddess, Mitron57</authors>
     <owners>konard, uselessgoddess, Mitron57</owners>
     <copyright>konard, uselessgoddess, Mitron57</copyright>
