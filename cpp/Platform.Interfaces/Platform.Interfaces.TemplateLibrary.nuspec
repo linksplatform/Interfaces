@@ -18,6 +18,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
       <group targetFramework="native"></group>
-    </dependencies> 
+    </dependencies>  
   </metadata>
 </package>
