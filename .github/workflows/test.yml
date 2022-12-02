@@ -1,14 +1,12 @@
 on:
-  release:
-    types: [published]
+  push:
+    branches: main
 
 jobs:
-  call-workflow:
-    uses: linksplatform/Scripts/.github/workflows/get-cpp-conan-package-info.yml@main
   test:
-    needs: [call-workflow]
     runs-on: ubuntu-latest
     steps:
     - name: Test
       run: | 
-        echo ${{needs.call-workflow.outputs.package_name}}
+        echo ${{event.commit.modified}};
+        echo ${{contains(event.commit.modified, "Interfaces/cpp/setup-gitpod.sh")}};
