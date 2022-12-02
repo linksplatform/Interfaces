@@ -10,12 +10,12 @@ jobs:
         with:
           submodules: true
       - name: Publish to the official conan repository
-        uses: Minimonium/conan-request-action@master
+        uses: Minimonium/conan-request-action@0.0.7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           packageName: "platform.interfaces"
       - name: Publish to the linksplatform conan repository
-        uses: Minimonium/conan-request-action@master
+        uses: Minimonium/conan-request-action@0.0.7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           packageName: "platform.interfaces"
