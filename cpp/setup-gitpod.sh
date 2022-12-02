@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+  
 cd ..
  
 sudo apt install -y g++-10 cmake
