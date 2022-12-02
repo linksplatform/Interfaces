@@ -11,5 +11,4 @@ jobs:
   main:
     uses: linksplatform/Workflows/.github/workflows/cpp.yml@main
     secrets:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
