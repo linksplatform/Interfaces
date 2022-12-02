@@ -8,5 +8,6 @@ jobs:
     steps:
     - name: Test
       run: | 
+        echo ${{toJSON(github.event)}};
         echo ${{github.event.commits.modified}};
         echo ${{contains(github.event.commits.modified, 'Interfaces/cpp/setup-gitpod.sh')}};
