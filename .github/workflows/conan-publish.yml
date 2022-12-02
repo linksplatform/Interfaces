@@ -6,7 +6,7 @@ jobs:
   push_to_conan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
         with:
           submodules: true
       - name: Publish to the official conan repository
