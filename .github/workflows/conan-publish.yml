@@ -1,22 +1,27 @@
 on:
   release:
-    types: [created]
+    types: [published]
         
 jobs:
-  push_to_conan:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-      - name: Publish to the official conan repository
-        uses: Minimonium/conan-request-action@0.0.7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          packageName: "platform.interfaces"
-      - name: Publish to the linksplatform conan repository
-        uses: Minimonium/conan-request-action@0.0.7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          packageName: "platform.interfaces"
-          upstreamOwner: 'linksplatform'
+      - run: |
+          echo "Test"
+#   push_to_conan:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           submodules: true
+#       - name: Publish to the official conan repository
+#         uses: Minimonium/conan-request-action@0.0.7
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           packageName: "platform.interfaces"
+#       - name: Publish to the linksplatform conan repository
+#         uses: Minimonium/conan-request-action@0.0.7
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           packageName: "platform.interfaces"
+#           upstreamOwner: 'linksplatform'
