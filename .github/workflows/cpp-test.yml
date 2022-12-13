@@ -6,6 +6,13 @@ on:
       - 'main'
     paths:
       - 'cpp/**'
+  pull_request:
+    types:
+      - edited
+    branches:
+      - 'main'
+    paths:
+      - 'cpp/**'
       
 jobs:
   main:
