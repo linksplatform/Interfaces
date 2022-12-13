@@ -1,0 +1,16 @@
+name: Deploy new cpp version
+
+on: workflow_dispatch
+
+on:
+  push:
+    branches: main
+    paths:
+      - 'cpp/**'
+      - '.github/workflows/cpp.yml'
+
+jobs:
+  main:
+    uses: linksplatform/Workflows/.github/workflows/cpp-deploy.yml@main
+    secrets:
+        NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
