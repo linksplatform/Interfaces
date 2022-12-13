@@ -5,14 +5,20 @@ on:
     branches:
       - 'main'
     paths:
-      - 'cpp/**'
+      - 'cpp/**.h'
+      - 'cpp/**.cpp'
+      - 'cpp/CMakeLists.txt'
+      - 'cpp/conanfile.txt'
   pull_request:
     types:
       - edited
     branches:
       - 'main'
     paths:
-      - 'cpp/**'
+      - 'cpp/**.h'
+      - 'cpp/**.cpp'
+      - 'cpp/CMakeLists.txt'
+      - 'cpp/conanfile.txt'
       
 jobs:
   main:
