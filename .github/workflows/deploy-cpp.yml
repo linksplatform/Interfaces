@@ -5,6 +5,7 @@ on:
     branches: main 
     paths:
       - 'cpp/**/*.nuspec'
+  workflow_dispatch:
 
 jobs:
   main:
