@@ -4,9 +4,9 @@ namespace Platform::Interfaces {
   template <typename...>
   struct ICounter;
 
-  template <typename TResult>
-  struct ICounter<TResult> {
-    virtual TResult Count() = 0;
+  template <typename TResult, typename TArgument>
+  struct ICounter<TResult, TArgument> {
+    virtual TResult Count(TArgument argument) = 0;
 
     virtual ~ICounter() = default;
   };
