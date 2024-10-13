@@ -3,9 +3,9 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/93857535a2214ba9b512e1a88787d461)](https://app.codacy.com/gh/linksplatform/Interfaces?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Interfaces&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/interfaces/badge)](https://www.codefactor.io/repository/github/linksplatform/interfaces)
 
-| [![Actions Status](https://github.com/linksplatform/Interfaces/workflows/deploy-cpp/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=deploy-cpp) | [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces.TemplateLibrary)](https://www.nuget.org/packages/Platform.Interfaces.TemplateLibrary) [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/platform.interfaces.svg)](https://conan.io/center/platform.interfaces) | __C++__  |
+| [![Actions Status](https://github.com/linksplatform/Interfaces/workflows/deploy-cpp/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=deploy-cpp) | [![NuGet Version and Downloads count](https://img.shields.io/nuget/v/Platform.Interfaces.TemplateLibrary?label=nuget&style=flat)](https://www.nuget.org/packages/Platform.Interfaces.TemplateLibrary) [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/platform.interfaces.svg)](https://conan.io/center/platform.interfaces) | __C++__  |
 |-|-|-|
-| [![Actions Status](https://github.com/linksplatform/Interfaces/workflows/csharp/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=csharp) | [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Interfaces)](https://www.nuget.org/packages/Platform.Interfaces) | C# |
+| [![Actions Status](https://github.com/linksplatform/Interfaces/workflows/csharp/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=csharp) | [![NuGet Version and Downloads count](https://img.shields.io/nuget/v/Platform.Interfaces?label=nuget&style=flat)](https://www.nuget.org/packages/Platform.Interfaces) | C# |
 
 # [Interfaces](https://github.com/linksplatform/Interfaces)
 
