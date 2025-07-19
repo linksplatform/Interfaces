@@ -13,42 +13,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - uses: actions/checkout@v2
-      - name: Auto-merge PR
-        uses: actions/github-script@v7
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
+          target: minor
           github-token: ${{ secrets.DEPENDABOT_AUTO_MERGE_TOKEN }}
-          script: |
-            const { owner, repo, number } = context.issue;
-            
-            // Check if PR is from cursor[bot]
-            const pr = await github.rest.pulls.get({
-              owner,
-              repo,
-              pull_number: number
-            });
-            
-            if (pr.data.user.login === 'cursor[bot]') {
-              console.log('PR is from cursor[bot], proceeding with auto-merge');
-              
-              // Check if PR is ready for merge
-              const status = await github.rest.pulls.get({
-                owner,
-                repo,
-                pull_number: number
-              });
-              
-              if (status.data.mergeable && !status.data.draft) {
-                // Merge the PR
-                await github.rest.pulls.merge({
-                  owner,
-                  repo,
-                  pull_number: number,
-                  merge_method: 'squash'
-                });
-                console.log('PR auto-merged successfully');
-              } else {
-                console.log('PR is not ready for merge (draft or not mergeable)');
-              }
-            } else {
-              console.log('PR is not from cursor[bot], skipping auto-merge');
-            }
