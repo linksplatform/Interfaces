@@ -189,8 +189,8 @@ async function processWorkflow(filePath, yaml) {
     }
   }
   
-  // Add actions/setup-dotnet if not present
-  if (!hasSetupDotnet(content)) {
+  // Add actions/setup-dotnet if not present and workflow uses .NET
+  if (!hasSetupDotnet(content) && content.includes('dotnet')) {
     content = addSetupDotnet(content);
     
     // Validate YAML syntax again after adding setup-dotnet
@@ -216,6 +216,8 @@ async function processWorkflow(filePath, yaml) {
       writeFileSync(filePath, content);
       console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
     }
+  } else if (!content.includes('dotnet')) {
+    console.log(`Skipping setup-dotnet addition - workflow doesn't use .NET commands`);
   }
 }
 
