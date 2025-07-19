@@ -40,6 +40,44 @@ if (workflowFiles.length === 0) {
 }
 
 /**
+ * Load YAML library using use-m
+ */
+async function loadYaml() {
+  try {
+    const { use } = eval(
+      await fetch('https://unpkg.com/use-m/use.js').then(u => u.text())
+    );
+    
+    // Try different YAML packages
+    let yaml = null;
+    
+    try {
+      yaml = await use('yaml');
+      console.log('✅ Loaded YAML library successfully');
+    } catch (error) {
+      console.log('Trying js-yaml package...');
+      try {
+        yaml = await use('js-yaml');
+        console.log('✅ Loaded js-yaml library successfully');
+      } catch (error2) {
+        console.log('Trying yamljs package...');
+        try {
+          yaml = await use('yamljs');
+          console.log('✅ Loaded yamljs library successfully');
+        } catch (error3) {
+          console.log('No YAML library available, proceeding without validation');
+        }
+      }
+    }
+    
+    return yaml;
+  } catch (error) {
+    console.error('Failed to load use-m:', error.message);
+    return null;
+  }
+}
+
+/**
  * Check if actions/setup-dotnet is already included
  */
 function hasSetupDotnet(content) {
@@ -78,7 +116,7 @@ function addSetupDotnet(content) {
 /**
  * Process a workflow file
  */
-async function processWorkflow(filePath) {
+async function processWorkflow(filePath, yaml) {
   console.log(`Processing workflow file: ${filePath}`);
   
   // Read the file
@@ -115,6 +153,28 @@ async function processWorkflow(filePath) {
   // Remove nuget/setup-nuget@v1 action as it's no longer needed
   content = content.replace(/- uses: nuget\/setup-nuget@v1\n/g, '');
   
+  // Validate YAML syntax using modern YAML library
+  if (yaml) {
+    try {
+      // Handle different YAML library APIs
+      if (yaml.parse) {
+        yaml.parse(content);
+      } else if (yaml.load) {
+        yaml.load(content);
+      } else if (typeof yaml === 'function') {
+        yaml(content);
+      }
+      console.log('✅ YAML syntax validation passed');
+    } catch (error) {
+      console.error('❌ YAML syntax validation failed:', error.message);
+      // Restore from backup
+      content = readFileSync(`${filePath}.bak`, 'utf8');
+      console.log('Restored original content due to YAML syntax error');
+    }
+  } else {
+    console.log('⚠️  Skipping YAML validation (YAML library not available)');
+  }
+  
   // Check for changes
   if (content !== originalContent) {
     console.log(`Modified ${filePath} to use dotnet CLI instead of nuget.exe`);
@@ -132,8 +192,30 @@ async function processWorkflow(filePath) {
   // Add actions/setup-dotnet if not present
   if (!hasSetupDotnet(content)) {
     content = addSetupDotnet(content);
-    writeFileSync(filePath, content);
-    console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
+    
+    // Validate YAML syntax again after adding setup-dotnet
+    if (yaml) {
+      try {
+        // Handle different YAML library APIs
+        if (yaml.parse) {
+          yaml.parse(content);
+        } else if (yaml.load) {
+          yaml.load(content);
+        } else if (typeof yaml === 'function') {
+          yaml(content);
+        }
+        console.log('✅ YAML syntax validation passed after adding setup-dotnet');
+        writeFileSync(filePath, content);
+        console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
+      } catch (error) {
+        console.error('❌ YAML syntax validation failed after adding setup-dotnet:', error.message);
+        console.log('Skipping setup-dotnet addition due to YAML syntax error');
+      }
+    } else {
+      console.log('⚠️  Skipping YAML validation after adding setup-dotnet');
+      writeFileSync(filePath, content);
+      console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
+    }
   }
 }
 
@@ -143,9 +225,12 @@ async function processWorkflow(filePath) {
 async function main() {
   console.log('Starting nuget.exe to dotnet CLI conversion...\n');
   
+  // Load YAML library
+  const yaml = await loadYaml();
+  
   // Process each workflow file
   for (const file of workflowFiles) {
-    await processWorkflow(file);
+    await processWorkflow(file, yaml);
     console.log('');
   }
   
