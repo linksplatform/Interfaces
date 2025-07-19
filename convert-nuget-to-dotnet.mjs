@@ -189,35 +189,51 @@ async function processWorkflow(filePath, yaml) {
     }
   }
   
-  // Add actions/setup-dotnet if not present and workflow uses .NET
-  if (!hasSetupDotnet(content) && content.includes('dotnet')) {
-    content = addSetupDotnet(content);
-    
-    // Validate YAML syntax again after adding setup-dotnet
-    if (yaml) {
-      try {
-        // Handle different YAML library APIs
-        if (yaml.parse) {
-          yaml.parse(content);
-        } else if (yaml.load) {
-          yaml.load(content);
-        } else if (typeof yaml === 'function') {
-          yaml(content);
+  // Handle setup-dotnet based on whether workflow uses .NET
+  // Check for actual dotnet commands, not just the word "dotnet"
+  const hasDotnetCommands = /run:\s*dotnet\s+/.test(content) || 
+                           /dotnet\s+(test|build|pack|restore|nuget)/.test(content);
+  
+  if (hasDotnetCommands) {
+    // Workflow uses .NET - ensure setup-dotnet is present
+    if (!hasSetupDotnet(content)) {
+      content = addSetupDotnet(content);
+      
+      // Validate YAML syntax again after adding setup-dotnet
+      if (yaml) {
+        try {
+          // Handle different YAML library APIs
+          if (yaml.parse) {
+            yaml.parse(content);
+          } else if (yaml.load) {
+            yaml.load(content);
+          } else if (typeof yaml === 'function') {
+            yaml(content);
+          }
+          console.log('✅ YAML syntax validation passed after adding setup-dotnet');
+          writeFileSync(filePath, content);
+          console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
+        } catch (error) {
+          console.error('❌ YAML syntax validation failed after adding setup-dotnet:', error.message);
+          console.log('Skipping setup-dotnet addition due to YAML syntax error');
         }
-        console.log('✅ YAML syntax validation passed after adding setup-dotnet');
+      } else {
+        console.log('⚠️  Skipping YAML validation after adding setup-dotnet');
         writeFileSync(filePath, content);
         console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
-      } catch (error) {
-        console.error('❌ YAML syntax validation failed after adding setup-dotnet:', error.message);
-        console.log('Skipping setup-dotnet addition due to YAML syntax error');
       }
-    } else {
-      console.log('⚠️  Skipping YAML validation after adding setup-dotnet');
-      writeFileSync(filePath, content);
-      console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
     }
-  } else if (!content.includes('dotnet')) {
-    console.log(`Skipping setup-dotnet addition - workflow doesn't use .NET commands`);
+  } else {
+    // Workflow doesn't use .NET - remove setup-dotnet if present
+    if (hasSetupDotnet(content)) {
+      // Remove setup-dotnet step
+      const beforeRemoval = content;
+      content = content.replace(/- name: Setup \.NET\s*\n\s*uses: actions\/setup-dotnet@v4\s*\n\s*with:\s*\n\s*dotnet-version: '8\.0\.x'\s*\n/g, '');
+      if (content !== beforeRemoval) {
+        console.log(`Removed unnecessary actions/setup-dotnet@v4 from ${filePath}`);
+        writeFileSync(filePath, content);
+      }
+    }
   }
 }
 
