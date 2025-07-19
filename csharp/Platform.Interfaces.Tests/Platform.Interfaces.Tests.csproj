@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7</TargetFramework>
+    <TargetFramework>net8</TargetFramework>
     <IsPackable>false</IsPackable>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
@@ -21,7 +21,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Platform.Interfaces\Platform.Interfaces.csproj" />
   </ItemGroup>
-
-
 
 </Project>

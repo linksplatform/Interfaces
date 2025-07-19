@@ -6,7 +6,7 @@
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
     <VersionPrefix>0.5.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
-    <TargetFramework>net7</TargetFramework>
+    <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Interfaces</AssemblyName>
     <PackageId>Platform.Interfaces</PackageId>
     <PackageTags>LinksPlatform;Interfaces;ICounter;ICriterionMatcher;IFactory;IProperties;IProperty;IProvider;ISetter</PackageTags>
@@ -23,8 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Change target frameworks to net7.
-Change license to Unlicensed.</PackageReleaseNotes>
+    <PackageReleaseNotes>Change target frameworks to net8.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -35,7 +34,5 @@ Change license to Unlicensed.</PackageReleaseNotes>
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
-
-
 
 </Project>
