@@ -40,82 +40,6 @@ if (workflowFiles.length === 0) {
 }
 
 /**
- * Simple YAML parser for basic validation
- * This is a basic implementation - in production you might want to use a proper YAML library
- */
-function parseYAML(yamlString) {
-  const lines = yamlString.split('\n');
-  const result = {};
-  const stack = [result];
-  const indentStack = [0];
-  
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const trimmedLine = line.trim();
-    
-    if (trimmedLine === '' || trimmedLine.startsWith('#')) {
-      continue;
-    }
-    
-    const indent = line.length - line.trimStart().length;
-    
-    // Find the appropriate level in the stack
-    while (indent <= indentStack[indentStack.length - 1] && stack.length > 1) {
-      stack.pop();
-      indentStack.pop();
-    }
-    
-    if (indent > indentStack[indentStack.length - 1]) {
-      // New nested level
-      const lastKey = Object.keys(stack[stack.length - 1]).pop();
-      if (lastKey) {
-        stack[stack.length - 1][lastKey] = {};
-        stack.push(stack[stack.length - 1][lastKey]);
-        indentStack.push(indent);
-      }
-    }
-    
-    // Parse key-value pair
-    const colonIndex = trimmedLine.indexOf(':');
-    if (colonIndex !== -1) {
-      const key = trimmedLine.substring(0, colonIndex).trim();
-      const value = trimmedLine.substring(colonIndex + 1).trim();
-      
-      if (value === '') {
-        // This is a key with nested content
-        stack[stack.length - 1][key] = {};
-        stack.push(stack[stack.length - 1][key]);
-        indentStack.push(indent);
-      } else {
-        // This is a key-value pair
-        stack[stack.length - 1][key] = value;
-      }
-    }
-  }
-  
-  return result;
-}
-
-/**
- * Convert YAML back to string
- */
-function stringifyYAML(obj, indent = 0) {
-  const spaces = '  '.repeat(indent);
-  let result = '';
-  
-  for (const [key, value] of Object.entries(obj)) {
-    if (typeof value === 'object' && value !== null && Object.keys(value).length > 0) {
-      result += `${spaces}${key}:\n`;
-      result += stringifyYAML(value, indent + 1);
-    } else {
-      result += `${spaces}${key}: ${value}\n`;
-    }
-  }
-  
-  return result;
-}
-
-/**
  * Check if actions/setup-dotnet is already included
  */
 function hasSetupDotnet(content) {
@@ -191,17 +115,6 @@ async function processWorkflow(filePath) {
   // Remove nuget/setup-nuget@v1 action as it's no longer needed
   content = content.replace(/- uses: nuget\/setup-nuget@v1\n/g, '');
   
-  // Validate YAML syntax
-  try {
-    parseYAML(content);
-    console.log('✅ YAML syntax validation passed');
-  } catch (error) {
-    console.error('❌ YAML syntax validation failed:', error.message);
-    // Restore from backup
-    content = readFileSync(`${filePath}.bak`, 'utf8');
-    console.log('Restored original content due to YAML syntax error');
-  }
-  
   // Check for changes
   if (content !== originalContent) {
     console.log(`Modified ${filePath} to use dotnet CLI instead of nuget.exe`);
@@ -219,17 +132,8 @@ async function processWorkflow(filePath) {
   // Add actions/setup-dotnet if not present
   if (!hasSetupDotnet(content)) {
     content = addSetupDotnet(content);
-    
-    // Validate YAML syntax again after adding setup-dotnet
-    try {
-      parseYAML(content);
-      console.log('✅ YAML syntax validation passed after adding setup-dotnet');
-      writeFileSync(filePath, content);
-      console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
-    } catch (error) {
-      console.error('❌ YAML syntax validation failed after adding setup-dotnet:', error.message);
-      console.log('Skipping setup-dotnet addition due to YAML syntax error');
-    }
+    writeFileSync(filePath, content);
+    console.log(`Added actions/setup-dotnet@v4 to ${filePath}`);
   }
 }
 
