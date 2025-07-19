@@ -19,6 +19,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
       - uses: actions/checkout@v1
         with:
           submodules: true
@@ -29,20 +34,29 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
       - uses: actions/checkout@v1
         with:
           submodules: true
-      - uses: nuget/setup-nuget@v1
       - name: Publish NuGet package to GitHub Package Registry
         run: |
           dotnet build -c Release
           dotnet pack -c Release
-          nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/linksplatform/index.json" -UserName linksplatform -Password ${{ secrets.GITHUB_TOKEN }}
-          nuget push **/*.nupkg -Source "GitHub" -SkipDuplicate
+          dotnet nuget add source https://nuget.pkg.github.com/linksplatform/index.json --name GitHub --username linksplatform --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
+          dotnet nuget push **/*.nupkg --source GitHub --skip-duplicate
   pusnToNuget:
     runs-on: ubuntu-latest
     needs: test
     steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
     - uses: actions/checkout@v1
       with:
         submodules: true
@@ -60,6 +74,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
       - uses: actions/checkout@v1
         with:
           submodules: true
@@ -82,6 +101,11 @@ jobs:
     outputs:
       isCsFilesChanged: ${{ steps.setIsCsFilesChangedOutput.outputs.isCsFilesChanged }}
     steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
     - uses: actions/checkout@v3
       with:
        fetch-depth: 0
@@ -107,6 +131,11 @@ jobs:
     needs: [findChangedCsFiles]
     if: ${{ needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
     steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
     - uses: actions/checkout@v1
       with:
         submodules: true
@@ -122,6 +151,11 @@ jobs:
     needs: [findChangedCsFiles]
     if: ${{ needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
     steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
     - uses: actions/checkout@v1
       with:
         submodules: true
