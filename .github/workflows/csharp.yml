@@ -162,8 +162,34 @@ jobs:
       - name: Publish documentation to gh-pages branch
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          wget "$SCRIPTS_BASE_URL/docfx.json"
+          
+          # Download filter.yml
           wget "$SCRIPTS_BASE_URL/filter.yml"
-          wget "$SCRIPTS_BASE_URL/toc.yml"
-          wget "$SCRIPTS_BASE_URL/publish-csharp-docs.sh"
-          bash ./publish-csharp-docs.sh
+          
+          # Use custom docfx.json and toc.yml with PDF support from repository
+          cp ../docfx.json ./docfx.json
+          cp ../toc.yml ./toc.yml
+          cp ../publish-docs-with-pdf.sh ./publish-docs-with-pdf.sh
+          chmod +x ./publish-docs-with-pdf.sh
+          
+          # Install modern DocFX with PDF support
+          dotnet tool install -g docfx --version 2.78.3
+          
+          # Replace repository name in configurations
+          sed -i "s/\$REPOSITORY_NAME/$REPOSITORY_NAME/g" docfx.json
+          sed -i "s/\$REPOSITORY_NAME/$REPOSITORY_NAME/g" toc.yml
+          
+          # Generate HTML documentation
+          docfx docfx.json
+          
+          # Generate PDF documentation
+          docfx pdf docfx.json
+          
+          # Copy PDF to site directory
+          mkdir -p _site
+          if [ -d "_site_pdf" ] && [ "$(ls -A _site_pdf)" ]; then
+            cp _site_pdf/*.pdf _site/ 2>/dev/null || echo "No PDF files generated"
+          fi
+          
+          # Publish documentation with PDF
+          bash ./publish-docs-with-pdf.sh
