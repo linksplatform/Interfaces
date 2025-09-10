@@ -2,12 +2,12 @@
 
 namespace Platform::Interfaces {
   template <typename...>
-  struct ICriterionMatcher;
+  struct IMatcher;
 
   template <typename TArgument>
-  struct ICriterionMatcher<TArgument> {
+  struct IMatcher<TArgument> {
     virtual bool IsMatched(TArgument argument) = 0;
 
-    virtual ~ICriterionMatcher() = default;
+    virtual ~IMatcher() = default;
   };
 }  // namespace Platform::Interfaces
