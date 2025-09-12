@@ -10,7 +10,7 @@
     <AssemblyName>Platform.Interfaces</AssemblyName>
     <PackageId>Platform.Interfaces</PackageId>
     <PackageTags>LinksPlatform;Interfaces;ICounter;ICriterionMatcher;IFactory;IProperties;IProperty;IProvider;ISetter</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://linksplatform.github.io/Interfaces</PackageProjectUrl>
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
@@ -34,6 +34,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
