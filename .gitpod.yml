@@ -1,4 +1,12 @@
+image: gitpod/workspace-dotnet
+
 tasks:
-  - name: Setup & Test
+  - name: Setup C++ Environment
     init: sh ./cpp/setup-gitpod.sh
     command: sh ./cpp/run-tests-gitpod.sh
+  - name: Setup .NET Environment  
+    init: |
+      cd csharp
+      dotnet restore Platform.Interfaces.sln
+      dotnet build Platform.Interfaces.sln
+    command: echo ".NET 8 SDK is ready for development"
