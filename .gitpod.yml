@@ -7,6 +7,6 @@ tasks:
   - name: Setup .NET Environment  
     init: |
       cd csharp
-      dotnet restore Platform.Interfaces.sln
-      dotnet build Platform.Interfaces.sln
+      dotnet restore Platform.Abstractions.sln
+      dotnet build Platform.Abstractions.sln
     command: echo ".NET 8 SDK is ready for development"
