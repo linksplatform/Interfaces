@@ -6,7 +6,7 @@ set(LINKS_PLATFORM_EXTRA_FLAGS "" CACHE STRING "Extra compiler flags")
 set(CONAN_DISABLE_CHECK_COMPILER TRUE)
 set(LINKS_PLATFORM_TESTS TRUE)
 
-project(Platform.Interfaces CXX)
+project(Platform.Abstractions CXX)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 find_package(GTest)
 
