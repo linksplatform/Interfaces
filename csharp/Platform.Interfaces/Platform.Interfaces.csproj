@@ -22,9 +22,8 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <DebugType>embedded</DebugType>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Add embedded symbols support for GitHub Package Registry debugging.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix NU5017 packaging error by removing conflicting DebugType setting.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
