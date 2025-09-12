@@ -30,17 +30,17 @@ namespace Platform::Interfaces::Tests {
     }
   }
 
-  TEST(CompileTests, CriterionMatcher) {
-    struct EmptyCriterionMatcher : public ICriterionMatcher<int> {
+  TEST(CompileTests, Matcher) {
+    struct EmptyMatcher : public IMatcher<int> {
       bool IsMatched(int) { return {}; }
     };
-    static_assert(CCriterionMatcher<EmptyCriterionMatcher, int>);
+    static_assert(CMatcher<EmptyMatcher, int>);
 
     {
-      CCriterionMatcher<int> auto criterionMatcher = EmptyCriterionMatcher{};
+      CMatcher<int> auto matcher = EmptyMatcher{};
 
-      ASSERT_TRUE((CCriterionMatcher<EmptyCriterionMatcher, int>));
-      ASSERT_TRUE((CCriterionMatcher<EmptyCriterionMatcher, float>));
+      ASSERT_TRUE((CMatcher<EmptyMatcher, int>));
+      ASSERT_TRUE((CMatcher<EmptyMatcher, float>));
     }
   }
 
