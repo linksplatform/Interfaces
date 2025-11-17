@@ -43,11 +43,45 @@ namespace Platform::Interfaces {
       return false;
     }
 
+    template <typename TRawSelf, typename... TItems>
+    consteval bool CReadonlySetHelpFunction() {
+      using Self = TRawSelf;
+
+      if constexpr (sizeof...(TItems) == 1) {
+        return requires(const Self self, std::tuple<TItems...> items, decltype(std::get<0>(items)) item) {
+          { self.find(item) } -> std::same_as<std::ranges::iterator_t<const Self>>;
+          { self.contains(item) } -> std::same_as<bool>;
+          { self.empty() } -> std::same_as<bool>;
+          { self.size() } -> std::integral;
+
+          requires std::ranges::forward_range<const Self>;
+        };
+      }
+      if constexpr (sizeof...(TItems) == 0) {
+        return requires(const Self self, typename Enumerable<const Self>::Item generic_item) {
+          { self.find(generic_item) } -> std::same_as<std::ranges::iterator_t<const Self>>;
+          { self.contains(generic_item) } -> std::same_as<bool>;
+          { self.empty() } -> std::same_as<bool>;
+          { self.size() } -> std::integral;
+
+          requires std::ranges::forward_range<const Self>;
+        };
+      }
+
+      return false;
+    }
+
   }  // namespace Internal
 
   template <typename TSelf, typename... TItems>
   concept CSet = CEnumerable<TSelf> && Internal::CSetHelpFunction<TSelf, TItems...>();
 
+  template <typename TSelf, typename... TItems>
+  concept CReadonlySet = CEnumerable<TSelf> && Internal::CReadonlySetHelpFunction<TSelf, TItems...>();
+
   template <CSet TSelf>
   struct Set : Enumerable<TSelf> {};
+
+  template <CReadonlySet TSelf>
+  struct ReadonlySet : Enumerable<TSelf> {};
 }  // namespace Platform::Interfaces
