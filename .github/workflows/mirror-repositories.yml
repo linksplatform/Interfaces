@@ -1,0 +1,171 @@
+name: Mirror to GitLab and Bitbucket
+
+on:
+  push:
+    branches: ['*']
+    tags: ['*']
+  delete:
+    # Triggered when branches or tags are deleted
+
+env:
+  GITLAB_URL: gitlab.com
+  BITBUCKET_URL: bitbucket.org
+
+jobs:
+  mirror-to-gitlab:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch complete history for mirroring
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions Mirror Bot"
+          git config --global user.email "actions@github.com"
+
+      - name: Add GitLab remote and mirror
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          GITLAB_PROJECT_PATH: ${{ secrets.GITLAB_PROJECT_PATH }}  # e.g., linksplatform/Interfaces
+        run: |
+          # Add GitLab remote
+          git remote add gitlab https://oauth2:${GITLAB_TOKEN}@${GITLAB_URL}/${GITLAB_PROJECT_PATH}.git
+          
+          # Push all branches and tags to GitLab
+          git push --mirror gitlab || {
+            echo "Mirror push failed, attempting individual branch push"
+            git push gitlab ${GITHUB_REF#refs/heads/} || echo "Failed to push current branch"
+          }
+
+  mirror-to-bitbucket:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch complete history for mirroring
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions Mirror Bot"
+          git config --global user.email "actions@github.com"
+
+      - name: Add Bitbucket remote and mirror
+        env:
+          BITBUCKET_USERNAME: ${{ secrets.BITBUCKET_USERNAME }}
+          BITBUCKET_APP_PASSWORD: ${{ secrets.BITBUCKET_APP_PASSWORD }}
+          BITBUCKET_PROJECT_PATH: ${{ secrets.BITBUCKET_PROJECT_PATH }}  # e.g., linksplatform/interfaces
+        run: |
+          # Add Bitbucket remote
+          git remote add bitbucket https://${BITBUCKET_USERNAME}:${BITBUCKET_APP_PASSWORD}@${BITBUCKET_URL}/${BITBUCKET_PROJECT_PATH}.git
+          
+          # Push all branches and tags to Bitbucket
+          git push --mirror bitbucket || {
+            echo "Mirror push failed, attempting individual branch push"
+            git push bitbucket ${GITHUB_REF#refs/heads/} || echo "Failed to push current branch"
+          }
+
+  handle-branch-deletion:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'delete' && github.event.ref_type == 'branch'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions Mirror Bot"
+          git config --global user.email "actions@github.com"
+
+      - name: Check if branch was fully merged before deletion
+        id: check-merged
+        env:
+          DELETED_BRANCH: ${{ github.event.ref }}
+        run: |
+          echo "Checking if branch '${DELETED_BRANCH}' was fully merged..."
+          
+          # Check if the branch was merged into main/master
+          MAIN_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@' || echo "main")
+          
+          # Get the last commit of the deleted branch from GitHub API
+          LAST_COMMIT=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/commits/${DELETED_BRANCH}" \
+            | jq -r '.sha' 2>/dev/null || echo "")
+          
+          if [ -n "${LAST_COMMIT}" ] && [ "${LAST_COMMIT}" != "null" ]; then
+            # Check if the commit exists in the main branch
+            if git merge-base --is-ancestor "${LAST_COMMIT}" "origin/${MAIN_BRANCH}" 2>/dev/null; then
+              echo "Branch was fully merged - safe to delete from mirrors"
+              echo "should_delete=true" >> $GITHUB_OUTPUT
+            else
+              echo "Branch was NOT fully merged - skipping deletion from mirrors"
+              echo "should_delete=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "Could not determine merge status - skipping deletion for safety"
+            echo "should_delete=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Delete branch from GitLab mirror
+        if: steps.check-merged.outputs.should_delete == 'true'
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          GITLAB_PROJECT_PATH: ${{ secrets.GITLAB_PROJECT_PATH }}
+          DELETED_BRANCH: ${{ github.event.ref }}
+        run: |
+          echo "Deleting branch '${DELETED_BRANCH}' from GitLab mirror..."
+          git remote add gitlab https://oauth2:${GITLAB_TOKEN}@${GITLAB_URL}/${GITLAB_PROJECT_PATH}.git
+          git push gitlab --delete "${DELETED_BRANCH}" || echo "Branch may not exist in GitLab or already deleted"
+
+      - name: Delete branch from Bitbucket mirror
+        if: steps.check-merged.outputs.should_delete == 'true'
+        env:
+          BITBUCKET_USERNAME: ${{ secrets.BITBUCKET_USERNAME }}
+          BITBUCKET_APP_PASSWORD: ${{ secrets.BITBUCKET_APP_PASSWORD }}
+          BITBUCKET_PROJECT_PATH: ${{ secrets.BITBUCKET_PROJECT_PATH }}
+          DELETED_BRANCH: ${{ github.event.ref }}
+        run: |
+          echo "Deleting branch '${DELETED_BRANCH}' from Bitbucket mirror..."
+          git remote add bitbucket https://${BITBUCKET_USERNAME}:${BITBUCKET_APP_PASSWORD}@${BITBUCKET_URL}/${BITBUCKET_PROJECT_PATH}.git
+          git push bitbucket --delete "${DELETED_BRANCH}" || echo "Branch may not exist in Bitbucket or already deleted"
+
+  mirror-tags:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions Mirror Bot"
+          git config --global user.email "actions@github.com"
+
+      - name: Mirror tags to GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          GITLAB_PROJECT_PATH: ${{ secrets.GITLAB_PROJECT_PATH }}
+        run: |
+          git remote add gitlab https://oauth2:${GITLAB_TOKEN}@${GITLAB_URL}/${GITLAB_PROJECT_PATH}.git
+          git push gitlab --tags || echo "Failed to push tags to GitLab"
+
+      - name: Mirror tags to Bitbucket
+        env:
+          BITBUCKET_USERNAME: ${{ secrets.BITBUCKET_USERNAME }}
+          BITBUCKET_APP_PASSWORD: ${{ secrets.BITBUCKET_APP_PASSWORD }}
+          BITBUCKET_PROJECT_PATH: ${{ secrets.BITBUCKET_PROJECT_PATH }}
+        run: |
+          git remote add bitbucket https://${BITBUCKET_USERNAME}:${BITBUCKET_APP_PASSWORD}@${BITBUCKET_URL}/${BITBUCKET_PROJECT_PATH}.git
+          git push bitbucket --tags || echo "Failed to push tags to Bitbucket"
