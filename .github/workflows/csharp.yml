@@ -2,15 +2,26 @@ name: csharp
 
 on:
   push:
-    branches: main 
+    branches: main
     paths:
       - 'csharp/**'
+      - 'README.md'
+      - '.github/scripts/validate-csharp-package.sh'
       - '.github/workflows/csharp.yml'
+  pull_request:
+    branches: main
+    paths:
+      - 'csharp/**'
+      - 'README.md'
+      - '.github/scripts/validate-csharp-package.sh'
+      - '.github/workflows/csharp.yml'
+
+permissions:
+  contents: read
+
 env:
-  NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/main/MultiProjectRepository
-  
+
 defaults:
   run:
     working-directory: csharp
@@ -18,100 +29,113 @@ defaults:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v7
         with:
           submodules: true
-      - name: Test
-        run: |
-          dotnet test -c Release -f net8
+      - name: Validate tests and NuGet package
+        run: ../.github/scripts/validate-csharp-package.sh
+
   pushNuGetPackageToGitHubPackageRegistry:
     needs: test
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - name: Publish NuGet package to GitHub Package Registry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          dotnet build -c Release
-          dotnet pack -c Release --include-symbols
-          dotnet nuget add source https://nuget.pkg.github.com/linksplatform/index.json --name GitHub --username linksplatform --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
-          dotnet nuget push **/*.nupkg --source GitHub --skip-duplicate
-  pusnToNuget:
-    runs-on: ubuntu-latest
+          package_output="$RUNNER_TEMP/github-packages"
+          dotnet pack Platform.Interfaces/Platform.Interfaces.csproj -c Release --output "$package_output" -warnaserror
+          dotnet nuget add source https://nuget.pkg.github.com/linksplatform/index.json --name GitHub --username linksplatform --password "$GITHUB_TOKEN" --store-password-in-clear-text
+          dotnet nuget push "$package_output"/*.nupkg --source GitHub --skip-duplicate
+
+  pushToNuget:
     needs: test
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v7
         with:
           submodules: true
-      - name: Read project information
-        run: |
-          export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          wget "$SCRIPTS_BASE_URL/read_csharp_package_info.sh"
-          bash ./read_csharp_package_info.sh
       - name: Publish NuGet package
+        env:
+          NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
         run: |
-          export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          wget "$SCRIPTS_BASE_URL/push-csharp-nuget.sh"
-          bash ./push-csharp-nuget.sh
-  publiseRelease:
+          package_output="$RUNNER_TEMP/nuget-packages"
+          dotnet pack Platform.Interfaces/Platform.Interfaces.csproj -c Release --output "$package_output" -warnaserror
+          dotnet nuget push "$package_output"/*.nupkg --source https://api.nuget.org/v3/index.json --api-key "$NUGETTOKEN" --skip-duplicate
+
+  publishRelease:
+    needs: [pushNuGetPackageToGitHubPackageRegistry, pushToNuget]
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
-    needs: test
+    timeout-minutes: 10
+    permissions:
+      contents: write
     steps:
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - name: Read project information
-        if: ${{ github.event_name == 'push' }}
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
           wget "$SCRIPTS_BASE_URL/read_csharp_package_info.sh"
           bash ./read_csharp_package_info.sh
       - name: Publish release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
+          export CSHARP_PACKAGE_VERSION="$(<CSHARP_PACKAGE_VERSION.txt)"
           wget "$SCRIPTS_BASE_URL/publish-release.sh"
           chmod +x ./publish-release.sh
           wget "$SCRIPTS_BASE_URL/publish-csharp-release.sh"
           bash ./publish-csharp-release.sh
+
   findChangedCsFiles:
-    runs-on: ubuntu-latest
     needs: test
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     outputs:
       isCsFilesChanged: ${{ steps.setIsCsFilesChangedOutput.outputs.isCsFilesChanged }}
     steps:
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
-
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Get changed files using defaults
         id: changed-files
-        uses: tj-actions/changed-files@v46
+        uses: tj-actions/changed-files@v47
       - name: Set output isCsFilesChanged
         id: setIsCsFilesChangedOutput
         run: |
@@ -124,19 +148,21 @@ jobs:
               isCsFilesChanged='true'
             fi
           done
-          echo "::set-output name=isCsFilesChanged::${isCsFilesChanged}"
+          echo "isCsFilesChanged=${isCsFilesChanged}" >> "$GITHUB_OUTPUT"
           echo "isCsFilesChanged: ${isCsFilesChanged}"
+
   generatePdfWithCode:
-    runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
-    if: ${{ needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
+    if: ${{ github.event_name == 'push' && needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - name: Generate PDF with code
@@ -146,20 +172,26 @@ jobs:
           wget "$SCRIPTS_BASE_URL/format-csharp-document.sh"
           wget "$SCRIPTS_BASE_URL/generate-csharp-pdf.sh"
           bash ./generate-csharp-pdf.sh
+
   publishDocumentation:
-    runs-on: ubuntu-latest
     needs: [findChangedCsFiles]
-    if: ${{ needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
+    if: ${{ github.event_name == 'push' && needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
     steps:
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - name: Publish documentation to gh-pages branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
           wget "$SCRIPTS_BASE_URL/docfx.json"
