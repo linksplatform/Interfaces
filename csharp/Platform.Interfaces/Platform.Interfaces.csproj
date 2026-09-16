@@ -21,10 +21,9 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <DebugType>embedded</DebugType>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Fix package and symbol publishing, eliminate C# workflow warnings, and validate NuGet artifacts before release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix package publishing while preserving embedded symbols, eliminate C# workflow warnings, and validate NuGet artifacts before release.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
