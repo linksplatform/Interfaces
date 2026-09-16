@@ -13,6 +13,11 @@
  *
  * Usage:
  *   node .github/scripts/check-readme-badges.mjs [--verbose]
+ *     [--readme <path>] [--workflows <directory>]
+ *
+ * --readme and --workflows default to this repository's README.md and
+ * .github/workflows, and exist so the test suite can point the check at
+ * fixtures.
  *
  * Exits with code 1 and a description of every unresolved badge when a badge
  * references a workflow that does not exist.
@@ -24,8 +29,16 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(__dirname, "..", "..");
-const workflowsDirectory = join(repositoryRoot, ".github", "workflows");
-const readmePath = join(repositoryRoot, "README.md");
+
+const readOption = (option, fallback) => {
+  const index = process.argv.indexOf(option);
+  return index === -1 || index === process.argv.length - 1
+    ? fallback
+    : resolve(process.argv[index + 1]);
+};
+
+const workflowsDirectory = readOption("--workflows", join(repositoryRoot, ".github", "workflows"));
+const readmePath = readOption("--readme", join(repositoryRoot, "README.md"));
 
 const verbose = process.argv.includes("--verbose");
 const trace = (...args) => {
@@ -69,22 +82,24 @@ const referencePatterns = [
   {
     kind: "badge (workflow name)",
     pattern: /https:\/\/github\.com\/[^/\s)]+\/[^/\s)]+\/workflows\/([^/\s)]+)\/badge\.svg/g,
-    resolve: (raw) => ({ by: "name", value: decodeWorkflowReference(raw, false) }),
-  },
-  {
-    kind: "badge (workflow file)",
-    pattern: /https:\/\/github\.com\/[^/\s)]+\/[^/\s)]+\/actions\/workflows\/([^/\s)]+)\/badge\.svg/g,
-    resolve: (raw) => ({ by: "file", value: decodeWorkflowReference(raw, false) }),
+    resolve: (match) => ({ by: "name", value: decodeWorkflowReference(match[1], false) }),
   },
   {
     kind: "link (workflow name)",
     pattern: /https:\/\/github\.com\/[^/\s)]+\/[^/\s)]+\/actions\?workflow=([^\s)]+)/g,
-    resolve: (raw) => ({ by: "name", value: decodeWorkflowReference(raw, true) }),
+    resolve: (match) => ({ by: "name", value: decodeWorkflowReference(match[1], true) }),
   },
   {
-    kind: "link (workflow file)",
-    pattern: /https:\/\/github\.com\/[^/\s)]+\/[^/\s)]+\/actions\/workflows\/([^/\s)?]+)(?!\/badge\.svg)/g,
-    resolve: (raw) => ({ by: "file", value: decodeWorkflowReference(raw, false) }),
+    // Covers both the badge form (.../actions/workflows/<file>/badge.svg) and the
+    // plain link form (.../actions/workflows/<file>). The trailing boundary keeps
+    // the capture from backtracking into a truncated file name such as "cpp-test.ym".
+    kind: "workflow file",
+    pattern: /https:\/\/github\.com\/[^/\s)]+\/[^/\s)]+\/actions\/workflows\/([^/\s)?#]+)(\/badge\.svg)?(?=[\s)?#]|$)/g,
+    resolve: (match) => ({
+      kind: match[2] ? "badge (workflow file)" : "link (workflow file)",
+      by: "file",
+      value: decodeWorkflowReference(match[1], false),
+    }),
   },
 ];
 
@@ -92,7 +107,7 @@ const collectReferences = (readme) => {
   const references = [];
   for (const { kind, pattern, resolve: resolveReference } of referencePatterns) {
     for (const match of readme.matchAll(pattern)) {
-      references.push({ kind, url: match[0], ...resolveReference(match[1]) });
+      references.push({ kind, url: match[0], ...resolveReference(match) });
     }
   }
   return references;

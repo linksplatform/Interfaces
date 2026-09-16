@@ -7,12 +7,12 @@ on:
     paths:
       - 'README.md'
       - '.github/workflows/**'
-      - '.github/scripts/check-readme-badges.mjs'
+      - '.github/scripts/**'
   pull_request:
     paths:
       - 'README.md'
       - '.github/workflows/**'
-      - '.github/scripts/check-readme-badges.mjs'
+      - '.github/scripts/**'
   workflow_dispatch:
 
 jobs:
@@ -24,5 +24,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Test the badge check
+        run: node --test .github/scripts/check-readme-badges.test.mjs
       - name: Check that README badges reference existing workflows
         run: node .github/scripts/check-readme-badges.mjs --verbose
