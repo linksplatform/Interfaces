@@ -2,9 +2,6 @@
 using System.Reflection.PortableExecutable;
 using Xunit;
 
-#pragma warning disable CS0168 // Variable is declared but never used
-#pragma warning disable CS0219 // Variable is assigned but its value is never used
-
 namespace Platform.Interfaces.Tests
 {
     public static class InterfacesTests
@@ -22,6 +19,17 @@ namespace Platform.Interfaces.Tests
             IProvider<int>? p4 = null;
             ISetter<int, int>? s1 = null;
             ISetter<int>? s2 = null;
+
+            Assert.Null(c1);
+            Assert.Null(c2);
+            Assert.Null(cm1);
+            Assert.Null(f1);
+            Assert.Null(p1);
+            Assert.Null(p2);
+            Assert.Null(p3);
+            Assert.Null(p4);
+            Assert.Null(s1);
+            Assert.Null(s2);
         }
 
         [Fact]
