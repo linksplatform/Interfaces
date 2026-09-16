@@ -32,15 +32,15 @@ if [[ ${#symbol_packages[@]} -ne 1 ]]; then
   exit 1
 fi
 
-for expected_file in README.md icon.png lib/net8/Platform.Interfaces.dll; do
+for expected_file in README.md icon.png lib/net8.0/Platform.Interfaces.dll; do
   if ! unzip -Z1 "${packages[0]}" | grep -Fxq "$expected_file"; then
     echo "${packages[0]} is missing $expected_file." >&2
     exit 1
   fi
 done
 
-if ! unzip -Z1 "${symbol_packages[0]}" | grep -Fxq 'lib/net8/Platform.Interfaces.pdb'; then
-  echo "${symbol_packages[0]} is missing lib/net8/Platform.Interfaces.pdb." >&2
+if ! unzip -Z1 "${symbol_packages[0]}" | grep -Fxq 'lib/net8.0/Platform.Interfaces.pdb'; then
+  echo "${symbol_packages[0]} is missing lib/net8.0/Platform.Interfaces.pdb." >&2
   exit 1
 fi
 

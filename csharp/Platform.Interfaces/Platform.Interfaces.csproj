@@ -4,12 +4,13 @@
     <Description>LinksPlatform's Platform.Interfaces Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
-    <VersionPrefix>0.5.1</VersionPrefix>
+    <VersionPrefix>0.5.2</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Interfaces</AssemblyName>
     <PackageId>Platform.Interfaces</PackageId>
     <PackageTags>LinksPlatform;Interfaces;ICounter;ICriterionMatcher;IFactory;IProperties;IProperty;IProvider;ISetter</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://linksplatform.github.io/Interfaces</PackageProjectUrl>
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
@@ -23,7 +24,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Fix NU5017 packaging error by removing conflicting DebugType setting.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix package and symbol publishing, eliminate C# workflow warnings, and validate NuGet artifacts before release.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -36,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="\" />
     <None Include="icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
