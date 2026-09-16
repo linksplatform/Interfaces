@@ -1,4 +1,6 @@
-﻿using Xunit;
+﻿using System.IO;
+using System.Reflection.PortableExecutable;
+using Xunit;
 
 #pragma warning disable CS0168 // Variable is declared but never used
 #pragma warning disable CS0219 // Variable is assigned but its value is never used
@@ -20,6 +22,17 @@ namespace Platform.Interfaces.Tests
             IProvider<int>? p4 = null;
             ISetter<int, int>? s1 = null;
             ISetter<int>? s2 = null;
+        }
+
+        [Fact]
+        public static void AssemblyContainsEmbeddedPortablePdb()
+        {
+            using var assembly = File.OpenRead(typeof(ICounter<>).Assembly.Location);
+            using var peReader = new PEReader(assembly);
+
+            Assert.Contains(
+                peReader.ReadDebugDirectory(),
+                entry => entry.Type == DebugDirectoryEntryType.EmbeddedPortablePdb);
         }
     }
 }
