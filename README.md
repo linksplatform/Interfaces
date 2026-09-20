@@ -4,7 +4,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/interfaces/badge)](https://www.codefactor.io/repository/github/linksplatform/interfaces)
 [![CodeQL](https://github.com/linksplatform/Interfaces/actions/workflows/codeql.yml/badge.svg)](https://github.com/linksplatform/Interfaces/actions/workflows/codeql.yml)
 
-| [![Actions Status](https://github.com/linksplatform/Interfaces/workflows/deploy-cpp/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=deploy-cpp) | [![NuGet Version and Downloads count](https://img.shields.io/nuget/v/Platform.Interfaces.TemplateLibrary?label=nuget&style=flat)](https://www.nuget.org/packages/Platform.Interfaces.TemplateLibrary) [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/platform.interfaces.svg)](https://conan.io/center/platform.interfaces) | __C++__  |
+| [![Actions Status](https://github.com/linksplatform/Interfaces/workflows/Test%20cpp/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=Test%20cpp) | [![NuGet Version and Downloads count](https://img.shields.io/nuget/v/Platform.Interfaces.TemplateLibrary?label=nuget&style=flat)](https://www.nuget.org/packages/Platform.Interfaces.TemplateLibrary) [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/platform.interfaces.svg)](https://conan.io/center/platform.interfaces) | __C++__  |
 |-|-|-|
 | [![Actions Status](https://github.com/linksplatform/Interfaces/workflows/csharp/badge.svg)](https://github.com/linksplatform/Interfaces/actions?workflow=csharp) | [![NuGet Version and Downloads count](https://img.shields.io/nuget/v/Platform.Interfaces?label=nuget&style=flat)](https://www.nuget.org/packages/Platform.Interfaces) | C# |
 
