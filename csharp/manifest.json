@@ -1,5 +1,4 @@
 {
-  "homepages": [],
   "source_base_path": "/home/runner/work/Interfaces/Interfaces/csharp",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -9,219 +8,213 @@
         "resource": {
           "relative_path": "index.json"
         }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
       },
-      "is_incremental": false
+      "version": ""
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.ICli.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.ICli.html",
-          "hash": "++g81OvGJeLX4he7dZIDwg=="
+          "relative_path": "api/Platform.Interfaces.ICli.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.ICli",
+      "Summary": "<p>Defines command line interfaces for command that interacts with an operating system.</p>\n<p>Определяет интерфейс командной строки, для команды взаимодействующей с операционной системой.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.ICounter-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.ICounter-1.html",
-          "hash": "awzGIjX+qXjk9qZGkc/XKg=="
+          "relative_path": "api/Platform.Interfaces.ICounter-1.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.ICounter<TResult>",
+      "Summary": "<p>Defines a counter.</p>\n<p>Определяет счётчик.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.ICounter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.ICounter-2.html",
-          "hash": "sgY64RuuyGXj5NZEPkWkNQ=="
+          "relative_path": "api/Platform.Interfaces.ICounter-2.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.ICounter<TResult, TArgument>",
+      "Summary": "<p>Defines a counter that requires an argument to perform a count.</p>\n<p>Определяет счётчик, которому требуется аргумент для выполнения подсчёта.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.ICriterionMatcher-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.ICriterionMatcher-1.html",
-          "hash": "1cx/6pwmNhL6wzt0XmH2HQ=="
+          "relative_path": "api/Platform.Interfaces.ICriterionMatcher-1.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.ICriterionMatcher<TArgument>",
+      "Summary": "<p>Defines a criterion matcher, that contains a specific method for determining whether the argument matches the criterion or not.</p>\n<p>Определяет объект который проверяет соответствие критерию и содержит конкретный метод для определения, соответствует ли аргумент критерию или нет.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.IFactory-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.IFactory-1.html",
-          "hash": "QnDrHqT+RH5xB0Y6Ntd5Sg=="
+          "relative_path": "api/Platform.Interfaces.IFactory-1.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.IFactory<TProduct>",
+      "Summary": "<p>Defines a factory that produces instances of a specific type.</p>\n<p>Определяет фабрику, которая производит экземпляры определенного типа.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.IProperties-3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.IProperties-3.html",
-          "hash": "asVCfpjZrrcLpQdLmE7SeA=="
+          "relative_path": "api/Platform.Interfaces.IProperties-3.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.IProperties<TObject, TProperty, TValue>",
+      "Summary": "<p>Defines a properties operator that is able to get or set values of properties of a object of a specific type.</p>\n<p>Определяет оператор свойств, который может получать или устанавливать значения свойств объекта определенного типа.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.IProperty-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.IProperty-2.html",
-          "hash": "If7+hd4CWrlVrtefWvcrDw=="
+          "relative_path": "api/Platform.Interfaces.IProperty-2.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.IProperty<TObject, TValue>",
+      "Summary": "<p>Defines a specific property operator that is able to get or set values of that property.</p>\n<p>Определяет оператор определённого свойства, который может получать или устанавливать его значения.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.IProvider-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.IProvider-1.html",
-          "hash": "3Mtf0FlwL8Eo6s8ja3DwNw=="
+          "relative_path": "api/Platform.Interfaces.IProvider-1.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.IProvider<TProvided>",
+      "Summary": "<p>Defines the provider of objects/values.</p>\n<p>Определяет поставщика объектов/значений.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.IProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.IProvider-2.html",
-          "hash": "UQCF2sZ8ZyvMOtstwq8QKA=="
+          "relative_path": "api/Platform.Interfaces.IProvider-2.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.IProvider<TProvided, TArgument>",
+      "Summary": "<p>Defines the provider of objects/values for which an argument must be specified.</p>\n<p>Определяет поставщика объектов/значений, для получения которых необходимо указать аргумент.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.ISetter-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.ISetter-1.html",
-          "hash": "sgPCPMeeNHW5a77beU1bfg=="
+          "relative_path": "api/Platform.Interfaces.ISetter-1.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.ISetter<TValue>",
+      "Summary": "<p>Defines an setter that sets the passed value as a new state.</p>\n<p>Определяет установщик, который устанавливает переданное значение в качестве нового состояния.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.ISetter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.ISetter-2.html",
-          "hash": "uXEDb2wfHoMNKImCwFGIKw=="
+          "relative_path": "api/Platform.Interfaces.ISetter-2.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.ISetter<TValue, TArgument>",
+      "Summary": "<p>Defines an setter that requires an argument to set the passed value as a new state.</p>\n<p>Определяет установщик, которому для установки переданного значения в качестве нового состояния требуется аргумент.</p>\n"
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Platform.Interfaces.html",
-          "hash": "0tALMcRp66StixUsGf80XQ=="
+          "relative_path": "api/Platform.Interfaces.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces",
+      "Summary": null
     },
     {
       "type": "Toc",
       "source_relative_path": "obj/api/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "5ekst4gFZ8Rb5aOpDTocjQ=="
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "IwXZh7X5zz51MuIZiBw7Xw=="
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     }
   ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
-      },
-      "processors": {
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 12,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
-    }
-  ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"

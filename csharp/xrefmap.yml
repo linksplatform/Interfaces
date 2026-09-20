@@ -14,14 +14,14 @@ references:
   fullName: Platform.Interfaces.ICli
   nameWithType: ICli
 - uid: Platform.Interfaces.ICli.Run(System.String[])
-  name: Run(String[])
+  name: Run(params string[])
   href: api/Platform.Interfaces.ICli.html#Platform_Interfaces_ICli_Run_System_String___
   commentId: M:Platform.Interfaces.ICli.Run(System.String[])
-  name.vb: Run(String())
-  fullName: Platform.Interfaces.ICli.Run(System.String[])
-  fullName.vb: Platform.Interfaces.ICli.Run(System.String())
-  nameWithType: ICli.Run(String[])
-  nameWithType.vb: ICli.Run(String())
+  name.vb: Run(ParamArray String())
+  fullName: Platform.Interfaces.ICli.Run(params string[])
+  fullName.vb: Platform.Interfaces.ICli.Run(ParamArray String())
+  nameWithType: ICli.Run(params string[])
+  nameWithType.vb: ICli.Run(ParamArray String())
 - uid: Platform.Interfaces.ICli.Run*
   name: Run
   href: api/Platform.Interfaces.ICli.html#Platform_Interfaces_ICli_Run_
