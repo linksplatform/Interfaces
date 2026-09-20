@@ -77,6 +77,13 @@ test("caps every job so hangs cannot run indefinitely", () => {
   }
 });
 
+test("pins the runner image so latest-image migrations do not create warnings", () => {
+  assert.doesNotMatch(workflow, /runs-on: ubuntu-latest/);
+  for (const [name, job] of jobs) {
+    assert.match(job, /\n    runs-on: ubuntu-24\.04/, `${name} has an unpinned runner`);
+  }
+});
+
 test("gates both package publishers on a release preflight", () => {
   const preflight = jobs.get("releasePreflight");
   assert.ok(preflight, "releasePreflight job should exist");
@@ -101,9 +108,10 @@ test("builds documentation on pull requests and transfers the PDF", () => {
   assert.doesNotMatch(jobs.get("generatePdfWithCode"), /github\.event_name == 'push'/);
   assert.doesNotMatch(jobs.get("buildDocumentation"), /github\.event_name == 'push'/);
   assert.match(jobs.get("generatePdfWithCode"), /actions\/upload-artifact@/);
-  assert.match(jobs.get("buildDocumentation"), /actions\/download-artifact@/);
+  assert.doesNotMatch(workflow, /actions\/download-artifact@/);
+  assert.match(jobs.get("buildDocumentation"), /gh run download/);
   assert.match(jobs.get("buildDocumentation"), /actions\/upload-artifact@/);
-  assert.match(jobs.get("publishDocumentation"), /actions\/download-artifact@/);
+  assert.match(jobs.get("publishDocumentation"), /gh run download/);
   assert.match(jobs.get("publishDocumentation"), /github\.event_name == 'push'/);
 });
 
