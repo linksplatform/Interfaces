@@ -1,4 +1,4 @@
-name: "CodeQL"
+name: CodeQL
 
 on:
   push:
@@ -8,11 +8,16 @@ on:
   schedule:
     - cron: '43 3 * * 0'
 
+env:
+  GIT_CONFIG_COUNT: '1'
+  GIT_CONFIG_KEY_0: init.defaultBranch
+  GIT_CONFIG_VALUE_0: main
+
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
-    runs-on: ubuntu-latest
-    timeout-minutes: 360
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     permissions:
       actions: read
       contents: read
@@ -21,23 +26,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'cpp', 'csharp' ]
+        language: [ 'c-cpp', 'csharp' ]
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
+        persist-credentials: false
         submodules: true
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
+        build-mode: manual
         queries: security-extended,security-and-quality
 
     - name: Setup .NET (for C# analysis)
       if: matrix.language == 'csharp'
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: '8.0.x'
 
@@ -49,21 +56,18 @@ jobs:
         dotnet build -c Release
 
     - name: Install dependencies (for C++ analysis)
-      if: matrix.language == 'cpp'
+      if: matrix.language == 'c-cpp'
       run: |
         sudo apt-get update
-        sudo apt-get install -y cmake build-essential
+        sudo apt-get install -y build-essential cmake libgtest-dev
 
     - name: Build C++
-      if: matrix.language == 'cpp'
+      if: matrix.language == 'c-cpp'
       run: |
-        cd cpp
-        mkdir -p build
-        cd build
-        cmake ..
-        make
+        cmake -S cpp -B cpp/build -DCMAKE_BUILD_TYPE=Release
+        cmake --build cpp/build --parallel
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
       with:
-        category: "/language:${{matrix.language}}"
+        category: "/language:${{ matrix.language }}"
