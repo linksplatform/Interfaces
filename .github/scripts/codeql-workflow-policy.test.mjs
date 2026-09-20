@@ -7,23 +7,24 @@ import test from "node:test";
 const workflowPath = new URL("../workflows/codeql.yml", import.meta.url);
 const workflow = readFileSync(workflowPath, "utf8");
 
-test("uses current CodeQL language identifiers and an explicit manual build", () => {
+test("uses current CodeQL language identifiers and build-free extraction", () => {
   assert.match(workflow, /language: \[ 'c-cpp', 'csharp' \]/);
-  assert.match(workflow, /build-mode: manual/);
+  assert.match(workflow, /build-mode: none/);
   assert.doesNotMatch(workflow, /language: \[ 'cpp'/);
+  assert.doesNotMatch(workflow, /build-mode: manual/);
 });
 
-test("installs every dependency required by the C++ CMake build", () => {
-  assert.match(workflow, /sudo apt-get install -y[^\n]*libgtest-dev/);
-  assert.match(workflow, /if: matrix\.language == 'c-cpp'/);
-  assert.match(workflow, /cmake --build cpp\/build --parallel/);
+test("does not duplicate the repositories' language build pipelines", () => {
+  assert.doesNotMatch(workflow, /apt-get/);
+  assert.doesNotMatch(workflow, /dotnet (?:restore|build)/);
+  assert.doesNotMatch(workflow, /cmake/);
 });
 
 test("uses action versions backed by the current Node runtime", () => {
   assert.match(workflow, /actions\/checkout@v7/);
-  assert.match(workflow, /actions\/setup-dotnet@v6/);
   assert.match(workflow, /github\/codeql-action\/init@v4/);
   assert.match(workflow, /github\/codeql-action\/analyze@v4/);
+  assert.doesNotMatch(workflow, /actions\/setup-dotnet@/);
 });
 
 test("pins the runner and disables persisted checkout credentials", () => {
