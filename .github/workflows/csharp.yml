@@ -6,21 +6,24 @@ on:
     paths:
       - 'csharp/**'
       - 'README.md'
-      - '.github/scripts/validate-csharp-package.sh'
+      - '.github/scripts/*csharp*'
       - '.github/workflows/csharp.yml'
   pull_request:
     branches: main
     paths:
       - 'csharp/**'
       - 'README.md'
-      - '.github/scripts/validate-csharp-package.sh'
+      - '.github/scripts/*csharp*'
       - '.github/workflows/csharp.yml'
 
 permissions:
+  actions: read
   contents: read
 
 env:
-  SCRIPTS_BASE_URL: https://raw.githubusercontent.com/linksplatform/Scripts/main/MultiProjectRepository
+  GIT_CONFIG_COUNT: '1'
+  GIT_CONFIG_KEY_0: init.defaultBranch
+  GIT_CONFIG_VALUE_0: main
 
 defaults:
   run:
@@ -28,174 +31,268 @@ defaults:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          submodules: true
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v7
-        with:
-          submodules: true
       - name: Validate tests and NuGet package
         run: ../.github/scripts/validate-csharp-package.sh
 
-  pushNuGetPackageToGitHubPackageRegistry:
-    needs: test
+      - name: Test C# workflow safeguards
+        run: node --test ../.github/scripts/*csharp*.test.mjs
+
+  releasePreflight:
     if: ${{ github.event_name == 'push' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check release credentials
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+        run: node ../.github/scripts/preflight-csharp-release.mjs
+
+  pushNuGetPackageToGitHubPackageRegistry:
+    needs: [test, releasePreflight]
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       contents: read
       packages: write
     steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          submodules: true
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v7
-        with:
-          submodules: true
       - name: Publish NuGet package to GitHub Package Registry
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           package_output="$RUNNER_TEMP/github-packages"
-          dotnet pack Platform.Interfaces/Platform.Interfaces.csproj -c Release --output "$package_output" -warnaserror
+          dotnet pack Platform.Interfaces/Platform.Interfaces.csproj --configuration Release --output "$package_output" --nologo -warnaserror
           dotnet nuget add source https://nuget.pkg.github.com/linksplatform/index.json --name GitHub --username linksplatform --password "$GITHUB_TOKEN" --store-password-in-clear-text
           dotnet nuget push "$package_output"/*.nupkg --source GitHub --skip-duplicate
 
   pushToNuget:
-    needs: test
+    needs: [test, releasePreflight]
     if: ${{ github.event_name == 'push' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          submodules: true
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v7
-        with:
-          submodules: true
       - name: Publish NuGet package
         env:
-          NUGETTOKEN: ${{ secrets.NUGET_TOKEN }}
+          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
         run: |
           package_output="$RUNNER_TEMP/nuget-packages"
-          dotnet pack Platform.Interfaces/Platform.Interfaces.csproj -c Release --output "$package_output" -warnaserror
-          dotnet nuget push "$package_output"/*.nupkg --source https://api.nuget.org/v3/index.json --api-key "$NUGETTOKEN" --skip-duplicate
+          dotnet pack Platform.Interfaces/Platform.Interfaces.csproj --configuration Release --output "$package_output" --nologo -warnaserror
+          dotnet nuget push "$package_output"/*.nupkg --source https://api.nuget.org/v3/index.json --api-key "$NUGET_TOKEN" --skip-duplicate
 
   publishRelease:
     needs: [pushNuGetPackageToGitHubPackageRegistry, pushToNuget]
     if: ${{ github.event_name == 'push' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          submodules: true
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v7
-        with:
-          submodules: true
-      - name: Read project information
-        run: |
-          export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          wget "$SCRIPTS_BASE_URL/read_csharp_package_info.sh"
-          bash ./read_csharp_package_info.sh
-      - name: Publish release
+      - name: Publish GitHub release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          export CSHARP_PACKAGE_VERSION="$(<CSHARP_PACKAGE_VERSION.txt)"
-          wget "$SCRIPTS_BASE_URL/publish-release.sh"
-          chmod +x ./publish-release.sh
-          wget "$SCRIPTS_BASE_URL/publish-csharp-release.sh"
-          bash ./publish-csharp-release.sh
+          project=Platform.Interfaces/Platform.Interfaces.csproj
+          version=$(dotnet msbuild "$project" -nologo -getProperty:VersionPrefix)
+          release_notes=$(dotnet msbuild "$project" -nologo -getProperty:PackageReleaseNotes)
+          tag="csharp_${version}"
+          title="[C#] ${version}"
+          package_url="https://www.nuget.org/packages/Platform.Interfaces/${version}"
+          notes="${package_url}"$'\n\n'"${release_notes}"
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release ${tag} already exists."
+          else
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$title" --notes "$notes"
+          fi
 
   findChangedCsFiles:
     needs: test
-    if: ${{ github.event_name == 'push' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     outputs:
-      isCsFilesChanged: ${{ steps.setIsCsFilesChangedOutput.outputs.isCsFilesChanged }}
+      documentationChanged: ${{ steps.detect.outputs.documentationChanged }}
     steps:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - name: Get changed files using defaults
+          persist-credentials: false
+
+      - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v47
-      - name: Set output isCsFilesChanged
-        id: setIsCsFilesChangedOutput
+
+      - name: Detect documentation inputs
+        id: detect
+        env:
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          isCsFilesChanged='false'
-          echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
-          for changedFile in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [[ $changedFile == *.cs ]]
-            then
-              echo "isCsFilesChanged='true'"
-              isCsFilesChanged='true'
-            fi
+          documentation_changed=false
+          for changed_file in $CHANGED_FILES; do
+            case "$changed_file" in
+              *.cs|README.md|.github/workflows/csharp.yml|.github/scripts/*csharp*|csharp/docfx.json|csharp/filter.yml|csharp/toc.yml)
+                documentation_changed=true
+                ;;
+            esac
           done
-          echo "isCsFilesChanged=${isCsFilesChanged}" >> "$GITHUB_OUTPUT"
-          echo "isCsFilesChanged: ${isCsFilesChanged}"
+          echo "documentationChanged=${documentation_changed}" >> "$GITHUB_OUTPUT"
+          echo "Documentation inputs changed: ${documentation_changed}"
 
   generatePdfWithCode:
     needs: [findChangedCsFiles]
-    if: ${{ github.event_name == 'push' && needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
-    runs-on: ubuntu-latest
+    if: ${{ needs.findChangedCsFiles.outputs.documentationChanged == 'true' }}
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          submodules: true
+
+      - name: Generate PDF with code
+        run: ../.github/scripts/generate-csharp-pdf.sh
+
+      - name: Upload generated PDF
+        timeout-minutes: 5
+        uses: actions/upload-artifact@v7
+        with:
+          name: csharp-pdf
+          path: csharp/_site/Platform.Interfaces.pdf
+          if-no-files-found: error
+          retention-days: 1
+
+  buildDocumentation:
+    needs: [findChangedCsFiles, generatePdfWithCode]
+    if: ${{ needs.findChangedCsFiles.outputs.documentationChanged == 'true' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          submodules: true
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '8.0.x'
 
-      - uses: actions/checkout@v7
-        with:
-          submodules: true
-      - name: Generate PDF with code
+      - name: Build API documentation
         run: |
-          export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          wget "$SCRIPTS_BASE_URL/format-csharp-files.py"
-          wget "$SCRIPTS_BASE_URL/format-csharp-document.sh"
-          wget "$SCRIPTS_BASE_URL/generate-csharp-pdf.sh"
-          bash ./generate-csharp-pdf.sh
+          dotnet tool install docfx --tool-path "$RUNNER_TEMP/docfx" --version 2.80.1
+          "$RUNNER_TEMP/docfx/docfx" docfx.json --warningsAsErrors
+          cp _site/README.html _site/index.html
+
+      - name: Download generated PDF
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name csharp-pdf --dir _site
+
+      - name: Validate documentation output
+        run: |
+          test -s _site/index.html
+          test -s _site/Platform.Interfaces.pdf
+
+      - name: Upload documentation site
+        timeout-minutes: 5
+        uses: actions/upload-artifact@v7
+        with:
+          name: csharp-documentation
+          path: csharp/_site
+          if-no-files-found: error
+          retention-days: 1
 
   publishDocumentation:
-    needs: [findChangedCsFiles]
-    if: ${{ github.event_name == 'push' && needs.findChangedCsFiles.outputs.isCsFilesChanged == 'true' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+    needs: [findChangedCsFiles, buildDocumentation]
+    if: ${{ github.event_name == 'push' && needs.findChangedCsFiles.outputs.documentationChanged == 'true' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     permissions:
+      actions: read
       contents: write
     steps:
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v6
-        with:
-          dotnet-version: '8.0.x'
-
       - uses: actions/checkout@v7
         with:
-          submodules: true
-      - name: Publish documentation to gh-pages branch
+          persist-credentials: false
+
+      - name: Download documentation site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name csharp-documentation --dir _site
+
+      - name: Publish documentation to gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          export REPOSITORY_NAME=$(basename ${{ github.repository }})
-          wget "$SCRIPTS_BASE_URL/docfx.json"
-          wget "$SCRIPTS_BASE_URL/filter.yml"
-          wget "$SCRIPTS_BASE_URL/toc.yml"
-          wget "$SCRIPTS_BASE_URL/publish-csharp-docs.sh"
-          bash ./publish-csharp-docs.sh
+        run: ../.github/scripts/publish-csharp-docs.sh _site
+
+  pipelineStatus:
+    needs:
+      - test
+      - releasePreflight
+      - pushNuGetPackageToGitHubPackageRegistry
+      - pushToNuget
+      - publishRelease
+      - findChangedCsFiles
+      - generatePdfWithCode
+      - buildDocumentation
+      - publishDocumentation
+    if: ${{ always() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check aggregate pipeline status
+        env:
+          DOCUMENTATION_CHANGED: ${{ needs.findChangedCsFiles.outputs.documentationChanged }}
+          EVENT_NAME: ${{ github.event_name }}
+          NEEDS_JSON: ${{ toJSON(needs) }}
+        run: node ../.github/scripts/check-csharp-pipeline-status.mjs

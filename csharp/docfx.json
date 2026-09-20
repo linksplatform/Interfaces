@@ -1,0 +1,39 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": ["Platform.Interfaces/Platform.Interfaces.csproj"]
+        }
+      ],
+      "dest": "obj/api",
+      "filter": "filter.yml"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["**/*.yml"],
+        "src": "obj/api",
+        "dest": "api"
+      },
+      {
+        "files": ["README.md"],
+        "src": ".."
+      },
+      {
+        "files": ["toc.yml"]
+      }
+    ],
+    "globalMetadata": {
+      "_appTitle": "LinksPlatform's Platform.Interfaces Library",
+      "_enableSearch": true,
+      "_gitContribute": {
+        "branch": "main"
+      },
+      "_gitUrlPattern": "github"
+    },
+    "markdownEngineName": "markdig",
+    "dest": "_site"
+  }
+}
