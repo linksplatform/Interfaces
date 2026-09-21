@@ -140,4 +140,17 @@ namespace Platform::Interfaces::Tests {
       ASSERT_TRUE((CSetter<EmptyProperty, int, int&>));
     }
   }
+
+  TEST(CompileTests, Cli) {
+    struct EmptyCli : public ICli {
+      int Run(const std::vector<std::string>& args) override { return 0; }
+    };
+    static_assert(CCli<EmptyCli>);
+
+    {
+      CCli auto cli = EmptyCli{};
+
+      ASSERT_TRUE((CCli<EmptyCli>));
+    }
+  }
 }  // namespace Platform::Interfaces::Tests
