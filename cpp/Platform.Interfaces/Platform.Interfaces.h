@@ -10,6 +10,8 @@
 #include "CCounter.h"
 #include "CCriterionMatcher.h"
 #include "CFactory.h"
+#include "CLink.h"
+#include "CLinkAddress.h"
 #include "CProperties.h"
 #include "CProvider.h"
 #include "CSetter.h"
