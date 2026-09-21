@@ -1,0 +1,30 @@
+name: Check README badges
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'README.md'
+      - '.github/workflows/**'
+      - '.github/scripts/**'
+  pull_request:
+    paths:
+      - 'README.md'
+      - '.github/workflows/**'
+      - '.github/scripts/**'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Test the badge check
+        run: node --test .github/scripts/check-readme-badges.test.mjs
+      - name: Check that README badges reference existing workflows
+        run: node .github/scripts/check-readme-badges.mjs --verbose
