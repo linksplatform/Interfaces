@@ -48,7 +48,7 @@ namespace Platform::Interfaces {
       using Self = TRawSelf;
 
       if constexpr (sizeof...(TItems) == 1) {
-        return requires(const Self self, std::tuple<TItems...> items, decltype(std::get<0>(items)) item) {
+        return requires(const Self& self, std::tuple<TItems...> items, decltype(std::get<0>(items)) item) {
           { self.find(item) } -> std::same_as<std::ranges::iterator_t<const Self>>;
           { self.contains(item) } -> std::same_as<bool>;
           { self.empty() } -> std::same_as<bool>;
@@ -58,7 +58,7 @@ namespace Platform::Interfaces {
         };
       }
       if constexpr (sizeof...(TItems) == 0) {
-        return requires(const Self self, typename Enumerable<const Self>::Item generic_item) {
+        return requires(const Self& self, typename Enumerable<const Self>::Item generic_item) {
           { self.find(generic_item) } -> std::same_as<std::ranges::iterator_t<const Self>>;
           { self.contains(generic_item) } -> std::same_as<bool>;
           { self.empty() } -> std::same_as<bool>;

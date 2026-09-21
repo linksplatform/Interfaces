@@ -70,10 +70,9 @@ namespace Platform::Interfaces {
       using Self = TRawSelf;
 
       using GenericKey = std::remove_reference_t<decltype(std::get<0>(std::declval<typename Enumerable<Self>::Item>()))>;
-      using GenericValue = std::remove_reference_t<decltype(std::get<1>(std::declval<typename Enumerable<Self>::Item>()))>;
 
       if constexpr (sizeof...(TArgs) == 0) {
-        return requires(const Self self, GenericKey generic_key) {
+        return requires(const Self& self, GenericKey generic_key) {
           { self.find(generic_key) } -> std::forward_iterator;
           { self.contains(generic_key) } -> std::same_as<bool>;
           { self.empty() } -> std::same_as<bool>;
@@ -83,7 +82,7 @@ namespace Platform::Interfaces {
         };
       }
       if constexpr (sizeof...(TArgs) == 1) {
-        return requires(const Self self, std::tuple<TArgs...> args,
+        return requires(const Self& self, std::tuple<TArgs...> args,
                         decltype(std::get<0>(args)) key) {
           { self.find(key) } -> std::forward_iterator;
           { self.contains(key) } -> std::same_as<bool>;
@@ -94,7 +93,7 @@ namespace Platform::Interfaces {
         };
       }
       if constexpr (sizeof...(TArgs) == 2) {
-        return requires(const Self self, std::tuple<TArgs...> args,
+        return requires(const Self& self, std::tuple<TArgs...> args,
                         decltype(std::get<0>(args)) key) {
           { self.find(key) } -> std::forward_iterator;
           { self.contains(key) } -> std::same_as<bool>;
@@ -118,14 +117,14 @@ namespace Platform::Interfaces {
   template <CDictionary TSelf>
   struct Dictionary : Enumerable<TSelf> {
     using base = Enumerable<TSelf>;
-    using Key = decltype(std::get<0>(std::declval<base::Item>()));
-    using Value = decltype(std::get<1>(std::declval<base::Item>()));
+    using Key = decltype(std::get<0>(std::declval<typename base::Item>()));
+    using Value = decltype(std::get<1>(std::declval<typename base::Item>()));
   };
 
   template <CReadonlyDictionary TSelf>
   struct ReadonlyDictionary : Enumerable<TSelf> {
     using base = Enumerable<TSelf>;
-    using Key = decltype(std::get<0>(std::declval<base::Item>()));
-    using Value = decltype(std::get<1>(std::declval<base::Item>()));
+    using Key = decltype(std::get<0>(std::declval<typename base::Item>()));
+    using Value = decltype(std::get<1>(std::declval<typename base::Item>()));
   };
 }  // namespace Platform::Interfaces

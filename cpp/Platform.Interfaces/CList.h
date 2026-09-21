@@ -42,20 +42,24 @@ namespace Platform::Interfaces {
       using Self = TRawSelf;
 
       if constexpr (sizeof...(TItems) == 1) {
-        return requires(const Self self, std::size_t index, std::tuple<TItems...> items, decltype(std::get<0>(items)) item, std::ranges::iterator_t<const Self> const_iterator) {
+        using RequiredItem = std::remove_reference_t<decltype(std::get<0>(std::declval<std::tuple<TItems...>>()))>;
+
+        return requires(const Self& self, std::size_t index) {
           { self.size() } -> std::integral;
           { self.empty() } -> std::same_as<bool>;
-          { self[index] } -> std::convertible_to<decltype(item)>;
-          
+          { self[index] } -> std::convertible_to<RequiredItem>;
+
           requires std::ranges::forward_range<const Self>;
         };
       }
       if constexpr (sizeof...(TItems) == 0) {
-        return requires(const Self self, std::size_t index, typename Enumerable<const Self>::Item generic_item, typename Enumerable<const Self>::Iter const_iterator) {
+        using GenericItem = typename Enumerable<const Self>::Item;
+
+        return requires(const Self& self, std::size_t index) {
           { self.size() } -> std::integral;
           { self.empty() } -> std::same_as<bool>;
-          { self[index] } -> std::convertible_to<decltype(generic_item)>;
-          
+          { self[index] } -> std::convertible_to<GenericItem>;
+
           requires std::ranges::forward_range<const Self>;
         };
       }
