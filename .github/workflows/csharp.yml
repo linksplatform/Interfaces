@@ -208,7 +208,7 @@ jobs:
           retention-days: 1
 
   buildDocumentation:
-    needs: [findChangedCsFiles, generatePdfWithCode]
+    needs: [findChangedCsFiles]
     if: ${{ needs.findChangedCsFiles.outputs.documentationChanged == 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
@@ -229,15 +229,8 @@ jobs:
           "$RUNNER_TEMP/docfx/docfx" docfx.json --warningsAsErrors
           cp _site/README.html _site/index.html
 
-      - name: Download generated PDF
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name csharp-pdf --dir _site
-
       - name: Validate documentation output
-        run: |
-          test -s _site/index.html
-          test -s _site/Platform.Interfaces.pdf
+        run: test -s _site/index.html
 
       - name: Upload documentation site
         timeout-minutes: 5
@@ -249,7 +242,7 @@ jobs:
           retention-days: 1
 
   publishDocumentation:
-    needs: [findChangedCsFiles, buildDocumentation]
+    needs: [findChangedCsFiles, generatePdfWithCode, buildDocumentation]
     if: ${{ github.event_name == 'push' && needs.findChangedCsFiles.outputs.documentationChanged == 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -261,10 +254,17 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Download documentation site
+      - name: Download documentation artifacts
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name csharp-documentation --dir _site
+        run: |
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name csharp-documentation --dir _site
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name csharp-pdf --dir _site
+
+      - name: Validate documentation site
+        run: |
+          test -s _site/index.html
+          test -s _site/Platform.Interfaces.pdf
 
       - name: Publish documentation to gh-pages
         env:
