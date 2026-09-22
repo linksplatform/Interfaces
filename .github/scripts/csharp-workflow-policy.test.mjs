@@ -125,7 +125,14 @@ test("builds PDF and API documentation in parallel before publishing both", () =
   );
   assert.match(publisher, /--name csharp-documentation/);
   assert.match(publisher, /--name csharp-pdf/);
-  assert.match(publisher, /github\.event_name == 'push'/);
+  assert.match(
+    publisher,
+    /if: \$\{\{ needs\.findChangedCsFiles\.outputs\.documentationChanged == 'true' \}\}/,
+  );
+  assert.match(
+    publisher,
+    /- name: Publish documentation to gh-pages\n        if: \$\{\{ github\.event_name == 'push' \}\}/,
+  );
 });
 
 test("aggregates every job result so skipped dependents cannot hide failures", () => {

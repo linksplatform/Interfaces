@@ -243,7 +243,7 @@ jobs:
 
   publishDocumentation:
     needs: [findChangedCsFiles, generatePdfWithCode, buildDocumentation]
-    if: ${{ github.event_name == 'push' && needs.findChangedCsFiles.outputs.documentationChanged == 'true' }}
+    if: ${{ needs.findChangedCsFiles.outputs.documentationChanged == 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
@@ -267,6 +267,7 @@ jobs:
           test -s _site/Platform.Interfaces.pdf
 
       - name: Publish documentation to gh-pages
+        if: ${{ github.event_name == 'push' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ../.github/scripts/publish-csharp-docs.sh _site
