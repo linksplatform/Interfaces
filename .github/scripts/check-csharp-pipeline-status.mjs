@@ -18,6 +18,7 @@ export const evaluatePipeline = ({ eventName, documentationChanged, needs }) => 
   if (documentationChanged) {
     required.add("generatePdfWithCode");
     required.add("buildDocumentation");
+    required.add("publishDocumentation");
   }
 
   if (eventName === "push") {
@@ -25,9 +26,6 @@ export const evaluatePipeline = ({ eventName, documentationChanged, needs }) => 
     required.add("pushNuGetPackageToGitHubPackageRegistry");
     required.add("pushToNuget");
     required.add("publishRelease");
-    if (documentationChanged) {
-      required.add("publishDocumentation");
-    }
   }
 
   const failures = [];

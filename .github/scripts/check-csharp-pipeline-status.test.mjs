@@ -25,10 +25,27 @@ test("accepts a pull request after validation and documentation builds pass", ()
     findChangedCsFiles: "success",
     generatePdfWithCode: "success",
     buildDocumentation: "success",
+    publishDocumentation: "success",
   });
   assert.deepEqual(
     evaluatePipeline({ eventName: "pull_request", documentationChanged: true, needs }),
     { passed: true, failures: [] },
+  );
+});
+
+test("rejects a skipped documentation assembly on pull requests", () => {
+  const needs = results({
+    test: "success",
+    findChangedCsFiles: "success",
+    generatePdfWithCode: "success",
+    buildDocumentation: "success",
+  });
+  assert.deepEqual(
+    evaluatePipeline({ eventName: "pull_request", documentationChanged: true, needs }),
+    {
+      passed: false,
+      failures: ["publishDocumentation: required job finished with skipped"],
+    },
   );
 });
 
