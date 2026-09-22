@@ -103,16 +103,36 @@ test("gates both package publishers on a release preflight", () => {
   }
 });
 
-test("builds documentation on pull requests and transfers the PDF", () => {
-  assert.ok(jobs.get("buildDocumentation"), "buildDocumentation job should exist");
-  assert.doesNotMatch(jobs.get("generatePdfWithCode"), /github\.event_name == 'push'/);
-  assert.doesNotMatch(jobs.get("buildDocumentation"), /github\.event_name == 'push'/);
-  assert.match(jobs.get("generatePdfWithCode"), /actions\/upload-artifact@/);
+test("builds PDF and API documentation in parallel before publishing both", () => {
+  const pdf = jobs.get("generatePdfWithCode");
+  const documentation = jobs.get("buildDocumentation");
+  const publisher = jobs.get("publishDocumentation");
+
+  assert.ok(pdf, "generatePdfWithCode job should exist");
+  assert.ok(documentation, "buildDocumentation job should exist");
+  assert.ok(publisher, "publishDocumentation job should exist");
+  assert.match(pdf, /needs: \[findChangedCsFiles\]/);
+  assert.match(documentation, /needs: \[findChangedCsFiles\]/);
+  assert.doesNotMatch(documentation, /needs:.*generatePdfWithCode/);
+  assert.doesNotMatch(pdf, /github\.event_name == 'push'/);
+  assert.doesNotMatch(documentation, /github\.event_name == 'push'/);
+  assert.match(pdf, /name: csharp-pdf/);
+  assert.match(documentation, /name: csharp-documentation/);
   assert.doesNotMatch(workflow, /actions\/download-artifact@/);
-  assert.match(jobs.get("buildDocumentation"), /gh run download/);
-  assert.match(jobs.get("buildDocumentation"), /actions\/upload-artifact@/);
-  assert.match(jobs.get("publishDocumentation"), /gh run download/);
-  assert.match(jobs.get("publishDocumentation"), /github\.event_name == 'push'/);
+  assert.match(
+    publisher,
+    /needs: \[findChangedCsFiles, generatePdfWithCode, buildDocumentation\]/,
+  );
+  assert.match(publisher, /--name csharp-documentation/);
+  assert.match(publisher, /--name csharp-pdf/);
+  assert.match(
+    publisher,
+    /if: \$\{\{ needs\.findChangedCsFiles\.outputs\.documentationChanged == 'true' \}\}/,
+  );
+  assert.match(
+    publisher,
+    /- name: Publish documentation to gh-pages\n        if: \$\{\{ github\.event_name == 'push' \}\}/,
+  );
 });
 
 test("aggregates every job result so skipped dependents cannot hide failures", () => {
