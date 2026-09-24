@@ -135,6 +135,15 @@ test("builds PDF and API documentation in parallel before publishing both", () =
   );
 });
 
+test("validates generated API pages before upload and after download", () => {
+  const documentation = jobs.get("buildDocumentation");
+  const publisher = jobs.get("publishDocumentation");
+
+  assert.match(documentation, /docfx" docfx\.json --warningsAsErrors/);
+  assert.match(documentation, /validate-csharp-docs\.sh _site/);
+  assert.match(publisher, /validate-csharp-docs\.sh _site/);
+});
+
 test("aggregates every job result so skipped dependents cannot hide failures", () => {
   const gate = jobs.get("pipelineStatus");
   assert.ok(gate, "pipelineStatus job should exist");

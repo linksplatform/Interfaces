@@ -230,7 +230,7 @@ jobs:
           cp _site/README.html _site/index.html
 
       - name: Validate documentation output
-        run: test -s _site/index.html
+        run: ../.github/scripts/validate-csharp-docs.sh _site
 
       - name: Upload documentation site
         timeout-minutes: 5
@@ -263,7 +263,7 @@ jobs:
 
       - name: Validate documentation site
         run: |
-          test -s _site/index.html
+          ../.github/scripts/validate-csharp-docs.sh _site
           test -s _site/Platform.Interfaces.pdf
 
       - name: Publish documentation to gh-pages
