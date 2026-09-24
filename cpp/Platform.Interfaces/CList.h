@@ -36,11 +36,47 @@ namespace Platform::Interfaces {
 
       return false;
     }
+
+    template <typename TRawSelf, typename... TItems>
+    consteval bool CReadonlyListHelpFunction() {
+      using Self = TRawSelf;
+
+      if constexpr (sizeof...(TItems) == 1) {
+        using RequiredItem = std::remove_reference_t<decltype(std::get<0>(std::declval<std::tuple<TItems...>>()))>;
+
+        return requires(const Self& self, std::size_t index) {
+          { self.size() } -> std::integral;
+          { self.empty() } -> std::same_as<bool>;
+          { self[index] } -> std::convertible_to<RequiredItem>;
+
+          requires std::ranges::forward_range<const Self>;
+        };
+      }
+      if constexpr (sizeof...(TItems) == 0) {
+        using GenericItem = typename Enumerable<const Self>::Item;
+
+        return requires(const Self& self, std::size_t index) {
+          { self.size() } -> std::integral;
+          { self.empty() } -> std::same_as<bool>;
+          { self[index] } -> std::convertible_to<GenericItem>;
+
+          requires std::ranges::forward_range<const Self>;
+        };
+      }
+
+      return false;
+    }
   }  // namespace Internal
 
   template <typename TSelf, typename... TItems>
   concept CList = CArray<TSelf> && Internal::CListHelpFunction<TSelf, TItems...>();
 
+  template <typename TSelf, typename... TItems>
+  concept CReadonlyList = CArray<TSelf> && Internal::CReadonlyListHelpFunction<TSelf, TItems...>();
+
   template <CList TSelf>
   struct List : Enumerable<TSelf> {};
+
+  template <CReadonlyList TSelf>
+  struct ReadonlyList : Enumerable<TSelf> {};
 }  // namespace Platform::Interfaces

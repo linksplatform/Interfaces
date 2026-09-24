@@ -1,5 +1,4 @@
 - name: Home
-  href: README.md
+  href: ../README.md
 - name: API Documentation
-  href: obj/api/
-  homepage: api/Platform.Interfaces.html
+  href: obj/api/toc.yml

@@ -3,41 +3,37 @@
     {
       "src": [
         {
-          "files": [ "**/*.sln" ],
-          "exclude": [ "**/bin/**", "**/obj/**" ],
-          "src": ""
+          "files": ["Platform.Interfaces/Platform.Interfaces.csproj"]
         }
       ],
       "dest": "obj/api",
-      "filter": "filter.yml",
-      "properties": { "TargetFramework": "net8" }
+      "filter": "filter.yml"
     }
   ],
   "build": {
     "content": [
       {
-        "files": [ "**/*.yml" ],
+        "files": ["**/*.yml"],
         "src": "obj/api",
         "dest": "api"
       },
       {
-        "files": [ "*.md", "toc.yml" ]
+        "files": ["README.md"],
+        "src": ".."
       },
       {
-        "files": [ "README.md" ],
-        "src": ".."
+        "files": ["toc.yml"]
       }
     ],
     "globalMetadata": {
       "_appTitle": "LinksPlatform's Platform.Interfaces Library",
       "_enableSearch": true,
       "_gitContribute": {
-        "branch": "master"
+        "branch": "main"
       },
       "_gitUrlPattern": "github"
     },
     "markdownEngineName": "markdig",
-    "dest": "_site",
-    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
+    "dest": "_site"
   }
 }
