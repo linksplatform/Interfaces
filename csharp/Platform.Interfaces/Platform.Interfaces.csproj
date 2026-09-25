@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Interfaces Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
-    <VersionPrefix>0.5.2</VersionPrefix>
+    <VersionPrefix>0.5.3</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Interfaces</AssemblyName>
@@ -23,7 +23,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Fix package publishing while preserving embedded symbols, eliminate C# workflow warnings, and validate NuGet artifacts before release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix package publishing while preserving embedded symbols, eliminate C# workflow warnings, validate NuGet artifacts before release, and add downloadable DocFX API documentation in PDF format.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

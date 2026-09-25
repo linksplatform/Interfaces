@@ -28,12 +28,16 @@
     "globalMetadata": {
       "_appTitle": "LinksPlatform's Platform.Interfaces Library",
       "_enableSearch": true,
+      "pdf": true,
+      "pdfFileName": "Platform.Interfaces.Documentation.pdf",
+      "pdfTocPage": true,
       "_gitContribute": {
         "branch": "main"
       },
       "_gitUrlPattern": "github"
     },
     "markdownEngineName": "markdig",
+    "template": ["default", "modern"],
     "dest": "_site"
   }
 }
