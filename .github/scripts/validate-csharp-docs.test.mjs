@@ -9,13 +9,16 @@ import test from "node:test";
 
 const validator = new URL("./validate-csharp-docs.sh", import.meta.url).pathname;
 
-const withSite = (files, check) => {
+const withSite = (files, check, contents = {}) => {
   const site = mkdtempSync(join(tmpdir(), "csharp-docs-"));
   try {
     for (const file of files) {
       const path = join(site, file);
       mkdirSync(join(path, ".."), { recursive: true });
-      writeFileSync(path, "generated content");
+      const content = file === "index.html"
+        ? '<a href="Platform.Interfaces.Documentation.pdf">Documentation PDF</a>'
+        : file.endsWith(".pdf") ? "%PDF-1.7\n" : "generated content";
+      writeFileSync(path, contents[file] ?? content);
     }
     check(spawnSync("bash", [validator, site], { encoding: "utf8" }));
   } finally {
@@ -28,6 +31,7 @@ const requiredFiles = [
   "api/Platform.Interfaces.html",
   "api/Platform.Interfaces.IFactory-1.html",
   "xrefmap.yml",
+  "Platform.Interfaces.Documentation.pdf",
 ];
 
 test("accepts a complete DocFX site", () => {
@@ -44,3 +48,17 @@ for (const missingFile of requiredFiles) {
     });
   });
 }
+
+test("rejects an invalid documentation PDF", () => {
+  withSite(requiredFiles, ({ status, stderr }) => {
+    assert.notEqual(status, 0);
+    assert.match(stderr, /Documentation PDF is invalid/);
+  }, { "Platform.Interfaces.Documentation.pdf": "not a PDF" });
+});
+
+test("rejects a site with no documentation PDF link", () => {
+  withSite(requiredFiles, ({ status, stderr }) => {
+    assert.notEqual(status, 0);
+    assert.match(stderr, /home page is missing its PDF link/);
+  }, { "index.html": "generated content" });
+});
