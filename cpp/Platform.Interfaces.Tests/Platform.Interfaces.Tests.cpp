@@ -2,6 +2,57 @@
 #include <gtest/gtest.h>
 
 namespace Platform::Interfaces::Tests {
+  namespace {
+    struct ReadonlyListModel {
+      int items[1]{};
+
+      const int* begin() const { return items; }
+      const int* end() const { return items + 1; }
+      const int& operator[](std::size_t index) const { return items[index]; }
+      std::size_t size() const { return static_cast<std::size_t>(end() - begin()); }
+      bool empty() const { return begin() == end(); }
+    };
+
+    struct ReadonlySetModel {
+      int items[1]{};
+
+      const int* begin() const { return items; }
+      const int* end() const { return items + 1; }
+      const int* find(int item) const { return items[0] == item ? begin() : end(); }
+      bool contains(int item) const { return find(item) != end(); }
+      std::size_t size() const { return static_cast<std::size_t>(end() - begin()); }
+      bool empty() const { return begin() == end(); }
+    };
+
+    struct ReadonlyDictionaryModel {
+      std::tuple<int, int> items[1]{};
+
+      const std::tuple<int, int>* begin() const { return items; }
+      const std::tuple<int, int>* end() const { return items + 1; }
+      const std::tuple<int, int>* find(int key) const { return std::get<0>(items[0]) == key ? begin() : end(); }
+      bool contains(int key) const { return find(key) != end(); }
+      std::size_t size() const { return static_cast<std::size_t>(end() - begin()); }
+      bool empty() const { return begin() == end(); }
+    };
+  }  // namespace
+
+  static_assert(CReadonlyList<const ReadonlyListModel>);
+  static_assert(CReadonlyList<const ReadonlyListModel, int>);
+  static_assert(!CList<const ReadonlyListModel>);
+  static_assert(std::same_as<typename ReadonlyList<const ReadonlyListModel>::Item, int>);
+
+  static_assert(CReadonlySet<const ReadonlySetModel>);
+  static_assert(CReadonlySet<const ReadonlySetModel, int>);
+  static_assert(!CSet<const ReadonlySetModel>);
+  static_assert(std::same_as<typename ReadonlySet<const ReadonlySetModel>::Item, int>);
+
+  static_assert(CReadonlyDictionary<const ReadonlyDictionaryModel>);
+  static_assert(CReadonlyDictionary<const ReadonlyDictionaryModel, int>);
+  static_assert(CReadonlyDictionary<const ReadonlyDictionaryModel, int, int>);
+  static_assert(!CDictionary<const ReadonlyDictionaryModel>);
+  static_assert(std::same_as<std::remove_reference_t<typename ReadonlyDictionary<const ReadonlyDictionaryModel>::Key>, int>);
+  static_assert(std::same_as<std::remove_reference_t<typename ReadonlyDictionary<const ReadonlyDictionaryModel>::Value>, int>);
+
   TEST(CompileTests, Counter) {
     struct EmptyCounter1 : ICounter<int> {
       int Count() { return {}; }
@@ -138,6 +189,19 @@ namespace Platform::Interfaces::Tests {
       ASSERT_TRUE((CProperty<EmptyProperty, int&, int>));
       ASSERT_TRUE((CProvider<EmptyProperty, int, int&>));
       ASSERT_TRUE((CSetter<EmptyProperty, int, int&>));
+    }
+  }
+
+  TEST(CompileTests, Cli) {
+    struct EmptyCli : public ICli {
+      int Run(const std::vector<std::string>& args) override { return 0; }
+    };
+    static_assert(CCli<EmptyCli>);
+
+    {
+      CCli auto cli = EmptyCli{};
+
+      ASSERT_TRUE((CCli<EmptyCli>));
     }
   }
 }  // namespace Platform::Interfaces::Tests
