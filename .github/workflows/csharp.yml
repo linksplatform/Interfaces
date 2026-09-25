@@ -84,14 +84,16 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Publish NuGet package to GitHub Package Registry
+      - name: Pack NuGet package
+        run: dotnet pack Platform.Interfaces/Platform.Interfaces.csproj --configuration Release --output "$RUNNER_TEMP/github-packages" --nologo -warnaserror
+
+      - name: Add GitHub NuGet source
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          package_output="$RUNNER_TEMP/github-packages"
-          dotnet pack Platform.Interfaces/Platform.Interfaces.csproj --configuration Release --output "$package_output" --nologo -warnaserror
-          dotnet nuget add source https://nuget.pkg.github.com/linksplatform/index.json --name GitHub --username linksplatform --password "$GITHUB_TOKEN" --store-password-in-clear-text
-          dotnet nuget push "$package_output"/*.nupkg --source GitHub --skip-duplicate
+        run: dotnet nuget add source https://nuget.pkg.github.com/linksplatform/index.json --name GitHub --username linksplatform --password "$GITHUB_TOKEN" --store-password-in-clear-text
+
+      - name: Push NuGet package to GitHub Package Registry
+        run: dotnet nuget push "$RUNNER_TEMP/github-packages"/*.nupkg --source GitHub --skip-duplicate
 
   pushToNuget:
     needs: [test, releasePreflight]
@@ -109,13 +111,13 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Publish NuGet package
+      - name: Pack NuGet package
+        run: dotnet pack Platform.Interfaces/Platform.Interfaces.csproj --configuration Release --output "$RUNNER_TEMP/nuget-packages" --nologo -warnaserror
+
+      - name: Push NuGet package to NuGet.org
         env:
           NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-        run: |
-          package_output="$RUNNER_TEMP/nuget-packages"
-          dotnet pack Platform.Interfaces/Platform.Interfaces.csproj --configuration Release --output "$package_output" --nologo -warnaserror
-          dotnet nuget push "$package_output"/*.nupkg --source https://api.nuget.org/v3/index.json --api-key "$NUGET_TOKEN" --skip-duplicate
+        run: dotnet nuget push "$RUNNER_TEMP/nuget-packages"/*.nupkg --source https://api.nuget.org/v3/index.json --api-key "$NUGET_TOKEN" --skip-duplicate
 
   publishRelease:
     needs: [pushNuGetPackageToGitHubPackageRegistry, pushToNuget]

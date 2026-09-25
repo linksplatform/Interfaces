@@ -103,6 +103,36 @@ test("gates both package publishers on a release preflight", () => {
   }
 });
 
+test("packs and publishes each NuGet package in separate ordered steps", () => {
+  for (const [jobName, outputDirectory] of [
+    ["pushNuGetPackageToGitHubPackageRegistry", "github-packages"],
+    ["pushToNuget", "nuget-packages"],
+  ]) {
+    const job = jobs.get(jobName);
+    const output = `"$RUNNER_TEMP/${outputDirectory}"`;
+    const pack = job.indexOf("- name: Pack NuGet package");
+    const push = job.indexOf("- name: Push NuGet package");
+
+    assert.ok(pack >= 0, `${jobName} has no pack step`);
+    assert.ok(push > pack, `${jobName} must push after packing`);
+    assert.match(job.slice(pack, push), /run: dotnet pack /);
+    assert.ok(job.slice(pack, push).includes(`--output ${output}`));
+    assert.match(job.slice(push), /run: dotnet nuget push /);
+    assert.ok(job.slice(push).includes(`${output}/*.nupkg`));
+    assert.equal(
+      job.slice(pack, push).includes("dotnet nuget push"),
+      false,
+      `${jobName} pushes inside the pack step`,
+    );
+  }
+
+  const github = jobs.get("pushNuGetPackageToGitHubPackageRegistry");
+  const addSource = github.indexOf("- name: Add GitHub NuGet source");
+  assert.ok(addSource > github.indexOf("- name: Pack NuGet package"));
+  assert.ok(addSource < github.indexOf("- name: Push NuGet package"));
+  assert.match(github.slice(addSource), /run: dotnet nuget add source /);
+});
+
 test("builds PDF and API documentation in parallel before publishing both", () => {
   const pdf = jobs.get("generatePdfWithCode");
   const documentation = jobs.get("buildDocumentation");
