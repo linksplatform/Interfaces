@@ -81,32 +81,6 @@ references:
   fullName.vb: Platform.Interfaces.ICounter(Of TResult, TArgument).Count
   nameWithType: ICounter<TResult, TArgument>.Count
   nameWithType.vb: ICounter(Of TResult, TArgument).Count
-- uid: Platform.Interfaces.ICriterionMatcher`1
-  name: ICriterionMatcher<TArgument>
-  href: api/Platform.Interfaces.ICriterionMatcher-1.html
-  commentId: T:Platform.Interfaces.ICriterionMatcher`1
-  name.vb: ICriterionMatcher(Of TArgument)
-  fullName: Platform.Interfaces.ICriterionMatcher<TArgument>
-  fullName.vb: Platform.Interfaces.ICriterionMatcher(Of TArgument)
-  nameWithType: ICriterionMatcher<TArgument>
-  nameWithType.vb: ICriterionMatcher(Of TArgument)
-- uid: Platform.Interfaces.ICriterionMatcher`1.IsMatched(`0)
-  name: IsMatched(TArgument)
-  href: api/Platform.Interfaces.ICriterionMatcher-1.html#Platform_Interfaces_ICriterionMatcher_1_IsMatched__0_
-  commentId: M:Platform.Interfaces.ICriterionMatcher`1.IsMatched(`0)
-  fullName: Platform.Interfaces.ICriterionMatcher<TArgument>.IsMatched(TArgument)
-  fullName.vb: Platform.Interfaces.ICriterionMatcher(Of TArgument).IsMatched(TArgument)
-  nameWithType: ICriterionMatcher<TArgument>.IsMatched(TArgument)
-  nameWithType.vb: ICriterionMatcher(Of TArgument).IsMatched(TArgument)
-- uid: Platform.Interfaces.ICriterionMatcher`1.IsMatched*
-  name: IsMatched
-  href: api/Platform.Interfaces.ICriterionMatcher-1.html#Platform_Interfaces_ICriterionMatcher_1_IsMatched_
-  commentId: Overload:Platform.Interfaces.ICriterionMatcher`1.IsMatched
-  isSpec: "True"
-  fullName: Platform.Interfaces.ICriterionMatcher<TArgument>.IsMatched
-  fullName.vb: Platform.Interfaces.ICriterionMatcher(Of TArgument).IsMatched
-  nameWithType: ICriterionMatcher<TArgument>.IsMatched
-  nameWithType.vb: ICriterionMatcher(Of TArgument).IsMatched
 - uid: Platform.Interfaces.IFactory`1
   name: IFactory<TProduct>
   href: api/Platform.Interfaces.IFactory-1.html
@@ -133,6 +107,32 @@ references:
   fullName.vb: Platform.Interfaces.IFactory(Of TProduct).Create
   nameWithType: IFactory<TProduct>.Create
   nameWithType.vb: IFactory(Of TProduct).Create
+- uid: Platform.Interfaces.IMatcher`1
+  name: IMatcher<TCandidate>
+  href: api/Platform.Interfaces.IMatcher-1.html
+  commentId: T:Platform.Interfaces.IMatcher`1
+  name.vb: IMatcher(Of TCandidate)
+  fullName: Platform.Interfaces.IMatcher<TCandidate>
+  fullName.vb: Platform.Interfaces.IMatcher(Of TCandidate)
+  nameWithType: IMatcher<TCandidate>
+  nameWithType.vb: IMatcher(Of TCandidate)
+- uid: Platform.Interfaces.IMatcher`1.IsMatched(`0)
+  name: IsMatched(TCandidate)
+  href: api/Platform.Interfaces.IMatcher-1.html#Platform_Interfaces_IMatcher_1_IsMatched__0_
+  commentId: M:Platform.Interfaces.IMatcher`1.IsMatched(`0)
+  fullName: Platform.Interfaces.IMatcher<TCandidate>.IsMatched(TCandidate)
+  fullName.vb: Platform.Interfaces.IMatcher(Of TCandidate).IsMatched(TCandidate)
+  nameWithType: IMatcher<TCandidate>.IsMatched(TCandidate)
+  nameWithType.vb: IMatcher(Of TCandidate).IsMatched(TCandidate)
+- uid: Platform.Interfaces.IMatcher`1.IsMatched*
+  name: IsMatched
+  href: api/Platform.Interfaces.IMatcher-1.html#Platform_Interfaces_IMatcher_1_IsMatched_
+  commentId: Overload:Platform.Interfaces.IMatcher`1.IsMatched
+  isSpec: "True"
+  fullName: Platform.Interfaces.IMatcher<TCandidate>.IsMatched
+  fullName.vb: Platform.Interfaces.IMatcher(Of TCandidate).IsMatched
+  nameWithType: IMatcher<TCandidate>.IsMatched
+  nameWithType.vb: IMatcher(Of TCandidate).IsMatched
 - uid: Platform.Interfaces.IProperties`3
   name: IProperties<TObject, TProperty, TValue>
   href: api/Platform.Interfaces.IProperties-3.html

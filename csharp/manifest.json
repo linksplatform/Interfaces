@@ -64,20 +64,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Interfaces.ICriterionMatcher-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Interfaces.ICriterionMatcher-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Platform.Interfaces.ICriterionMatcher<TArgument>",
-      "Summary": "<p>Defines a criterion matcher, that contains a specific method for determining whether the argument matches the criterion or not.</p>\n<p>Определяет объект который проверяет соответствие критерию и содержит конкретный метод для определения, соответствует ли аргумент критерию или нет.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "obj/api/Platform.Interfaces.IFactory-1.yml",
       "output": {
         ".html": {
@@ -89,6 +75,20 @@
       "IsMRef": true,
       "Title": "Platform.Interfaces.IFactory<TProduct>",
       "Summary": "<p>Defines a factory that produces instances of a specific type.</p>\n<p>Определяет фабрику, которая производит экземпляры определенного типа.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Interfaces.IMatcher-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Interfaces.IMatcher-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Platform.Interfaces.IMatcher<TCandidate>",
+      "Summary": "<p>Defines a matcher that determines whether a candidate satisfies its matching rule.</p>\n<p>Определяет объект, который проверяет, соответствует ли кандидат правилу сопоставления.</p>\n"
     },
     {
       "type": "ManagedReference",

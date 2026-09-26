@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface ICriterionMatcher&lt;TArgument&gt; | LinksPlatform&#39;s Platform.Interfaces Library </title>
+      <title>Interface IMatcher&lt;TCandidate&gt; | LinksPlatform&#39;s Platform.Interfaces Library </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface ICriterionMatcher&lt;TArgument&gt; | LinksPlatform&#39;s Platform.Interfaces Library ">
+      <meta name="title" content="Interface IMatcher&lt;TCandidate&gt; | LinksPlatform&#39;s Platform.Interfaces Library ">
       
-      <meta name="description" content="Defines a criterion matcher, that contains a specific method for determining whether the argument matches the criterion or not. Определяет объект который проверяет соответствие критерию и содержит конкретный метод для определения, соответствует ли аргумент критерию или нет.">
+      <meta name="description" content="Defines a matcher that determines whether a candidate satisfies its matching rule. Определяет объект, который проверяет, соответствует ли кандидат правилу сопоставления.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/linksplatform/Interfaces/new/main/apiSpec/new?filename=Platform_Interfaces_ICriterionMatcher_1.md&amp;value=---%0Auid%3A%20Platform.Interfaces.ICriterionMatcher%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/linksplatform/Interfaces/new/main/apiSpec/new?filename=Platform_Interfaces_IMatcher_1.md&amp;value=---%0Auid%3A%20Platform.Interfaces.IMatcher%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -70,12 +70,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Platform.Interfaces.ICriterionMatcher`1">
+        <article data-uid="Platform.Interfaces.IMatcher`1">
 
 
 
-  <h1 id="Platform_Interfaces_ICriterionMatcher_1" data-uid="Platform.Interfaces.ICriterionMatcher`1" class="text-break">
-Interface ICriterionMatcher&lt;TArgument&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/linksplatform/Interfaces/blob/main/csharp/Platform.Interfaces/ICriterionMatcher.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <h1 id="Platform_Interfaces_IMatcher_1" data-uid="Platform.Interfaces.IMatcher`1" class="text-break">
+Interface IMatcher&lt;TCandidate&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/linksplatform/Interfaces/blob/main/csharp/Platform.Interfaces/IMatcher.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -83,22 +83,22 @@ Interface ICriterionMatcher&lt;TArgument&gt;  <a class="header-action link-secon
   <dl><dt>Assembly</dt><dd>Platform.Interfaces.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Defines a criterion matcher, that contains a specific method for determining whether the argument matches the criterion or not.</p>
-<p>Определяет объект который проверяет соответствие критерию и содержит конкретный метод для определения, соответствует ли аргумент критерию или нет.</p>
+  <div class="markdown summary"><p>Defines a matcher that determines whether a candidate satisfies its matching rule.</p>
+<p>Определяет объект, который проверяет, соответствует ли кандидат правилу сопоставления.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ICriterionMatcher&lt;in TArgument&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IMatcher&lt;in TCandidate&gt;</code></pre>
   </div>
 
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
-    <dt><code>TArgument</code></dt>
-    <dd><p>Argument type.</p>
-<p>Тип аргумента.</p>
+    <dt><code>TCandidate</code></dt>
+    <dd><p>Type of the value being tested for a match.</p>
+<p>Тип значения, проверяемого на соответствие.</p>
 </dd>
   </dl>
 
@@ -115,35 +115,35 @@ Interface ICriterionMatcher&lt;TArgument&gt;  <a class="header-action link-secon
 </h2>
 
 
-  <a id="Platform_Interfaces_ICriterionMatcher_1_IsMatched_" data-uid="Platform.Interfaces.ICriterionMatcher`1.IsMatched*"></a>
+  <a id="Platform_Interfaces_IMatcher_1_IsMatched_" data-uid="Platform.Interfaces.IMatcher`1.IsMatched*"></a>
 
-  <h3 id="Platform_Interfaces_ICriterionMatcher_1_IsMatched__0_" data-uid="Platform.Interfaces.ICriterionMatcher`1.IsMatched(`0)">
-  IsMatched(TArgument)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/linksplatform/Interfaces/blob/main/csharp/Platform.Interfaces/ICriterionMatcher.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Platform_Interfaces_IMatcher_1_IsMatched__0_" data-uid="Platform.Interfaces.IMatcher`1.IsMatched(`0)">
+  IsMatched(TCandidate)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/linksplatform/Interfaces/blob/main/csharp/Platform.Interfaces/IMatcher.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Determines whether the argument matches the criterion.</p>
-<p>Определяет, соответствует ли аргумент критерию.</p>
+  <div class="markdown level1 summary"><p>Determines whether the candidate satisfies the matching rule.</p>
+<p>Определяет, соответствует ли кандидат правилу сопоставления.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsMatched(TArgument argument)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IsMatched(TCandidate candidate)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>argument</code> <span class="xref">TArgument</span></dt>
-    <dd><p>The argument.</p>
-<p>Аргумент.</p>
+    <dt><code>candidate</code> <span class="xref">TCandidate</span></dt>
+    <dd><p>The value to test.</p>
+<p>Проверяемое значение.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>A value that determines whether the argument matches the criterion.</p>
-<p>Значение, определяющие соответствует ли аргумент критерию.</p>
+    <dd><p>Whether the candidate satisfies the matching rule.</p>
+<p>Соответствует ли кандидат правилу сопоставления.</p>
 </dd>
   </dl>
 
@@ -161,7 +161,7 @@ Interface ICriterionMatcher&lt;TArgument&gt;  <a class="header-action link-secon
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/linksplatform/Interfaces/blob/main/csharp/Platform.Interfaces/ICriterionMatcher.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/linksplatform/Interfaces/blob/main/csharp/Platform.Interfaces/IMatcher.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 
