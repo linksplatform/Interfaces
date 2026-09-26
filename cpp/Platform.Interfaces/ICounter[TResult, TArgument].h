@@ -1,13 +1,45 @@
 ﻿#pragma once
 
 namespace Platform::Interfaces {
+  /// <summary>
+  /// <para>Declares the primary counter interface template for its supported specializations.</para>
+  /// <para>Объявляет основной шаблон интерфейса счётчика для поддерживаемых специализаций.</para>
+  /// </summary>
   template <typename...>
   struct ICounter;
 
+  /// <summary>
+  /// <para>Defines a counter that requires an argument to perform a count.</para>
+  /// <para>Определяет счётчик, которому требуется аргумент для выполнения подсчёта.</para>
+  /// </summary>
+  /// <typeparam name="TResult">
+  /// <para>The count result type.</para>
+  /// <para>Тип результата подсчёта.</para>
+  /// </typeparam>
+  /// <typeparam name="TArgument">
+  /// <para>The argument type.</para>
+  /// <para>Тип аргумента.</para>
+  /// </typeparam>
   template <typename TResult, typename TArgument>
   struct ICounter<TResult, TArgument> {
+    /// <summary>
+    /// <para>Performs a count.</para>
+    /// <para>Выполняет подсчёт.</para>
+    /// </summary>
+    /// <param name="argument">
+    /// <para>The argument.</para>
+    /// <para>Аргумент.</para>
+    /// </param>
+    /// <returns>
+    /// <para>The count result.</para>
+    /// <para>Результат подсчёта.</para>
+    /// </returns>
     virtual TResult Count(TArgument argument) = 0;
 
+    /// <summary>
+    /// <para>Destroys the interface instance.</para>
+    /// <para>Уничтожает экземпляр интерфейса.</para>
+    /// </summary>
     virtual ~ICounter() = default;
   };
 }  // namespace Platform::Interfaces

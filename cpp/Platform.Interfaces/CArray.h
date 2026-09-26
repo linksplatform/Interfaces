@@ -29,9 +29,29 @@ namespace Platform::Interfaces {
     }
   }  // namespace Internal
 
+  /// <summary>
+  /// <para>Requires an enumerable with indexed random access and, optionally, a specified item type.</para>
+  /// <para>Требует перечисляемую коллекцию с произвольным доступом по индексу и, при необходимости, заданным типом элемента.</para>
+  /// </summary>
+  /// <typeparam name="TSelf">
+  /// <para>The type checked by this concept or described by this helper.</para>
+  /// <para>Тип, проверяемый этим концептом или описываемый этим вспомогательным типом.</para>
+  /// </typeparam>
+  /// <typeparam name="TItems">
+  /// <para>Optional item types.</para>
+  /// <para>Необязательные типы элементов.</para>
+  /// </typeparam>
   template <typename TSelf, typename... TItems>
   concept CArray = CEnumerable<TSelf> && Internal::CArrayHelpFunction<TSelf, TItems...>();
 
+  /// <summary>
+  /// <para>Exposes the item and iterator types of an array.</para>
+  /// <para>Предоставляет типы элементов и итератора массива.</para>
+  /// </summary>
+  /// <typeparam name="TSelf">
+  /// <para>The type checked by this concept or described by this helper.</para>
+  /// <para>Тип, проверяемый этим концептом или описываемый этим вспомогательным типом.</para>
+  /// </typeparam>
   template <CArray TSelf>
   struct Array : Enumerable<TSelf> {};
 }  // namespace Platform::Interfaces

@@ -326,6 +326,9 @@ ASALocalRun/
 # Generated DocFX site
 csharp/_site/
 
+# Generated Doxygen site
+cpp/docs/
+
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
 

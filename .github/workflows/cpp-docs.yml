@@ -1,0 +1,50 @@
+name: C++ documentation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cpp/Platform.Interfaces/**'
+      - 'cpp/Doxyfile'
+      - '.github/scripts/check-cpp-docs.py'
+      - '.github/scripts/check-cpp-docs.test.py'
+      - '.github/workflows/cpp-docs.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cpp/Platform.Interfaces/**'
+      - 'cpp/Doxyfile'
+      - '.github/scripts/check-cpp-docs.py'
+      - '.github/scripts/check-cpp-docs.test.py'
+      - '.github/workflows/cpp-docs.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Install Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+      - name: Check documentation coverage
+        run: |
+          python3 .github/scripts/check-cpp-docs.test.py
+          python3 .github/scripts/check-cpp-docs.py
+      - name: Generate documentation
+        run: |
+          doxygen cpp/Doxyfile
+          test -s cpp/docs/html/index.html
+          test -s cpp/docs/xml/index.xml
+      - name: Upload HTML and XML documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: cpp-api-documentation
+          path: |
+            cpp/docs/html
+            cpp/docs/xml

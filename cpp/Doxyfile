@@ -1,0 +1,27 @@
+PROJECT_NAME = "Platform.Interfaces C++"
+# Run from the repository root. The output is ignored locally and uploaded by CI.
+OUTPUT_DIRECTORY = cpp/docs
+INPUT = cpp/Platform.Interfaces
+FILE_PATTERNS = *.h
+RECURSIVE = NO
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+GENERATE_XML = YES
+HAVE_DOT = NO
+EXTRACT_ALL = NO
+EXTRACT_PRIVATE = NO
+EXTRACT_STATIC = NO
+WARN_IF_UNDOCUMENTED = YES
+WARN_IF_DOC_ERROR = YES
+WARN_AS_ERROR = FAIL_ON_WARNINGS
+QUIET = YES
+EXCLUDE_SYMBOLS = Platform::Interfaces::Internal
+MACRO_EXPANSION = YES
+EXPAND_ONLY_PREDEF = YES
+# These replacements let Doxygen parse template bases and macro-generated methods.
+# The original declarations remain unchanged in the published headers.
+PREDEFINED = "THIS_REFERENCE_WRAPPER_METHODS(x,y)=" \
+             "VARIABLE_WRAPPER_METHODS(x,y)=" \
+             "USE_ALL_BASE_CONSTRUCTORS(x,y)=" \
+             "EXTENDED_BASE_TYPE(a,b,c,d,e)=c" \
+             "DECORATED_BASE_TYPE(a,b,c,d,e)=c"

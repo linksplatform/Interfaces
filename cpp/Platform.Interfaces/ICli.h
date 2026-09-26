@@ -23,6 +23,10 @@ namespace Platform::Interfaces {
     /// </returns>
     virtual int Run(const std::vector<std::string>& args) = 0;
 
+    /// <summary>
+    /// <para>Destroys the interface instance.</para>
+    /// <para>Уничтожает экземпляр интерфейса.</para>
+    /// </summary>
     virtual ~ICli() = default;
   };
 }  // namespace Platform::Interfaces

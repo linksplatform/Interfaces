@@ -47,6 +47,11 @@ jobs:
       - name: Validate tests and NuGet package
         run: ../.github/scripts/validate-csharp-package.sh
 
+      - name: Validate bilingual C# API documentation
+        run: |
+          python3 ../.github/scripts/check-csharp-docs.test.py
+          python3 ../.github/scripts/check-csharp-docs.py Platform.Interfaces/bin/Release/net8/Platform.Interfaces.xml
+
       - name: Test C# workflow safeguards
         run: node --test ../.github/scripts/*csharp*.test.mjs
 
