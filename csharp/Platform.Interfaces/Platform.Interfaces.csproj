@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Interfaces Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
-    <VersionPrefix>0.6.0</VersionPrefix>
+    <VersionPrefix>0.6.1</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Interfaces</AssemblyName>
@@ -23,7 +23,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Breaking change: rename ICriterionMatcher to IMatcher. Matcher input is named candidate; update implementations and references to the new interface.</PackageReleaseNotes>
+    <PackageReleaseNotes>Validate complete bilingual English and Russian XML documentation for the public C# API in CI.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

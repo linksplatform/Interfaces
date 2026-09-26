@@ -33,7 +33,7 @@ if [[ ${#symbol_packages[@]} -ne 0 ]]; then
 fi
 
 package_contents=$(unzip -Z1 "${packages[0]}")
-for expected_file in README.md icon.png lib/net8.0/Platform.Interfaces.dll; do
+for expected_file in README.md icon.png lib/net8.0/Platform.Interfaces.dll lib/net8.0/Platform.Interfaces.xml; do
   if ! grep -Fxq "$expected_file" <<< "$package_contents"; then
     echo "${packages[0]} is missing $expected_file." >&2
     exit 1
