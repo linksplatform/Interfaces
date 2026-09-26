@@ -1,6 +1,10 @@
 ﻿#pragma once
 
 namespace Platform::Interfaces {
+  /// <summary>
+  /// <para>Declares the primary matcher interface template.</para>
+  /// <para>Объявляет основной шаблон интерфейса сопоставления.</para>
+  /// </summary>
   template <typename...>
   struct IMatcher;
 

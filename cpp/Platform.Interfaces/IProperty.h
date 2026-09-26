@@ -4,6 +4,10 @@
 #include "ISetter[TValue, TArgument].h"
 
 namespace Platform::Interfaces {
+  /// <summary>
+  /// <para>Declares the primary property operator interface template.</para>
+  /// <para>Объявляет основной шаблон интерфейса оператора свойства.</para>
+  /// </summary>
   template <typename...>
   struct IProperty;
 

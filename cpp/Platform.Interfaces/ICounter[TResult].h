@@ -1,6 +1,10 @@
 ﻿#pragma once
 
 namespace Platform::Interfaces {
+  /// <summary>
+  /// <para>Declares the primary counter interface template for its supported specializations.</para>
+  /// <para>Объявляет основной шаблон интерфейса счётчика для поддерживаемых специализаций.</para>
+  /// </summary>
   template <typename...>
   struct ICounter;
 

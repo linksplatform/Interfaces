@@ -8,7 +8,9 @@ import sys
 
 def declaration_kind(line: str) -> str | None:
     stripped = line.strip()
-    if re.match(r"(?:concept|struct|class)\s+\w+", stripped) and ("{" in stripped or "=" in stripped):
+    if re.match(r"(?:struct|class)\s+\w+", stripped):
+        return "type"
+    if re.match(r"concept\s+\w+\s*=", stripped):
         return "type"
     if re.match(r"using\s+\w+\s*=", stripped):
         return "alias"

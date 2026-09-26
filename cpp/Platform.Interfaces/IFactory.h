@@ -1,6 +1,10 @@
 ﻿#pragma once
 
 namespace Platform::Interfaces {
+  /// <summary>
+  /// <para>Declares the primary factory interface template.</para>
+  /// <para>Объявляет основной шаблон интерфейса фабрики.</para>
+  /// </summary>
   template <typename...>
   struct IFactory;
 

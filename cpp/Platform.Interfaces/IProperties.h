@@ -1,6 +1,10 @@
 ﻿#pragma once
 
 namespace Platform::Interfaces {
+  /// <summary>
+  /// <para>Declares the primary properties operator interface template.</para>
+  /// <para>Объявляет основной шаблон интерфейса оператора свойств.</para>
+  /// </summary>
   template <typename...>
   struct IProperties;
 

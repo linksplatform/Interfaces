@@ -23,6 +23,9 @@ class DocumentationCoverageTests(unittest.TestCase):
     def test_undocumented_concept_is_rejected(self):
         self.assertTrue(self.validate("template <typename TSelf>\nconcept CExample = true;\n"))
 
+    def test_undocumented_primary_template_is_rejected(self):
+        self.assertTrue(self.validate("template <typename...>\nstruct IExample;\n"))
+
     def test_bilingual_concept_with_type_parameter_is_accepted(self):
         source = """/// <summary>
 /// <para>Checks an example.</para>
