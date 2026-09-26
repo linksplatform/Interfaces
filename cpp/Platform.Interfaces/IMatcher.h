@@ -4,9 +4,9 @@ namespace Platform::Interfaces {
   template <typename...>
   struct IMatcher;
 
-  template <typename TArgument>
-  struct IMatcher<TArgument> {
-    virtual bool IsMatched(TArgument argument) = 0;
+  template <typename TCandidate>
+  struct IMatcher<TCandidate> {
+    virtual bool IsMatched(TCandidate candidate) = 0;
 
     virtual ~IMatcher() = default;
   };

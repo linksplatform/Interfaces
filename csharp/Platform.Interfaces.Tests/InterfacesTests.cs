@@ -1,7 +1,6 @@
-﻿using Xunit;
-
-#pragma warning disable CS0168 // Variable is declared but never used
-#pragma warning disable CS0219 // Variable is assigned but its value is never used
+﻿using System.IO;
+using System.Reflection.PortableExecutable;
+using Xunit;
 
 namespace Platform.Interfaces.Tests
 {
@@ -10,16 +9,52 @@ namespace Platform.Interfaces.Tests
         [Fact]
         public static void BuildTest()
         {
-            ICounter<int, int> c1 = null;
-            ICounter<int> c2 = null;
-            IMatcher<int> cm1 = null;
-            IFactory<int> f1 = null;
-            IProperties<int, int, int> p1 = null;
-            IProperty<int, int> p2 = null;
-            IProvider<int, int> p3 = null;
-            IProvider<int> p4 = null;
-            ISetter<int, int> s1 = null;
-            ISetter<int> s2 = null;
+            ICounter<int, int>? c1 = null;
+            ICounter<int>? c2 = null;
+            IMatcher<int>? cm1 = null;
+            IFactory<int>? f1 = null;
+            IProperties<int, int, int>? p1 = null;
+            IProperty<int, int>? p2 = null;
+            IProvider<int, int>? p3 = null;
+            IProvider<int>? p4 = null;
+            ISetter<int, int>? s1 = null;
+            ISetter<int>? s2 = null;
+
+            Assert.Null(c1);
+            Assert.Null(c2);
+            Assert.Null(cm1);
+            Assert.Null(f1);
+            Assert.Null(p1);
+            Assert.Null(p2);
+            Assert.Null(p3);
+            Assert.Null(p4);
+            Assert.Null(s1);
+            Assert.Null(s2);
+        }
+
+        [Fact]
+        public static void MatcherTestsCandidate()
+        {
+            IMatcher<int> matcher = new MinimumMatcher(10);
+
+            Assert.False(matcher.IsMatched(9));
+            Assert.True(matcher.IsMatched(10));
+        }
+
+        [Fact]
+        public static void AssemblyContainsEmbeddedPortablePdb()
+        {
+            using var assembly = File.OpenRead(typeof(ICounter<>).Assembly.Location);
+            using var peReader = new PEReader(assembly);
+
+            Assert.Contains(
+                peReader.ReadDebugDirectory(),
+                entry => entry.Type == DebugDirectoryEntryType.EmbeddedPortablePdb);
+        }
+
+        private sealed class MinimumMatcher(int minimum) : IMatcher<int>
+        {
+            public bool IsMatched(int candidate) => candidate >= minimum;
         }
     }
 }

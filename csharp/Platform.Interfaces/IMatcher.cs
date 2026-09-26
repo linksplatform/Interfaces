@@ -1,27 +1,27 @@
 ﻿namespace Platform.Interfaces
 {
     /// <summary>
-    /// <para>Defines a matcher that contains a specific method for determining whether the argument matches or not.</para>
-    /// <para>Определяет объект который проверяет соответствие и содержит конкретный метод для определения, соответствует ли аргумент или нет.</para>
+    /// <para>Defines a matcher that determines whether a candidate satisfies its matching rule.</para>
+    /// <para>Определяет объект, который проверяет, соответствует ли кандидат правилу сопоставления.</para>
     /// </summary>
-    /// <typeparam name="TArgument">
-    /// <para>Argument type.</para>
-    /// <para>Тип аргумента.</para>
+    /// <typeparam name="TCandidate">
+    /// <para>Type of the value being tested for a match.</para>
+    /// <para>Тип значения, проверяемого на соответствие.</para>
     /// </typeparam>
-    public interface IMatcher<in TArgument>
+    public interface IMatcher<in TCandidate>
     {
         /// <summary>
-        /// <para>Determines whether the argument matches.</para>
-        /// <para>Определяет, соответствует ли аргумент.</para>
+        /// <para>Determines whether the candidate satisfies the matching rule.</para>
+        /// <para>Определяет, соответствует ли кандидат правилу сопоставления.</para>
         /// </summary>
-        /// <param name="argument">
-        /// <para>The argument.</para>
-        /// <para>Аргумент.</para>
+        /// <param name="candidate">
+        /// <para>The value to test.</para>
+        /// <para>Проверяемое значение.</para>
         /// </param>
         /// <returns>
-        /// <para>A value that determines whether the argument matches.</para>
-        /// <para>Значение, определяющие соответствует ли аргумент.</para>
+        /// <para>Whether the candidate satisfies the matching rule.</para>
+        /// <para>Соответствует ли кандидат правилу сопоставления.</para>
         /// </returns>
-        bool IsMatched(TArgument argument);
+        bool IsMatched(TCandidate candidate);
     }
 }

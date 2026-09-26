@@ -3,8 +3,8 @@
 #include <concepts>
 
 namespace Platform::Interfaces {
-  template <typename TSelf, typename TArgument>
-  concept CMatcher = requires(TSelf self, TArgument argument) {
-    { self.IsMatched(argument) } -> std::same_as<bool>;
+  template <typename TSelf, typename TCandidate>
+  concept CMatcher = requires(TSelf self, TCandidate candidate) {
+    { self.IsMatched(candidate) } -> std::same_as<bool>;
   };
 }  // namespace Platform::Interfaces

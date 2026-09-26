@@ -10,10 +10,13 @@
 #include "CCounter.h"
 #include "CMatcher.h"
 #include "CFactory.h"
+#include "CLink.h"
+#include "CLinkAddress.h"
 #include "CProperties.h"
 #include "CProvider.h"
 #include "CSetter.h"
 #include "CProperty.h"
+#include "CCli.h"
 
 #include "ICounter[TResult, TArgument].h"
 #include "ICounter[TResult].h"
@@ -25,6 +28,7 @@
 #include "IProvider[TProvided].h"
 #include "ISetter[TValue, TArgument].h"
 #include "ISetter[TValue].h"
+#include "ICli.h"
 
 #include "Polymorph.h"
 

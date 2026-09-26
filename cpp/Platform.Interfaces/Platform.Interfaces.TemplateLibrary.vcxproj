@@ -144,7 +144,7 @@
   <ItemGroup>
     <ClInclude Include="ICounter[TResult, TArgument].h" />
     <ClInclude Include="ICounter[TResult].h" />
-    <ClInclude Include="ICriterionMatcher.h" />
+    <ClInclude Include="IMatcher.h" />
     <ClInclude Include="IFactory.h" />
     <ClInclude Include="IProperties.h" />
     <ClInclude Include="IProperty.h" />
