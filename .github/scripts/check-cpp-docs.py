@@ -38,6 +38,51 @@ def documentation_before(lines: list[str], index: int) -> tuple[str, str]:
     return "\n".join(reversed(comment)), template
 
 
+def summary_errors(comment: str, label: str) -> list[str]:
+    errors = []
+    if "<summary>" not in comment or "</summary>" not in comment:
+        return [f"{label} lacks a documentation summary"]
+    paragraphs = re.findall(r"<para>(.*?)</para>", comment)
+    if not any(re.search(r"[A-Za-z]", paragraph) for paragraph in paragraphs) or not any(
+        re.search(r"[А-Яа-яЁё]", paragraph) for paragraph in paragraphs
+    ):
+        errors.append(f"{label} lacks English and Russian paragraphs")
+    return errors
+
+
+def template_errors(comment: str, template: str, label: str) -> list[str]:
+    parameters = dict.fromkeys(re.findall(r"\bT(?:[A-Z]\w*)?\b", template))
+    return [
+        f"{label} lacks documentation for {parameter}"
+        for parameter in parameters
+        if f'<typeparam name="{parameter}">' not in comment
+    ]
+
+
+def callable_errors(comment: str, signature: str, kind: str, label: str) -> list[str]:
+    errors = []
+    arguments = re.search(r"\((.*?)\)", signature)
+    if arguments:
+        for argument in arguments.group(1).split(","):
+            name = re.search(r"(\w+)$", argument.strip())
+            if name and f'<param name="{name.group(1)}">' not in comment:
+                errors.append(f"{label} lacks documentation for argument {name.group(1)}")
+    if kind == "method" and not ("virtual void " in signature or "virtual ~" in signature) and "<returns>" not in comment:
+        errors.append(f"{label} lacks return documentation")
+    return errors
+
+
+def declaration_errors(lines: list[str], index: int, kind: str, path: Path) -> list[str]:
+    comment, template = documentation_before(lines, index)
+    label = f"{path}:{index + 1}: {kind}"
+    errors = summary_errors(comment, label)
+    if kind == "type":
+        errors.extend(template_errors(comment, template, label))
+    if kind in {"method", "constructor"}:
+        errors.extend(callable_errors(comment, lines[index].strip(), kind, label))
+    return errors
+
+
 def validate_header(path: Path) -> list[str]:
     lines = path.read_text(encoding="utf-8-sig").splitlines()
     errors = []
@@ -51,36 +96,8 @@ def validate_header(path: Path) -> list[str]:
         if inside_internal:
             continue
         kind = declaration_kind(line)
-        if kind is None:
-            continue
-        comment, template = documentation_before(lines, index)
-        label = f"{path}:{index + 1}: {kind}"
-        if "<summary>" not in comment or "</summary>" not in comment:
-            errors.append(f"{label} lacks a documentation summary")
-            continue
-        paragraphs = re.findall(r"<para>(.*?)</para>", comment)
-        if not any(re.search(r"[A-Za-z]", paragraph) for paragraph in paragraphs) or not any(
-            re.search(r"[А-Яа-яЁё]", paragraph) for paragraph in paragraphs
-        ):
-            errors.append(f"{label} lacks English and Russian paragraphs")
-        if kind == "type":
-            parameters = dict.fromkeys(re.findall(r"\bT(?:[A-Z]\w*)?\b", template))
-            for parameter in parameters:
-                if f'<typeparam name="{parameter}">' not in comment:
-                    errors.append(f"{label} lacks documentation for {parameter}")
-        if kind in {"method", "constructor"}:
-            signature = line.strip()
-            arguments = re.search(r"\((.*?)\)", signature)
-            if arguments:
-                for argument in arguments.group(1).split(","):
-                    argument = argument.strip()
-                    if not argument:
-                        continue
-                    name = re.search(r"(\w+)$", argument)
-                    if name and f'<param name="{name.group(1)}">' not in comment:
-                        errors.append(f"{label} lacks documentation for argument {name.group(1)}")
-            if kind == "method" and not ("virtual void " in signature or "virtual ~" in signature) and "<returns>" not in comment:
-                errors.append(f"{label} lacks return documentation")
+        if kind is not None:
+            errors.extend(declaration_errors(lines, index, kind, path))
     return errors
 
 
