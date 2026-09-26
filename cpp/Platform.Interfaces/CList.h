@@ -68,15 +68,55 @@ namespace Platform::Interfaces {
     }
   }  // namespace Internal
 
+  /// <summary>
+  /// <para>Requires an indexed mutable list with insertion and removal operations.</para>
+  /// <para>Требует индексируемый изменяемый список с операциями вставки и удаления.</para>
+  /// </summary>
+  /// <typeparam name="TSelf">
+  /// <para>The type checked by this concept or described by this helper.</para>
+  /// <para>Тип, проверяемый этим концептом или описываемый этим вспомогательным типом.</para>
+  /// </typeparam>
+  /// <typeparam name="TItems">
+  /// <para>Optional item types.</para>
+  /// <para>Необязательные типы элементов.</para>
+  /// </typeparam>
   template <typename TSelf, typename... TItems>
   concept CList = CArray<TSelf> && Internal::CListHelpFunction<TSelf, TItems...>();
 
+  /// <summary>
+  /// <para>Requires an indexed read-only list with size and empty-state queries.</para>
+  /// <para>Требует индексируемый список только для чтения с запросами размера и пустого состояния.</para>
+  /// </summary>
+  /// <typeparam name="TSelf">
+  /// <para>The type checked by this concept or described by this helper.</para>
+  /// <para>Тип, проверяемый этим концептом или описываемый этим вспомогательным типом.</para>
+  /// </typeparam>
+  /// <typeparam name="TItems">
+  /// <para>Optional item types.</para>
+  /// <para>Необязательные типы элементов.</para>
+  /// </typeparam>
   template <typename TSelf, typename... TItems>
   concept CReadonlyList = CArray<TSelf> && Internal::CReadonlyListHelpFunction<TSelf, TItems...>();
 
+  /// <summary>
+  /// <para>Exposes the item and iterator types of a mutable list.</para>
+  /// <para>Предоставляет типы элемента и итератора изменяемого списка.</para>
+  /// </summary>
+  /// <typeparam name="TSelf">
+  /// <para>The type checked by this concept or described by this helper.</para>
+  /// <para>Тип, проверяемый этим концептом или описываемый этим вспомогательным типом.</para>
+  /// </typeparam>
   template <CList TSelf>
   struct List : Enumerable<TSelf> {};
 
+  /// <summary>
+  /// <para>Exposes the item and iterator types of a read-only list.</para>
+  /// <para>Предоставляет типы элемента и итератора списка только для чтения.</para>
+  /// </summary>
+  /// <typeparam name="TSelf">
+  /// <para>The type checked by this concept or described by this helper.</para>
+  /// <para>Тип, проверяемый этим концептом или описываемый этим вспомогательным типом.</para>
+  /// </typeparam>
   template <CReadonlyList TSelf>
   struct ReadonlyList : Enumerable<TSelf> {};
 }  // namespace Platform::Interfaces

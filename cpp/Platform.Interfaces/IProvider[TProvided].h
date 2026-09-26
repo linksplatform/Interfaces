@@ -24,6 +24,10 @@ namespace Platform::Interfaces {
     /// </returns>
     virtual TProvided Get() = 0;
 
+    /// <summary>
+    /// <para>Destroys the interface instance.</para>
+    /// <para>Уничтожает экземпляр интерфейса.</para>
+    /// </summary>
     virtual ~IProvider() = default;
   };
 }  // namespace Platform::Interfaces

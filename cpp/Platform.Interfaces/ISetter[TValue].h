@@ -24,6 +24,10 @@ namespace Platform::Interfaces {
     /// </param>
     virtual void Set(TValue value) = 0;
 
+    /// <summary>
+    /// <para>Destroys the interface instance.</para>
+    /// <para>Уничтожает экземпляр интерфейса.</para>
+    /// </summary>
     virtual ~ISetter() = default;
   };
 }  // namespace Platform::Interfaces

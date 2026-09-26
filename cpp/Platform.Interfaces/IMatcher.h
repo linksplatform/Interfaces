@@ -28,6 +28,10 @@ namespace Platform::Interfaces {
     /// </returns>
     virtual bool IsMatched(TCandidate candidate) = 0;
 
+    /// <summary>
+    /// <para>Destroys the interface instance.</para>
+    /// <para>Уничтожает экземпляр интерфейса.</para>
+    /// </summary>
     virtual ~IMatcher() = default;
   };
 }  // namespace Platform::Interfaces

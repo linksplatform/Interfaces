@@ -24,6 +24,10 @@ namespace Platform::Interfaces {
     /// </returns>
     virtual TProduct Create() = 0;
 
+    /// <summary>
+    /// <para>Destroys the interface instance.</para>
+    /// <para>Уничтожает экземпляр интерфейса.</para>
+    /// </summary>
     virtual ~IFactory() = default;
   };
 }  // namespace Platform::Interfaces

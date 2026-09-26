@@ -21,6 +21,10 @@ namespace Platform::Interfaces {
   /// </typeparam>
   template <typename TObject, typename TValue>
   struct IProperty<TObject, TValue> : public ISetter<TValue, TObject>, IProvider<TValue, TObject> {
+    /// <summary>
+    /// <para>Destroys the interface instance.</para>
+    /// <para>Уничтожает экземпляр интерфейса.</para>
+    /// </summary>
     virtual ~IProperty() = default;
   };
 }  // namespace Platform::Interfaces

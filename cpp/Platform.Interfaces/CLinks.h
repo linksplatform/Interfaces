@@ -3,6 +3,14 @@
 #include <concepts>
 
 namespace Platform::Interfaces {
+  /// <summary>
+  /// <para>Requires link storage with counting, enumeration, creation, update and deletion operations.</para>
+  /// <para>Требует хранилище связей с подсчётом, перебором, созданием, изменением и удалением.</para>
+  /// </summary>
+  /// <typeparam name="TSelf">
+  /// <para>The type checked by this concept or described by this helper.</para>
+  /// <para>Тип, проверяемый этим концептом или описываемый этим вспомогательным типом.</para>
+  /// </typeparam>
   template <typename TSelf>
   concept CLinks = requires {
     typename TSelf::OptionsType;
