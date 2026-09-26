@@ -81,17 +81,22 @@ namespace Platform::Interfaces::Tests {
     }
   }
 
-  TEST(CompileTests, CriterionMatcher) {
-    struct EmptyCriterionMatcher : public ICriterionMatcher<int> {
-      bool IsMatched(int) { return {}; }
+  TEST(CompileTests, Matcher) {
+    struct MinimumMatcher : public IMatcher<int> {
+      int minimum;
+      explicit MinimumMatcher(int value) : minimum(value) {}
+      bool IsMatched(int candidate) override { return candidate >= minimum; }
     };
-    static_assert(CCriterionMatcher<EmptyCriterionMatcher, int>);
+    static_assert(CMatcher<MinimumMatcher, int>);
 
     {
-      CCriterionMatcher<int> auto criterionMatcher = EmptyCriterionMatcher{};
+      CMatcher<int> auto matcher = MinimumMatcher{10};
+      IMatcher<int>& interface = matcher;
 
-      ASSERT_TRUE((CCriterionMatcher<EmptyCriterionMatcher, int>));
-      ASSERT_TRUE((CCriterionMatcher<EmptyCriterionMatcher, float>));
+      ASSERT_TRUE((CMatcher<MinimumMatcher, int>));
+      ASSERT_TRUE((CMatcher<MinimumMatcher, float>));
+      ASSERT_FALSE(interface.IsMatched(9));
+      ASSERT_TRUE(interface.IsMatched(10));
     }
   }
 

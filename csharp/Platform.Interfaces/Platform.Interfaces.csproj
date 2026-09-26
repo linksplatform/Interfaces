@@ -4,12 +4,12 @@
     <Description>LinksPlatform's Platform.Interfaces Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Interfaces</AssemblyTitle>
-    <VersionPrefix>0.5.3</VersionPrefix>
+    <VersionPrefix>0.6.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Interfaces</AssemblyName>
     <PackageId>Platform.Interfaces</PackageId>
-    <PackageTags>LinksPlatform;Interfaces;ICounter;ICriterionMatcher;IFactory;IProperties;IProperty;IProvider;ISetter</PackageTags>
+    <PackageTags>LinksPlatform;Interfaces;ICounter;IMatcher;IFactory;IProperties;IProperty;IProvider;ISetter</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://linksplatform.github.io/Interfaces</PackageProjectUrl>
@@ -23,7 +23,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Fix package publishing while preserving embedded symbols, eliminate C# workflow warnings, validate NuGet artifacts before release, and add downloadable DocFX API documentation in PDF format.</PackageReleaseNotes>
+    <PackageReleaseNotes>Breaking change: rename ICriterionMatcher to IMatcher. Matcher input is named candidate; update implementations and references to the new interface.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

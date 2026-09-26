@@ -8,7 +8,7 @@
 #include "CSet.h"
 #include "CDictionary.h"
 #include "CCounter.h"
-#include "CCriterionMatcher.h"
+#include "CMatcher.h"
 #include "CFactory.h"
 #include "CLink.h"
 #include "CLinkAddress.h"
@@ -20,7 +20,7 @@
 
 #include "ICounter[TResult, TArgument].h"
 #include "ICounter[TResult].h"
-#include "ICriterionMatcher.h"
+#include "IMatcher.h"
 #include "IFactory.h"
 #include "IProperties.h"
 #include "IProperty.h"

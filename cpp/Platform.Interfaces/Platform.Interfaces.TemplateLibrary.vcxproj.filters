@@ -21,7 +21,7 @@
     <ClInclude Include="ICounter[TResult].h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ICriterionMatcher.h">
+    <ClInclude Include="IMatcher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IFactory.h">
