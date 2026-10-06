@@ -57,6 +57,15 @@ test("lets the build script decide whether tests are built", () => {
   assert.match(script, /ctest .*--build-config "\$build_type"/);
 });
 
+test("checks the C++ formatting with a pinned clang-format", () => {
+  const job = testJobs.get("format");
+  assert.match(job, /git submodule update --init --depth 1 Settings/);
+  assert.match(job, /pipx install clang-format==\d+\.\d+\.\d+\n/);
+  assert.match(job, /run: \.github\/scripts\/check-cpp-format\.sh\n/);
+  const script = readFileSync(new URL("./check-cpp-format.sh", import.meta.url), "utf8");
+  assert.match(script, /--dry-run --Werror/);
+});
+
 test("packs with dotnet and verifies the package on every run", () => {
   const job = testJobs.get("pack");
   assert.match(job, /pack-cpp-nuget\.mjs "\$RUNNER_TEMP\/cpp-nuget"/);
