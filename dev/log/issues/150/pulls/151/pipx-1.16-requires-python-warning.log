@@ -1,0 +1,77 @@
+# Reproduction: DeprecationWarning from 'pipx install clang-format==23.1.3' on the ubuntu-24.04 runner (Test cpp run 37528763604, format job).
+# Runner image ubuntu24/20260927.320 ships Python 3.12.3 and Pipx 1.16.7 (Ubuntu2404-Readme.md lines 28, 40).
+# pipx 1.16.7 runs metadata['Requires-Python']; clang-format 23.1.3 declares no Requires-Python, so importlib.metadata warns.
+# pipx 1.17.11 uses metadata.get('Requires-Python') and prints no warning (already fixed upstream).
+
+$ docker run --rm python:3.12.3-slim sh -c "pip install pipx==1.16.7; pipx install --verbose clang-format==23.1.3"
+1.16.7
+pipx >(setup:1931): pipx version is 1.16.7
+pipx >(setup:1932): Default python interpreter is '/usr/local/bin/python3.12'
+pipx >(mkdir:96): creating directory /root/.local/share/pipx/venvs
+pipx >(mkdir:96): creating directory /root/.local/bin
+pipx >(mkdir:96): creating directory /root/.local/share/man
+pipx >(mkdir:96): creating directory /root/.cache/pipx
+pipx >(mkdir:96): creating directory /root/.local/share/pipx/py
+pipx >(_validate_backend_available:380): Backend resolved to pip (source: auto-pip)
+pipx >(package_name_from_spec:517): Determined package name: clang-format
+pipx >(package_name_from_spec:518): Package name determined in 0.0s
+pipx >(create_venv:315): Creating virtual environment
+creating virtual environment...
+pipx >(run_subprocess:217): running /usr/local/bin/python3.12 -m venv --without-pip /root/.local/share/pipx/venvs/clang-format
+creating shared libraries...
+pipx >(run_subprocess:217): running /usr/local/bin/python3.12 -m venv --clear /root/.local/share/pipx/shared
+pipx >(run_subprocess:217): running <checking pip's availability>
+pipx >(_upgrade:205): Upgrading shared libraries in /root/.local/share/pipx/shared
+upgrading shared libraries...
+pipx >(run_subprocess:217): running /root/.local/share/pipx/shared/bin/python -m pip --no-input --disable-pip-version-check install --upgrade --force-reinstall pip >= 26.1
+pipx >(run_subprocess:217): running /root/.local/share/pipx/shared/bin/python -m pip --no-input uninstall -y setuptools
+WARNING: Skipping setuptools as it is not installed.
+pipx >(run_subprocess:217): running /root/.local/share/pipx/venvs/clang-format/bin/python -c import sysconfig; print(sysconfig.get_path('purelib')); print(sysconfig.get_path('platlib'))
+pipx >(run_subprocess:217): running /root/.local/share/pipx/shared/bin/python -c import sysconfig; print(sysconfig.get_path('purelib')); print(sysconfig.get_path('platlib'))
+pipx >(run_subprocess:217): running /root/.local/share/pipx/venvs/clang-format/bin/python --version
+pipx >(_parsed_package_to_package_or_url:152): cleaned package spec: clang-format==23.1.3
+pipx >(install_package:413): Installing clang-format from spec 'clang-format==23.1.3'
+installing clang-format from spec 'clang-format==23.1.3'...
+pipx >(run_subprocess:217): running /root/.local/share/pipx/venvs/clang-format/bin/python -m pip --no-input install --progress-bar=on clang-format==23.1.3
+Collecting clang-format==23.1.3
+  Downloading clang_format-23.1.3-py2.py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+Downloading clang_format-23.1.3-py2.py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 6.1 MB/s  0:00:00
+Installing collected packages: clang-format
+Successfully installed clang-format-23.1.3
+pipx >(run_subprocess:217): running <fetch_info_in_venv commands>
+pipx >(get_venv_metadata_for_package:587): get_venv_metadata_for_package: 123ms
+pipx >(_parsed_package_to_package_or_url:152): cleaned package spec: clang-format==23.1.3
+pipx >(run_subprocess:217): running /root/.local/share/pipx/venvs/clang-format/bin/python -c import sys;from importlib.metadata import distribution;print(distribution(sys.argv[1]).metadata['Requires-Python'] or '');print('.'.join(str(part) for part in sys.version_info[:3])) clang-format
+<string>:1: DeprecationWarning: Implicit None on return values is deprecated and will raise KeyErrors.
+pipx >(_parse:120): Cannot read the Python constraint '3.12.3'
+pipx >(render_messages:81): ⚠️  Note: '/root/.local/bin' is not on your PATH environment variable. These
+    apps will not be globally accessible until your PATH is updated. Run `pipx
+    ensurepath` to automatically add it, or manually modify your PATH in your
+    shell's config file (e.g. ~/.bashrc).
+done! ✨ 🌟 ✨
+  installed package clang-format 23.1.3, installed using Python 3.12.3
+  These apps are now available
+    - clang-format
+    - clang-format-diff.py
+    - git-clang-format
+
+$ docker run --rm -e "PYTHONWARNINGS=ignore:Implicit None on return values:DeprecationWarning" python:3.12.3-slim sh -c "pip install pipx==1.16.7; pipx install clang-format==23.1.3"
+creating virtual environment...
+creating shared libraries...
+upgrading shared libraries...
+WARNING: Skipping setuptools as it is not installed.
+installing clang-format from spec 'clang-format==23.1.3'...
+⚠️  Note: '/root/.local/bin' is not on your PATH environment variable. These
+    apps will not be globally accessible until your PATH is updated. Run `pipx
+    ensurepath` to automatically add it, or manually modify your PATH in your
+    shell's config file (e.g. ~/.bashrc).
+done! ✨ 🌟 ✨
+  installed package clang-format 23.1.3, installed using Python 3.12.3
+  These apps are now available
+    - clang-format
+    - clang-format-diff.py
+    - git-clang-format
+
+$ docker run --rm python:3.12.3-slim sh -c "pip install pipx==1.17.11; pipx install --verbose clang-format==23.1.3" | grep -c "Implicit None"
+0
