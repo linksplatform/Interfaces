@@ -43,3 +43,13 @@ test("reviews dependency changes on pull requests", () => {
   assert.match(workflow, /actions\/dependency-review-action@v5/);
   assert.match(workflow, /fail-on-severity: high/);
 });
+
+test("gives CodeQL's buildless C# restore an explicit NuGet feed to check", () => {
+  // Without a nuget.config in the repository, CodeQL checks an empty feed set
+  // and logs "No NuGet feeds are reachable" although nuget.org is reachable.
+  const config = readFileSync(new URL("../../nuget.config", import.meta.url), "utf8").replace(/<!--[\s\S]*?-->/g, "");
+  assert.match(config, /<add key="nuget\.org" value="https:\/\/api\.nuget\.org\/v3\/index\.json"/);
+  // <clear /> would hide the GitHub source that csharp.yml adds to the
+  // user-level config, and its push step would fail.
+  assert.doesNotMatch(config, /<clear\s*\/>/);
+});
