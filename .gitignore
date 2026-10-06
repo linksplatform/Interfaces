@@ -23,6 +23,11 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+# CI investigation evidence (issue #150) is kept under dev/log.
+!dev/log/
+
+# Conan/CMake build directory created by cpp/build-and-test.sh
+cpp/build/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
