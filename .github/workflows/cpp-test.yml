@@ -2,24 +2,83 @@ name: Test cpp
 
 on:
   push:
-    branches:
-      - 'main'
+    branches: [main]
     paths:
-      - 'cpp/**.h'
-      - 'cpp/**.cpp'
-      - 'cpp/CMakeLists.txt'
-      - 'cpp/conanfile.txt'
+      - 'cpp/**'
+      - '.github/scripts/pack-cpp-nuget*'
+      - '.github/scripts/*nuget-*'
+      - '.github/workflows/cpp-test.yml'
   pull_request:
-    types:
-      - edited
-    branches:
-      - 'main'
+    branches: [main]
     paths:
-      - 'cpp/**.h'
-      - 'cpp/**.cpp'
-      - 'cpp/CMakeLists.txt'
-      - 'cpp/conanfile.txt'
-      
+      - 'cpp/**'
+      - '.github/scripts/pack-cpp-nuget*'
+      - '.github/scripts/*nuget-*'
+      - '.github/workflows/cpp-test.yml'
+  workflow_call:
+    outputs:
+      package_id:
+        description: NuGet package id read from the nuspec
+        value: ${{ jobs.pack.outputs.package_id }}
+      version:
+        description: NuGet package version read from the nuspec
+        value: ${{ jobs.pack.outputs.version }}
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  GIT_CONFIG_COUNT: '1'
+  GIT_CONFIG_KEY_0: init.defaultBranch
+  GIT_CONFIG_VALUE_0: main
+
 jobs:
-  main:
-    uses: linksplatform/Workflows/.github/workflows/cpp-test.yml@main
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install Conan
+        run: pipx install conan==2.33.0
+
+      # The previous shared workflow only compiled the tests, so failing tests
+      # still passed CI (issue #150). The script runs them through CTest.
+      - name: Build and run the tests
+        run: cpp/build-and-test.sh
+
+  pack:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      package_id: ${{ steps.pack.outputs.package_id }}
+      version: ${{ steps.pack.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Test the NuGet release scripts
+        run: node --test .github/scripts/pack-cpp-nuget.test.mjs .github/scripts/preflight-nuget-release.test.mjs .github/scripts/push-nuget-package.test.mjs
+
+      # Ubuntu 24.04 has no nuget apt package, which failed every deploy since
+      # 0.3.43; dotnet pack builds the same package layout from the nuspec.
+      - name: Pack NuGet package
+        id: pack
+        run: node .github/scripts/pack-cpp-nuget.mjs "$RUNNER_TEMP/cpp-nuget"
+
+      - name: Upload NuGet package
+        uses: actions/upload-artifact@v7
+        with:
+          name: cpp-nuget-package
+          path: ${{ runner.temp }}/cpp-nuget
+          if-no-files-found: error
+          retention-days: 7
