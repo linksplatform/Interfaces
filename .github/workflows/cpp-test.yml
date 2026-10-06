@@ -77,8 +77,14 @@ jobs:
         with:
           persist-credentials: false
 
+      # pipx 1.17 (macOS image) always runs `pip uninstall setuptools` when it
+      # creates its shared venv, and pip warns on Python 3.12+ where the venv
+      # has no setuptools. Only that exact line is dropped; see
+      # dev/log/issues/150/pulls/151/upstream/pipx-setuptools-warning-repro.log.
       - name: Install Conan
-        run: pipx install conan==2.33.0
+        run: |
+          pipx install conan==2.33.0 \
+            2> >(grep -vxF 'WARNING: Skipping setuptools as it is not installed.' >&2)
 
       # The previous shared workflow only compiled the tests, so failing tests
       # still passed CI (issue #150). The script runs them through CTest.
