@@ -115,13 +115,20 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Test the NuGet release scripts
-        run: node --test .github/scripts/pack-cpp-nuget.test.mjs .github/scripts/preflight-nuget-release.test.mjs .github/scripts/push-nuget-package.test.mjs
+        run: node --test .github/scripts/pack-cpp-nuget.test.mjs .github/scripts/check-cpp-nuget-package.test.mjs .github/scripts/preflight-nuget-release.test.mjs .github/scripts/push-nuget-package.test.mjs
 
       # Ubuntu 24.04 has no nuget apt package, which failed every deploy since
       # 0.3.43; dotnet pack builds the same package layout from the nuspec.
       - name: Pack NuGet package
         id: pack
         run: node .github/scripts/pack-cpp-nuget.mjs "$RUNNER_TEMP/cpp-nuget"
+
+      # A package that packs is not necessarily usable: restore it like a
+      # consumer and compile against its headers before it can be published.
+      - name: Restore and use the NuGet package
+        env:
+          PACKAGE_PATH: ${{ steps.pack.outputs.package_path }}
+        run: .github/scripts/check-cpp-nuget-package.sh "$PACKAGE_PATH"
 
       - name: Upload NuGet package
         uses: actions/upload-artifact@v7

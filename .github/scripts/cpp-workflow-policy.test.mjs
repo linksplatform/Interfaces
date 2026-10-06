@@ -60,6 +60,8 @@ test("lets the build script decide whether tests are built", () => {
 test("packs with dotnet and verifies the package on every run", () => {
   const job = testJobs.get("pack");
   assert.match(job, /pack-cpp-nuget\.mjs "\$RUNNER_TEMP\/cpp-nuget"/);
+  assert.match(job, /check-cpp-nuget-package\.sh "\$PACKAGE_PATH"/);
+  assert.match(job, /check-cpp-nuget-package\.test\.mjs/);
   assert.match(job, /name: cpp-nuget-package/);
   assert.match(job, /if-no-files-found: error/);
 });
