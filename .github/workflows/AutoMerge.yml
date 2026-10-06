@@ -8,6 +8,12 @@ on:
 
 permissions: {}
 
+# github.ref is the base branch for pull_request_target, so the group is keyed
+# by pull request; a newer event for the same pull request supersedes an older one.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   auto-merge:
     # The pull request author cannot be spoofed by re-running or commenting,

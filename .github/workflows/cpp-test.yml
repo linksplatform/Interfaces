@@ -37,6 +37,11 @@ jobs:
   test:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
+    # Job-level groups: deploy-cpp.yml calls this workflow, and its own
+    # workflow-level group must not be shared with these jobs.
+    concurrency:
+      group: check-${{ github.workflow }}-${{ github.ref }}-test
+      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -53,6 +58,9 @@ jobs:
   pack:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    concurrency:
+      group: check-${{ github.workflow }}-${{ github.ref }}-pack
+      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
     outputs:
       package_id: ${{ steps.pack.outputs.package_id }}
       version: ${{ steps.pack.outputs.version }}

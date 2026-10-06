@@ -106,3 +106,27 @@ test("does not trust the spoofable github.actor for bot checks", () => {
 test("lets cancelled runs stop instead of forcing jobs with always()", () => {
   assert.deepEqual(findLines(/\balways\(\)/), []);
 });
+
+test("lets every workflow supersede stale runs without cancelling a writer", () => {
+  const missing = workflows
+    .filter(({ source }) => !/^concurrency:/m.test(source))
+    .filter(({ source }) =>
+      [...getJobs(source).values()].some((body) => /\n    runs-on:/.test(body) && !/\n    concurrency:/.test(body)),
+    )
+    .map(({ name }) => name);
+  assert.deepEqual(missing, []);
+
+  const writers = workflows
+    .filter(({ source }) => /^\s+(?:contents|packages|id-token|pages):\s*write/m.test(source))
+    .filter(({ source }) => /cancel-in-progress:\s*true/.test(source))
+    .map(({ name }) => name);
+  assert.deepEqual(writers, []);
+});
+
+test("scans the repository for committed secrets with a pinned scanner", () => {
+  const secrets = workflows.find(({ name }) => name === "secrets.yml");
+  assert.ok(secrets, "secrets.yml is missing");
+  assert.match(secrets.source, /secretlint@\d+\.\d+\.\d+/);
+  assert.match(secrets.source, /@secretlint\/secretlint-rule-preset-recommend@\d+\.\d+\.\d+/);
+  assert.doesNotMatch(secrets.source, /\n    paths:/);
+});

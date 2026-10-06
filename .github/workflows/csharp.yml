@@ -22,6 +22,12 @@ permissions:
   actions: read
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # Superseded pull request runs are cancelled; runs on main finish so a
+  # release or documentation push that already started is never interrupted.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 env:
   GIT_CONFIG_COUNT: '1'
   GIT_CONFIG_KEY_0: init.defaultBranch
