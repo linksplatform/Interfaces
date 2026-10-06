@@ -82,6 +82,19 @@ test("still publishes with --skip-duplicate when nuget.org is unreachable", () =
   assert.match(result.warnings[1], /could not verify the NUGET_TOKEN/);
 });
 
+test("says why the API key could not be verified", () => {
+  const result = evaluateRelease({
+    published: false,
+    githubToken: "g",
+    nugetToken: "k",
+    nugetUser: "",
+    keyValid: undefined,
+    keyDetail: "no published version exists to check its package scope",
+  });
+  assert.equal(result.passed, true);
+  assert.match(result.warnings[0], /NUGET_TOKEN secret \(no published version exists .*\); the push/);
+});
+
 // Answers each request from a "METHOD url" -> [status, body] table and records the calls.
 const gallery = (routes) => {
   const calls = [];
@@ -145,10 +158,10 @@ test("rejects an API key that is not scoped to the package", async () => {
   assert.equal(result.valid, false);
 });
 
-test("checks only the key itself for a package that was never published", async () => {
+test("does not claim a package scope it cannot check for a package that was never published", async () => {
   const { calls, fetchImpl } = gallery({ [createUrl]: [200, { Key: "one-time" }] });
   const result = await verifyApiKey({ packageId: "Platform.Interfaces", apiKey: "k", fetchImpl });
-  assert.equal(result.valid, true);
+  assert.equal(result.valid, undefined);
   assert.match(result.detail, /no published version/);
   assert.equal(calls.length, 1);
 });

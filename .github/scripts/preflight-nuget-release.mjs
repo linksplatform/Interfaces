@@ -70,8 +70,9 @@ export const fetchPublished = async ({ packageId, version, indexUrl, fetchImpl =
 
 /**
  * @returns {Promise<{ valid: boolean | undefined, detail: string }>}
- * `valid` is undefined when nuget.org could not answer. Without a published
- * version only the key itself is checked, not its package scope.
+ * `valid` is undefined when nuget.org could not answer, and also when no
+ * version is published yet: then only the key itself can be checked, not
+ * whether it may push this package.
  */
 export const verifyApiKey = async ({
   packageId,
@@ -104,7 +105,10 @@ export const verifyApiKey = async ({
     return { valid: undefined, detail: `${createUrl} returned no verification key` };
   }
   if (!publishedVersion) {
-    return { valid: true, detail: `${createUrl} accepted the key; no published version to check its package scope` };
+    return {
+      valid: undefined,
+      detail: `${createUrl} accepted the key, but no published version exists to check its package scope`,
+    };
   }
 
   const verifyUrl = `${galleryUrl}/api/v2/verifykey/${id}/${encodeURIComponent(publishedVersion)}`;
@@ -125,7 +129,7 @@ export const verifyApiKey = async ({
   }
 };
 
-export const evaluateRelease = ({ published, githubToken, nugetToken, nugetUser, keyValid }) => {
+export const evaluateRelease = ({ published, githubToken, nugetToken, nugetUser, keyValid, keyDetail }) => {
   const failures = [];
   const warnings = [];
 
@@ -157,7 +161,8 @@ export const evaluateRelease = ({ published, githubToken, nugetToken, nugetUser,
         "nuget.org rejected the NUGET_TOKEN secret: it is invalid, expired, or not scoped to push this package. Create a new key at https://www.nuget.org/account/apikeys with push scope for the package and store it as the NUGET_TOKEN repository secret, or configure trusted publishing (https://learn.microsoft.com/nuget/nuget-org/trusted-publishing) and set the NUGET_USER repository variable",
       );
     } else if (keyValid === undefined) {
-      warnings.push("nuget.org could not verify the NUGET_TOKEN secret; the push will show whether it is accepted");
+      const reason = keyDetail ? ` (${keyDetail})` : "";
+      warnings.push(`nuget.org could not verify the NUGET_TOKEN secret${reason}; the push will show whether it is accepted`);
     }
   }
 
@@ -198,6 +203,7 @@ export const run = async (environment = process.env, fetchImpl = fetch) => {
   const nugetToken = environment.NUGET_TOKEN ?? "";
   const nugetUser = environment.NUGET_USER ?? "";
   let keyValid;
+  let keyDetail;
   if (published !== true && nugetToken && !nugetUser) {
     const verification = await verifyApiKey({
       packageId,
@@ -207,6 +213,7 @@ export const run = async (environment = process.env, fetchImpl = fetch) => {
       fetchImpl,
     });
     keyValid = verification.valid;
+    keyDetail = verification.detail;
     if (verbose) {
       console.log(`API key verification: ${verification.detail}`);
     }
@@ -218,6 +225,7 @@ export const run = async (environment = process.env, fetchImpl = fetch) => {
     nugetToken,
     nugetUser,
     keyValid,
+    keyDetail,
   });
 
   for (const warning of result.warnings) {
