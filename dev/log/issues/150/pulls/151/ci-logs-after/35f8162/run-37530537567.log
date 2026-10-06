@@ -1,0 +1,964 @@
+zizmor	Set up job	﻿2026-10-06T20:59:05.4477040Z Current runner version: '2.337.0'
+zizmor	Set up job	2026-10-06T20:59:05.4501438Z ##[group]Runner Image Provisioner
+zizmor	Set up job	2026-10-06T20:59:05.4502343Z Hosted Compute Agent
+zizmor	Set up job	2026-10-06T20:59:05.4503094Z Version: 20260901.588
+zizmor	Set up job	2026-10-06T20:59:05.4503731Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+zizmor	Set up job	2026-10-06T20:59:05.4504514Z Build Date: 2026-09-01T19:56:44Z
+zizmor	Set up job	2026-10-06T20:59:05.4505195Z Worker ID: {ce842b89-690f-4518-a236-d125e95fb4b9}
+zizmor	Set up job	2026-10-06T20:59:05.4505927Z Azure Region: westus2
+zizmor	Set up job	2026-10-06T20:59:05.4506565Z ##[endgroup]
+zizmor	Set up job	2026-10-06T20:59:05.4507980Z ##[group]Operating System
+zizmor	Set up job	2026-10-06T20:59:05.4508678Z Ubuntu
+zizmor	Set up job	2026-10-06T20:59:05.4509224Z 24.04.5
+zizmor	Set up job	2026-10-06T20:59:05.4509768Z LTS
+zizmor	Set up job	2026-10-06T20:59:05.4510382Z ##[endgroup]
+zizmor	Set up job	2026-10-06T20:59:05.4510942Z ##[group]Runner Image
+zizmor	Set up job	2026-10-06T20:59:05.4511841Z Image: ubuntu-24.04
+zizmor	Set up job	2026-10-06T20:59:05.4512424Z Version: 20260927.320.1
+zizmor	Set up job	2026-10-06T20:59:05.4513512Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+zizmor	Set up job	2026-10-06T20:59:05.4515293Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+zizmor	Set up job	2026-10-06T20:59:05.4516302Z ##[endgroup]
+zizmor	Set up job	2026-10-06T20:59:05.4517386Z ##[group]GITHUB_TOKEN Permissions
+zizmor	Set up job	2026-10-06T20:59:05.4519406Z Contents: read
+zizmor	Set up job	2026-10-06T20:59:05.4520054Z Metadata: read
+zizmor	Set up job	2026-10-06T20:59:05.4520617Z ##[endgroup]
+zizmor	Set up job	2026-10-06T20:59:05.4523157Z Secret source: Actions
+zizmor	Set up job	2026-10-06T20:59:05.4524175Z Cache mode: write
+zizmor	Set up job	2026-10-06T20:59:05.4524951Z Prepare workflow directory
+zizmor	Set up job	2026-10-06T20:59:05.4926699Z Prepare all required actions
+zizmor	Set up job	2026-10-06T20:59:05.4974152Z Getting action download info
+zizmor	Set up job	2026-10-06T20:59:05.8823297Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+zizmor	Set up job	2026-10-06T20:59:05.9859640Z Download action repository 'zizmorcore/zizmor-action@cc914d7f3750a2d13d75c7f184a1060aa0e9d482' (SHA:cc914d7f3750a2d13d75c7f184a1060aa0e9d482)
+zizmor	Set up job	2026-10-06T20:59:06.2695058Z Getting action download info
+zizmor	Set up job	2026-10-06T20:59:06.4267955Z Download action repository 'github/codeql-action@cdf488f595d80d6e07e03d4674febd5ab45fa938' (SHA:cdf488f595d80d6e07e03d4674febd5ab45fa938)
+zizmor	Set up job	2026-10-06T20:59:06.6215690Z Complete job name: zizmor
+zizmor	Run actions/checkout@v7	﻿2026-10-06T20:59:06.7065866Z ##[group]Run actions/checkout@v7
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7066840Z with:
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7067338Z   persist-credentials: false
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7067929Z   repository: linksplatform/Interfaces
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7072420Z   token: ***
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7072912Z   ssh-strict: true
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7073384Z   ssh-user: git
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7073842Z   clean: true
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7074349Z   sparse-checkout-cone-mode: true
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7074927Z   fetch-depth: 1
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7075400Z   fetch-tags: false
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7075882Z   show-progress: true
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7076374Z   lfs: false
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7076843Z   submodules: false
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7077364Z   set-safe-directory: true
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7077917Z   allow-unsafe-pr-checkout: false
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7078749Z env:
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7079237Z   GIT_CONFIG_COUNT: 1
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7079762Z   GIT_CONFIG_KEY_0: init.defaultBranch
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7080355Z   GIT_CONFIG_VALUE_0: main
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.7080892Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8115690Z Syncing repository: linksplatform/Interfaces
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8119116Z ##[group]Getting Git version info
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8120657Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8123179Z [command]/usr/bin/git version
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8215331Z git version 2.55.0
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8245084Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8253354Z Temporarily overriding HOME='/home/runner/work/_temp/b4d7c367-9a6a-43bc-94f1-c5d074ae73fe' before making global git config changes
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8256152Z Adding repository directory to the temporary git global config as a safe directory
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8262605Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8318047Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8322582Z ##[group]Determining repository object format
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8324832Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8327088Z ##[group]Initializing the repository
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8332477Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8479847Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8492347Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8552049Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8553547Z ##[group]Disabling automatic garbage collection
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8555016Z [command]/usr/bin/git config --local gc.auto 0
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8590251Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8591723Z ##[group]Setting up auth
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8592634Z Removing SSH command configuration
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8596463Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.8630905Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9023069Z Removing HTTP extra header
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9028777Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9067997Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9285139Z Removing includeIf entries pointing to credentials config files
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9291572Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9327765Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9553880Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9594597Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9628919Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9667538Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9702515Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9734152Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9735035Z ##[group]Fetching the repository
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:06.9742341Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9d9f59c08dfecdfa0f48595880e753dee46d3b7b:refs/remotes/pull/151/merge
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.4986639Z From https://github.com/linksplatform/Interfaces
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.4988473Z  * [new ref]         9d9f59c08dfecdfa0f48595880e753dee46d3b7b -> pull/151/merge
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.4993778Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.4995408Z ##[group]Determining the checkout info
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.4997069Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5000473Z [command]/usr/bin/git sparse-checkout disable
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5132979Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5136322Z ##[group]Checking out the ref
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5137816Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/151/merge
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5541768Z Note: switching to 'refs/remotes/pull/151/merge'.
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5543532Z 
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5545017Z You are in 'detached HEAD' state. You can look around, make experimental
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5548745Z changes and commit them, and you can discard any commits you make in this
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5552409Z state without impacting any branches by switching back to a branch.
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5553935Z 
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5554888Z If you want to create a new branch to retain commits you create, you may
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5557473Z do so (now or later) by using -c with the switch command. Example:
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5558883Z 
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5559509Z   git switch -c <new-branch-name>
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5560506Z 
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5561339Z Or undo this operation with:
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5562379Z 
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5562907Z   git switch -
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5563588Z 
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5564899Z Turn off this advice by setting config variable advice.detachedHead to false
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5566627Z 
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5568422Z HEAD is now at 9d9f59c Merge 35f8162ef134b3b674840d0166f804b2170574d3 into 3dfbee614c1276425f216d032580c052d94da4e8
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5573997Z ##[endgroup]
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5618364Z [command]/usr/bin/git log -1 --format=%H
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5657052Z 9d9f59c08dfecdfa0f48595880e753dee46d3b7b
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5671705Z ##[group]Removing auth
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5683598Z Removing SSH command configuration
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5685725Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5730765Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5958562Z Removing HTTP extra header
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.5962947Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6004462Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6227152Z Removing includeIf entries pointing to credentials config files
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6230124Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6260740Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6264230Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6266478Z includeif.gitdir:/github/workspace/.git.path
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6268828Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6274429Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6297412Z /home/runner/work/_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6312110Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-f7087750\-4fe5\-495f\-b5bd\-169c2b14cf78\.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6352022Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6379580Z /home/runner/work/_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6388960Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-f7087750\-4fe5\-495f\-b5bd\-169c2b14cf78\.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6425586Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6455563Z /github/runner_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6467111Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-f7087750\-4fe5\-495f\-b5bd\-169c2b14cf78\.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6503628Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6530042Z /github/runner_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6621535Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-f7087750\-4fe5\-495f\-b5bd\-169c2b14cf78\.config
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6635399Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6849643Z Removing credentials config '/home/runner/work/_temp/git-credentials-f7087750-4fe5-495f-b5bd-169c2b14cf78.config'
+zizmor	Run actions/checkout@v7	2026-10-06T20:59:07.6858459Z ##[endgroup]
+zizmor	Audit workflow files	﻿2026-10-06T20:59:07.7338481Z ##[group]Run zizmorcore/zizmor-action@cc914d7f3750a2d13d75c7f184a1060aa0e9d482
+zizmor	Audit workflow files	2026-10-06T20:59:07.7340192Z with:
+zizmor	Audit workflow files	2026-10-06T20:59:07.7341287Z   advanced-security: false
+zizmor	Audit workflow files	2026-10-06T20:59:07.7342376Z   annotations: true
+zizmor	Audit workflow files	2026-10-06T20:59:07.7343362Z   config: .github/zizmor.yml
+zizmor	Audit workflow files	2026-10-06T20:59:07.7344434Z   inputs: .github
+zizmor	Audit workflow files	2026-10-06T20:59:07.7345375Z   min-confidence: medium
+zizmor	Audit workflow files	2026-10-06T20:59:07.7346383Z   version: 1.29.0
+zizmor	Audit workflow files	2026-10-06T20:59:07.7347301Z   collect: default
+zizmor	Audit workflow files	2026-10-06T20:59:07.7348242Z   online-audits: true
+zizmor	Audit workflow files	2026-10-06T20:59:07.7349224Z   persona: regular
+zizmor	Audit workflow files	2026-10-06T20:59:07.7359254Z   token: ***
+zizmor	Audit workflow files	2026-10-06T20:59:07.7360160Z   color: true
+zizmor	Audit workflow files	2026-10-06T20:59:07.7361400Z   fail-on-no-inputs: true
+zizmor	Audit workflow files	2026-10-06T20:59:07.7362462Z env:
+zizmor	Audit workflow files	2026-10-06T20:59:07.7363315Z   GIT_CONFIG_COUNT: 1
+zizmor	Audit workflow files	2026-10-06T20:59:07.7364355Z   GIT_CONFIG_KEY_0: init.defaultBranch
+zizmor	Audit workflow files	2026-10-06T20:59:07.7365533Z   GIT_CONFIG_VALUE_0: main
+zizmor	Audit workflow files	2026-10-06T20:59:07.7366546Z ##[endgroup]
+zizmor	Audit workflow files	2026-10-06T20:59:07.7437342Z ##[start-action display=Run zizmor;id=__zizmorcore_zizmor-action.run-zizmor]
+zizmor	Audit workflow files	2026-10-06T20:59:07.7506686Z ##[group]Run "${GITHUB_ACTION_PATH}/action.sh"
+zizmor	Audit workflow files	2026-10-06T20:59:07.7508135Z ^[[36;1m"${GITHUB_ACTION_PATH}/action.sh"^[[0m
+zizmor	Audit workflow files	2026-10-06T20:59:07.7816297Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+zizmor	Audit workflow files	2026-10-06T20:59:07.7817692Z env:
+zizmor	Audit workflow files	2026-10-06T20:59:07.7818537Z   GIT_CONFIG_COUNT: 1
+zizmor	Audit workflow files	2026-10-06T20:59:07.7819556Z   GIT_CONFIG_KEY_0: init.defaultBranch
+zizmor	Audit workflow files	2026-10-06T20:59:07.7820712Z   GIT_CONFIG_VALUE_0: main
+zizmor	Audit workflow files	2026-10-06T20:59:07.7822094Z   GHA_ZIZMOR_INPUTS: .github
+zizmor	Audit workflow files	2026-10-06T20:59:07.7823158Z   GHA_ZIZMOR_COLLECT: default
+zizmor	Audit workflow files	2026-10-06T20:59:07.7824229Z   GHA_ZIZMOR_ONLINE_AUDITS: true
+zizmor	Audit workflow files	2026-10-06T20:59:07.7825327Z   GHA_ZIZMOR_PERSONA: regular
+zizmor	Audit workflow files	2026-10-06T20:59:07.7826391Z   GHA_ZIZMOR_MIN_SEVERITY: 
+zizmor	Audit workflow files	2026-10-06T20:59:07.7827454Z   GHA_ZIZMOR_MIN_CONFIDENCE: medium
+zizmor	Audit workflow files	2026-10-06T20:59:07.7828572Z   GHA_ZIZMOR_VERSION: 1.29.0
+zizmor	Audit workflow files	2026-10-06T20:59:07.7838604Z   GHA_ZIZMOR_TOKEN: ***
+zizmor	Audit workflow files	2026-10-06T20:59:07.7839666Z   GHA_ZIZMOR_ADVANCED_SECURITY: false
+zizmor	Audit workflow files	2026-10-06T20:59:07.7840850Z   GHA_ZIZMOR_COLOR: true
+zizmor	Audit workflow files	2026-10-06T20:59:07.7842104Z   GHA_ZIZMOR_ANNOTATIONS: true
+zizmor	Audit workflow files	2026-10-06T20:59:07.7843223Z   GHA_ZIZMOR_CONFIG: .github/zizmor.yml
+zizmor	Audit workflow files	2026-10-06T20:59:07.7844401Z   GHA_ZIZMOR_FAIL_ON_NO_INPUTS: true
+zizmor	Audit workflow files	2026-10-06T20:59:07.7845493Z ##[endgroup]
+zizmor	Audit workflow files	2026-10-06T20:59:07.8005179Z ##[group]Pulling zizmor image
+zizmor	Audit workflow files	2026-10-06T20:59:08.2981612Z ghcr.io/zizmorcore/zizmor@sha256:863026d54f91271b10b60b67ad8054cb37120167e162482597db102b3026a284: Pulling from zizmorcore/zizmor
+zizmor	Audit workflow files	2026-10-06T20:59:08.4208376Z a66283bef834: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4211270Z f1dc41da0ac6: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4213532Z 2e3139e176fe: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4215611Z c920184a3208: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4217689Z 9201e51fe8c1: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4219805Z 69cbafd2417b: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4222168Z 7fc117d2446a: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4224232Z 8d99fd8fea9c: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4226715Z 5f460b97a17e: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4228870Z cdea145aa115: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4231314Z b92857818105: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4233540Z c621f68b4dc2: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4235779Z 4f4fb700ef54: Pulling fs layer
+zizmor	Audit workflow files	2026-10-06T20:59:08.4237927Z c920184a3208: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4239917Z 9201e51fe8c1: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4242131Z 69cbafd2417b: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4243999Z 7fc117d2446a: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4245860Z 8d99fd8fea9c: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4247687Z b92857818105: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4249493Z 5f460b97a17e: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4251551Z c621f68b4dc2: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4253415Z cdea145aa115: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.4255247Z 4f4fb700ef54: Waiting
+zizmor	Audit workflow files	2026-10-06T20:59:08.5986385Z 2e3139e176fe: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.5989090Z 2e3139e176fe: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:08.6159465Z a66283bef834: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.6300624Z f1dc41da0ac6: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.6308895Z f1dc41da0ac6: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:08.6668821Z a66283bef834: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:08.7845251Z c920184a3208: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.7850494Z c920184a3208: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:08.7935976Z 69cbafd2417b: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.7938694Z 69cbafd2417b: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:08.7943790Z 9201e51fe8c1: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.7945782Z 9201e51fe8c1: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:08.9365389Z 7fc117d2446a: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.9370085Z 7fc117d2446a: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:08.9426449Z 8d99fd8fea9c: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.9427666Z 8d99fd8fea9c: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:08.9636953Z 5f460b97a17e: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:08.9638496Z 5f460b97a17e: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:09.0792087Z cdea145aa115: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:09.0793059Z cdea145aa115: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:09.0870549Z b92857818105: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:09.0871202Z b92857818105: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:09.1956066Z c621f68b4dc2: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:09.1956530Z c621f68b4dc2: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:09.2252508Z 4f4fb700ef54: Verifying Checksum
+zizmor	Audit workflow files	2026-10-06T20:59:09.2252949Z 4f4fb700ef54: Download complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.7469531Z f1dc41da0ac6: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.7852751Z 2e3139e176fe: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.8050104Z c920184a3208: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.8208156Z 9201e51fe8c1: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.8343295Z 69cbafd2417b: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.8478481Z 7fc117d2446a: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.8626640Z 8d99fd8fea9c: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.8869349Z 5f460b97a17e: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.9010355Z cdea145aa115: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:10.9613862Z b92857818105: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:11.0954384Z c621f68b4dc2: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:11.1030474Z 4f4fb700ef54: Pull complete
+zizmor	Audit workflow files	2026-10-06T20:59:11.1075371Z Digest: sha256:863026d54f91271b10b60b67ad8054cb37120167e162482597db102b3026a284
+zizmor	Audit workflow files	2026-10-06T20:59:11.1083321Z Status: Downloaded newer image for ghcr.io/zizmorcore/zizmor@sha256:863026d54f91271b10b60b67ad8054cb37120167e162482597db102b3026a284
+zizmor	Audit workflow files	2026-10-06T20:59:11.1091252Z ghcr.io/zizmorcore/zizmor:1.29.0@sha256:863026d54f91271b10b60b67ad8054cb37120167e162482597db102b3026a284
+zizmor	Audit workflow files	2026-10-06T20:59:11.1118516Z ##[endgroup]
+zizmor	Audit workflow files	2026-10-06T20:59:11.3178265Z ^[[32m INFO^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 zizmor v1.29.0
+zizmor	Audit workflow files	2026-10-06T20:59:11.3788843Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/dependabot.yml
+zizmor	Audit workflow files	2026-10-06T20:59:11.7279307Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/AutoMerge.yml
+zizmor	Audit workflow files	2026-10-06T20:59:12.4610708Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/codeql.yml
+zizmor	Audit workflow files	2026-10-06T20:59:12.7506622Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/cpp-docs.yml
+zizmor	Audit workflow files	2026-10-06T20:59:13.0064017Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/cpp-test.yml
+zizmor	Audit workflow files	2026-10-06T20:59:13.3141975Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/csharp.yml
+zizmor	Audit workflow files	2026-10-06T20:59:13.5910474Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/deploy-cpp.yml
+zizmor	Audit workflow files	2026-10-06T20:59:13.8848223Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/readme-badges.yml
+zizmor	Audit workflow files	2026-10-06T20:59:13.8859092Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/secrets.yml
+zizmor	Audit workflow files	2026-10-06T20:59:14.2884577Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/workflows.yml
+zizmor	Audit workflow files	2026-10-06T20:59:14.3713513Z ##[end-action id=__zizmorcore_zizmor-action.run-zizmor;outcome=success;conclusion=success;duration_ms=6627]
+zizmor	Audit workflow files	2026-10-06T20:59:14.3720386Z ##[start-action display=Upload SARIF file to GitHub Advanced Security;id=__zizmorcore_zizmor-action.__github_codeql-action]
+zizmor	Audit workflow files	2026-10-06T20:59:14.3742832Z ##[end-action id=__zizmorcore_zizmor-action.__github_codeql-action;outcome=skipped;conclusion=skipped;duration_ms=0]
+zizmor	Audit for pedantic-only high-severity findings	﻿2026-10-06T20:59:14.3806294Z ##[group]Run pipx run zizmor==1.29.0 --config .github/zizmor.yml \
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3806799Z ^[[36;1mpipx run zizmor==1.29.0 --config .github/zizmor.yml \^[[0m
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3807284Z ^[[36;1m  --persona pedantic --min-severity high --min-confidence high \^[[0m
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3807671Z ^[[36;1m  .github^[[0m
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3871615Z shell: /usr/bin/bash -e {0}
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3871907Z env:
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3872098Z   GIT_CONFIG_COUNT: 1
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3872352Z   GIT_CONFIG_KEY_0: init.defaultBranch
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3872633Z   GIT_CONFIG_VALUE_0: main
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.3872864Z ##[endgroup]
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:14.8513664Z creating virtual environment...
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:15.0197311Z installing zizmor from spec 'zizmor==1.29.0'...
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7455210Z ^[[32m INFO^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 zizmor v1.29.0
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7925893Z ^[[33m WARN^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m zizmor is running in offline mode by default; some audits and auto-fixes will not be available. see https://docs.zizmor.sh/usage/#operating-modes for details
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7927671Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/dependabot.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7938985Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/AutoMerge.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7944100Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/codeql.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7947693Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/cpp-docs.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7954702Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/cpp-test.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7984524Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/csharp.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7995205Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/deploy-cpp.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.7997502Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/readme-badges.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.8000032Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/secrets.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.8004449Z ^[[32m INFO^[[0m ^[[1maudit^[[0m^[[2m:^[[0m ^[[2mzizmor^[[0m^[[2m:^[[0m 🌈 completed .github/workflows/workflows.yml
+zizmor	Audit for pedantic-only high-severity findings	2026-10-06T20:59:16.8005539Z ^[[32mNo findings to report. Good job!^[[39m (^[[1m^[[93m30^[[39m ignored, ^[[93m5^[[39m suppressed^[[0m)
+zizmor	Post Audit workflow files	﻿2026-10-06T20:59:16.8168907Z Post job cleanup.
+zizmor	Post Run actions/checkout@v7	﻿2026-10-06T20:59:16.8285700Z Post job cleanup.
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9110876Z [command]/usr/bin/git version
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9154842Z git version 2.55.0
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9191238Z Temporarily overriding HOME='/home/runner/work/_temp/08887066-fcae-47cc-8897-e7d02e0a1b60' before making global git config changes
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9193019Z Adding repository directory to the temporary git global config as a safe directory
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9197285Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9229822Z Removing SSH command configuration
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9236182Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9280246Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9523258Z Removing HTTP extra header
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9528475Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9568495Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9818986Z Removing includeIf entries pointing to credentials config files
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9827732Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+zizmor	Post Run actions/checkout@v7	2026-10-06T20:59:16.9865452Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+zizmor	Complete job	﻿2026-10-06T20:59:17.0252842Z Cleaning up orphan processes
+Workflow policy	Set up job	﻿2026-10-06T20:59:04.4935437Z Current runner version: '2.337.0'
+Workflow policy	Set up job	2026-10-06T20:59:04.4957057Z ##[group]Runner Image Provisioner
+Workflow policy	Set up job	2026-10-06T20:59:04.4957823Z Hosted Compute Agent
+Workflow policy	Set up job	2026-10-06T20:59:04.4958416Z Version: 20260901.588
+Workflow policy	Set up job	2026-10-06T20:59:04.4958941Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+Workflow policy	Set up job	2026-10-06T20:59:04.4959604Z Build Date: 2026-09-01T19:56:44Z
+Workflow policy	Set up job	2026-10-06T20:59:04.4960189Z Worker ID: {4e573861-63f1-4ec5-a25c-56e3793f21bb}
+Workflow policy	Set up job	2026-10-06T20:59:04.4960802Z Azure Region: centralus
+Workflow policy	Set up job	2026-10-06T20:59:04.4961310Z ##[endgroup]
+Workflow policy	Set up job	2026-10-06T20:59:04.4962987Z ##[group]Operating System
+Workflow policy	Set up job	2026-10-06T20:59:04.4963531Z Ubuntu
+Workflow policy	Set up job	2026-10-06T20:59:04.4963978Z 24.04.5
+Workflow policy	Set up job	2026-10-06T20:59:04.4964413Z LTS
+Workflow policy	Set up job	2026-10-06T20:59:04.4964864Z ##[endgroup]
+Workflow policy	Set up job	2026-10-06T20:59:04.4965313Z ##[group]Runner Image
+Workflow policy	Set up job	2026-10-06T20:59:04.4965936Z Image: ubuntu-24.04
+Workflow policy	Set up job	2026-10-06T20:59:04.4966470Z Version: 20260927.320.1
+Workflow policy	Set up job	2026-10-06T20:59:04.4967455Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+Workflow policy	Set up job	2026-10-06T20:59:04.4968942Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+Workflow policy	Set up job	2026-10-06T20:59:04.4969716Z ##[endgroup]
+Workflow policy	Set up job	2026-10-06T20:59:04.4970677Z ##[group]GITHUB_TOKEN Permissions
+Workflow policy	Set up job	2026-10-06T20:59:04.4972726Z Contents: read
+Workflow policy	Set up job	2026-10-06T20:59:04.4973243Z Metadata: read
+Workflow policy	Set up job	2026-10-06T20:59:04.4973735Z ##[endgroup]
+Workflow policy	Set up job	2026-10-06T20:59:04.4975633Z Secret source: Actions
+Workflow policy	Set up job	2026-10-06T20:59:04.4976482Z Cache mode: write
+Workflow policy	Set up job	2026-10-06T20:59:04.4977165Z Prepare workflow directory
+Workflow policy	Set up job	2026-10-06T20:59:04.5577836Z Prepare all required actions
+Workflow policy	Set up job	2026-10-06T20:59:04.5643587Z Getting action download info
+Workflow policy	Set up job	2026-10-06T20:59:04.8179832Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Workflow policy	Set up job	2026-10-06T20:59:05.4712440Z Complete job name: Workflow policy
+Workflow policy	Run actions/checkout@v7	﻿2026-10-06T20:59:05.5874953Z ##[group]Run actions/checkout@v7
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5875817Z with:
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5876275Z   persist-credentials: false
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5876813Z   repository: linksplatform/Interfaces
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5880448Z   token: ***
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5880874Z   ssh-strict: true
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5881505Z   ssh-user: git
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5881966Z   clean: true
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5882414Z   sparse-checkout-cone-mode: true
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5882948Z   fetch-depth: 1
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5883383Z   fetch-tags: false
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5883893Z   show-progress: true
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5884342Z   lfs: false
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5884762Z   submodules: false
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5885223Z   set-safe-directory: true
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5885739Z   allow-unsafe-pr-checkout: false
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5886394Z env:
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5886804Z   GIT_CONFIG_COUNT: 1
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5887267Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5887833Z   GIT_CONFIG_VALUE_0: main
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.5888412Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6769653Z Syncing repository: linksplatform/Interfaces
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6771973Z ##[group]Getting Git version info
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6773034Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6774531Z [command]/usr/bin/git version
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6857576Z git version 2.55.0
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6883293Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6891716Z Temporarily overriding HOME='/home/runner/work/_temp/806497e1-4041-4517-98bb-f08d20381be3' before making global git config changes
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6893418Z Adding repository directory to the temporary git global config as a safe directory
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6898325Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6988905Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6992318Z ##[group]Determining repository object format
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6993877Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6994796Z ##[group]Initializing the repository
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.6998323Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7581591Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7593712Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7767641Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7768523Z ##[group]Disabling automatic garbage collection
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7770517Z [command]/usr/bin/git config --local gc.auto 0
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7799992Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7801038Z ##[group]Setting up auth
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7802069Z Removing SSH command configuration
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7805362Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.7833246Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8124237Z Removing HTTP extra header
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8128910Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8155442Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8307229Z Removing includeIf entries pointing to credentials config files
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8311039Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8335108Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8497098Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8525757Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8551023Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8579339Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8658858Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8682117Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8682914Z ##[group]Fetching the repository
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:05.8688654Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9d9f59c08dfecdfa0f48595880e753dee46d3b7b:refs/remotes/pull/151/merge
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5343493Z From https://github.com/linksplatform/Interfaces
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5345377Z  * [new ref]         9d9f59c08dfecdfa0f48595880e753dee46d3b7b -> pull/151/merge
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5354055Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5355254Z ##[group]Determining the checkout info
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5357048Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5358140Z [command]/usr/bin/git sparse-checkout disable
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5403105Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5434009Z ##[group]Checking out the ref
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5436231Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/151/merge
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5769581Z Note: switching to 'refs/remotes/pull/151/merge'.
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5770402Z 
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5770832Z You are in 'detached HEAD' state. You can look around, make experimental
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5772291Z changes and commit them, and you can discard any commits you make in this
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5773248Z state without impacting any branches by switching back to a branch.
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5773986Z 
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5774394Z If you want to create a new branch to retain commits you create, you may
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5775437Z do so (now or later) by using -c with the switch command. Example:
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5776090Z 
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5776504Z   git switch -c <new-branch-name>
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5777044Z 
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5777456Z Or undo this operation with:
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5778072Z 
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5778415Z   git switch -
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5778921Z 
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5779340Z Turn off this advice by setting config variable advice.detachedHead to false
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5779927Z 
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5780804Z HEAD is now at 9d9f59c Merge 35f8162ef134b3b674840d0166f804b2170574d3 into 3dfbee614c1276425f216d032580c052d94da4e8
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5783350Z ##[endgroup]
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5809952Z [command]/usr/bin/git log -1 --format=%H
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5829281Z 9d9f59c08dfecdfa0f48595880e753dee46d3b7b
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5837162Z ##[group]Removing auth
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5837800Z Removing SSH command configuration
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5840532Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.5863909Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6025941Z Removing HTTP extra header
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6028608Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6054675Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6215824Z Removing includeIf entries pointing to credentials config files
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6218113Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6240796Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6242575Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6243908Z includeif.gitdir:/github/workspace/.git.path
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6245001Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6248235Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6268075Z /home/runner/work/_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6277371Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-e70eebad\-6d60\-458b\-aa67\-a382611ea213\.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6330256Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6351123Z /home/runner/work/_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6357966Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-e70eebad\-6d60\-458b\-aa67\-a382611ea213\.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6383790Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6403352Z /github/runner_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6411134Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-e70eebad\-6d60\-458b\-aa67\-a382611ea213\.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6437460Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6456140Z /github/runner_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6464604Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-e70eebad\-6d60\-458b\-aa67\-a382611ea213\.config
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6539494Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6695841Z Removing credentials config '/home/runner/work/_temp/git-credentials-e70eebad-6d60-458b-aa67-a382611ea213.config'
+Workflow policy	Run actions/checkout@v7	2026-10-06T20:59:06.6702218Z ##[endgroup]
+Workflow policy	Test workflow policies	﻿2026-10-06T20:59:06.6887246Z ##[group]Run node --test .github/scripts/*workflow-policy.test.mjs
+Workflow policy	Test workflow policies	2026-10-06T20:59:06.6888248Z ^[[36;1mnode --test .github/scripts/*workflow-policy.test.mjs^[[0m
+Workflow policy	Test workflow policies	2026-10-06T20:59:06.7096905Z shell: /usr/bin/bash -e {0}
+Workflow policy	Test workflow policies	2026-10-06T20:59:06.7097585Z env:
+Workflow policy	Test workflow policies	2026-10-06T20:59:06.7098188Z   GIT_CONFIG_COUNT: 1
+Workflow policy	Test workflow policies	2026-10-06T20:59:06.7098815Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Workflow policy	Test workflow policies	2026-10-06T20:59:06.7099502Z   GIT_CONFIG_VALUE_0: main
+Workflow policy	Test workflow policies	2026-10-06T20:59:06.7100107Z ##[endgroup]
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.1451032Z TAP version 13
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3233323Z # Subtest: uses current CodeQL language identifiers and build-free extraction
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3244818Z ok 1 - uses current CodeQL language identifiers and build-free extraction
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3246162Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3246874Z   duration_ms: 0.995124
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3247480Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3248157Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3248908Z # Subtest: does not duplicate the repositories' language build pipelines
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3250111Z ok 2 - does not duplicate the repositories' language build pipelines
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3251151Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3252062Z   duration_ms: 0.29833
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3252640Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3253196Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3254017Z # Subtest: uses action versions backed by the current Node runtime
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3254977Z ok 3 - uses action versions backed by the current Node runtime
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3255930Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3256626Z   duration_ms: 0.18121
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3257209Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3282319Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3283028Z # Subtest: pins the runner and disables persisted checkout credentials
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3284059Z ok 4 - pins the runner and disables persisted checkout credentials
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3291818Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3296580Z   duration_ms: 1.141792
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3297539Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3298197Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3298880Z # Subtest: prevents checkout's default-branch warning
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3299953Z ok 5 - prevents checkout's default-branch warning
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3300802Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3301775Z   duration_ms: 0.159889
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3302805Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3303720Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3304630Z # Subtest: reviews dependency changes on pull requests
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3305627Z ok 6 - reviews dependency changes on pull requests
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3306526Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3307037Z   duration_ms: 0.097898
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3307595Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3308075Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3308776Z # Subtest: gives CodeQL's buildless C\# restore an explicit NuGet feed to check
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3309706Z ok 7 - gives CodeQL's buildless C\# restore an explicit NuGet feed to check
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3311296Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3312272Z   duration_ms: 0.323649
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3313000Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.3313481Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4175316Z # Subtest: keeps the workflow names that README badges reference
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4192539Z ok 8 - keeps the workflow names that README badges reference
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4202605Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4214602Z   duration_ms: 1.355449
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4215052Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4215439Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4215871Z # Subtest: tests pull requests whenever C++ sources change
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4217192Z ok 9 - tests pull requests whenever C++ sources change
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4217775Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4232055Z   duration_ms: 0.303844
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4232992Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4233525Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4234110Z # Subtest: runs the tests instead of only compiling them
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4234886Z ok 10 - runs the tests instead of only compiling them
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4235627Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4236166Z   duration_ms: 0.330901
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4236558Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4236960Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4237369Z # Subtest: tests every compiler that consumes the headers, with sanitizers
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4238232Z ok 11 - tests every compiler that consumes the headers, with sanitizers
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4238694Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4239037Z   duration_ms: 0.457708
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4239395Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4239781Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4240250Z # Subtest: lets the build script decide whether tests are built
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4240775Z ok 12 - lets the build script decide whether tests are built
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4241213Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4241793Z   duration_ms: 0.47615
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4242287Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4242557Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4242966Z # Subtest: checks the C++ formatting with a pinned clang-format
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4243403Z ok 13 - checks the C++ formatting with a pinned clang-format
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4243779Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4244024Z   duration_ms: 0.266862
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4244281Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4244551Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4244963Z # Subtest: packs with dotnet and verifies the package on every run
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4245613Z ok 14 - packs with dotnet and verifies the package on every run
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4246054Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4246320Z   duration_ms: 0.189255
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4246621Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4246856Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4247270Z # Subtest: deploys only what the local test workflow built and tested
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4247858Z ok 15 - deploys only what the local test workflow built and tested
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4248205Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4248470Z   duration_ms: 0.112061
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4248798Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4249097Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4249503Z # Subtest: supports trusted publishing with the API key as a fallback
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4249970Z ok 16 - supports trusted publishing with the API key as a fallback
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4250411Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4250687Z   duration_ms: 0.296669
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4251042Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4251320Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4251782Z # Subtest: creates the GitHub release only after the NuGet push succeeded
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4252379Z ok 17 - creates the GitHub release only after the NuGet push succeeded
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4252825Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4253101Z   duration_ms: 0.348451
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4253400Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4253761Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4254160Z # Subtest: configures Git's initial branch before checkout runs
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4254664Z ok 18 - configures Git's initial branch before checkout runs
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4255047Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4255378Z   duration_ms: 0.786952
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4255695Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4256018Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4256472Z # Subtest: validates every maintained C\# workflow input on pull requests
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4257164Z ok 19 - validates every maintained C\# workflow input on pull requests
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4257766Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4258096Z   duration_ms: 0.298948
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4258431Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4258766Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4259274Z # Subtest: uses repository-owned build scripts instead of mutable downloads
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4260034Z ok 20 - uses repository-owned build scripts instead of mutable downloads
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4260591Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4261129Z   duration_ms: 0.312151
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4261701Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4262050Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4262353Z # Subtest: declares least-privilege checkout credentials
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4262893Z ok 21 - declares least-privilege checkout credentials
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4263377Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4263743Z   duration_ms: 7.593595
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4264166Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4264536Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4264913Z # Subtest: caps every job so hangs cannot run indefinitely
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4265414Z ok 22 - caps every job so hangs cannot run indefinitely
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4266082Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4266495Z   duration_ms: 0.27011
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4266853Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4267150Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4267538Z # Subtest: pins the runner image so latest-image migrations do not create warnings
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4268261Z ok 23 - pins the runner image so latest-image migrations do not create warnings
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4268718Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4269012Z   duration_ms: 0.135455
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4269335Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4269643Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4270074Z # Subtest: gates both package publishers on a release preflight
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4270557Z ok 24 - gates both package publishers on a release preflight
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4270952Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4271231Z   duration_ms: 0.28975
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4272738Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4273116Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4273487Z # Subtest: packs and publishes each NuGet package in separate ordered steps
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4273991Z ok 25 - packs and publishes each NuGet package in separate ordered steps
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4274476Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4274706Z   duration_ms: 0.417115
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4274992Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4275249Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4275631Z # Subtest: publishes to nuget.org only when the preflight found the version missing
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4276252Z ok 26 - publishes to nuget.org only when the preflight found the version missing
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4276817Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4277184Z   duration_ms: 0.480879
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4277548Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4277885Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4278403Z # Subtest: detects changed documentation inputs without third-party actions
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4279045Z ok 27 - detects changed documentation inputs without third-party actions
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4279728Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4280088Z   duration_ms: 0.52798
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4280376Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4280718Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4281261Z # Subtest: builds PDF and API documentation in parallel before publishing both
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4282103Z ok 28 - builds PDF and API documentation in parallel before publishing both
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4282704Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4283049Z   duration_ms: 0.369669
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4283495Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4283823Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4284294Z # Subtest: validates generated API pages before upload and after download
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4285081Z ok 29 - validates generated API pages before upload and after download
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4285630Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4285980Z   duration_ms: 0.137504
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4286358Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4286674Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4287284Z # Subtest: aggregates every job result so skipped dependents cannot hide failures
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4288119Z ok 30 - aggregates every job result so skipped dependents cannot hide failures
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4288732Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4289096Z   duration_ms: 0.461876
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4289448Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4289790Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4290129Z # Subtest: finds every workflow
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4290521Z ok 31 - finds every workflow
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4290878Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4291199Z   duration_ms: 0.782277
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4292001Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4292240Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4292720Z # Subtest: pins runner images so -latest label migrations cannot change builds
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4293219Z ok 32 - pins runner images so -latest label migrations cannot change builds
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4293667Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4293934Z   duration_ms: 1.105636
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4294220Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4294466Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4294780Z # Subtest: caps every job that runs on a runner
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4295240Z ok 33 - caps every job that runs on a runner
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4295584Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4295840Z   duration_ms: 1.290562
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4296108Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4296511Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4296932Z # Subtest: declares least-privilege token permissions in every workflow
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4297456Z ok 34 - declares least-privilege token permissions in every workflow
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4297841Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4298082Z   duration_ms: 0.195732
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4298406Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4298665Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4298946Z # Subtest: never persists checkout credentials
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4299320Z ok 35 - never persists checkout credentials
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4299644Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4299981Z   duration_ms: 0.409005
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4300310Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4300564Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4300924Z # Subtest: names the default branch so checkout prints no 'Using master' hint
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4301605Z ok 36 - names the default branch so checkout prints no 'Using master' hint
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4302065Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4302320Z   duration_ms: 0.176333
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4302597Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4302878Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4303206Z # Subtest: uses no actions that run on the deprecated Node 20 runtime
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4303739Z ok 37 - uses no actions that run on the deprecated Node 20 runtime
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4304109Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4304346Z   duration_ms: 0.486401
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4304664Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4304925Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4305228Z # Subtest: pins third-party actions to a full commit hash
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4305676Z ok 38 - pins third-party actions to a full commit hash
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4306022Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4306286Z   duration_ms: 0.978142
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4306562Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4306870Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4307228Z # Subtest: keeps CI definitions in this repository instead of a mutable @main
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4307740Z ok 39 - keeps CI definitions in this repository instead of a mutable @main
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4308191Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4308458Z   duration_ms: 1.490189
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4308737Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4309113Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4309629Z # Subtest: does not install the nuget CLI that Ubuntu 24.04 no longer ships
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4310235Z ok 40 - does not install the nuget CLI that Ubuntu 24.04 no longer ships
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4310694Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4311002Z   duration_ms: 0.619961
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4311309Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4311724Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4312115Z # Subtest: runs pull request checks on code changes, not only on edits
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4312544Z ok 41 - runs pull request checks on code changes, not only on edits
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4312878Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4313153Z   duration_ms: 0.453824
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4313440Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4313690Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4313995Z # Subtest: does not trust the spoofable github.actor for bot checks
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4314417Z ok 42 - does not trust the spoofable github.actor for bot checks
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4314788Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4315031Z   duration_ms: 0.347219
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4315411Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4315754Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4316267Z # Subtest: lets cancelled runs stop instead of forcing jobs with always()
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4317047Z ok 43 - lets cancelled runs stop instead of forcing jobs with always()
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4317837Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4318201Z   duration_ms: 0.281187
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4318611Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4319003Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4319561Z # Subtest: lets every workflow supersede stale runs without cancelling a writer
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4320351Z ok 44 - lets every workflow supersede stale runs without cancelling a writer
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4320949Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4321352Z   duration_ms: 0.296282
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4321950Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4322370Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4322857Z # Subtest: scans the repository for committed secrets with a pinned scanner
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4323658Z ok 45 - scans the repository for committed secrets with a pinned scanner
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4324246Z   ---
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4324604Z   duration_ms: 0.214543
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4324966Z   type: 'test'
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4325305Z   ...
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4325603Z 1..45
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4325935Z # tests 45
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4326297Z # suites 0
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4326688Z # pass 45
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4327022Z # fail 0
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4327344Z # cancelled 0
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4327692Z # skipped 0
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4328034Z # todo 0
+Workflow policy	Test workflow policies	2026-10-06T20:59:09.4328339Z # duration_ms 460.083173
+Workflow policy	Post Run actions/checkout@v7	﻿2026-10-06T20:59:09.4545064Z Post job cleanup.
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5279468Z [command]/usr/bin/git version
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5316504Z git version 2.55.0
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5345372Z Temporarily overriding HOME='/home/runner/work/_temp/5ac2bcc3-b07c-4ce1-a1f7-d38be5f8db93' before making global git config changes
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5346421Z Adding repository directory to the temporary git global config as a safe directory
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5348721Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5378171Z Removing SSH command configuration
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5384145Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5414557Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5600656Z Removing HTTP extra header
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5605197Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5632076Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5798619Z Removing includeIf entries pointing to credentials config files
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5804119Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Workflow policy	Post Run actions/checkout@v7	2026-10-06T20:59:09.5827965Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Workflow policy	Complete job	﻿2026-10-06T20:59:09.6108245Z Cleaning up orphan processes
+Lint workflows	Set up job	﻿2026-10-06T20:59:04.9788914Z Current runner version: '2.337.0'
+Lint workflows	Set up job	2026-10-06T20:59:04.9814238Z ##[group]Runner Image Provisioner
+Lint workflows	Set up job	2026-10-06T20:59:04.9815132Z Hosted Compute Agent
+Lint workflows	Set up job	2026-10-06T20:59:04.9815787Z Version: 20260901.588
+Lint workflows	Set up job	2026-10-06T20:59:04.9816534Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+Lint workflows	Set up job	2026-10-06T20:59:04.9817362Z Build Date: 2026-09-01T19:56:44Z
+Lint workflows	Set up job	2026-10-06T20:59:04.9818162Z Worker ID: {f49ca944-2107-4c12-9521-0bea9dceb068}
+Lint workflows	Set up job	2026-10-06T20:59:04.9818899Z Azure Region: centralus
+Lint workflows	Set up job	2026-10-06T20:59:04.9819952Z ##[endgroup]
+Lint workflows	Set up job	2026-10-06T20:59:04.9821862Z ##[group]Operating System
+Lint workflows	Set up job	2026-10-06T20:59:04.9822576Z Ubuntu
+Lint workflows	Set up job	2026-10-06T20:59:04.9823176Z 24.04.5
+Lint workflows	Set up job	2026-10-06T20:59:04.9823723Z LTS
+Lint workflows	Set up job	2026-10-06T20:59:04.9824249Z ##[endgroup]
+Lint workflows	Set up job	2026-10-06T20:59:04.9824871Z ##[group]Runner Image
+Lint workflows	Set up job	2026-10-06T20:59:04.9825520Z Image: ubuntu-24.04
+Lint workflows	Set up job	2026-10-06T20:59:04.9826218Z Version: 20260927.320.1
+Lint workflows	Set up job	2026-10-06T20:59:04.9827328Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+Lint workflows	Set up job	2026-10-06T20:59:04.9829310Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+Lint workflows	Set up job	2026-10-06T20:59:04.9830410Z ##[endgroup]
+Lint workflows	Set up job	2026-10-06T20:59:04.9831580Z ##[group]GITHUB_TOKEN Permissions
+Lint workflows	Set up job	2026-10-06T20:59:04.9833766Z Contents: read
+Lint workflows	Set up job	2026-10-06T20:59:04.9834482Z Metadata: read
+Lint workflows	Set up job	2026-10-06T20:59:04.9835122Z ##[endgroup]
+Lint workflows	Set up job	2026-10-06T20:59:04.9837210Z Secret source: Actions
+Lint workflows	Set up job	2026-10-06T20:59:04.9838309Z Cache mode: write
+Lint workflows	Set up job	2026-10-06T20:59:04.9839663Z Prepare workflow directory
+Lint workflows	Set up job	2026-10-06T20:59:05.0235815Z Prepare all required actions
+Lint workflows	Set up job	2026-10-06T20:59:05.0288474Z Getting action download info
+Lint workflows	Set up job	2026-10-06T20:59:05.3042954Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Lint workflows	Set up job	2026-10-06T20:59:05.4835878Z Complete job name: Lint workflows
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	﻿2026-10-06T20:59:05.5326250Z ##[group]Pull down action image 'rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667'
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:05.5434686Z ##[command]/usr/bin/docker pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.0142747Z docker.io/rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667: Pulling from rhysd/actionlint
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.1669727Z 589002ba0eae: Pulling fs layer
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.1670918Z c09af8888d6a: Pulling fs layer
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.1671846Z 4ccd7d76ca98: Pulling fs layer
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.1672668Z b6b4b7b0e257: Pulling fs layer
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.1673602Z b6b4b7b0e257: Waiting
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.3965677Z c09af8888d6a: Verifying Checksum
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.3972680Z c09af8888d6a: Download complete
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.3974998Z 589002ba0eae: Verifying Checksum
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.3976446Z 589002ba0eae: Download complete
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.3977497Z 4ccd7d76ca98: Verifying Checksum
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.3978590Z 4ccd7d76ca98: Download complete
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.5074506Z 589002ba0eae: Pull complete
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.6738985Z b6b4b7b0e257: Verifying Checksum
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:06.6740702Z b6b4b7b0e257: Download complete
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:09.0324681Z c09af8888d6a: Pull complete
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:09.1083177Z 4ccd7d76ca98: Pull complete
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:09.6721212Z b6b4b7b0e257: Pull complete
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:09.6767133Z Digest: sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:09.6776019Z Status: Downloaded newer image for rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:09.6784159Z docker.io/rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+Lint workflows	Pull rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667	2026-10-06T20:59:09.6813546Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	﻿2026-10-06T20:59:09.7144572Z ##[group]Run actions/checkout@v7
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7145245Z with:
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7145549Z   persist-credentials: false
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7145899Z   repository: linksplatform/Interfaces
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7148528Z   token: ***
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7148808Z   ssh-strict: true
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7149351Z   ssh-user: git
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7149925Z   clean: true
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7150249Z   sparse-checkout-cone-mode: true
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7150579Z   fetch-depth: 1
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7150844Z   fetch-tags: false
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7151126Z   show-progress: true
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7151403Z   lfs: false
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7151656Z   submodules: false
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7151929Z   set-safe-directory: true
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7152240Z   allow-unsafe-pr-checkout: false
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7152853Z env:
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7153121Z   GIT_CONFIG_COUNT: 1
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7153420Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7153757Z   GIT_CONFIG_VALUE_0: main
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.7154093Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8210376Z Syncing repository: linksplatform/Interfaces
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8213002Z ##[group]Getting Git version info
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8213812Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8215031Z [command]/usr/bin/git version
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8289835Z git version 2.55.0
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8314732Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8326817Z Temporarily overriding HOME='/home/runner/work/_temp/57338cf7-5600-4930-97da-69a1cb3ef6e4' before making global git config changes
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8328810Z Adding repository directory to the temporary git global config as a safe directory
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8334263Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8382966Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8386274Z ##[group]Determining repository object format
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8387839Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8388782Z ##[group]Initializing the repository
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8392607Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8504360Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8513893Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8563170Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8564202Z ##[group]Disabling automatic garbage collection
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8567505Z [command]/usr/bin/git config --local gc.auto 0
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8602923Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8604108Z ##[group]Setting up auth
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8605139Z Removing SSH command configuration
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8612169Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.8672434Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9035663Z Removing HTTP extra header
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9041563Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9078553Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9300657Z Removing includeIf entries pointing to credentials config files
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9306272Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9341861Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9571301Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9611001Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9645384Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9683686Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9720530Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9753221Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9754108Z ##[group]Fetching the repository
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:09.9760916Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9d9f59c08dfecdfa0f48595880e753dee46d3b7b:refs/remotes/pull/151/merge
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.4925336Z From https://github.com/linksplatform/Interfaces
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.4926281Z  * [new ref]         9d9f59c08dfecdfa0f48595880e753dee46d3b7b -> pull/151/merge
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.4930940Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.4931565Z ##[group]Determining the checkout info
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.4932356Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.4937211Z [command]/usr/bin/git sparse-checkout disable
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.4992685Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5028905Z ##[group]Checking out the ref
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5034128Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/151/merge
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5405349Z Note: switching to 'refs/remotes/pull/151/merge'.
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5405868Z 
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5406248Z You are in 'detached HEAD' state. You can look around, make experimental
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5406937Z changes and commit them, and you can discard any commits you make in this
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5407471Z state without impacting any branches by switching back to a branch.
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5407778Z 
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5407990Z If you want to create a new branch to retain commits you create, you may
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5408473Z do so (now or later) by using -c with the switch command. Example:
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5408733Z 
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5408887Z   git switch -c <new-branch-name>
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5409252Z 
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5409382Z Or undo this operation with:
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5409553Z 
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5409652Z   git switch -
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5409794Z 
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5410025Z Turn off this advice by setting config variable advice.detachedHead to false
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5410357Z 
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5410718Z HEAD is now at 9d9f59c Merge 35f8162ef134b3b674840d0166f804b2170574d3 into 3dfbee614c1276425f216d032580c052d94da4e8
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5417489Z ##[endgroup]
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5465178Z [command]/usr/bin/git log -1 --format=%H
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5494428Z 9d9f59c08dfecdfa0f48595880e753dee46d3b7b
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5504690Z ##[group]Removing auth
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5505198Z Removing SSH command configuration
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5509580Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5545571Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5773009Z Removing HTTP extra header
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5777641Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.5815621Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6046316Z Removing includeIf entries pointing to credentials config files
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6051090Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6083872Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6085182Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6085920Z includeif.gitdir:/github/workspace/.git.path
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6086645Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6092644Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6119012Z /home/runner/work/_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6128919Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-65af332f\-c825\-4b3e\-ae8a\-23fa7fa46cc1\.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6169649Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6196184Z /home/runner/work/_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6205168Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-65af332f\-c825\-4b3e\-ae8a\-23fa7fa46cc1\.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6241539Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6273089Z /github/runner_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6280966Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-65af332f\-c825\-4b3e\-ae8a\-23fa7fa46cc1\.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6318522Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6345660Z /github/runner_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6396907Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-65af332f\-c825\-4b3e\-ae8a\-23fa7fa46cc1\.config
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6450615Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6671614Z Removing credentials config '/home/runner/work/_temp/git-credentials-65af332f-c825-4b3e-ae8a-23fa7fa46cc1.config'
+Lint workflows	Run actions/checkout@v7	2026-10-06T20:59:10.6681308Z ##[endgroup]
+Lint workflows	Lint workflow files	﻿2026-10-06T20:59:10.6873095Z ##[group]Run docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+Lint workflows	Lint workflow files	2026-10-06T20:59:10.6873699Z with:
+Lint workflows	Lint workflow files	2026-10-06T20:59:10.6946049Z   args: -color
+Lint workflows	Lint workflow files	2026-10-06T20:59:10.6946355Z env:
+Lint workflows	Lint workflow files	2026-10-06T20:59:10.6946568Z   GIT_CONFIG_COUNT: 1
+Lint workflows	Lint workflow files	2026-10-06T20:59:10.6946837Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Lint workflows	Lint workflow files	2026-10-06T20:59:10.6947160Z   GIT_CONFIG_VALUE_0: main
+Lint workflows	Lint workflow files	2026-10-06T20:59:10.6947407Z ##[endgroup]
+Lint workflows	Lint workflow files	2026-10-06T20:59:10.7045321Z ##[command]/usr/bin/docker run --name rhysdactionlintsha256b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667_7fcffc --label d72d56 --workdir /github/workspace --rm -e "GIT_CONFIG_COUNT" -e "GIT_CONFIG_KEY_0" -e "GIT_CONFIG_VALUE_0" -e "INPUT_ARGS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "GITHUB_ARTIFACTS" -e "GITHUB_ARTIFACTS_LIST" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_CACHE_MODE" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/Interfaces/Interfaces":"/github/workspace" rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 -color
+Lint workflows	Post Run actions/checkout@v7	﻿2026-10-06T20:59:11.2192939Z Post job cleanup.
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3051267Z [command]/usr/bin/git version
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3092696Z git version 2.55.0
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3128645Z Temporarily overriding HOME='/home/runner/work/_temp/53c12516-69e9-4f93-aeb5-1888f0701d14' before making global git config changes
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3130224Z Adding repository directory to the temporary git global config as a safe directory
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3133332Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3167124Z Removing SSH command configuration
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3173866Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3210325Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3456210Z Removing HTTP extra header
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3462766Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3498845Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3757671Z Removing includeIf entries pointing to credentials config files
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3770275Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint workflows	Post Run actions/checkout@v7	2026-10-06T20:59:11.3807873Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint workflows	Complete job	﻿2026-10-06T20:59:11.4190696Z Cleaning up orphan processes

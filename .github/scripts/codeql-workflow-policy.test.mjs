@@ -43,3 +43,9 @@ test("reviews dependency changes on pull requests", () => {
   assert.match(workflow, /actions\/dependency-review-action@v5/);
   assert.match(workflow, /fail-on-severity: high/);
 });
+
+test("turns off the C# feed check that warns about an empty feed set", () => {
+  // github/codeql#22766: the check logs "No NuGet feeds are reachable" for an
+  // empty set even when nuget.org is reachable.
+  assert.match(workflow, /CODEQL_EXTRACTOR_CSHARP_BUILDLESS_NUGET_FEEDS_CHECK: 'false'/);
+});

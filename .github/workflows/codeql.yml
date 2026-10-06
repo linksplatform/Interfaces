@@ -50,8 +50,14 @@ jobs:
         build-mode: none
         queries: security-extended,security-and-quality
 
+    # The C# buildless restore warns "No NuGet feeds are reachable" whenever
+    # one of its feed sets is empty, although nuget.org, the only feed here,
+    # is reachable (github/codeql#22766). With the check off it restores from
+    # nuget.org directly. The variable is read only by the C# extractor.
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
+      env:
+        CODEQL_EXTRACTOR_CSHARP_BUILDLESS_NUGET_FEEDS_CHECK: 'false'
       with:
         category: "/language:${{ matrix.language }}"
 
