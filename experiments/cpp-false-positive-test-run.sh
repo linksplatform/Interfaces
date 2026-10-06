@@ -20,7 +20,8 @@ echo "== Old shared workflow command (build only)"
 (
   cd "$work/cpp"
   conan install . --output-folder=old --build=missing --settings:all compiler.cppstd=20 >/dev/null
-  cmake -S . -B old -DCMAKE_TOOLCHAIN_FILE=old/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release >/dev/null
+  cmake -S . -B old -DCMAKE_TOOLCHAIN_FILE=old/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release \
+    -DLINKS_PLATFORM_TESTS=ON >/dev/null
   cmake --build old >/dev/null
 ) && echo "old command: PASSED (false positive)"
 

@@ -27,9 +27,34 @@ test("tests pull requests whenever C++ sources change", () => {
 
 test("runs the tests instead of only compiling them", () => {
   const job = testJobs.get("test");
-  assert.match(job, /run: cpp\/build-and-test\.sh/);
+  assert.match(job, /\n {10}cpp\/build-and-test\.sh\n/);
   const script = readFileSync(new URL("../../cpp/build-and-test.sh", import.meta.url), "utf8");
   assert.match(script, /ctest .*--no-tests=error/);
+});
+
+test("tests every compiler that consumes the headers, with sanitizers", () => {
+  const job = testJobs.get("test");
+  for (const os of ["ubuntu-24.04", "macos-15", "windows-2025"]) {
+    assert.match(job, new RegExp(`os: ${os}\\n`));
+  }
+  assert.match(job, /cxx: g\+\+/);
+  assert.match(job, /cxx: clang\+\+/);
+  assert.match(job, /sanitizers: address;undefined/);
+  assert.match(job, /fail-fast: false/);
+  // Matrix jobs share a job-level group unless it names the matrix entry.
+  assert.match(job, /group: .*\$\{\{ matrix\.name \}\}/);
+  const cmake = readFileSync(new URL("../../cpp/CMakeLists.txt", import.meta.url), "utf8");
+  assert.match(cmake, /-fsanitize=\$\{sanitizers\}/);
+});
+
+test("lets the build script decide whether tests are built", () => {
+  const cmake = readFileSync(new URL("../../cpp/CMakeLists.txt", import.meta.url), "utf8");
+  assert.doesNotMatch(cmake, /set\(LINKS_PLATFORM_TESTS (TRUE|ON)\)/);
+  assert.doesNotMatch(cmake, /CMAKE_CXX_FLAGS.*-march/);
+  const script = readFileSync(new URL("../../cpp/build-and-test.sh", import.meta.url), "utf8");
+  assert.match(script, /-DLINKS_PLATFORM_TESTS=ON/);
+  assert.match(script, /cmake --build .*--config "\$build_type"/);
+  assert.match(script, /ctest .*--build-config "\$build_type"/);
 });
 
 test("packs with dotnet and verifies the package on every run", () => {

@@ -1,0 +1,7 @@
+== SANITIZERS=""
+PASSED
+== SANITIZERS="address;undefined"
+==98623==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000400 at pc 0x596168b98a27 bp 0x7ffdd897b420 sp 0x7ffdd897b410
+/tmp/tmp.OqccHFVytE/cpp/Platform.Interfaces.Tests/Platform.Interfaces.Tests.cpp:224:5: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+80% tests passed, 2 tests failed out of 10
+FAILED

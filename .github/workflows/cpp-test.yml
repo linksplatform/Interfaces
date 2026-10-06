@@ -35,13 +35,43 @@ env:
 
 jobs:
   test:
-    runs-on: ubuntu-24.04
+    name: test (${{ matrix.name }})
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     # Job-level groups: deploy-cpp.yml calls this workflow, and its own
-    # workflow-level group must not be shared with these jobs.
+    # workflow-level group must not be shared with these jobs. The matrix name
+    # keeps the matrix jobs from cancelling each other.
     concurrency:
-      group: check-${{ github.workflow }}-${{ github.ref }}-test
+      group: check-${{ github.workflow }}-${{ github.ref }}-test-${{ matrix.name }}
       cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+    # The headers are consumed by every compiler that restores the NuGet or
+    # Conan package, so each one has to build and pass the tests, as in
+    # link-foundation/cpp-ai-driven-development-pipeline-template.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: linux-gcc
+            os: ubuntu-24.04
+            cc: gcc
+            cxx: g++
+          - name: linux-clang
+            os: ubuntu-24.04
+            cc: clang
+            cxx: clang++
+          - name: linux-gcc-sanitizers
+            os: ubuntu-24.04
+            cc: gcc
+            cxx: g++
+            build-type: Debug
+            sanitizers: address;undefined
+          - name: macos-appleclang
+            os: macos-15
+          - name: windows-msvc
+            os: windows-2025
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v7
         with:
@@ -53,7 +83,17 @@ jobs:
       # The previous shared workflow only compiled the tests, so failing tests
       # still passed CI (issue #150). The script runs them through CTest.
       - name: Build and run the tests
-        run: cpp/build-and-test.sh
+        env:
+          MATRIX_CC: ${{ matrix.cc }}
+          MATRIX_CXX: ${{ matrix.cxx }}
+          BUILD_TYPE: ${{ matrix.build-type || 'Release' }}
+          SANITIZERS: ${{ matrix.sanitizers }}
+        run: |
+          # macOS and Windows use the platform compiler that Conan detects.
+          if [ -n "$MATRIX_CXX" ]; then
+            export CC="$MATRIX_CC" CXX="$MATRIX_CXX"
+          fi
+          cpp/build-and-test.sh
 
   pack:
     runs-on: ubuntu-24.04

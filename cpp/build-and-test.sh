@@ -6,6 +6,8 @@
 # Environment:
 #   BUILD_DIR   build directory relative to cpp/ (default: build)
 #   BUILD_TYPE  CMake/Conan build type (default: Release)
+#   SANITIZERS  sanitizers for the tests, e.g. "address;undefined" (default: none)
+#   CC, CXX     compilers; `conan profile detect` and CMake both read them
 #   VERBOSE=1   or RUNNER_DEBUG=1 traces every command (off by default)
 set -euo pipefail
 
@@ -26,7 +28,9 @@ conan install . --output-folder="$build_dir" --build=missing \
 cmake -S . -B "$build_dir" \
   -DCMAKE_TOOLCHAIN_FILE="$build_dir/conan_toolchain.cmake" \
   -DCMAKE_BUILD_TYPE="$build_type" \
-  -DLINKS_PLATFORM_TESTS=ON
-cmake --build "$build_dir" --parallel
+  -DLINKS_PLATFORM_TESTS=ON \
+  -DLINKS_PLATFORM_SANITIZERS="${SANITIZERS:-}"
+# --config and -C select the build type of multi-config generators (MSVC).
+cmake --build "$build_dir" --config "$build_type" --parallel
 # --no-tests=error turns "nothing was run" into a failure instead of a pass.
-ctest --test-dir "$build_dir" --output-on-failure --no-tests=error
+ctest --test-dir "$build_dir" --build-config "$build_type" --output-on-failure --no-tests=error

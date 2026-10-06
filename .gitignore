@@ -25,6 +25,7 @@ bld/
 [Ll]og/
 # Conan/CMake build directory created by cpp/build-and-test.sh
 cpp/build/
+cpp/build-*/
 cpp/CMakeUserPresets.json
 
 # Visual Studio 2015/2017 cache/options directory

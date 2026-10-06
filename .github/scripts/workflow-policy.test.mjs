@@ -26,8 +26,8 @@ test("finds every workflow", () => {
   assert.ok(workflows.length >= 8, `only ${workflows.length} workflows found`);
 });
 
-test("pins runner images so ubuntu-latest migrations cannot change builds", () => {
-  assert.deepEqual(findLines(/runs-on:\s*ubuntu-latest/), []);
+test("pins runner images so -latest label migrations cannot change builds", () => {
+  assert.deepEqual(findLines(/(runs-on|os):\s*[\w-]*-latest/), []);
 });
 
 test("caps every job that runs on a runner", () => {
