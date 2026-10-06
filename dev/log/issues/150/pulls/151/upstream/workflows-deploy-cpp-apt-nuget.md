@@ -1,3 +1,5 @@
+# deploy-cpp.yml: apt-get install nuget fails on ubuntu-24.04, and publishRelease still creates the release
+
 ## Summary
 
 `deploy-cpp.yml` (at `06a7067`) installs the NuGet CLI with `sudo apt-get install nuget`. `ubuntu-latest` is Ubuntu 24.04, and Ubuntu 24.04 no longer ships that package, so `pushToNuget` fails with exit code 100. The `publishRelease` job does not depend on `pushToNuget`, so it still creates the GitHub release. The result is a release page that links to a NuGet package that was never published.
@@ -6,7 +8,7 @@
 
 From linksplatform/Interfaces run [36213155523](https://github.com/linksplatform/Interfaces/actions/runs/36213155523) (image `ubuntu24/20260920.314`):
 
-```
+```text
 main / pushToNuget  Package nuget is not available, but is referred to by another package.
 main / pushToNuget  E: Package 'nuget' has no installation candidate
 main / pushToNuget  ##[error]Process completed with exit code 100.

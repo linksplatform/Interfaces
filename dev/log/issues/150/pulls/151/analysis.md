@@ -64,6 +64,7 @@ Everything cited below lives in this folder:
 | 15 | FN | all | Stale PR runs kept running. No secrets scan | Missing concurrency control. No secret detection ([best practices](https://github.com/link-assistant/hive-mind/blob/main/docs/CI-CD-BEST-PRACTICES.md) §10, §11) | Concurrency in every workflow: cancelled on PRs, never on `main`, so writers are not interrupted. A `Secrets` workflow (secretlint 13.0.7, pinned). `experiments/secretlint-detects-planted-secret.sh` proves the scan can fail |
 | 16 | — | codeql | Dependencies and workflows were not covered | — | CodeQL `actions` language and `dependency-review-action@v5` on PRs (`fail-on-severity: high`) |
 | 17 | — | dependabot | Updates landed the day they were published | — | `cooldown: default-days: 7`, the same as the templates |
+| 18 | FP | Codacy (GitHub App) | `action_required`: "18 new issues (0 max.)" on this PR, all markdownlint, in the case-study files (`codacy/pr-151-new-issues-before.json`) | MD034, MD040 and MD041 were genuine. MD043 (required heading structure) is enabled in Codacy without a heading list, so it reports `Expected: [None]` for every file with a heading, including `README.md:11` and `MIGRATION_SUMMARY.md:1` on `main` (`codacy/main-md043.json`) | Bare URLs wrapped, fence languages added, top-level headings added; `markdownlint-cli2` with Codacy's enabled rules reports 0 errors. `.codacy.yml` excludes the archived evidence under `dev/log/`, which is not code. **A maintainer should disable MD043 in Codacy's code patterns** |
 
 ## Requirements of the issue and their status
 
@@ -120,6 +121,7 @@ All files in the three templates were compared at `csharp@22e53c8`, `js` and `py
    After that, re-run `csharp` and `Deploy new cpp version` on `main`, or push. 0.6.1 and 0.4.1 will be published.
 2. **Dependabot auto-merge.** Enable *Settings → General → Allow auto-merge*. Check that `DEPENDABOT_AUTO_MERGE_TOKEN` (last updated 2021-08-19) is still valid. Until then, the auto-merge job fails with an error that names the missing setting, instead of being silently skipped.
 3. **Releases without packages.** `cpp_0.3.43`, `cpp_0.4.0` and `csharp_0.5.1` point to NuGet versions that do not exist. They were left untouched, because deleting releases cannot be undone. Delete them, or mark them in their notes.
+4. **Codacy MD043.** Disable markdownlint's *MD043 (required heading structure)* in Codacy's code patterns, or give it a heading list. As configured, it flags every new markdown file that has a heading.
 
 ## Verification
 
@@ -132,10 +134,10 @@ All files in the three templates were compared at `csharp@22e53c8`, `js` and `py
 
 ## References
 
-- NuGet trusted publishing: https://learn.microsoft.com/nuget/nuget-org/trusted-publishing, and `NuGet/login`: https://github.com/NuGet/login
-- Node 20 deprecation: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-- Dependabot comment commands removal: https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands/
-- Ubuntu 26 migration of `ubuntu-latest`: https://github.com/actions/runner-images/issues/14748
-- tj-actions/changed-files compromise: CVE-2025-30066, https://github.com/advisories/GHSA-mrrh-fwg8-r2c3
-- zizmor audits: https://docs.zizmor.sh/audits/; actionlint: https://github.com/rhysd/actionlint
-- Auto-merge setting: https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository
+- NuGet trusted publishing: <https://learn.microsoft.com/nuget/nuget-org/trusted-publishing>, and `NuGet/login`: <https://github.com/NuGet/login>
+- Node 20 deprecation: <https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/>
+- Dependabot comment commands removal: <https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands/>
+- Ubuntu 26 migration of `ubuntu-latest`: <https://github.com/actions/runner-images/issues/14748>
+- tj-actions/changed-files compromise: CVE-2025-30066, <https://github.com/advisories/GHSA-mrrh-fwg8-r2c3>
+- zizmor audits: <https://docs.zizmor.sh/audits/>; actionlint: <https://github.com/rhysd/actionlint>
+- Auto-merge setting: <https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository>

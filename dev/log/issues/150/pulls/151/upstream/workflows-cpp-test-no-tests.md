@@ -1,3 +1,5 @@
+# cpp-test.yml builds tests but never runs them (no ctest), so failing tests pass CI
+
 ## Summary
 
 `cpp-test.yml` (at `06a7067`) configures and builds the tests (`cmake --build .`) but never runs them. A failing assertion therefore still produces a green "Test cpp" run. The callers make it worse: linksplatform/Interfaces, for example, triggers it with `pull_request: types: [edited]`, so commits pushed to a PR do not start it at all. Only edits to the PR title or body do.

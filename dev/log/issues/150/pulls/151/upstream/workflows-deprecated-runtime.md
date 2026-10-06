@@ -1,3 +1,5 @@
+# Reusable workflows use Node.js 20 actions, ubuntu-latest, @main references and unpinned, over-privileged jobs
+
 ## Summary
 
 The reusable workflows (at `06a7067`) produce deprecation warnings on every run. They also depend on mutable references.

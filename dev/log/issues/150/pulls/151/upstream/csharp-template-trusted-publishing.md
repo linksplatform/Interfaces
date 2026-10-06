@@ -1,3 +1,5 @@
+# release.yml: support NuGet trusted publishing (OIDC) so an expired NUGET_API_KEY cannot block releases
+
 ## Summary
 
 `release.yml` publishes to nuget.org only with the long-lived `NUGET_API_KEY` secret. It does not support [NuGet trusted publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing) (OIDC through `NuGet/login`). Both sibling templates already publish with OIDC:
@@ -11,7 +13,7 @@ The preflight added for #51/#57 only checks that the key is present. As its own 
 
 In linksplatform/Interfaces, the `NUGET_TOKEN` secret was last updated on 2022-12-02 and has since expired. Every C# release since then fails with:
 
-```
+```text
 error: Response status code does not indicate success: 403 (The specified API key is invalid, has expired, or does not have permission to access the specified package.).
 ```
 
