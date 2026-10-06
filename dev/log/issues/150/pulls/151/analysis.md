@@ -85,7 +85,7 @@ All files in the three templates were compared at `csharp@22e53c8`, `js` and `py
 
 | Template practice | Here |
 |---|---|
-| `workflows.yml` running actionlint and zizmor, with `.github/zizmor.yml` | Adopted. The policy pins `actions/*`, `github/*` and `zizmorcore/*` by ref, and every other action by hash |
+| `workflows.yml` running actionlint and zizmor, with `.github/zizmor.yml` | Adopted. The policy pins `actions/*` and `github/*` by ref, and every other action by hash (including `zizmorcore/zizmor-action`, after CodeQL `actions/unpinned-tag` flagged its tag ref on this PR) |
 | `security.yml`: CodeQL including `actions`, plus dependency review | Adopted in `codeql.yml`. The file name is kept for the README badge |
 | Release preflight before publishing (csharp #51/#57, best practices §16) | Adopted. It also checks the registry, so a published version is skipped |
 | Trusted publishing (npm in js, PyPI in python) | Adopted for NuGet. The csharp template lacks it, so it was reported as [#66](https://github.com/link-foundation/csharp-ai-driven-development-pipeline-template/issues/66) |

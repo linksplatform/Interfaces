@@ -10,5 +10,4 @@ rules:
         # CVE-2025-30066).
         actions/*: ref-pin
         github/*: ref-pin
-        zizmorcore/*: ref-pin
         '*': hash-pin

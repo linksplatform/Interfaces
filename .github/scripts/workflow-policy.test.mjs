@@ -75,7 +75,7 @@ test("uses no actions that run on the deprecated Node 20 runtime", () => {
 });
 
 test("pins third-party actions to a full commit hash", () => {
-  const trusted = /^(?:actions|github|zizmorcore)\//;
+  const trusted = /^(?:actions|github)\//;
   const failures = findLines(/^\s*(?:-\s*)?uses:\s*[^.\s]/).filter((entry) => {
     const reference = /uses:\s*(\S+)/.exec(entry)[1];
     if (reference.startsWith("docker://")) {
