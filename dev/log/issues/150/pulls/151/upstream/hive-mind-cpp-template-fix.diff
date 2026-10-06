@@ -1,0 +1,17 @@
+diff --git a/src/fix.ci-cd.lib.mjs b/src/fix.ci-cd.lib.mjs
+index da9cb95..d3d5eac 100644
+--- a/src/fix.ci-cd.lib.mjs
++++ b/src/fix.ci-cd.lib.mjs
+@@ -73,6 +73,12 @@ export const CI_CD_TEMPLATES = Object.freeze([
+     languages: ['Java'],
+     repo: 'link-foundation/java-ai-driven-development-pipeline-template',
+   },
++  {
++    key: 'cpp',
++    label: 'C / C++',
++    languages: ['C++', 'C', 'CMake'],
++    repo: 'link-foundation/cpp-ai-driven-development-pipeline-template',
++  },
+   {
+     key: 'php',
+     label: 'PHP',
