@@ -65,6 +65,14 @@ test("never persists checkout credentials", () => {
   assert.deepEqual(failures, []);
 });
 
+test("names the default branch so checkout prints no 'Using master' hint", () => {
+  const missing = workflows
+    .filter(({ source }) => source.includes("uses: actions/checkout@"))
+    .filter(({ source }) => !/^env:\n(?: {2}.*\n)*? {2}GIT_CONFIG_KEY_0: init\.defaultBranch\n {2}GIT_CONFIG_VALUE_0: main\n/m.test(source))
+    .map(({ name }) => name);
+  assert.deepEqual(missing, []);
+});
+
 test("uses no actions that run on the deprecated Node 20 runtime", () => {
   assert.deepEqual(
     findLines(
