@@ -27,6 +27,6 @@ env:
   GIT_CONFIG_VALUE_0: main
 ```
 
-Then add a workflow policy test that requires it in every workflow with an `actions/checkout` step, so a new workflow can't miss it again. linksplatform/Interfaces does this in `.github/scripts/workflow-policy.test.mjs` ([PR #151](https://github.com/linksplatform/Interfaces/pull/151)). The C++ template has the same gap in `workflows.yml` (reported there).
+Then add a workflow policy test that requires it in every workflow with an `actions/checkout` step, so a new workflow can't miss it again. linksplatform/Interfaces does this in `.github/scripts/workflow-policy.test.mjs` ([PR #151](https://github.com/linksplatform/Interfaces/pull/151)). The C++ template has the same gap in `workflows.yml` (link-foundation/cpp-ai-driven-development-pipeline-template#5).
 
 Evidence: [templates-git-master-hint.txt](https://github.com/linksplatform/Interfaces/blob/issue-150-dfc4758d0022/dev/log/issues/150/pulls/151/upstream/templates-git-master-hint.txt).
