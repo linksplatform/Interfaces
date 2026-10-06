@@ -1,0 +1,26 @@
+== Platform.Interfaces (with-key)
+The specified API key is invalid, has expired, or does not have permission to access the specified package.
+HTTP 403
+== Platform.Interfaces (without-key)
+An API key must be provided in the 'X-NuGet-ApiKey' header to use this service
+HTTP 401
+== Platform.Interfaces.TemplateLibrary (with-key)
+The specified API key is invalid, has expired, or does not have permission to access the specified package.
+HTTP 403
+== Platform.Interfaces.TemplateLibrary (without-key)
+An API key must be provided in the 'X-NuGet-ApiKey' header to use this service
+HTTP 401
+Version index: https://api.nuget.org/v3-flatcontainer/platform.interfaces/index.json lists 14 versions
+API key verification: https://www.nuget.org/api/v2/package/create-verification-key/Platform.Interfaces returned 403
+::error title=NuGet release preflight failed::nuget.org rejected the NUGET_TOKEN secret: it is invalid, expired, or not scoped to push this package. Create a new key at https://www.nuget.org/account/apikeys with push scope for the package and store it as the NUGET_TOKEN repository secret, or configure trusted publishing (https://learn.microsoft.com/nuget/nuget-org/trusted-publishing) and set the NUGET_USER repository variable
+Platform.Interfaces 99.0.0 is not on nuget.org yet; it will be published using api-key.
+publish_required=true
+auth=api-key
+exit=1
+Version index: https://api.nuget.org/v3-flatcontainer/platform.interfaces.templatelibrary/index.json lists 37 versions
+API key verification: https://www.nuget.org/api/v2/package/create-verification-key/Platform.Interfaces.TemplateLibrary returned 403
+::error title=NuGet release preflight failed::nuget.org rejected the NUGET_TOKEN secret: it is invalid, expired, or not scoped to push this package. Create a new key at https://www.nuget.org/account/apikeys with push scope for the package and store it as the NUGET_TOKEN repository secret, or configure trusted publishing (https://learn.microsoft.com/nuget/nuget-org/trusted-publishing) and set the NUGET_USER repository variable
+Platform.Interfaces.TemplateLibrary 99.0.0 is not on nuget.org yet; it will be published using api-key.
+publish_required=true
+auth=api-key
+exit=1

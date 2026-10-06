@@ -14,4 +14,4 @@ namespace Platform::Interfaces {
   /// </typeparam>
   template <typename T>
   concept CLinkAddress = std::is_integral<T>::value && std::is_unsigned<T>::value;
-}
+}  // namespace Platform::Interfaces

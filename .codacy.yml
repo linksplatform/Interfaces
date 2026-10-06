@@ -1,0 +1,5 @@
+# Codacy configuration — https://docs.codacy.com/repositories-configure/codacy-configuration-file/
+exclude_paths:
+  # Archived CI evidence for issue #150 (raw logs, captured reports), not code.
+  # secretlint still scans it.
+  - "dev/log/**"

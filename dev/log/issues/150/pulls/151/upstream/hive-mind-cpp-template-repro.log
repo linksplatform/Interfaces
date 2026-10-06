@@ -1,0 +1,21 @@
+# hive-mind 03dcb2e (main, 2026-10-06), languages from gh api repos/linksplatform/Interfaces/languages
+$ node experiments/hive-mind-cpp-template-mapping.mjs <hive-mind> "$(cat dev/log/issues/150/pulls/151/upstream/interfaces-languages.json)"
+templates: [
+  'link-foundation/csharp-ai-driven-development-pipeline-template',
+  'link-foundation/js-ai-driven-development-pipeline-template',
+  'link-foundation/python-ai-driven-development-pipeline-template'
+]
+unmatched: [ 'C++', 'C', 'CMake', 'Shell' ]
+
+# With the suggested fix (hive-mind-cpp-template-fix.diff)
+templates: [
+  'link-foundation/cpp-ai-driven-development-pipeline-template',
+  'link-foundation/csharp-ai-driven-development-pipeline-template',
+  'link-foundation/js-ai-driven-development-pipeline-template',
+  'link-foundation/python-ai-driven-development-pipeline-template'
+]
+unmatched: [ 'Shell' ]
+
+# node tests/test-fix-ci-cd.mjs before / after the fix
+38 passed, 0 failed
+38 passed, 0 failed

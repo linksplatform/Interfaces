@@ -1,0 +1,823 @@
+pack	Set up job	﻿2026-10-06T19:40:20.8302306Z Current runner version: '2.337.0'
+pack	Set up job	2026-10-06T19:40:20.8321190Z ##[group]Runner Image Provisioner
+pack	Set up job	2026-10-06T19:40:20.8321735Z Hosted Compute Agent
+pack	Set up job	2026-10-06T19:40:20.8322125Z Version: 20261002.596
+pack	Set up job	2026-10-06T19:40:20.8322541Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+pack	Set up job	2026-10-06T19:40:20.8322963Z Build Date: 2026-10-02T22:28:27Z
+pack	Set up job	2026-10-06T19:40:20.8323406Z Worker ID: {d5eb8ecc-35d2-4f2d-8ea0-e45a3c014a12}
+pack	Set up job	2026-10-06T19:40:20.8323823Z Region: centralus
+pack	Set up job	2026-10-06T19:40:20.8324143Z Cloud: Azure
+pack	Set up job	2026-10-06T19:40:20.8324564Z ##[endgroup]
+pack	Set up job	2026-10-06T19:40:20.8325316Z ##[group]Operating System
+pack	Set up job	2026-10-06T19:40:20.8325712Z Ubuntu
+pack	Set up job	2026-10-06T19:40:20.8326026Z 24.04.5
+pack	Set up job	2026-10-06T19:40:20.8326334Z LTS
+pack	Set up job	2026-10-06T19:40:20.8326723Z ##[endgroup]
+pack	Set up job	2026-10-06T19:40:20.8327050Z ##[group]Runner Image
+pack	Set up job	2026-10-06T19:40:20.8327431Z Image: ubuntu-24.04
+pack	Set up job	2026-10-06T19:40:20.8327896Z Version: 20261004.327.1
+pack	Set up job	2026-10-06T19:40:20.8328501Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+pack	Set up job	2026-10-06T19:40:20.8329591Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+pack	Set up job	2026-10-06T19:40:20.8330164Z ##[endgroup]
+pack	Set up job	2026-10-06T19:40:20.8330842Z ##[group]GITHUB_TOKEN Permissions
+pack	Set up job	2026-10-06T19:40:20.8332176Z Contents: read
+pack	Set up job	2026-10-06T19:40:20.8332575Z Metadata: read
+pack	Set up job	2026-10-06T19:40:20.8332929Z ##[endgroup]
+pack	Set up job	2026-10-06T19:40:20.8334318Z Secret source: Actions
+pack	Set up job	2026-10-06T19:40:20.8334838Z Cache mode: write
+pack	Set up job	2026-10-06T19:40:20.8335340Z Prepare workflow directory
+pack	Set up job	2026-10-06T19:40:20.8682133Z Prepare all required actions
+pack	Set up job	2026-10-06T19:40:20.8713284Z Getting action download info
+pack	Set up job	2026-10-06T19:40:21.1260152Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+pack	Set up job	2026-10-06T19:40:21.4465500Z Download action repository 'actions/setup-dotnet@v6' (SHA:a98b56852c35b8e3190ac28c8c2271da59106c68)
+pack	Set up job	2026-10-06T19:40:22.1317642Z Download action repository 'actions/upload-artifact@v7' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+pack	Set up job	2026-10-06T19:40:22.3955677Z Complete job name: pack
+pack	Run actions/checkout@v7	﻿2026-10-06T19:40:22.4499488Z ##[group]Run actions/checkout@v7
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4500233Z with:
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4500688Z   persist-credentials: false
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4501269Z   repository: linksplatform/Interfaces
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4506549Z   token: ***
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4506999Z   ssh-strict: true
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4507451Z   ssh-user: git
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4508048Z   clean: true
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4508534Z   sparse-checkout-cone-mode: true
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4509096Z   fetch-depth: 1
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4509550Z   fetch-tags: false
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4510012Z   show-progress: true
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4510492Z   lfs: false
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4510943Z   submodules: false
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4511420Z   set-safe-directory: true
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4511962Z   allow-unsafe-pr-checkout: false
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4512601Z env:
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4513011Z   GIT_CONFIG_COUNT: 1
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4513535Z   GIT_CONFIG_KEY_0: init.defaultBranch
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4514149Z   GIT_CONFIG_VALUE_0: main
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.4514682Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5231105Z Syncing repository: linksplatform/Interfaces
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5233865Z ##[group]Getting Git version info
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5235146Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5236971Z [command]/usr/bin/git version
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5293951Z git version 2.55.0
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5305814Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5315625Z Temporarily overriding HOME='/home/runner/work/_temp/c706736e-ad96-40db-a6f3-5a7a7d15949b' before making global git config changes
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5318294Z Adding repository directory to the temporary git global config as a safe directory
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5320221Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5427694Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5430674Z ##[group]Determining repository object format
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5432719Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5433731Z ##[group]Initializing the repository
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5435642Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5542495Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5552325Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5737081Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5738844Z ##[group]Disabling automatic garbage collection
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5739880Z [command]/usr/bin/git config --local gc.auto 0
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5831895Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5833243Z ##[group]Setting up auth
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5834272Z Removing SSH command configuration
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5836914Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.5869922Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6170487Z Removing HTTP extra header
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6174717Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6206585Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6386008Z Removing includeIf entries pointing to credentials config files
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6390237Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6429317Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6612357Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6649275Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6738041Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6767572Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6832077Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6933940Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6935757Z ##[group]Fetching the repository
+pack	Run actions/checkout@v7	2026-10-06T19:40:22.6940089Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +79b4829f865b3b8eaae6d20301410e3d93cc0459:refs/remotes/pull/151/merge
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.8137640Z From https://github.com/linksplatform/Interfaces
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.8139044Z  * [new ref]         79b4829f865b3b8eaae6d20301410e3d93cc0459 -> pull/151/merge
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.8140908Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.8141495Z ##[group]Determining the checkout info
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.8142027Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.8145122Z [command]/usr/bin/git sparse-checkout disable
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.8971125Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.9269245Z ##[group]Checking out the ref
+pack	Run actions/checkout@v7	2026-10-06T19:40:23.9272594Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/151/merge
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0486659Z Note: switching to 'refs/remotes/pull/151/merge'.
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0489748Z 
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0490298Z You are in 'detached HEAD' state. You can look around, make experimental
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0493439Z changes and commit them, and you can discard any commits you make in this
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0494716Z state without impacting any branches by switching back to a branch.
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0495681Z 
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0496166Z If you want to create a new branch to retain commits you create, you may
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0496862Z do so (now or later) by using -c with the switch command. Example:
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0497356Z 
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0497888Z   git switch -c <new-branch-name>
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0499957Z 
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0502259Z Or undo this operation with:
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0503254Z 
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0503902Z   git switch -
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0504419Z 
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0504837Z Turn off this advice by setting config variable advice.detachedHead to false
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0505384Z 
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0505932Z HEAD is now at 79b4829 Merge c77f922c8381d75fe2cda373b54342be053656da into 3dfbee614c1276425f216d032580c052d94da4e8
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0514090Z ##[endgroup]
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0615979Z [command]/usr/bin/git log -1 --format=%H
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0672079Z 79b4829f865b3b8eaae6d20301410e3d93cc0459
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0687101Z ##[group]Removing auth
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0688611Z Removing SSH command configuration
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0691451Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0751373Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0961486Z Removing HTTP extra header
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0963844Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.0996683Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1187284Z Removing includeIf entries pointing to credentials config files
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1189039Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1378050Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1447541Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1448420Z includeif.gitdir:/github/workspace/.git.path
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1449015Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1450801Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1451618Z /home/runner/work/_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1453476Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-f93e1839\-da9a\-45de\-8d9b\-71aeb4898496\.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1469653Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1493477Z /home/runner/work/_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1500800Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-f93e1839\-da9a\-45de\-8d9b\-71aeb4898496\.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1570957Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1595198Z /github/runner_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1600670Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-f93e1839\-da9a\-45de\-8d9b\-71aeb4898496\.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1631228Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1653704Z /github/runner_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1693635Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-f93e1839\-da9a\-45de\-8d9b\-71aeb4898496\.config
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1737282Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1913387Z Removing credentials config '/home/runner/work/_temp/git-credentials-f93e1839-da9a-45de-8d9b-71aeb4898496.config'
+pack	Run actions/checkout@v7	2026-10-06T19:40:24.1922221Z ##[endgroup]
+pack	Setup .NET	﻿2026-10-06T19:40:24.2109890Z ##[group]Run actions/setup-dotnet@v6
+pack	Setup .NET	2026-10-06T19:40:24.2110214Z with:
+pack	Setup .NET	2026-10-06T19:40:24.2110474Z   dotnet-version: 8.0.x
+pack	Setup .NET	2026-10-06T19:40:24.2110738Z   cache: false
+pack	Setup .NET	2026-10-06T19:40:24.2110976Z env:
+pack	Setup .NET	2026-10-06T19:40:24.2111209Z   GIT_CONFIG_COUNT: 1
+pack	Setup .NET	2026-10-06T19:40:24.2111474Z   GIT_CONFIG_KEY_0: init.defaultBranch
+pack	Setup .NET	2026-10-06T19:40:24.2111768Z   GIT_CONFIG_VALUE_0: main
+pack	Setup .NET	2026-10-06T19:40:24.2112030Z ##[endgroup]
+pack	Setup .NET	2026-10-06T19:40:24.3024218Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+pack	Setup .NET	2026-10-06T19:40:24.6621663Z dotnet-install: .NET Core Runtime with version '10.0.12' is already installed.
+pack	Setup .NET	2026-10-06T19:40:24.6637511Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --channel 8.0
+pack	Setup .NET	2026-10-06T19:40:24.9265600Z dotnet-install: .NET Core SDK with version '8.0.425' is already installed.
+pack	Test the NuGet release scripts	﻿2026-10-06T19:40:24.9398657Z ##[group]Run node --test .github/scripts/pack-cpp-nuget.test.mjs .github/scripts/preflight-nuget-release.test.mjs .github/scripts/push-nuget-package.test.mjs
+pack	Test the NuGet release scripts	2026-10-06T19:40:24.9399381Z ^[[36;1mnode --test .github/scripts/pack-cpp-nuget.test.mjs .github/scripts/preflight-nuget-release.test.mjs .github/scripts/push-nuget-package.test.mjs^[[0m
+pack	Test the NuGet release scripts	2026-10-06T19:40:24.9618357Z shell: /usr/bin/bash -e {0}
+pack	Test the NuGet release scripts	2026-10-06T19:40:24.9618554Z env:
+pack	Test the NuGet release scripts	2026-10-06T19:40:24.9618680Z   GIT_CONFIG_COUNT: 1
+pack	Test the NuGet release scripts	2026-10-06T19:40:24.9618823Z   GIT_CONFIG_KEY_0: init.defaultBranch
+pack	Test the NuGet release scripts	2026-10-06T19:40:24.9618979Z   GIT_CONFIG_VALUE_0: main
+pack	Test the NuGet release scripts	2026-10-06T19:40:24.9619117Z   DOTNET_ROOT: /usr/share/dotnet
+pack	Test the NuGet release scripts	2026-10-06T19:40:24.9619259Z ##[endgroup]
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.1596217Z TAP version 13
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2007932Z # Subtest: reads the package identity and release notes from the nuspec
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2028720Z ok 1 - reads the package identity and release notes from the nuspec
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2029116Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2029365Z   duration_ms: 0.763969
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2029617Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2029729Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2029932Z # Subtest: fails loudly when a required nuspec element is missing
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2030369Z ok 2 - fails loudly when a required nuspec element is missing
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2030676Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2030894Z   duration_ms: 1.420826
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2031081Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2031201Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2031548Z # Subtest: adds the staged content after the metadata without editing it
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2032652Z ok 3 - adds the staged content after the metadata without editing it
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2032918Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2033033Z   duration_ms: 0.194152
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2033158Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2033264Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2033445Z # Subtest: expects the layout of the last package published to nuget.org
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2033712Z ok 4 - expects the layout of the last package published to nuget.org
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2033902Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2034013Z   duration_ms: 0.593041
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2034136Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2034457Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2034673Z # Subtest: reports every expected entry that the package lacks
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2037542Z ok 5 - reports every expected entry that the package lacks
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2038202Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2038385Z   duration_ms: 0.108584
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2040116Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2040444Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2431314Z # Platform.Interfaces 0.5.0 is already on nuget.org; publishing will be skipped.
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2431809Z # publish_required=false
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2432056Z # auth=none
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2432605Z # Subtest: reads the C\# package identity from the project file
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2433444Z ok 6 - reads the C\# package identity from the project file
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2433800Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2434009Z   duration_ms: 2.542677
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2434236Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2434480Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2434704Z # Subtest: queries the lower-case flat-container index
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2435216Z ok 7 - queries the lower-case flat-container index
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2435545Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2435745Z   duration_ms: 0.144267
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2435996Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2436189Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2436476Z # Subtest: detects published, unpublished, unknown and unreachable packages
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2436983Z ok 8 - detects published, unpublished, unknown and unreachable packages
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2437284Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2437466Z   duration_ms: 0.561024
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2438507Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2438795Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2439060Z # Subtest: skips publishing an existing version without NuGet credentials
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2442196Z ok 9 - skips publishing an existing version without NuGet credentials
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2442500Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2442688Z   duration_ms: 0.693393
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2443322Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2443494Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2443816Z # Subtest: fails before pushing when an unpublished version has no credentials
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2444339Z ok 10 - fails before pushing when an unpublished version has no credentials
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2444677Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2444917Z   duration_ms: 0.132609
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2445144Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2445307Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2445575Z # Subtest: prefers trusted publishing over the long-lived API key
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2446037Z ok 11 - prefers trusted publishing over the long-lived API key
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2446511Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2446690Z   duration_ms: 0.069244
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2446896Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2447062Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2447368Z # Subtest: still publishes with --skip-duplicate when nuget.org is unreachable
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2448031Z ok 12 - still publishes with --skip-duplicate when nuget.org is unreachable
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2448399Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2448590Z   duration_ms: 0.061463
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2448835Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2449011Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2449237Z # Subtest: writes the decision to GITHUB_OUTPUT
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2449591Z ok 13 - writes the decision to GITHUB_OUTPUT
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2449875Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2450060Z   duration_ms: 1.686196
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2450316Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2450489Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2486762Z # Subtest: skips the push when the version is already published
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2488528Z ok 14 - skips the push when the version is already published
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2488817Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2489021Z   duration_ms: 6.043718
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2489219Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2489388Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2511169Z # Subtest: fails without a key instead of silently skipping
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2511669Z ok 15 - fails without a key instead of silently skipping
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2512062Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2512284Z   duration_ms: 6.802248
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2512532Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2513188Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2513460Z # Subtest: pushes with --skip-duplicate to nuget.org
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2513862Z ok 16 - pushes with --skip-duplicate to nuget.org
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2514169Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2514366Z   duration_ms: 8.346485
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2514610Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2514794Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2515048Z # Subtest: explains how to renew an expired NUGET_TOKEN
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2515451Z ok 17 - explains how to renew an expired NUGET_TOKEN
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2515761Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2515959Z   duration_ms: 18.148909
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2516200Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2516379Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2516680Z # Subtest: explains how to fix a rejected trusted publishing policy
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2517156Z ok 18 - explains how to fix a rejected trusted publishing policy
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2517496Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2517684Z   duration_ms: 8.229654
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2518017Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2518206Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2518469Z # Subtest: keeps other push failures red without misleading guidance
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2518768Z ok 19 - keeps other push failures red without misleading guidance
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2518951Z   ---
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2519072Z   duration_ms: 7.955636
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2519199Z   type: 'test'
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2519309Z   ...
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2562089Z 1..19
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2562331Z # tests 19
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2562509Z # suites 0
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2562706Z # pass 19
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2578448Z # fail 0
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2582654Z # cancelled 0
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2582849Z # skipped 0
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2583014Z # todo 0
+pack	Test the NuGet release scripts	2026-10-06T19:40:25.2583296Z # duration_ms 112.456994
+pack	Pack NuGet package	﻿2026-10-06T19:40:25.2640486Z ##[group]Run node .github/scripts/pack-cpp-nuget.mjs "$RUNNER_TEMP/cpp-nuget"
+pack	Pack NuGet package	2026-10-06T19:40:25.2640812Z ^[[36;1mnode .github/scripts/pack-cpp-nuget.mjs "$RUNNER_TEMP/cpp-nuget"^[[0m
+pack	Pack NuGet package	2026-10-06T19:40:25.2693051Z shell: /usr/bin/bash -e {0}
+pack	Pack NuGet package	2026-10-06T19:40:25.2693212Z env:
+pack	Pack NuGet package	2026-10-06T19:40:25.2693326Z   GIT_CONFIG_COUNT: 1
+pack	Pack NuGet package	2026-10-06T19:40:25.2693460Z   GIT_CONFIG_KEY_0: init.defaultBranch
+pack	Pack NuGet package	2026-10-06T19:40:25.2693615Z   GIT_CONFIG_VALUE_0: main
+pack	Pack NuGet package	2026-10-06T19:40:25.2693751Z   DOTNET_ROOT: /usr/share/dotnet
+pack	Pack NuGet package	2026-10-06T19:40:25.2693888Z ##[endgroup]
+pack	Pack NuGet package	2026-10-06T19:40:27.5817516Z Packed Platform.Interfaces.TemplateLibrary 0.4.1 with 39 headers.
+pack	Pack NuGet package	2026-10-06T19:40:27.5827370Z package_id=Platform.Interfaces.TemplateLibrary
+pack	Pack NuGet package	2026-10-06T19:40:27.5827677Z version=0.4.1
+pack	Pack NuGet package	2026-10-06T19:40:27.5828221Z package_path=/home/runner/work/_temp/cpp-nuget/Platform.Interfaces.TemplateLibrary.0.4.1.nupkg
+pack	Upload NuGet package	﻿2026-10-06T19:40:27.6020093Z ##[group]Run actions/upload-artifact@v7
+pack	Upload NuGet package	2026-10-06T19:40:27.6020270Z with:
+pack	Upload NuGet package	2026-10-06T19:40:27.6020391Z   name: cpp-nuget-package
+pack	Upload NuGet package	2026-10-06T19:40:27.6020535Z   path: /home/runner/work/_temp/cpp-nuget
+pack	Upload NuGet package	2026-10-06T19:40:27.6020691Z   if-no-files-found: error
+pack	Upload NuGet package	2026-10-06T19:40:27.6020820Z   retention-days: 7
+pack	Upload NuGet package	2026-10-06T19:40:27.6020940Z   compression-level: 6
+pack	Upload NuGet package	2026-10-06T19:40:27.6021073Z   overwrite: false
+pack	Upload NuGet package	2026-10-06T19:40:27.6021195Z   include-hidden-files: false
+pack	Upload NuGet package	2026-10-06T19:40:27.6021326Z   archive: true
+pack	Upload NuGet package	2026-10-06T19:40:27.6021433Z env:
+pack	Upload NuGet package	2026-10-06T19:40:27.6021538Z   GIT_CONFIG_COUNT: 1
+pack	Upload NuGet package	2026-10-06T19:40:27.6021663Z   GIT_CONFIG_KEY_0: init.defaultBranch
+pack	Upload NuGet package	2026-10-06T19:40:27.6021811Z   GIT_CONFIG_VALUE_0: main
+pack	Upload NuGet package	2026-10-06T19:40:27.6021944Z   DOTNET_ROOT: /usr/share/dotnet
+pack	Upload NuGet package	2026-10-06T19:40:27.6022077Z ##[endgroup]
+pack	Upload NuGet package	2026-10-06T19:40:27.6995839Z With the provided path, there will be 2 files uploaded
+pack	Upload NuGet package	2026-10-06T19:40:27.6999650Z Artifact name is valid!
+pack	Upload NuGet package	2026-10-06T19:40:27.7000217Z Root directory input is valid!
+pack	Upload NuGet package	2026-10-06T19:40:27.9916445Z Uploading artifact: cpp-nuget-package.zip
+pack	Upload NuGet package	2026-10-06T19:40:27.9935650Z Beginning upload of artifact content to blob storage
+pack	Upload NuGet package	2026-10-06T19:40:28.2114045Z Uploaded bytes 36502
+pack	Upload NuGet package	2026-10-06T19:40:28.2550698Z Finished uploading artifact content to blob storage!
+pack	Upload NuGet package	2026-10-06T19:40:28.2551604Z SHA256 digest of uploaded artifact is 08e394213e1157a397539681016f6616d28bd82695920b69dc4673431aca20e5
+pack	Upload NuGet package	2026-10-06T19:40:28.2552634Z Finalizing artifact upload
+pack	Upload NuGet package	2026-10-06T19:40:28.6018712Z Artifact cpp-nuget-package successfully finalized. Artifact ID 11439562230
+pack	Upload NuGet package	2026-10-06T19:40:28.6019471Z Artifact cpp-nuget-package has been successfully uploaded! Final size is 36502 bytes. Artifact ID is 11439562230
+pack	Upload NuGet package	2026-10-06T19:40:28.6020197Z Artifact download URL: https://github.com/linksplatform/Interfaces/actions/runs/37520716684/artifacts/11439562230
+pack	Post Setup .NET	﻿2026-10-06T19:40:28.8069890Z Post job cleanup.
+pack	Post Run actions/checkout@v7	﻿2026-10-06T19:40:28.8955331Z Post job cleanup.
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9560175Z [command]/usr/bin/git version
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9592655Z git version 2.55.0
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9617067Z Temporarily overriding HOME='/home/runner/work/_temp/628299e9-a3ff-48d0-ad60-20a22449a6a7' before making global git config changes
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9618002Z Adding repository directory to the temporary git global config as a safe directory
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9638422Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9650714Z Removing SSH command configuration
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9668348Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9685734Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9884960Z Removing HTTP extra header
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9889672Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:28.9931131Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:29.0124750Z Removing includeIf entries pointing to credentials config files
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:29.0131098Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+pack	Post Run actions/checkout@v7	2026-10-06T19:40:29.0162275Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+pack	Complete job	﻿2026-10-06T19:40:29.0452916Z Evaluate and set job outputs
+pack	Complete job	2026-10-06T19:40:29.0459370Z Set output 'package_id'
+pack	Complete job	2026-10-06T19:40:29.0460642Z Set output 'version'
+pack	Complete job	2026-10-06T19:40:29.0461254Z Cleaning up orphan processes
+test	Set up job	﻿2026-10-06T19:40:21.0601434Z Current runner version: '2.337.0'
+test	Set up job	2026-10-06T19:40:21.0626635Z ##[group]Runner Image Provisioner
+test	Set up job	2026-10-06T19:40:21.0627650Z Hosted Compute Agent
+test	Set up job	2026-10-06T19:40:21.0628248Z Version: 20260901.588
+test	Set up job	2026-10-06T19:40:21.0628969Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+test	Set up job	2026-10-06T19:40:21.0629872Z Build Date: 2026-09-01T19:56:44Z
+test	Set up job	2026-10-06T19:40:21.0630575Z Worker ID: {486999f7-25c4-43e4-ba22-994388654b6f}
+test	Set up job	2026-10-06T19:40:21.0631290Z Azure Region: northcentralus
+test	Set up job	2026-10-06T19:40:21.0631873Z ##[endgroup]
+test	Set up job	2026-10-06T19:40:21.0633943Z ##[group]Operating System
+test	Set up job	2026-10-06T19:40:21.0634597Z Ubuntu
+test	Set up job	2026-10-06T19:40:21.0635212Z 24.04.5
+test	Set up job	2026-10-06T19:40:21.0635708Z LTS
+test	Set up job	2026-10-06T19:40:21.0636197Z ##[endgroup]
+test	Set up job	2026-10-06T19:40:21.0636760Z ##[group]Runner Image
+test	Set up job	2026-10-06T19:40:21.0637347Z Image: ubuntu-24.04
+test	Set up job	2026-10-06T19:40:21.0637927Z Version: 20260927.320.1
+test	Set up job	2026-10-06T19:40:21.0638965Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+test	Set up job	2026-10-06T19:40:21.0641073Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+test	Set up job	2026-10-06T19:40:21.0642043Z ##[endgroup]
+test	Set up job	2026-10-06T19:40:21.0643176Z ##[group]GITHUB_TOKEN Permissions
+test	Set up job	2026-10-06T19:40:21.0645532Z Contents: read
+test	Set up job	2026-10-06T19:40:21.0646189Z Metadata: read
+test	Set up job	2026-10-06T19:40:21.0646765Z ##[endgroup]
+test	Set up job	2026-10-06T19:40:21.0648840Z Secret source: Actions
+test	Set up job	2026-10-06T19:40:21.0650008Z Cache mode: write
+test	Set up job	2026-10-06T19:40:21.0650755Z Prepare workflow directory
+test	Set up job	2026-10-06T19:40:21.1038150Z Prepare all required actions
+test	Set up job	2026-10-06T19:40:21.1088115Z Getting action download info
+test	Set up job	2026-10-06T19:40:21.3809312Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+test	Set up job	2026-10-06T19:40:21.5612322Z Complete job name: test
+test	Run actions/checkout@v7	﻿2026-10-06T19:40:21.6296548Z ##[group]Run actions/checkout@v7
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6297387Z with:
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6297957Z   persist-credentials: false
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6298615Z   repository: linksplatform/Interfaces
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6303039Z   token: ***
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6303655Z   ssh-strict: true
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6304168Z   ssh-user: git
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6304673Z   clean: true
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6305201Z   sparse-checkout-cone-mode: true
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6305788Z   fetch-depth: 1
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6306361Z   fetch-tags: false
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6306869Z   show-progress: true
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6307382Z   lfs: false
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6307871Z   submodules: false
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6308385Z   set-safe-directory: true
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6308997Z   allow-unsafe-pr-checkout: false
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6309943Z env:
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6310418Z   GIT_CONFIG_COUNT: 1
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6310993Z   GIT_CONFIG_KEY_0: init.defaultBranch
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6311606Z   GIT_CONFIG_VALUE_0: main
+test	Run actions/checkout@v7	2026-10-06T19:40:21.6312286Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7335692Z Syncing repository: linksplatform/Interfaces
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7337795Z ##[group]Getting Git version info
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7338566Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7340120Z [command]/usr/bin/git version
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7402391Z git version 2.55.0
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7421445Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7433071Z Temporarily overriding HOME='/home/runner/work/_temp/74853bc0-4814-4399-80a5-e0930934e687' before making global git config changes
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7435466Z Adding repository directory to the temporary git global config as a safe directory
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7438511Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7485948Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7490498Z ##[group]Determining repository object format
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7492506Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7494073Z ##[group]Initializing the repository
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7496069Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7588281Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7597637Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7648676Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7650429Z ##[group]Disabling automatic garbage collection
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7652080Z [command]/usr/bin/git config --local gc.auto 0
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7689060Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7690728Z ##[group]Setting up auth
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7691610Z Removing SSH command configuration
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7694734Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Run actions/checkout@v7	2026-10-06T19:40:21.7724136Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8066728Z Removing HTTP extra header
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8068626Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8107018Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8305080Z Removing includeIf entries pointing to credentials config files
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8311374Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8340209Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8526062Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8561107Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8591750Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8625201Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8657593Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8685351Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8686339Z ##[group]Fetching the repository
+test	Run actions/checkout@v7	2026-10-06T19:40:21.8691828Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +79b4829f865b3b8eaae6d20301410e3d93cc0459:refs/remotes/pull/151/merge
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3155287Z From https://github.com/linksplatform/Interfaces
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3157162Z  * [new ref]         79b4829f865b3b8eaae6d20301410e3d93cc0459 -> pull/151/merge
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3160384Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3161361Z ##[group]Determining the checkout info
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3162471Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3165255Z [command]/usr/bin/git sparse-checkout disable
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3220718Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3253795Z ##[group]Checking out the ref
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3256387Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/151/merge
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3471058Z Note: switching to 'refs/remotes/pull/151/merge'.
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3471865Z 
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3472356Z You are in 'detached HEAD' state. You can look around, make experimental
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3473488Z changes and commit them, and you can discard any commits you make in this
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3474638Z state without impacting any branches by switching back to a branch.
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3475606Z 
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3476334Z If you want to create a new branch to retain commits you create, you may
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3477929Z do so (now or later) by using -c with the switch command. Example:
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3478865Z 
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3479423Z   git switch -c <new-branch-name>
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3480060Z 
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3480455Z Or undo this operation with:
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3481185Z 
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3481755Z   git switch -
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3482382Z 
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3483236Z Turn off this advice by setting config variable advice.detachedHead to false
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3484313Z 
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3485370Z HEAD is now at 79b4829 Merge c77f922c8381d75fe2cda373b54342be053656da into 3dfbee614c1276425f216d032580c052d94da4e8
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3488976Z ##[endgroup]
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3524931Z [command]/usr/bin/git log -1 --format=%H
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3549930Z 79b4829f865b3b8eaae6d20301410e3d93cc0459
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3559419Z ##[group]Removing auth
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3560630Z Removing SSH command configuration
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3563137Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3593825Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3785106Z Removing HTTP extra header
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3787699Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Run actions/checkout@v7	2026-10-06T19:40:22.3818755Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4006819Z Removing includeIf entries pointing to credentials config files
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4009556Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4034374Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4036045Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4037296Z includeif.gitdir:/github/workspace/.git.path
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4038163Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4042179Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4063537Z /home/runner/work/_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4073635Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-297a053e\-f28e\-4238\-a805\-2b28b45a7492\.config
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4154476Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4176959Z /home/runner/work/_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4184293Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-297a053e\-f28e\-4238\-a805\-2b28b45a7492\.config
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4216534Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4240280Z /github/runner_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4249506Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-297a053e\-f28e\-4238\-a805\-2b28b45a7492\.config
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4281699Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4302644Z /github/runner_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4315841Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-297a053e\-f28e\-4238\-a805\-2b28b45a7492\.config
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4345263Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4529513Z Removing credentials config '/home/runner/work/_temp/git-credentials-297a053e-f28e-4238-a805-2b28b45a7492.config'
+test	Run actions/checkout@v7	2026-10-06T19:40:22.4539580Z ##[endgroup]
+test	Install Conan	﻿2026-10-06T19:40:22.4745961Z ##[group]Run pipx install conan==2.33.0
+test	Install Conan	2026-10-06T19:40:22.4746884Z ^[[36;1mpipx install conan==2.33.0^[[0m
+test	Install Conan	2026-10-06T19:40:22.4938526Z shell: /usr/bin/bash -e {0}
+test	Install Conan	2026-10-06T19:40:22.4939895Z env:
+test	Install Conan	2026-10-06T19:40:22.4940508Z   GIT_CONFIG_COUNT: 1
+test	Install Conan	2026-10-06T19:40:22.4941142Z   GIT_CONFIG_KEY_0: init.defaultBranch
+test	Install Conan	2026-10-06T19:40:22.4941889Z   GIT_CONFIG_VALUE_0: main
+test	Install Conan	2026-10-06T19:40:22.4942543Z ##[endgroup]
+test	Install Conan	2026-10-06T19:40:23.2888699Z creating virtual environment...
+test	Install Conan	2026-10-06T19:40:23.5227999Z installing conan from spec 'conan==2.33.0'...
+test	Install Conan	2026-10-06T19:40:27.1202539Z done! ✨ 🌟 ✨
+test	Install Conan	2026-10-06T19:40:27.1203504Z   installed package conan 2.33.0, installed using Python 3.12.3
+test	Install Conan	2026-10-06T19:40:27.1204054Z   These apps are now available
+test	Install Conan	2026-10-06T19:40:27.1204619Z     - conan
+test	Build and run the tests	﻿2026-10-06T19:40:27.1529593Z ##[group]Run cpp/build-and-test.sh
+test	Build and run the tests	2026-10-06T19:40:27.1530152Z ^[[36;1mcpp/build-and-test.sh^[[0m
+test	Build and run the tests	2026-10-06T19:40:27.1575964Z shell: /usr/bin/bash -e {0}
+test	Build and run the tests	2026-10-06T19:40:27.1576436Z env:
+test	Build and run the tests	2026-10-06T19:40:27.1576854Z   GIT_CONFIG_COUNT: 1
+test	Build and run the tests	2026-10-06T19:40:27.1577245Z   GIT_CONFIG_KEY_0: init.defaultBranch
+test	Build and run the tests	2026-10-06T19:40:27.1577656Z   GIT_CONFIG_VALUE_0: main
+test	Build and run the tests	2026-10-06T19:40:27.1578102Z ##[endgroup]
+test	Build and run the tests	2026-10-06T19:40:28.2858523Z detect_api: Found cc=gcc-13.3.0
+test	Build and run the tests	2026-10-06T19:40:28.2860111Z detect_api: gcc>=5, using the major as version
+test	Build and run the tests	2026-10-06T19:40:29.8612729Z detect_api: gcc C++ standard library: libstdc++11
+test	Build and run the tests	2026-10-06T19:40:29.8613330Z 
+test	Build and run the tests	2026-10-06T19:40:29.8613484Z Detected profile:
+test	Build and run the tests	2026-10-06T19:40:29.8614190Z WARN: This profile is a guess of your environment, please check it.
+test	Build and run the tests	2026-10-06T19:40:29.8615068Z WARN: The output of this command is not guaranteed to be stable and can change in future Conan versions.
+test	Build and run the tests	2026-10-06T19:40:29.8615854Z WARN: Use your own profile files for stability.
+test	Build and run the tests	2026-10-06T19:40:29.8616616Z Saving detected profile to /home/runner/.conan2/profiles/default
+test	Build and run the tests	2026-10-06T19:40:29.8617531Z [settings]
+test	Build and run the tests	2026-10-06T19:40:29.8618062Z arch=x86_64
+test	Build and run the tests	2026-10-06T19:40:29.8618564Z build_type=Release
+test	Build and run the tests	2026-10-06T19:40:29.8619075Z compiler=gcc
+test	Build and run the tests	2026-10-06T19:40:29.8619782Z compiler.cppstd=gnu17
+test	Build and run the tests	2026-10-06T19:40:29.8620200Z compiler.libcxx=libstdc++11
+test	Build and run the tests	2026-10-06T19:40:29.8620791Z compiler.version=13
+test	Build and run the tests	2026-10-06T19:40:29.8621231Z os=Linux
+test	Build and run the tests	2026-10-06T19:40:29.8621432Z 
+test	Build and run the tests	2026-10-06T19:40:30.1216174Z 
+test	Build and run the tests	2026-10-06T19:40:30.1216947Z ======== Input profiles ========
+test	Build and run the tests	2026-10-06T19:40:30.1217601Z Profile host:
+test	Build and run the tests	2026-10-06T19:40:30.1218165Z [settings]
+test	Build and run the tests	2026-10-06T19:40:30.1218516Z arch=x86_64
+test	Build and run the tests	2026-10-06T19:40:30.1218971Z build_type=Release
+test	Build and run the tests	2026-10-06T19:40:30.1219602Z compiler=gcc
+test	Build and run the tests	2026-10-06T19:40:30.1220030Z compiler.cppstd=20
+test	Build and run the tests	2026-10-06T19:40:30.1220492Z compiler.libcxx=libstdc++11
+test	Build and run the tests	2026-10-06T19:40:30.1220949Z compiler.version=13
+test	Build and run the tests	2026-10-06T19:40:30.1221290Z os=Linux
+test	Build and run the tests	2026-10-06T19:40:30.1221564Z 
+test	Build and run the tests	2026-10-06T19:40:30.1221732Z Profile build:
+test	Build and run the tests	2026-10-06T19:40:30.1222135Z [settings]
+test	Build and run the tests	2026-10-06T19:40:30.1222566Z arch=x86_64
+test	Build and run the tests	2026-10-06T19:40:30.1222899Z build_type=Release
+test	Build and run the tests	2026-10-06T19:40:30.1223259Z compiler=gcc
+test	Build and run the tests	2026-10-06T19:40:30.1223644Z compiler.cppstd=20
+test	Build and run the tests	2026-10-06T19:40:30.1224032Z compiler.libcxx=libstdc++11
+test	Build and run the tests	2026-10-06T19:40:30.1224442Z compiler.version=13
+test	Build and run the tests	2026-10-06T19:40:30.1224830Z os=Linux
+test	Build and run the tests	2026-10-06T19:40:30.1225053Z 
+test	Build and run the tests	2026-10-06T19:40:30.1263056Z 
+test	Build and run the tests	2026-10-06T19:40:30.1263991Z ======== Computing dependency graph ========
+test	Build and run the tests	2026-10-06T19:40:30.1268551Z gtest/1.18.0: Not found in local cache, looking in remotes...
+test	Build and run the tests	2026-10-06T19:40:30.1269917Z gtest/1.18.0: Checking remote: conancenter
+test	Build and run the tests	2026-10-06T19:40:30.1280241Z Connecting to remote 'conancenter' anonymously
+test	Build and run the tests	2026-10-06T19:40:30.5912420Z gtest/1.18.0: Downloaded recipe revision e2507fc4efe2ec9e2db9e5c91eefab9f
+test	Build and run the tests	2026-10-06T19:40:30.6529743Z cmake/4.4.4: Not found in local cache, looking in remotes...
+test	Build and run the tests	2026-10-06T19:40:30.6530603Z cmake/4.4.4: Checking remote: conancenter
+test	Build and run the tests	2026-10-06T19:40:30.7279762Z cmake/4.4.4: Downloaded recipe revision fec9c7048fae91e03c31e59977cd9c12
+test	Build and run the tests	2026-10-06T19:40:30.7314192Z Graph root
+test	Build and run the tests	2026-10-06T19:40:30.7314762Z     conanfile.txt: /home/runner/work/Interfaces/Interfaces/cpp/conanfile.txt
+test	Build and run the tests	2026-10-06T19:40:30.7315438Z Requirements
+test	Build and run the tests	2026-10-06T19:40:30.7316041Z     gtest/1.18.0#e2507fc4efe2ec9e2db9e5c91eefab9f - Downloaded (conancenter)
+test	Build and run the tests	2026-10-06T19:40:30.7316650Z Build requirements
+test	Build and run the tests	2026-10-06T19:40:30.7317274Z     cmake/4.4.4#fec9c7048fae91e03c31e59977cd9c12 - Downloaded (conancenter)
+test	Build and run the tests	2026-10-06T19:40:30.7318006Z Resolved version ranges
+test	Build and run the tests	2026-10-06T19:40:30.7318492Z     cmake/[>=3.16]: cmake/4.4.4
+test	Build and run the tests	2026-10-06T19:40:30.7318787Z 
+test	Build and run the tests	2026-10-06T19:40:30.7319029Z ======== Computing necessary packages ========
+test	Build and run the tests	2026-10-06T19:40:30.7828876Z Requirements
+test	Build and run the tests	2026-10-06T19:40:30.7830094Z     gtest/1.18.0#e2507fc4efe2ec9e2db9e5c91eefab9f:c961d8c62795395aeeebf1696bec18f00505c7ea - Build
+test	Build and run the tests	2026-10-06T19:40:30.7830848Z Build requirements
+test	Build and run the tests	2026-10-06T19:40:30.7832050Z     cmake/4.4.4#fec9c7048fae91e03c31e59977cd9c12:63fead0844576fc02943e16909f08fcdddd6f44b#4d4766f0d30bec6434f5b4962831f86b - Download (conancenter)
+test	Build and run the tests	2026-10-06T19:40:30.7832995Z 
+test	Build and run the tests	2026-10-06T19:40:30.7833334Z ======== Installing packages ========
+test	Build and run the tests	2026-10-06T19:40:30.7833589Z 
+test	Build and run the tests	2026-10-06T19:40:30.7833915Z -------- Downloading 1 package --------
+test	Build and run the tests	2026-10-06T19:40:30.7834930Z Downloading binary packages in 1 parallel threads
+test	Build and run the tests	2026-10-06T19:40:30.7889334Z cmake/4.4.4: Retrieving package 63fead0844576fc02943e16909f08fcdddd6f44b from remote 'conancenter'
+test	Build and run the tests	2026-10-06T19:40:30.9925199Z cmake/4.4.4: Downloading 53.5MB conan_package.tgz
+test	Build and run the tests	2026-10-06T19:40:31.3907929Z cmake/4.4.4: Decompressing 53.5MB conan_package.tgz
+test	Build and run the tests	2026-10-06T19:40:32.5285041Z cmake/4.4.4: Package installed 63fead0844576fc02943e16909f08fcdddd6f44b
+test	Build and run the tests	2026-10-06T19:40:32.5286092Z cmake/4.4.4: Downloaded package revision 4d4766f0d30bec6434f5b4962831f86b
+test	Build and run the tests	2026-10-06T19:40:32.5299826Z 
+test	Build and run the tests	2026-10-06T19:40:32.5300775Z -------- Installing package gtest/1.18.0 (2 of 2) --------
+test	Build and run the tests	2026-10-06T19:40:32.5319834Z Building from source gtest/1.18.0:c961d8c62795395aeeebf1696bec18f00505c7ea
+test	Build and run the tests	2026-10-06T19:40:32.5321168Z gtest/1.18.0: settings: os=Linux arch=x86_64 compiler=gcc compiler.cppstd=20 compiler.libcxx=libstdc++11 compiler.version=13 build_type=Release
+test	Build and run the tests	2026-10-06T19:40:32.5322668Z gtest/1.18.0: options: build_gmock=True disable_pthreads=False fPIC=True hide_symbols=False shared=False
+test	Build and run the tests	2026-10-06T19:40:32.5323831Z >>> Source step
+test	Build and run the tests	2026-10-06T19:40:32.5324425Z Getting sources for gtest/1.18.0
+test	Build and run the tests	2026-10-06T19:40:32.5325206Z Calling source() in /home/runner/.conan2/p/gtesta889918188a25/s/src
+test	Build and run the tests	2026-10-06T19:40:32.8835822Z Sources correctly downloaded from https://github.com/google/googletest/archive/v1.18.0.tar.gz
+test	Build and run the tests	2026-10-06T19:40:32.8837134Z Uncompressing v1.18.0.tar.gz to .
+test	Build and run the tests	2026-10-06T19:40:32.9308697Z Copying sources to build folder
+test	Build and run the tests	2026-10-06T19:40:32.9435500Z Sources in /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/src
+test	Build and run the tests	2026-10-06T19:40:32.9436233Z >>> Generate step for gtest/1.18.0
+test	Build and run the tests	2026-10-06T19:40:32.9436963Z Generators folder: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/build/Release/generators
+test	Build and run the tests	2026-10-06T19:40:32.9437848Z Calling generate() method in recipe
+test	Build and run the tests	2026-10-06T19:40:32.9823467Z CMakeToolchain generated: conan_toolchain.cmake
+test	Build and run the tests	2026-10-06T19:40:32.9827769Z CMakeToolchain generated: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/build/Release/generators/CMakePresets.json
+test	Build and run the tests	2026-10-06T19:40:32.9829035Z CMakeToolchain generated: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/src/CMakeUserPresets.json
+test	Build and run the tests	2026-10-06T19:40:32.9835299Z Generating aggregated env files
+test	Build and run the tests	2026-10-06T19:40:32.9836416Z Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+test	Build and run the tests	2026-10-06T19:40:32.9837264Z Building your package in /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b
+test	Build and run the tests	2026-10-06T19:40:32.9837970Z >>> Build step for gtest/1.18.0
+test	Build and run the tests	2026-10-06T19:40:32.9838458Z gtest/1.18.0: Calling build()
+test	Build and run the tests	2026-10-06T19:40:32.9838961Z gtest/1.18.0: Running CMake.configure()
+test	Build and run the tests	2026-10-06T19:40:32.9840889Z gtest/1.18.0: RUN: cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE="generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="/home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Release" "/home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/src"
+test	Build and run the tests	2026-10-06T19:40:33.0190322Z -- Using Conan toolchain: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/build/Release/generators/conan_toolchain.cmake
+test	Build and run the tests	2026-10-06T19:40:33.0191405Z -- Conan toolchain: Setting CMAKE_POSITION_INDEPENDENT_CODE=ON (options.fPIC)
+test	Build and run the tests	2026-10-06T19:40:33.0192018Z -- Conan toolchain: Defining architecture flag: -m64
+test	Build and run the tests	2026-10-06T19:40:33.0192609Z -- Conan toolchain: C++ Standard 20 with extensions OFF
+test	Build and run the tests	2026-10-06T19:40:33.0193105Z -- Conan toolchain: Setting BUILD_SHARED_LIBS = OFF
+test	Build and run the tests	2026-10-06T19:40:34.3017308Z -- The C compiler identification is GNU 13.3.0
+test	Build and run the tests	2026-10-06T19:40:34.6816695Z -- The CXX compiler identification is GNU 13.3.0
+test	Build and run the tests	2026-10-06T19:40:34.6894431Z -- Detecting C compiler ABI info
+test	Build and run the tests	2026-10-06T19:40:34.8130223Z -- Detecting C compiler ABI info - done
+test	Build and run the tests	2026-10-06T19:40:34.8292505Z -- Check for working C compiler: /usr/bin/cc - skipped
+test	Build and run the tests	2026-10-06T19:40:34.8295732Z -- Detecting C compile features
+test	Build and run the tests	2026-10-06T19:40:34.8300766Z -- Detecting C compile features - done
+test	Build and run the tests	2026-10-06T19:40:34.8643510Z -- Detecting CXX compiler ABI info
+test	Build and run the tests	2026-10-06T19:40:34.9591104Z -- Detecting CXX compiler ABI info - done
+test	Build and run the tests	2026-10-06T19:40:34.9755613Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+test	Build and run the tests	2026-10-06T19:40:34.9759646Z -- Detecting CXX compile features
+test	Build and run the tests	2026-10-06T19:40:34.9765166Z -- Detecting CXX compile features - done
+test	Build and run the tests	2026-10-06T19:40:34.9975820Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+test	Build and run the tests	2026-10-06T19:40:35.2165378Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+test	Build and run the tests	2026-10-06T19:40:35.2174553Z -- Found Threads: TRUE
+test	Build and run the tests	2026-10-06T19:40:35.2260887Z -- Configuring done (2.2s)
+test	Build and run the tests	2026-10-06T19:40:35.2335570Z -- Generating done (0.0s)
+test	Build and run the tests	2026-10-06T19:40:35.2339636Z -- Build files have been written to: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/build/Release
+test	Build and run the tests	2026-10-06T19:40:35.2373368Z 
+test	Build and run the tests	2026-10-06T19:40:35.2373714Z gtest/1.18.0: Running CMake.build()
+test	Build and run the tests	2026-10-06T19:40:35.2376177Z gtest/1.18.0: RUN: cmake --build "/home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/build/Release" -- -j4
+test	Build and run the tests	2026-10-06T19:40:35.2535899Z [ 12%] Building CXX object googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+test	Build and run the tests	2026-10-06T19:40:45.2808759Z [ 25%] Linking CXX static library ../lib/libgtest.a
+test	Build and run the tests	2026-10-06T19:40:53.7851816Z [ 25%] Built target gtest
+test	Build and run the tests	2026-10-06T19:40:53.7918517Z [ 37%] Building CXX object googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+test	Build and run the tests	2026-10-06T19:40:53.7919873Z [ 50%] Building CXX object googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+test	Build and run the tests	2026-10-06T19:40:54.5843049Z [ 62%] Linking CXX static library ../lib/libgtest_main.a
+test	Build and run the tests	2026-10-06T19:40:54.6586154Z [ 62%] Built target gtest_main
+test	Build and run the tests	2026-10-06T19:40:56.6397062Z [ 75%] Linking CXX static library ../lib/libgmock.a
+test	Build and run the tests	2026-10-06T19:40:56.7141153Z [ 75%] Built target gmock
+test	Build and run the tests	2026-10-06T19:40:56.7205878Z [ 87%] Building CXX object googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+test	Build and run the tests	2026-10-06T19:40:58.0013374Z [100%] Linking CXX static library ../lib/libgmock_main.a
+test	Build and run the tests	2026-10-06T19:40:58.0731658Z [100%] Built target gmock_main
+test	Build and run the tests	2026-10-06T19:40:58.0772832Z 
+test	Build and run the tests	2026-10-06T19:40:58.0773792Z gtest/1.18.0: Package 'c961d8c62795395aeeebf1696bec18f00505c7ea' built
+test	Build and run the tests	2026-10-06T19:40:58.0774465Z gtest/1.18.0: Build folder /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/build/Release
+test	Build and run the tests	2026-10-06T19:40:58.0790605Z >>> Package step for gtest/1.18.0:c961d8c62795395aeeebf1696bec18f00505c7ea
+test	Build and run the tests	2026-10-06T19:40:58.0793041Z Packaging in folder /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p
+test	Build and run the tests	2026-10-06T19:40:58.0794063Z Calling package()
+test	Build and run the tests	2026-10-06T19:40:58.0798672Z Running CMake.install()
+test	Build and run the tests	2026-10-06T19:40:58.0799977Z RUN: cmake --install "/home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/b/build/Release" --prefix "/home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p"
+test	Build and run the tests	2026-10-06T19:40:58.0835339Z -- Install configuration: "Release"
+test	Build and run the tests	2026-10-06T19:40:58.0836871Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include
+test	Build and run the tests	2026-10-06T19:40:58.0837776Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock
+test	Build and run the tests	2026-10-06T19:40:58.0838842Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock-matchers.h
+test	Build and run the tests	2026-10-06T19:40:58.0842014Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock-more-matchers.h
+test	Build and run the tests	2026-10-06T19:40:58.0843254Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock-function-mocker.h
+test	Build and run the tests	2026-10-06T19:40:58.0844486Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock-nice-strict.h
+test	Build and run the tests	2026-10-06T19:40:58.0845760Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock-spec-builders.h
+test	Build and run the tests	2026-10-06T19:40:58.0846941Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock-more-actions.h
+test	Build and run the tests	2026-10-06T19:40:58.0848635Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock-cardinalities.h
+test	Build and run the tests	2026-10-06T19:40:58.0850019Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock-actions.h
+test	Build and run the tests	2026-10-06T19:40:58.0860718Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/gmock.h
+test	Build and run the tests	2026-10-06T19:40:58.0870462Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal
+test	Build and run the tests	2026-10-06T19:40:58.0871824Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal/custom
+test	Build and run the tests	2026-10-06T19:40:58.0873265Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal/custom/gmock-matchers.h
+test	Build and run the tests	2026-10-06T19:40:58.0874613Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal/custom/gmock-port.h
+test	Build and run the tests	2026-10-06T19:40:58.0875929Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal/custom/README.md
+test	Build and run the tests	2026-10-06T19:40:58.0877227Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal/custom/gmock-generated-actions.h
+test	Build and run the tests	2026-10-06T19:40:58.0878566Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal/gmock-pp.h
+test	Build and run the tests	2026-10-06T19:40:58.0880191Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal/gmock-internal-utils.h
+test	Build and run the tests	2026-10-06T19:40:58.0881490Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gmock/internal/gmock-port.h
+test	Build and run the tests	2026-10-06T19:40:58.0882664Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/libgmock.a
+test	Build and run the tests	2026-10-06T19:40:58.0883649Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/libgmock_main.a
+test	Build and run the tests	2026-10-06T19:40:58.0884410Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/pkgconfig/gmock.pc
+test	Build and run the tests	2026-10-06T19:40:58.0885293Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/pkgconfig/gmock_main.pc
+test	Build and run the tests	2026-10-06T19:40:58.0886131Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/cmake/GTest/GTestTargets.cmake
+test	Build and run the tests	2026-10-06T19:40:58.0886967Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/cmake/GTest/GTestTargets-release.cmake
+test	Build and run the tests	2026-10-06T19:40:58.0887796Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/cmake/GTest/GTestConfigVersion.cmake
+test	Build and run the tests	2026-10-06T19:40:58.0888609Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/cmake/GTest/GTestConfig.cmake
+test	Build and run the tests	2026-10-06T19:40:58.0889621Z -- Up-to-date: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include
+test	Build and run the tests	2026-10-06T19:40:58.0890366Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest
+test	Build and run the tests	2026-10-06T19:40:58.0890993Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-test-part.h
+test	Build and run the tests	2026-10-06T19:40:58.0891870Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-assertion-result.h
+test	Build and run the tests	2026-10-06T19:40:58.0892549Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest_prod.h
+test	Build and run the tests	2026-10-06T19:40:58.0893175Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-typed-test.h
+test	Build and run the tests	2026-10-06T19:40:58.0893784Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest.h
+test	Build and run the tests	2026-10-06T19:40:58.0894420Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-spi.h
+test	Build and run the tests	2026-10-06T19:40:58.0895041Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest_pred_impl.h
+test	Build and run the tests	2026-10-06T19:40:58.0895664Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-printers.h
+test	Build and run the tests	2026-10-06T19:40:58.0896289Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-matchers.h
+test	Build and run the tests	2026-10-06T19:40:58.0897054Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-param-test.h
+test	Build and run the tests	2026-10-06T19:40:58.0897775Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-death-test.h
+test	Build and run the tests	2026-10-06T19:40:58.0898370Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal
+test	Build and run the tests	2026-10-06T19:40:58.0899018Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/custom
+test	Build and run the tests	2026-10-06T19:40:58.0900179Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/custom/gtest.h
+test	Build and run the tests	2026-10-06T19:40:58.0900859Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/custom/gtest-port.h
+test	Build and run the tests	2026-10-06T19:40:58.0901579Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/custom/gtest-printers.h
+test	Build and run the tests	2026-10-06T19:40:58.0902301Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/custom/README.md
+test	Build and run the tests	2026-10-06T19:40:58.0903003Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/gtest-type-util.h
+test	Build and run the tests	2026-10-06T19:40:58.0903852Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/gtest-filepath.h
+test	Build and run the tests	2026-10-06T19:40:58.0904884Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/gtest-port.h
+test	Build and run the tests	2026-10-06T19:40:58.0905571Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/gtest-port-arch.h
+test	Build and run the tests	2026-10-06T19:40:58.0906578Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/gtest-string.h
+test	Build and run the tests	2026-10-06T19:40:58.0907280Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/gtest-death-test-internal.h
+test	Build and run the tests	2026-10-06T19:40:58.0908027Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/gtest-param-util.h
+test	Build and run the tests	2026-10-06T19:40:58.0908695Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/internal/gtest-internal.h
+test	Build and run the tests	2026-10-06T19:40:58.0909606Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/include/gtest/gtest-message.h
+test	Build and run the tests	2026-10-06T19:40:58.0910221Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/libgtest.a
+test	Build and run the tests	2026-10-06T19:40:58.0910750Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/libgtest_main.a
+test	Build and run the tests	2026-10-06T19:40:58.0911346Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/pkgconfig/gtest.pc
+test	Build and run the tests	2026-10-06T19:40:58.0911972Z -- Installing: /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p/lib/pkgconfig/gtest_main.pc
+test	Build and run the tests	2026-10-06T19:40:58.0912389Z 
+test	Build and run the tests	2026-10-06T19:40:58.0965372Z package(): Packaged 4 '.a' files: libgmock.a, libgtest.a, libgtest_main.a, libgmock_main.a
+test	Build and run the tests	2026-10-06T19:40:58.0966163Z package(): Packaged 1 file: LICENSE
+test	Build and run the tests	2026-10-06T19:40:58.0966728Z package(): Packaged 38 '.h' files
+test	Build and run the tests	2026-10-06T19:40:58.0967278Z package(): Packaged 2 '.md' files: README.md, README.md
+test	Build and run the tests	2026-10-06T19:40:58.0967905Z Created package revision b888c02d635ef24e52c1a0cc529b77bd
+test	Build and run the tests	2026-10-06T19:40:58.0968942Z Package 'c961d8c62795395aeeebf1696bec18f00505c7ea' created
+test	Build and run the tests	2026-10-06T19:40:58.0970008Z Full package reference: gtest/1.18.0#e2507fc4efe2ec9e2db9e5c91eefab9f:c961d8c62795395aeeebf1696bec18f00505c7ea#b888c02d635ef24e52c1a0cc529b77bd
+test	Build and run the tests	2026-10-06T19:40:58.1364998Z Package folder /home/runner/.conan2/p/b/gtesta5dd9a7bab4ad/p
+test	Build and run the tests	2026-10-06T19:40:58.1366919Z 
+test	Build and run the tests	2026-10-06T19:40:58.1367919Z ======== Finalizing install (deploy, generators) ========
+test	Build and run the tests	2026-10-06T19:40:58.1368644Z >>> Generate step for conanfile.txt
+test	Build and run the tests	2026-10-06T19:40:58.1369308Z Generators folder: /home/runner/work/Interfaces/Interfaces/cpp/build
+test	Build and run the tests	2026-10-06T19:40:58.1385859Z Generator 'CMakeDeps' calling 'generate()'
+test	Build and run the tests	2026-10-06T19:40:58.1879961Z CMakeDeps necessary find_package() and targets for your CMakeLists.txt
+test	Build and run the tests	2026-10-06T19:40:58.1880847Z     find_package(GTest)
+test	Build and run the tests	2026-10-06T19:40:58.1887233Z     target_link_libraries(... gtest::gtest)
+test	Build and run the tests	2026-10-06T19:40:58.1893804Z Generator 'CMakeToolchain' calling 'generate()'
+test	Build and run the tests	2026-10-06T19:40:58.2174337Z CMakeToolchain generated: conan_toolchain.cmake
+test	Build and run the tests	2026-10-06T19:40:58.2175253Z CMakeToolchain: Preset 'conan-release' added to CMakePresets.json.
+test	Build and run the tests	2026-10-06T19:40:58.2175867Z     (cmake>=3.23) cmake --preset conan-release
+test	Build and run the tests	2026-10-06T19:40:58.2176318Z     (cmake<3.23) cmake <path> -G "Unix Makefiles"
+test	Build and run the tests	2026-10-06T19:40:58.2176774Z                  -DCMAKE_TOOLCHAIN_FILE=<output_folder>/conan_toolchain.cmake 
+test	Build and run the tests	2026-10-06T19:40:58.2177946Z                  -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Release
+test	Build and run the tests	2026-10-06T19:40:58.2178694Z CMakeToolchain generated: /home/runner/work/Interfaces/Interfaces/cpp/build/CMakePresets.json
+test	Build and run the tests	2026-10-06T19:40:58.2180238Z CMakeToolchain generated: /home/runner/work/Interfaces/Interfaces/cpp/CMakeUserPresets.json
+test	Build and run the tests	2026-10-06T19:40:58.2184380Z Generating aggregated env files
+test	Build and run the tests	2026-10-06T19:40:58.2185002Z Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+test	Build and run the tests	2026-10-06T19:40:58.2185656Z Install finished successfully
+test	Build and run the tests	2026-10-06T19:40:58.8495505Z -- Using Conan toolchain: /home/runner/work/Interfaces/Interfaces/cpp/build/conan_toolchain.cmake
+test	Build and run the tests	2026-10-06T19:40:58.8496382Z -- Conan toolchain: Defining architecture flag: -m64
+test	Build and run the tests	2026-10-06T19:40:58.8497053Z -- Conan toolchain: C++ Standard 20 with extensions OFF
+test	Build and run the tests	2026-10-06T19:40:59.1619399Z -- The CXX compiler identification is GNU 13.3.0
+test	Build and run the tests	2026-10-06T19:40:59.2668515Z -- Detecting CXX compiler ABI info
+test	Build and run the tests	2026-10-06T19:40:59.4673023Z -- Detecting CXX compiler ABI info - done
+test	Build and run the tests	2026-10-06T19:40:59.4832549Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+test	Build and run the tests	2026-10-06T19:40:59.4895217Z -- Detecting CXX compile features
+test	Build and run the tests	2026-10-06T19:40:59.4960288Z -- Detecting CXX compile features - done
+test	Build and run the tests	2026-10-06T19:40:59.5202511Z -- Conan: Component target declared 'GTest::gtest'
+test	Build and run the tests	2026-10-06T19:40:59.5203249Z -- Conan: Component target declared 'GTest::gtest_main'
+test	Build and run the tests	2026-10-06T19:40:59.5203904Z -- Conan: Component target declared 'GTest::gmock'
+test	Build and run the tests	2026-10-06T19:40:59.5204418Z -- Conan: Component target declared 'GTest::gmock_main'
+test	Build and run the tests	2026-10-06T19:40:59.5204916Z -- Conan: Target declared 'gtest::gtest'
+test	Build and run the tests	2026-10-06T19:40:59.5578233Z -- Configuring done (0.8s)
+test	Build and run the tests	2026-10-06T19:40:59.5668466Z -- Generating done (0.0s)
+test	Build and run the tests	2026-10-06T19:40:59.5671394Z -- Build files have been written to: /home/runner/work/Interfaces/Interfaces/cpp/build
+test	Build and run the tests	2026-10-06T19:40:59.5892699Z [ 50%] Building CXX object CMakeFiles/Platform.Interfaces.Tests.dir/Platform.Interfaces.Tests/Platform.Interfaces.Tests.cpp.o
+test	Build and run the tests	2026-10-06T19:41:00.6003918Z [100%] Linking CXX executable bin/Platform.Interfaces.Tests
+test	Build and run the tests	2026-10-06T19:41:00.6878364Z [100%] Built target Platform.Interfaces.Tests
+test	Build and run the tests	2026-10-06T19:41:01.0640292Z Internal ctest changing into directory: /home/runner/work/Interfaces/Interfaces/cpp/build
+test	Build and run the tests	2026-10-06T19:41:01.1448450Z Test project /home/runner/work/Interfaces/Interfaces/cpp/build
+test	Build and run the tests	2026-10-06T19:41:01.1963719Z     Start 1: CompileTests.Counter
+test	Build and run the tests	2026-10-06T19:41:01.2056670Z 1/8 Test #1: CompileTests.Counter .............   Passed    0.00 sec
+test	Build and run the tests	2026-10-06T19:41:01.2278518Z     Start 2: CompileTests.Matcher
+test	Build and run the tests	2026-10-06T19:41:01.2295190Z 2/8 Test #2: CompileTests.Matcher .............   Passed    0.00 sec
+test	Build and run the tests	2026-10-06T19:41:01.2296478Z     Start 3: CompileTests.Factory
+test	Build and run the tests	2026-10-06T19:41:01.2311681Z 3/8 Test #3: CompileTests.Factory .............   Passed    0.00 sec
+test	Build and run the tests	2026-10-06T19:41:01.2313141Z     Start 4: CompileTests.Properties
+test	Build and run the tests	2026-10-06T19:41:01.2327295Z 4/8 Test #4: CompileTests.Properties ..........   Passed    0.00 sec
+test	Build and run the tests	2026-10-06T19:41:01.2328613Z     Start 5: CompileTests.Provider
+test	Build and run the tests	2026-10-06T19:41:01.2343361Z 5/8 Test #5: CompileTests.Provider ............   Passed    0.00 sec
+test	Build and run the tests	2026-10-06T19:41:01.2344465Z     Start 6: CompileTests.Setter
+test	Build and run the tests	2026-10-06T19:41:01.2358875Z 6/8 Test #6: CompileTests.Setter ..............   Passed    0.00 sec
+test	Build and run the tests	2026-10-06T19:41:01.2360538Z     Start 7: CompileTests.Property
+test	Build and run the tests	2026-10-06T19:41:01.2374763Z 7/8 Test #7: CompileTests.Property ............   Passed    0.00 sec
+test	Build and run the tests	2026-10-06T19:41:01.2375839Z     Start 8: CompileTests.Cli
+test	Build and run the tests	2026-10-06T19:41:01.2390940Z 8/8 Test #8: CompileTests.Cli .................   Passed    0.00 sec
+test	Build and run the tests	2026-10-06T19:41:01.2392640Z 
+test	Build and run the tests	2026-10-06T19:41:01.2392844Z 100% tests passed, 0 tests failed out of 8
+test	Build and run the tests	2026-10-06T19:41:01.2393190Z 
+test	Build and run the tests	2026-10-06T19:41:01.2393363Z Total Test time (real) =   0.09 sec
+test	Post Run actions/checkout@v7	﻿2026-10-06T19:41:01.2928774Z Post job cleanup.
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.3792395Z [command]/usr/bin/git version
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.3831391Z git version 2.55.0
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.3864066Z Temporarily overriding HOME='/home/runner/work/_temp/66c23b8a-1eb3-46e8-93cb-edddde7b6a24' before making global git config changes
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.3865580Z Adding repository directory to the temporary git global config as a safe directory
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.3869939Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.3900781Z Removing SSH command configuration
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.3906848Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.3939873Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.4144218Z Removing HTTP extra header
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.4148283Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.4178890Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.4378523Z Removing includeIf entries pointing to credentials config files
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.4385821Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Post Run actions/checkout@v7	2026-10-06T19:41:01.4412964Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Complete job	﻿2026-10-06T19:41:01.4816041Z Cleaning up orphan processes

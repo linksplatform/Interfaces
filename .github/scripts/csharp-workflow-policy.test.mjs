@@ -89,7 +89,8 @@ test("gates both package publishers on a release preflight", () => {
   assert.ok(preflight, "releasePreflight job should exist");
   assert.match(preflight, /NUGET_TOKEN: \$\{\{ secrets\.NUGET_TOKEN \}\}/);
   assert.match(preflight, /GITHUB_TOKEN: \$\{\{ secrets\.GITHUB_TOKEN \}\}/);
-  assert.match(preflight, /preflight-csharp-release\.mjs/);
+  assert.match(preflight, /NUGET_USER: \$\{\{ vars\.NUGET_USER \}\}/);
+  assert.match(preflight, /preflight-nuget-release\.mjs/);
 
   for (const name of [
     "pushNuGetPackageToGitHubPackageRegistry",
@@ -117,7 +118,7 @@ test("packs and publishes each NuGet package in separate ordered steps", () => {
     assert.ok(push > pack, `${jobName} must push after packing`);
     assert.match(job.slice(pack, push), /run: dotnet pack /);
     assert.ok(job.slice(pack, push).includes(`--output ${output}`));
-    assert.match(job.slice(push), /run: dotnet nuget push /);
+    assert.match(job.slice(push), /run: (?:dotnet nuget push|\.\.\/\.github\/scripts\/push-nuget-package\.sh) /);
     assert.ok(job.slice(push).includes(`${output}/*.nupkg`));
     assert.equal(
       job.slice(pack, push).includes("dotnet nuget push"),
@@ -131,6 +132,28 @@ test("packs and publishes each NuGet package in separate ordered steps", () => {
   assert.ok(addSource > github.indexOf("- name: Pack NuGet package"));
   assert.ok(addSource < github.indexOf("- name: Push NuGet package"));
   assert.match(github.slice(addSource), /run: dotnet nuget add source /);
+  assert.match(github, /--source GitHub --api-key "\$GITHUB_TOKEN"/);
+});
+
+test("publishes to nuget.org only when the preflight found the version missing", () => {
+  const job = jobs.get("pushToNuget");
+  assert.match(job, /\n      id-token: write/);
+  assert.match(job, /uses: NuGet\/login@[0-9a-f]{40} # v\d/);
+  assert.match(
+    job,
+    /if: \$\{\{ needs\.releasePreflight\.outputs\.auth == 'trusted-publishing' && needs\.releasePreflight\.outputs\.publishRequired == 'true' \}\}/,
+  );
+  assert.match(job, /PUBLISH_REQUIRED: \$\{\{ needs\.releasePreflight\.outputs\.publishRequired \}\}/);
+  assert.match(job, /NUGET_API_KEY: \$\{\{ steps\.nuget-login\.outputs\.NUGET_API_KEY \|\| secrets\.NUGET_TOKEN \}\}/);
+  assert.doesNotMatch(job, /run: dotnet nuget push/);
+});
+
+test("detects changed documentation inputs without third-party actions", () => {
+  const job = jobs.get("findChangedCsFiles");
+  assert.doesNotMatch(workflow, /uses: tj-actions\//);
+  assert.match(job, /fetch-depth: 0/);
+  assert.match(job, /git diff --name-only "\$BASE_SHA" "\$GITHUB_SHA"/);
+  assert.match(job, /git cat-file -e/);
 });
 
 test("builds PDF and API documentation in parallel before publishing both", () => {
@@ -177,7 +200,7 @@ test("validates generated API pages before upload and after download", () => {
 test("aggregates every job result so skipped dependents cannot hide failures", () => {
   const gate = jobs.get("pipelineStatus");
   assert.ok(gate, "pipelineStatus job should exist");
-  assert.match(gate, /if: \$\{\{ always\(\) \}\}/);
+  assert.match(gate, /if: \$\{\{ !cancelled\(\) \}\}/);
   assert.match(gate, /check-csharp-pipeline-status\.mjs/);
 
   for (const name of [...jobs.keys()].filter((name) => name !== "pipelineStatus")) {

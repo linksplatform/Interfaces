@@ -7,6 +7,7 @@ on:
       - 'csharp/**'
       - 'README.md'
       - '.github/scripts/*csharp*'
+      - '.github/scripts/*nuget-*'
       - '.github/workflows/csharp.yml'
   pull_request:
     branches: main
@@ -14,11 +15,18 @@ on:
       - 'csharp/**'
       - 'README.md'
       - '.github/scripts/*csharp*'
+      - '.github/scripts/*nuget-*'
       - '.github/workflows/csharp.yml'
 
 permissions:
   actions: read
   contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # Superseded pull request runs are cancelled; runs on main finish so a
+  # release or documentation push that already started is never interrupted.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 env:
   GIT_CONFIG_COUNT: '1'
@@ -53,22 +61,28 @@ jobs:
           python3 ../.github/scripts/check-csharp-docs.py Platform.Interfaces/bin/Release/net8/Platform.Interfaces.xml
 
       - name: Test C# workflow safeguards
-        run: node --test ../.github/scripts/*csharp*.test.mjs
+        run: node --test ../.github/scripts/*csharp*.test.mjs ../.github/scripts/*nuget-*.test.mjs
 
   releasePreflight:
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 5
+    outputs:
+      publishRequired: ${{ steps.preflight.outputs.publish_required }}
+      auth: ${{ steps.preflight.outputs.auth }}
     steps:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
 
-      - name: Check release credentials
+      - name: Check release state and credentials
+        id: preflight
         env:
+          CSPROJ: Platform.Interfaces/Platform.Interfaces.csproj
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-        run: node ../.github/scripts/preflight-csharp-release.mjs
+          NUGET_USER: ${{ vars.NUGET_USER }}
+        run: node ../.github/scripts/preflight-nuget-release.mjs
 
   pushNuGetPackageToGitHubPackageRegistry:
     needs: [test, releasePreflight]
@@ -97,14 +111,21 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: dotnet nuget add source https://nuget.pkg.github.com/linksplatform/index.json --name GitHub --username linksplatform --password "$GITHUB_TOKEN" --store-password-in-clear-text
 
+      # GitHub Packages authenticates with GITHUB_TOKEN; trusted publishing is
+      # a nuget.org feature, so zizmor's suggestion does not apply here.
       - name: Push NuGet package to GitHub Package Registry
-        run: dotnet nuget push "$RUNNER_TEMP/github-packages"/*.nupkg --source GitHub --skip-duplicate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push "$RUNNER_TEMP/github-packages"/*.nupkg --source GitHub --api-key "$GITHUB_TOKEN" --skip-duplicate # zizmor: ignore[use-trusted-publishing]
 
   pushToNuget:
     needs: [test, releasePreflight]
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v7
         with:
@@ -119,10 +140,19 @@ jobs:
       - name: Pack NuGet package
         run: dotnet pack Platform.Interfaces/Platform.Interfaces.csproj --configuration Release --output "$RUNNER_TEMP/nuget-packages" --nologo -warnaserror
 
+      - name: Log in to NuGet with trusted publishing
+        id: nuget-login
+        if: ${{ needs.releasePreflight.outputs.auth == 'trusted-publishing' && needs.releasePreflight.outputs.publishRequired == 'true' }}
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: ${{ vars.NUGET_USER }}
+
       - name: Push NuGet package to NuGet.org
         env:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-        run: dotnet nuget push "$RUNNER_TEMP/nuget-packages"/*.nupkg --source https://api.nuget.org/v3/index.json --api-key "$NUGET_TOKEN" --skip-duplicate
+          AUTH: ${{ needs.releasePreflight.outputs.auth }}
+          PUBLISH_REQUIRED: ${{ needs.releasePreflight.outputs.publishRequired }}
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY || secrets.NUGET_TOKEN }}
+        run: ../.github/scripts/push-nuget-package.sh "$RUNNER_TEMP/nuget-packages"/*.nupkg
 
   publishRelease:
     needs: [pushNuGetPackageToGitHubPackageRegistry, pushToNuget]
@@ -171,17 +201,24 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v47
-
+      # git diff replaces tj-actions/changed-files, which was compromised in
+      # March 2025 (CVE-2025-30066) and was referenced by a mutable tag.
       - name: Detect documentation inputs
         id: detect
         env:
-          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
         run: |
+          if [ -n "$BASE_SHA" ] && git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            changed_files=$(git diff --name-only "$BASE_SHA" "$GITHUB_SHA")
+          else
+            echo "No base commit to compare with; treating documentation inputs as changed."
+            changed_files=README.md
+          fi
+          if [ "${RUNNER_DEBUG:-}" = 1 ]; then
+            printf 'Changed files:\n%s\n' "$changed_files"
+          fi
           documentation_changed=false
-          for changed_file in $CHANGED_FILES; do
+          for changed_file in $changed_files; do
             case "$changed_file" in
               *.cs|README.md|.github/workflows/csharp.yml|.github/scripts/*csharp*|csharp/docfx.json|csharp/filter.yml|csharp/toc.yml)
                 documentation_changed=true
@@ -290,7 +327,7 @@ jobs:
       - generatePdfWithCode
       - buildDocumentation
       - publishDocumentation
-    if: ${{ always() }}
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:

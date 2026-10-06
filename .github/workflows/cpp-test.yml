@@ -2,24 +2,182 @@ name: Test cpp
 
 on:
   push:
-    branches:
-      - 'main'
+    branches: [main]
     paths:
-      - 'cpp/**.h'
-      - 'cpp/**.cpp'
-      - 'cpp/CMakeLists.txt'
-      - 'cpp/conanfile.txt'
+      - 'cpp/**'
+      - '.github/scripts/pack-cpp-nuget*'
+      - '.github/scripts/*nuget-*'
+      - '.github/scripts/check-cpp-format.sh'
+      - '.clang-format'
+      - 'Settings'
+      - '.github/workflows/cpp-test.yml'
   pull_request:
-    types:
-      - edited
-    branches:
-      - 'main'
+    branches: [main]
     paths:
-      - 'cpp/**.h'
-      - 'cpp/**.cpp'
-      - 'cpp/CMakeLists.txt'
-      - 'cpp/conanfile.txt'
-      
+      - 'cpp/**'
+      - '.github/scripts/pack-cpp-nuget*'
+      - '.github/scripts/*nuget-*'
+      - '.github/scripts/check-cpp-format.sh'
+      - '.clang-format'
+      - 'Settings'
+      - '.github/workflows/cpp-test.yml'
+  workflow_call:
+    outputs:
+      package_id:
+        description: NuGet package id read from the nuspec
+        value: ${{ jobs.pack.outputs.package_id }}
+      version:
+        description: NuGet package version read from the nuspec
+        value: ${{ jobs.pack.outputs.version }}
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  GIT_CONFIG_COUNT: '1'
+  GIT_CONFIG_KEY_0: init.defaultBranch
+  GIT_CONFIG_VALUE_0: main
+
 jobs:
-  main:
-    uses: linksplatform/Workflows/.github/workflows/cpp-test.yml@main
+  format:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: check-${{ github.workflow }}-${{ github.ref }}-format
+      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      # .clang-format links to the Settings submodule.
+      - name: Check out the style settings
+        run: git submodule update --init --depth 1 Settings
+
+      # Pinned like the C++ template's scripts/requirements-ci.txt, so a new
+      # clang-format release cannot change the result of an unchanged commit.
+      # pipx 1.16 (Ubuntu image) reads metadata['Requires-Python'], which warns
+      # for clang-format's wheel that declares none; pipx 1.17 uses .get().
+      # Only that warning is ignored; see
+      # dev/log/issues/150/pulls/151/pipx-1.16-requires-python-warning.log.
+      - name: Install clang-format
+        env:
+          PYTHONWARNINGS: 'ignore:Implicit None on return values:DeprecationWarning'
+        run: pipx install clang-format==23.1.3
+
+      - name: Check C++ formatting
+        run: .github/scripts/check-cpp-format.sh
+
+  test:
+    name: test (${{ matrix.name }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    # Job-level groups: deploy-cpp.yml calls this workflow, and its own
+    # workflow-level group must not be shared with these jobs. The matrix name
+    # keeps the matrix jobs from cancelling each other.
+    concurrency:
+      group: check-${{ github.workflow }}-${{ github.ref }}-test-${{ matrix.name }}
+      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+    # The headers are consumed by every compiler that restores the NuGet or
+    # Conan package, so each one has to build and pass the tests, as in
+    # link-foundation/cpp-ai-driven-development-pipeline-template.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: linux-gcc
+            os: ubuntu-24.04
+            cc: gcc
+            cxx: g++
+          - name: linux-clang
+            os: ubuntu-24.04
+            cc: clang
+            cxx: clang++
+          - name: linux-gcc-sanitizers
+            os: ubuntu-24.04
+            cc: gcc
+            cxx: g++
+            build-type: Debug
+            sanitizers: address;undefined
+          - name: macos-appleclang
+            os: macos-15
+          - name: windows-msvc
+            os: windows-2025
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      # pipx 1.17 (macOS image) always runs `pip uninstall setuptools` when it
+      # creates its shared venv, and pip warns on Python 3.12+ where the venv
+      # has no setuptools. Only that exact line is dropped; see
+      # dev/log/issues/150/pulls/151/upstream/pipx-setuptools-warning-repro.log.
+      - name: Install Conan
+        run: |
+          pipx install conan==2.33.0 \
+            2> >(grep -vxF 'WARNING: Skipping setuptools as it is not installed.' >&2)
+
+      # The previous shared workflow only compiled the tests, so failing tests
+      # still passed CI (issue #150). The script runs them through CTest.
+      - name: Build and run the tests
+        env:
+          MATRIX_CC: ${{ matrix.cc }}
+          MATRIX_CXX: ${{ matrix.cxx }}
+          BUILD_TYPE: ${{ matrix.build-type || 'Release' }}
+          SANITIZERS: ${{ matrix.sanitizers }}
+        run: |
+          # macOS and Windows use the platform compiler that Conan detects.
+          if [ -n "$MATRIX_CXX" ]; then
+            export CC="$MATRIX_CC" CXX="$MATRIX_CXX"
+          fi
+          cpp/build-and-test.sh
+
+  pack:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: check-${{ github.workflow }}-${{ github.ref }}-pack
+      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+    outputs:
+      package_id: ${{ steps.pack.outputs.package_id }}
+      version: ${{ steps.pack.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Test the build script
+        run: node --test .github/scripts/cpp-build-and-test.test.mjs
+
+      - name: Test the NuGet release scripts
+        run: node --test .github/scripts/pack-cpp-nuget.test.mjs .github/scripts/check-cpp-nuget-package.test.mjs .github/scripts/preflight-nuget-release.test.mjs .github/scripts/push-nuget-package.test.mjs
+
+      # Ubuntu 24.04 has no nuget apt package, which failed every deploy since
+      # 0.3.43; dotnet pack builds the same package layout from the nuspec.
+      - name: Pack NuGet package
+        id: pack
+        run: node .github/scripts/pack-cpp-nuget.mjs "$RUNNER_TEMP/cpp-nuget"
+
+      # A package that packs is not necessarily usable: restore it like a
+      # consumer and compile against its headers before it can be published.
+      - name: Restore and use the NuGet package
+        env:
+          PACKAGE_PATH: ${{ steps.pack.outputs.package_path }}
+        run: .github/scripts/check-cpp-nuget-package.sh "$PACKAGE_PATH"
+
+      - name: Upload NuGet package
+        uses: actions/upload-artifact@v7
+        with:
+          name: cpp-nuget-package
+          path: ${{ runner.temp }}/cpp-nuget
+          if-no-files-found: error
+          retention-days: 7

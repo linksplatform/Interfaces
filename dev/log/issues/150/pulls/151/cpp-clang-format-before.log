@@ -1,0 +1,170 @@
+clang-format version 23.1.3
+cpp/Platform.Interfaces/CArray.h:16:82: error: code should be clang-formatted [-Wclang-format-violations]
+      constexpr bool member_indexator = requires(TSelf self, std::size_t index) { {self[index]} /*-> std::same_as<typename Enumerable<TSelf>::ItemReference>*/; };
+                                                                                 ^
+cpp/Platform.Interfaces/CArray.h:16:84: error: code should be clang-formatted [-Wclang-format-violations]
+      constexpr bool member_indexator = requires(TSelf self, std::size_t index) { {self[index]} /*-> std::same_as<typename Enumerable<TSelf>::ItemReference>*/; };
+                                                                                   ^
+cpp/Platform.Interfaces/CArray.h:16:95: error: code should be clang-formatted [-Wclang-format-violations]
+      constexpr bool member_indexator = requires(TSelf self, std::size_t index) { {self[index]} /*-> std::same_as<typename Enumerable<TSelf>::ItemReference>*/; };
+                                                                                              ^
+cpp/Platform.Interfaces/CArray.h:16:160: error: code should be clang-formatted [-Wclang-format-violations]
+      constexpr bool member_indexator = requires(TSelf self, std::size_t index) { {self[index]} /*-> std::same_as<typename Enumerable<TSelf>::ItemReference>*/; };
+                                                                                                                                                               ^
+cpp/Platform.Interfaces/CDictionary.h:26:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert({generic_key, generic_value})};
+           ^
+cpp/Platform.Interfaces/CDictionary.h:26:53: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert({generic_key, generic_value})};
+                                                    ^
+cpp/Platform.Interfaces/CDictionary.h:29:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+           ^
+cpp/Platform.Interfaces/CDictionary.h:29:24: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+                       ^
+cpp/Platform.Interfaces/CDictionary.h:41:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert({key, generic_value})};
+           ^
+cpp/Platform.Interfaces/CDictionary.h:41:45: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert({key, generic_value})};
+                                            ^
+cpp/Platform.Interfaces/CDictionary.h:44:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+           ^
+cpp/Platform.Interfaces/CDictionary.h:44:24: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+                       ^
+cpp/Platform.Interfaces/CDictionary.h:56:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert({key, value})};
+           ^
+cpp/Platform.Interfaces/CDictionary.h:56:37: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert({key, value})};
+                                    ^
+cpp/Platform.Interfaces/CDictionary.h:59:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+           ^
+cpp/Platform.Interfaces/CDictionary.h:59:24: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+                       ^
+cpp/Platform.Interfaces/CDictionary.h:85:69: error: code should be clang-formatted [-Wclang-format-violations]
+        return requires(const Self& self, std::tuple<TArgs...> args,
+                                                                    ^
+cpp/Platform.Interfaces/CDictionary.h:96:69: error: code should be clang-formatted [-Wclang-format-violations]
+        return requires(const Self& self, std::tuple<TArgs...> args,
+                                                                    ^
+cpp/Platform.Interfaces/CLinkAddress.h:17:2: error: code should be clang-formatted [-Wclang-format-violations]
+}
+ ^
+cpp/Platform.Interfaces/CList.h:20:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.push_back(item)};
+           ^
+cpp/Platform.Interfaces/CList.h:20:32: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.push_back(item)};
+                               ^
+cpp/Platform.Interfaces/CList.h:21:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert(const_iterator, item)};
+           ^
+cpp/Platform.Interfaces/CList.h:21:45: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert(const_iterator, item)};
+                                            ^
+cpp/Platform.Interfaces/CList.h:22:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.erase(const_iterator)};
+           ^
+cpp/Platform.Interfaces/CList.h:22:38: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.erase(const_iterator)};
+                                     ^
+cpp/Platform.Interfaces/CList.h:24:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+           ^
+cpp/Platform.Interfaces/CList.h:24:24: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+                       ^
+cpp/Platform.Interfaces/CList.h:29:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.push_back(generic_item)};
+           ^
+cpp/Platform.Interfaces/CList.h:29:40: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.push_back(generic_item)};
+                                       ^
+cpp/Platform.Interfaces/CList.h:30:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert(const_iterator, generic_item)};
+           ^
+cpp/Platform.Interfaces/CList.h:30:53: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert(const_iterator, generic_item)};
+                                                    ^
+cpp/Platform.Interfaces/CList.h:31:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.erase(const_iterator)};
+           ^
+cpp/Platform.Interfaces/CList.h:31:38: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.erase(const_iterator)};
+                                     ^
+cpp/Platform.Interfaces/CList.h:33:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+           ^
+cpp/Platform.Interfaces/CList.h:33:24: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+                       ^
+cpp/Platform.Interfaces/CProperty.h:25:2: error: code should be clang-formatted [-Wclang-format-violations]
+}
+ ^
+cpp/Platform.Interfaces/CSet.h:19:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert(item)};
+           ^
+cpp/Platform.Interfaces/CSet.h:19:29: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert(item)};
+                            ^
+cpp/Platform.Interfaces/CSet.h:20:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.erase(item)};
+           ^
+cpp/Platform.Interfaces/CSet.h:20:28: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.erase(item)};
+                           ^
+cpp/Platform.Interfaces/CSet.h:24:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+           ^
+cpp/Platform.Interfaces/CSet.h:24:24: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+                       ^
+cpp/Platform.Interfaces/CSet.h:32:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert(generic_item)};
+           ^
+cpp/Platform.Interfaces/CSet.h:32:37: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.insert(generic_item)};
+                                    ^
+cpp/Platform.Interfaces/CSet.h:33:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.erase(generic_item)};
+           ^
+cpp/Platform.Interfaces/CSet.h:33:36: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.erase(generic_item)};
+                                   ^
+cpp/Platform.Interfaces/CSet.h:37:12: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+           ^
+cpp/Platform.Interfaces/CSet.h:37:24: error: code should be clang-formatted [-Wclang-format-violations]
+          {self.clear()};
+                       ^
+cpp/Platform.Interfaces/Macros.h:13:32: error: code should be clang-formatted [-Wclang-format-violations]
+  constexpr auto&& MethodName()& { return static_cast<TWrapped&>(*this); }             \
+                               ^
+cpp/Platform.Interfaces/Macros.h:13:75: error: code should be clang-formatted [-Wclang-format-violations]
+  constexpr auto&& MethodName()& { return static_cast<TWrapped&>(*this); }             \
+                                                                          ^
+cpp/Platform.Interfaces/Macros.h:14:32: error: code should be clang-formatted [-Wclang-format-violations]
+  constexpr auto&& MethodName()&& { return static_cast<TWrapped&&>(*this); }           \
+                               ^
+cpp/Platform.Interfaces/Macros.h:14:77: error: code should be clang-formatted [-Wclang-format-violations]
+  constexpr auto&& MethodName()&& { return static_cast<TWrapped&&>(*this); }           \
+                                                                            ^
+cpp/Platform.Interfaces/Macros.h:23:32: error: code should be clang-formatted [-Wclang-format-violations]
+  constexpr auto&& MethodName()& { return VariableName; }       \
+                               ^
+cpp/Platform.Interfaces/Macros.h:23:58: error: code should be clang-formatted [-Wclang-format-violations]
+  constexpr auto&& MethodName()& { return VariableName; }       \
+                                                         ^
+cpp/Platform.Interfaces/Macros.h:24:32: error: code should be clang-formatted [-Wclang-format-violations]
+  constexpr auto&& MethodName()&& { return VariableName; }      \
+                               ^
+cpp/Platform.Interfaces/Macros.h:24:59: error: code should be clang-formatted [-Wclang-format-violations]
+  constexpr auto&& MethodName()&& { return VariableName; }      \
+                                                          ^
+::error title=C++ formatting::run clang-format -i on the files above (see .github/scripts/check-cpp-format.sh)

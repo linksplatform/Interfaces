@@ -1,0 +1,43 @@
+=== 36213155523
+108323753151 main / get_package_info / get_cpp_package_info success
+  [notice] : "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+108323753274 main / test / test success
+  [notice] : "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+108323753289 main / get_conan_package_info / get_conan_package_info success
+  [notice] : "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+108323853375 main / pushToNuget failure
+  [failure] : Process completed with exit code 100.
+  [notice] : "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+108323853381 main / publishRelease success
+  [warning] : Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: ncipollo/release-action@v1.11.2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+  [notice] : "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+=== 36213154898
+108323751244 test success
+108323751333 releasePreflight success
+108323842204 pushNuGetPackageToGitHubPackageRegistry success
+108323842206 pushToNuget failure
+  [failure] : Process completed with exit code 1.
+108323842214 findChangedCsFiles success
+108323870328 buildDocumentation success
+108323870368 generatePdfWithCode success
+108323903888 publishRelease skipped
+108324157912 publishDocumentation success
+108324184479 pipelineStatus failure
+  [failure] : Process completed with exit code 1.
+  [failure] C# pipeline failed: publishRelease: required job finished with skipped
+  [failure] C# pipeline failed: pushToNuget: required job finished with failure
+=== 36213155339
+108323752635 main / test success
+  [notice] : "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+=== 36213154988
+108323751600 check success
+  [notice] : "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+=== 36213154870
+108323751170 build success
+  [warning] : Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+=== 36213154910
+108323751322 Analyze (c-cpp) success
+108323751427 Analyze (csharp) success
+=== 37194208178
+111412566878 Analyze (c-cpp) success
+111412566894 Analyze (csharp) success

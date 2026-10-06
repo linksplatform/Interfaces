@@ -1,0 +1,49 @@
+pipx >(setup:1996): pipx version is 1.17.11
+pipx >(setup:1997): Default python interpreter is '/home/box/.pyenv/versions/3.14.7/bin/python3.14'
+pipx >(mkdir:96): creating directory /tmp/tmp.fFQhqAhaBm/venvs
+pipx >(mkdir:96): creating directory /tmp/tmp.fFQhqAhaBm/.cache
+pipx >(mkdir:96): creating directory /tmp/tmp.fFQhqAhaBm/py
+pipx >(_validate_backend_available:418): Backend resolved to pip (source: auto-pip)
+pipx >(package_name_from_spec:523): Determined package name: pycowsay
+pipx >(package_name_from_spec:524): Package name determined in 0.0s
+pipx >(create_venv:315): Creating virtual environment
+creating virtual environment...
+pipx >(run_subprocess:217): running /home/box/.pyenv/versions/3.14.7/bin/python3.14 -m venv --without-pip /tmp/tmp.fFQhqAhaBm/venvs/pycowsay
+creating shared libraries...
+pipx >(run_subprocess:217): running /home/box/.pyenv/versions/3.14.7/bin/python3.14 -m venv --clear /tmp/tmp.fFQhqAhaBm/shared
+pipx >(run_subprocess:217): running <checking pip's availability>
+pipx >(_upgrade:205): Upgrading shared libraries in /tmp/tmp.fFQhqAhaBm/shared
+upgrading shared libraries...
+pipx >(run_subprocess:217): running /tmp/tmp.fFQhqAhaBm/shared/bin/python -m pip --no-input --disable-pip-version-check install --upgrade --force-reinstall pip >= 26.1
+pipx >(run_subprocess:217): running /tmp/tmp.fFQhqAhaBm/shared/bin/python -m pip --no-input uninstall -y setuptools
+WARNING: Skipping setuptools as it is not installed.
+pipx >(run_subprocess:217): running /tmp/tmp.fFQhqAhaBm/venvs/pycowsay/bin/python -c import sysconfig; print(sysconfig.get_path('purelib')); print(sysconfig.get_path('platlib'))
+pipx >(run_subprocess:217): running /tmp/tmp.fFQhqAhaBm/shared/bin/python -c import sysconfig; print(sysconfig.get_path('purelib')); print(sysconfig.get_path('platlib'))
+pipx >(run_subprocess:217): running /tmp/tmp.fFQhqAhaBm/venvs/pycowsay/bin/python --version
+pipx >(_parsed_package_to_package_or_url:163): cleaned package spec: pycowsay==0.0.0.2
+pipx >(install_package:416): Installing pycowsay from spec 'pycowsay==0.0.0.2'
+installing pycowsay from spec 'pycowsay==0.0.0.2'...
+pipx >(run_subprocess:217): running /tmp/tmp.fFQhqAhaBm/venvs/pycowsay/bin/python -m pip --no-input install --progress-bar=on pycowsay==0.0.0.2
+Collecting pycowsay==0.0.0.2
+  Using cached pycowsay-0.0.0.2-py3-none-any.whl.metadata (965 bytes)
+Using cached pycowsay-0.0.0.2-py3-none-any.whl (4.0 kB)
+Installing collected packages: pycowsay
+Successfully installed pycowsay-0.0.0.2
+pipx >(run_subprocess:217): running <fetch_info_in_venv commands>
+pipx >(get_venv_metadata_for_package:590): get_venv_metadata_for_package: 78ms
+pipx >(_parsed_package_to_package_or_url:163): cleaned package spec: pycowsay==0.0.0.2
+pipx >(run_subprocess:217): running /tmp/tmp.fFQhqAhaBm/venvs/pycowsay/bin/python -c import sys;from importlib.metadata import distribution;print(distribution(sys.argv[1]).metadata.get('Requires-Python') or '');print('.'.join(str(part) for part in sys.version_info[:3])) pycowsay
+pipx >(_symlink_package_resource:221): ⚠️  File exists at /home/box/.local/share/man/man6/pycowsay.6 and points to
+    /tmp/tmp.PEcUyZlPZe/venvs/pycowsay/share/man/man6/pycowsay.6, not
+    /tmp/tmp.fFQhqAhaBm/venvs/pycowsay/share/man/man6/pycowsay.6. Not
+    modifying.
+pipx >(render_messages:81): ⚠️  Note: '/tmp/tmp.o9TKjGBhra' is not on your PATH environment variable.
+    These apps will not be globally accessible until your PATH is updated. Run
+    `pipx ensurepath` to automatically add it, or manually modify your PATH in
+    your shell's config file (e.g. ~/.bashrc).
+done! ✨ 🌟 ✨
+  installed package pycowsay 0.0.0.2, installed using Python 3.14.7
+  These apps are now available
+    - pycowsay
+  These manual pages are now available
+    - man6/pycowsay.6 (symlink missing or pointing to unexpected location)

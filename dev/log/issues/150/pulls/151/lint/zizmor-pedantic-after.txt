@@ -1,0 +1,13 @@
+ INFO zizmor: 🌈 zizmor v1.29.0
+ INFO audit: zizmor: 🌈 completed .github/dependabot.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/AutoMerge.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/codeql.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/cpp-docs.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/cpp-test.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/csharp.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/deploy-cpp.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/readme-badges.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/secrets.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/workflows.yml
+No findings to report. Good job! (30 ignored, 5 suppressed)
+zizmor exit=0

@@ -1,0 +1,85 @@
+name: Workflows
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # Superseded pull request runs are cancelled; runs on main finish so a
+  # release or documentation push that already started is never interrupted.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  GIT_CONFIG_COUNT: '1'
+  GIT_CONFIG_KEY_0: init.defaultBranch
+  GIT_CONFIG_VALUE_0: main
+
+jobs:
+  actionlint:
+    name: Lint workflows
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      # The image bundles shellcheck, so every run: block is linted as well.
+      # Pinned by digest; re-resolve when bumping:
+      #   docker pull rhysd/actionlint:<tag> &&
+      #   docker inspect --format='{{index .RepoDigests 0}}' rhysd/actionlint:<tag>
+      - name: Lint workflow files
+        uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 # v1.7.12
+        with:
+          args: -color
+
+  zizmor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Audit workflow files
+        uses: zizmorcore/zizmor-action@cc914d7f3750a2d13d75c7f184a1060aa0e9d482 # v0.6.4
+        with:
+          advanced-security: false
+          annotations: true
+          config: .github/zizmor.yml
+          inputs: .github
+          min-confidence: medium
+          version: 1.29.0
+
+      # Image pinning audits are pedantic-only; this pass keeps them enforced
+      # without the stylistic findings of the full pedantic persona. The online
+      # audits already ran in the step above; --offline says so, instead of
+      # zizmor warning that it fell back to offline mode without a token.
+      - name: Audit for pedantic-only high-severity findings
+        run: |
+          pipx run zizmor==1.29.0 --offline --config .github/zizmor.yml \
+            --persona pedantic --min-severity high --min-confidence high \
+            .github
+
+  policy:
+    name: Workflow policy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Test workflow policies
+        run: node --test .github/scripts/*workflow-policy.test.mjs

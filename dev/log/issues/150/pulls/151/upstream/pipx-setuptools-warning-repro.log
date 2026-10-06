@@ -1,0 +1,20 @@
+$ python3 --version
+Python 3.14.7
+$ pipx --version
+1.17.11
+$ PIPX_HOME=$(mktemp -d) PIPX_BIN_DIR=$(mktemp -d) pipx install pycowsay==0.0.0.2
+creating virtual environment...
+creating shared libraries...
+upgrading shared libraries...
+WARNING: Skipping setuptools as it is not installed.
+installing pycowsay from spec 'pycowsay==0.0.0.2'...
+⚠️  Note: '/tmp/tmp.1tZxBlWHH9' is not on your PATH environment variable.
+    These apps will not be globally accessible until your PATH is updated. Run
+    `pipx ensurepath` to automatically add it, or manually modify your PATH in
+    your shell's config file (e.g. ~/.bashrc).
+done! ✨ 🌟 ✨
+  installed package pycowsay 0.0.0.2, installed using Python 3.14.7
+  These apps are now available
+    - pycowsay
+  These manual pages are now available
+    - man6/pycowsay.6

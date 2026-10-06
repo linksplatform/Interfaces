@@ -1,0 +1,531 @@
+Build Doxygen docs	UNKNOWN STEP	﻿2026-09-29T18:55:38.5665012Z Current runner version: '2.337.0'
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5690347Z ##[group]Runner Image Provisioner
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5691667Z Hosted Compute Agent
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5692605Z Version: 20260828.587
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5693305Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5694129Z Build Date: 2026-08-28T16:44:25Z
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5694834Z Worker ID: {bcc30871-d001-4636-ac95-c1761e318039}
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5695588Z Azure Region: centralus
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5696290Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5697812Z ##[group]Operating System
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5698503Z Ubuntu
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5699066Z 24.04.5
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5699686Z LTS
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5700283Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5700908Z ##[group]Runner Image
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5701569Z Image: ubuntu-24.04
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5702382Z Version: 20260920.314.1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5703779Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5705399Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5706433Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5707710Z ##[group]GITHUB_TOKEN Permissions
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5709719Z Contents: read
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5710501Z Metadata: read
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5711290Z Pages: write
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5712387Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5715069Z Secret source: Actions
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5716627Z Cache mode: write
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.5718126Z Prepare workflow directory
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.6160359Z Prepare all required actions
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.6208628Z Getting action download info
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:38.9869180Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:39.3571086Z Download action repository 'actions/upload-artifact@v7' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:39.8891182Z Download action repository 'actions/configure-pages@v6' (SHA:45bfe0192ca1faeb007ade9deae92b16b8254a0d)
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:40.3106643Z Download action repository 'actions/upload-pages-artifact@v5' (SHA:fc324d3547104276b827a68afc52ff2a11cc49c9)
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:40.5938666Z Getting action download info
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:40.7492562Z Download action repository 'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f' (SHA:bbbca2ddaa5d8feaa63e36b76fdaad77386f024f)
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:40.9339981Z Complete job name: Build Doxygen docs
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0292984Z ##[group]Run actions/checkout@v7
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0294395Z with:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0295250Z   persist-credentials: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0296672Z   repository: link-foundation/cpp-ai-driven-development-pipeline-template
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0305270Z   token: ***
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0306097Z   ssh-strict: true
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0306939Z   ssh-user: git
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0307767Z   clean: true
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0308633Z   sparse-checkout-cone-mode: true
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0309676Z   fetch-depth: 1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0310591Z   fetch-tags: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0311452Z   show-progress: true
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0312424Z   lfs: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0313208Z   submodules: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0314054Z   set-safe-directory: true
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0315013Z   allow-unsafe-pr-checkout: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0316229Z env:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0316970Z   GIT_CONFIG_COUNT: 1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0317855Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0318953Z   GIT_CONFIG_VALUE_0: main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.0319833Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1410326Z Syncing repository: link-foundation/cpp-ai-driven-development-pipeline-template
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1414275Z ##[group]Getting Git version info
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1416935Z Working directory is '/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template'
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1420351Z [command]/usr/bin/git version
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1471229Z git version 2.55.0
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1504470Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1515533Z Temporarily overriding HOME='/home/runner/work/_temp/0a74708f-a69e-435a-a92f-aab53830d8cd' before making global git config changes
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1519018Z Adding repository directory to the temporary git global config as a safe directory
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1523034Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1571324Z Deleting the contents of '/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template'
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1576066Z ##[group]Determining repository object format
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1578398Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1580287Z ##[group]Initializing the repository
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1583871Z [command]/usr/bin/git init /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1667508Z Initialized empty Git repository in /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1676774Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/cpp-ai-driven-development-pipeline-template
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1740077Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1742621Z ##[group]Disabling automatic garbage collection
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1745320Z [command]/usr/bin/git config --local gc.auto 0
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1779383Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1781338Z ##[group]Setting up auth
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1783315Z Removing SSH command configuration
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1787095Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.1836908Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2202640Z Removing HTTP extra header
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2206605Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2255109Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2514784Z Removing includeIf entries pointing to credentials config files
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2521062Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2654599Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2836110Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2883857Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2924651Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.2966596Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.3007319Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.3041655Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.3043225Z ##[group]Fetching the repository
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.3049029Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +16bac388012443949cc182f50a42f042fcbaf6ce:refs/remotes/origin/main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8166799Z From https://github.com/link-foundation/cpp-ai-driven-development-pipeline-template
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8169066Z  * [new ref]         16bac388012443949cc182f50a42f042fcbaf6ce -> origin/main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8175611Z [command]/usr/bin/git branch --list --remote origin/main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8210586Z   origin/main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8218975Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8249000Z 16bac388012443949cc182f50a42f042fcbaf6ce
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8254438Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8256042Z ##[group]Determining the checkout info
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8257605Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8258943Z [command]/usr/bin/git sparse-checkout disable
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8313823Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8352879Z ##[group]Checking out the ref
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8356057Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8548099Z Reset branch 'main'
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8552086Z branch 'main' set up to track 'origin/main'.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8560981Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8610305Z [command]/usr/bin/git log -1 --format=%H
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8643334Z 16bac388012443949cc182f50a42f042fcbaf6ce
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8653184Z ##[group]Removing auth
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8654712Z Removing SSH command configuration
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8657147Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8696056Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8945671Z Removing HTTP extra header
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8948766Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.8987905Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9229204Z Removing includeIf entries pointing to credentials config files
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9232382Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9265828Z includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git.path
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9269835Z includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9273446Z includeif.gitdir:/github/workspace/.git.path
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9275121Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9279746Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git.path
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9304117Z /home/runner/work/_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9315566Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-cabc8f9f\-88c0\-4a40\-8e4e\-944710b7c843\.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9359912Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9392999Z /home/runner/work/_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9406296Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-cabc8f9f\-88c0\-4a40\-8e4e\-944710b7c843\.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9444076Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9472599Z /github/runner_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9489352Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-cabc8f9f\-88c0\-4a40\-8e4e\-944710b7c843\.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9525026Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9553497Z /github/runner_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9561169Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-cabc8f9f\-88c0\-4a40\-8e4e\-944710b7c843\.config
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9599662Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9841987Z Removing credentials config '/home/runner/work/_temp/git-credentials-cabc8f9f-88c0-4a40-8e4e-944710b7c843.config'
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:41.9850326Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0090411Z ##[group]Run sudo apt-get update -q
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0091670Z ^[[36;1msudo apt-get update -q^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0093289Z ^[[36;1msudo apt-get install -y -q --no-install-recommends doxygen^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0094780Z ^[[36;1mdoxygen --version^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0329768Z shell: /usr/bin/bash -e {0}
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0330832Z env:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0331663Z   GIT_CONFIG_COUNT: 1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0332841Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0333981Z   GIT_CONFIG_VALUE_0: main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.0334995Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.1826320Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.1973010Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.2223293Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.2233780Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.2276320Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.2342352Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.3387663Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [452 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.3649110Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [501 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.4767398Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1318 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.4835549Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [299 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.4856175Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.4880007Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1697 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.4993781Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [340 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5023424Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5063949Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1654 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5154102Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [377 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5157997Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5419365Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5833631Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5788 B]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5839158Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5854773Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [18.6 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5861541Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.5976813Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1063 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.6054272Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [220 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.6063102Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.3 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.6072495Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1216 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.6135761Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [244 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.6154038Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.6165751Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1559 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:42.6267230Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [359 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:50.1778813Z Fetched 12.5 MB in 2s (8148 kB/s)
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.0299300Z Reading package lists...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.0627291Z Reading package lists...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.2851469Z Building dependency tree...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.2859674Z Reading state information...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.4950782Z The following additional packages will be installed:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.4960014Z   libfmt9 libxapian30
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.4968541Z Suggested packages:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.4969226Z   doxygen-latex doxygen-doc doxygen-gui graphviz xapian-tools
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.5247609Z The following NEW packages will be installed:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.5253804Z   doxygen libfmt9 libxapian30
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.5437508Z 0 upgraded, 3 newly installed, 0 to remove and 39 not upgraded.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.5437992Z Need to get 5979 kB of archives.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.5438381Z After this operation, 22.9 MB of additional disk space will be used.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.5438891Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.6911282Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libfmt9 amd64 9.1.0+ds1-2 [63.0 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.7220063Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libxapian30 amd64 1.4.22-1build1 [716 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:51.7574027Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 doxygen amd64 1.9.8+ds-2ubuntu0.1 [5200 kB]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.0707682Z Fetched 5979 kB in 0s (22.1 MB/s)
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.1154610Z Selecting previously unselected package libfmt9:amd64.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2151402Z (Reading database ... 
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2151935Z (Reading database ... 5%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2152203Z (Reading database ... 10%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2152453Z (Reading database ... 15%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2152687Z (Reading database ... 20%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2152909Z (Reading database ... 25%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2153129Z (Reading database ... 30%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2153385Z (Reading database ... 35%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2153624Z (Reading database ... 40%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2153943Z (Reading database ... 45%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2154399Z (Reading database ... 50%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.2269729Z (Reading database ... 55%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.6129832Z (Reading database ... 60%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:52.8992927Z (Reading database ... 65%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:53.2164288Z (Reading database ... 70%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:53.5308942Z (Reading database ... 75%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:53.9407940Z (Reading database ... 80%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:54.5933546Z (Reading database ... 85%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:55.3878284Z (Reading database ... 90%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.1771255Z (Reading database ... 95%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.1771726Z (Reading database ... 100%
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.1772259Z (Reading database ... 202190 files and directories currently installed.)
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.1818083Z Preparing to unpack .../libfmt9_9.1.0+ds1-2_amd64.deb ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.1890191Z Unpacking libfmt9:amd64 (9.1.0+ds1-2) ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.2159940Z Selecting previously unselected package libxapian30:amd64.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.2291657Z Preparing to unpack .../libxapian30_1.4.22-1build1_amd64.deb ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.2299035Z Unpacking libxapian30:amd64 (1.4.22-1build1) ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.2583263Z Selecting previously unselected package doxygen.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.2711985Z Preparing to unpack .../doxygen_1.9.8+ds-2ubuntu0.1_amd64.deb ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.2719094Z Unpacking doxygen (1.9.8+ds-2ubuntu0.1) ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.4055775Z Setting up libxapian30:amd64 (1.4.22-1build1) ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.4074533Z Setting up libfmt9:amd64 (9.1.0+ds1-2) ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.4093719Z Setting up doxygen (1.9.8+ds-2ubuntu0.1) ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.4115150Z Processing triggers for man-db (2.12.0-4build2) ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.4137238Z Not building database; man-db/auto-update is not 'true'.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:56.4151084Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8468971Z 
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8469757Z Running kernel seems to be up-to-date.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8470035Z 
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8470143Z No services need to be restarted.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8470328Z 
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8470731Z No containers need to be restarted.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8470916Z 
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8471047Z No user sessions are running outdated binaries.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8471254Z 
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:55:57.8471455Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.0967354Z 1.9.8
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1043425Z ##[group]Run {
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1043706Z ^[[36;1m{^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1044036Z ^[[36;1m  echo "CPP_DIR=$(python3 scripts/get_version.py --print cpp_root)"^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1044587Z ^[[36;1m  echo "DOXYGEN_PROJECT_NUMBER=$(python3 scripts/get_version.py --print version)"^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1045171Z ^[[36;1m  echo "MULTI_LANGUAGE=$(python3 scripts/get_version.py --print multi_language)"^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1045607Z ^[[36;1m} >> "$GITHUB_ENV"^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1115761Z shell: /usr/bin/bash -e {0}
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1116014Z env:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1116215Z   GIT_CONFIG_COUNT: 1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1116458Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1116738Z   GIT_CONFIG_VALUE_0: main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.1116966Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2846428Z ##[group]Run doxygen Doxyfile
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2846743Z ^[[36;1mdoxygen Doxyfile^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2847114Z ^[[36;1m# Doxygen can exit 0 after writing nothing (for example an INPUT^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2847584Z ^[[36;1m# that matches no file), so check the outputs that are published.^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2848043Z ^[[36;1mtest -s docs/api/html/index.html^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2848374Z ^[[36;1mtest -s docs/api/xml/index.xml^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2919826Z shell: /usr/bin/bash -e {0}
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2920085Z env:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2920291Z   GIT_CONFIG_COUNT: 1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2920530Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2920814Z   GIT_CONFIG_VALUE_0: main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2921043Z   CPP_DIR: .
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2921253Z   DOXYGEN_PROJECT_NUMBER: 0.2.0
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2921502Z   MULTI_LANGUAGE: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.2921723Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3615339Z ##[group]Run if [ "$MULTI_LANGUAGE" = "true" ]; then
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3615766Z ^[[36;1mif [ "$MULTI_LANGUAGE" = "true" ]; then^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3616074Z ^[[36;1m  mkdir -p _site^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3616335Z ^[[36;1m  cp -R "$HTML_DIR" _site/cpp^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3616833Z ^[[36;1m  printf '<!doctype html><meta http-equiv="refresh" content="0; url=cpp/index.html">\n' > _site/index.html^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3617510Z ^[[36;1melse^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3617727Z ^[[36;1m  cp -R "$HTML_DIR" _site^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3617981Z ^[[36;1mfi^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3618195Z ^[[36;1mtouch _site/.nojekyll^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3618518Z ^[[36;1mfind _site -maxdepth 2 -name 'index.html' -print^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3691301Z shell: /usr/bin/bash -e {0}
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3691573Z env:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3691992Z   GIT_CONFIG_COUNT: 1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3692240Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3692516Z   GIT_CONFIG_VALUE_0: main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3692791Z   CPP_DIR: .
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3693004Z   DOXYGEN_PROJECT_NUMBER: 0.2.0
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3693254Z   MULTI_LANGUAGE: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3693482Z   HTML_DIR: ./docs/api/html
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3693709Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3859197Z _site/index.html
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3929188Z ##[group]Run actions/upload-artifact@v7
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3929506Z with:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3929727Z   name: api-reference
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3929963Z   path: _site
+Build Doxygen docs	UNKNOWN STEP	./docs/api/xml
+Build Doxygen docs	UNKNOWN STEP	
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3930222Z   if-no-files-found: error
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3930470Z   include-hidden-files: true
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3930724Z   compression-level: 6
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3930957Z   overwrite: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3931160Z   archive: true
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3931357Z env:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3931554Z   GIT_CONFIG_COUNT: 1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3932007Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3932336Z   GIT_CONFIG_VALUE_0: main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3932562Z   CPP_DIR: .
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3932777Z   DOXYGEN_PROJECT_NUMBER: 0.2.0
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3933029Z   MULTI_LANGUAGE: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.3933245Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.5514979Z Multiple search paths detected. Calculating the least common ancestor of all paths
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.5518017Z The least common ancestor is /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template. This will be the root directory of the artifact
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.5519459Z With the provided path, there will be 109 files uploaded
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.5523337Z Artifact name is valid!
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.5524032Z Root directory input is valid!
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.8091233Z Uploading artifact: api-reference.zip
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:02.8143099Z Beginning upload of artifact content to blob storage
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.1649135Z Uploaded bytes 179606
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.2037594Z Finished uploading artifact content to blob storage!
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.2038575Z SHA256 digest of uploaded artifact is d326cb41063b98d864565e2cb82c614c0804e75d367125b7c43fbaf0d8f21add
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.2040002Z Finalizing artifact upload
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.4913124Z Artifact api-reference successfully finalized. Artifact ID 11055635004
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.4914517Z Artifact api-reference has been successfully uploaded! Final size is 179606 bytes. Artifact ID is 11055635004
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.4916152Z Artifact download URL: https://github.com/link-foundation/cpp-ai-driven-development-pipeline-template/actions/runs/36615500779/artifacts/11055635004
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5069625Z ##[group]Run echo "::notice::Skipping GitHub Pages deployment. To enable publishing, set Settings -> Pages -> Source = GitHub Actions, then add repository variable DEPLOY_GITHUB_PAGES=true."
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5070868Z ^[[36;1mecho "::notice::Skipping GitHub Pages deployment. To enable publishing, set Settings -> Pages -> Source = GitHub Actions, then add repository variable DEPLOY_GITHUB_PAGES=true."^[[0m
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5139017Z shell: /usr/bin/bash -e {0}
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5139273Z env:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5139480Z   GIT_CONFIG_COUNT: 1
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5139727Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5140013Z   GIT_CONFIG_VALUE_0: main
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5140263Z   CPP_DIR: .
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5140482Z   DOXYGEN_PROJECT_NUMBER: 0.2.0
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5140737Z   MULTI_LANGUAGE: false
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5141143Z ##[endgroup]
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5243674Z ##[notice]Skipping GitHub Pages deployment. To enable publishing, set Settings -> Pages -> Source = GitHub Actions, then add repository variable DEPLOY_GITHUB_PAGES=true.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.5363913Z Post job cleanup.
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6226625Z [command]/usr/bin/git version
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6270708Z git version 2.55.0
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6313024Z Temporarily overriding HOME='/home/runner/work/_temp/879d4eb0-618b-479b-ad67-77ae514a6fb2' before making global git config changes
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6314309Z Adding repository directory to the temporary git global config as a safe directory
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6318983Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6351737Z Removing SSH command configuration
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6358406Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6395000Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6647128Z Removing HTTP extra header
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6652487Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6690034Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6949436Z Removing includeIf entries pointing to credentials config files
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6957798Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.6994581Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build Doxygen docs	UNKNOWN STEP	2026-09-29T18:56:03.7473527Z Cleaning up orphan processes
+Pipeline Status	UNKNOWN STEP	﻿2026-09-29T18:56:09.9619852Z Current runner version: '2.337.0'
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9656788Z ##[group]Runner Image Provisioner
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9658317Z Hosted Compute Agent
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9659490Z Version: 20260828.587
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9660746Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9662258Z Build Date: 2026-08-28T16:44:25Z
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9663547Z Worker ID: {4bc48877-dd46-4f06-9d9e-a46d2b97b14e}
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9665194Z Azure Region: eastus
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9666946Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9669461Z ##[group]Operating System
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9670637Z Ubuntu
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9671534Z 24.04.5
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9672466Z LTS
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9673425Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9674724Z ##[group]Runner Image
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9676106Z Image: ubuntu-24.04
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9677192Z Version: 20260920.314.1
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9679557Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9682581Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9684694Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9686711Z ##[group]GITHUB_TOKEN Permissions
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9689738Z Contents: read
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9690767Z Metadata: read
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9691686Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9695013Z Secret source: Actions
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9696642Z Cache mode: write
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:09.9698010Z Prepare workflow directory
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.0248025Z Prepare all required actions
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.0297372Z Getting action download info
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.2193756Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.4145437Z Complete job name: Pipeline Status
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5036026Z ##[group]Run actions/checkout@v7
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5036995Z with:
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5037452Z   persist-credentials: false
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5038193Z   repository: link-foundation/cpp-ai-driven-development-pipeline-template
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5042099Z   token: ***
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5042548Z   ssh-strict: true
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5042995Z   ssh-user: git
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5043432Z   clean: true
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5043887Z   sparse-checkout-cone-mode: true
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5044805Z   fetch-depth: 1
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5045262Z   fetch-tags: false
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5045722Z   show-progress: true
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5046188Z   lfs: false
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5046623Z   submodules: false
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5047087Z   set-safe-directory: true
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5047598Z   allow-unsafe-pr-checkout: false
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5048492Z env:
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5048925Z   GIT_CONFIG_COUNT: 1
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5049420Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5050153Z   GIT_CONFIG_VALUE_0: main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.5050793Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6095090Z Syncing repository: link-foundation/cpp-ai-driven-development-pipeline-template
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6097445Z ##[group]Getting Git version info
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6098692Z Working directory is '/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template'
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6100444Z [command]/usr/bin/git version
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6199336Z git version 2.55.0
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6230457Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6240524Z Temporarily overriding HOME='/home/runner/work/_temp/6700cd02-5f7e-4579-b095-cbe71e68e367' before making global git config changes
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6243484Z Adding repository directory to the temporary git global config as a safe directory
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6251493Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6308021Z Deleting the contents of '/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template'
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6311083Z ##[group]Determining repository object format
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6312795Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6313784Z ##[group]Initializing the repository
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6319639Z [command]/usr/bin/git init /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6437607Z Initialized empty Git repository in /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6447341Z [command]/usr/bin/git remote add origin https://github.com/link-foundation/cpp-ai-driven-development-pipeline-template
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6506773Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6508476Z ##[group]Disabling automatic garbage collection
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6512121Z [command]/usr/bin/git config --local gc.auto 0
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6549955Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6551356Z ##[group]Setting up auth
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6552396Z Removing SSH command configuration
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6555067Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.6597899Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7009598Z Removing HTTP extra header
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7016591Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7052251Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7277403Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7283127Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7321248Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7554586Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7598079Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git.path /home/runner/work/_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7634759Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7672896Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7712524Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7747179Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7748539Z ##[group]Fetching the repository
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:10.7755871Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +16bac388012443949cc182f50a42f042fcbaf6ce:refs/remotes/origin/main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0503747Z From https://github.com/link-foundation/cpp-ai-driven-development-pipeline-template
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0505328Z  * [new ref]         16bac388012443949cc182f50a42f042fcbaf6ce -> origin/main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0513284Z [command]/usr/bin/git branch --list --remote origin/main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0548171Z   origin/main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0556932Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0585250Z 16bac388012443949cc182f50a42f042fcbaf6ce
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0590441Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0591773Z ##[group]Determining the checkout info
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0592786Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0596211Z [command]/usr/bin/git sparse-checkout disable
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0652354Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0689550Z ##[group]Checking out the ref
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0693864Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0890678Z Reset branch 'main'
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0895443Z branch 'main' set up to track 'origin/main'.
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0904022Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0961644Z [command]/usr/bin/git log -1 --format=%H
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.0996399Z 16bac388012443949cc182f50a42f042fcbaf6ce
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1006891Z ##[group]Removing auth
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1007903Z Removing SSH command configuration
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1011447Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1051065Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1290989Z Removing HTTP extra header
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1294945Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1332926Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1566265Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1569801Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1607058Z includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git.path
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1609271Z includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1610766Z includeif.gitdir:/github/workspace/.git.path
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1611588Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1617130Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git.path
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1646777Z /home/runner/work/_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1657801Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-d792a4b8\-e100\-48da\-9865\-dec03bc8505c\.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1705117Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/worktrees/*.path
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1747818Z /home/runner/work/_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1758021Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-d792a4b8\-e100\-48da\-9865\-dec03bc8505c\.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1804405Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1838271Z /github/runner_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1900888Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-d792a4b8\-e100\-48da\-9865\-dec03bc8505c\.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1931281Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1960507Z /github/runner_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.1968213Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-d792a4b8\-e100\-48da\-9865\-dec03bc8505c\.config
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2008049Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2241714Z Removing credentials config '/home/runner/work/_temp/git-credentials-d792a4b8-e100-48da-9865-dec03bc8505c.config'
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2251421Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2506682Z ##[group]Run bash scripts/check-pipeline-status.sh
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2507617Z ^[[36;1mbash scripts/check-pipeline-status.sh^[[0m
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2784503Z shell: /usr/bin/bash -e {0}
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2785329Z env:
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2785847Z   GIT_CONFIG_COUNT: 1
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2786450Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2787137Z   GIT_CONFIG_VALUE_0: main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2788293Z   NEEDS_JSON: {
+Pipeline Status	UNKNOWN STEP	  "build": {
+Pipeline Status	UNKNOWN STEP	    "result": "success",
+Pipeline Status	UNKNOWN STEP	    "outputs": {}
+Pipeline Status	UNKNOWN STEP	  },
+Pipeline Status	UNKNOWN STEP	  "deploy": {
+Pipeline Status	UNKNOWN STEP	    "result": "skipped",
+Pipeline Status	UNKNOWN STEP	    "outputs": {}
+Pipeline Status	UNKNOWN STEP	  }
+Pipeline Status	UNKNOWN STEP	}
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2789603Z   RUN_SHA: 16bac388012443949cc182f50a42f042fcbaf6ce
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2790611Z   BRANCH_NAME: main
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.2791326Z ##[endgroup]
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.3426001Z Pipeline passed.
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.3611618Z Post job cleanup.
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.4527312Z [command]/usr/bin/git version
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.4571501Z git version 2.55.0
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.4620845Z Temporarily overriding HOME='/home/runner/work/_temp/dc0a0a25-878a-4911-8be6-cbd8751c03cb' before making global git config changes
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.4623535Z Adding repository directory to the temporary git global config as a safe directory
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.4629157Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cpp-ai-driven-development-pipeline-template/cpp-ai-driven-development-pipeline-template
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.4668031Z Removing SSH command configuration
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.4676570Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.4718238Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.5096329Z Removing HTTP extra header
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.5100811Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.5148663Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.5279683Z Removing includeIf entries pointing to credentials config files
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.5286890Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.5336291Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pipeline Status	UNKNOWN STEP	2026-09-29T18:56:11.5753360Z Cleaning up orphan processes

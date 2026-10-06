@@ -1,0 +1,308 @@
+build	UNKNOWN STEP	﻿2026-09-26T02:54:44.1366662Z Current runner version: '2.337.0'
+build	UNKNOWN STEP	2026-09-26T02:54:44.1383293Z ##[group]Runner Image Provisioner
+build	UNKNOWN STEP	2026-09-26T02:54:44.1384040Z Hosted Compute Agent
+build	UNKNOWN STEP	2026-09-26T02:54:44.1384488Z Version: 20260828.587
+build	UNKNOWN STEP	2026-09-26T02:54:44.1384942Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+build	UNKNOWN STEP	2026-09-26T02:54:44.1385483Z Build Date: 2026-08-28T16:44:25Z
+build	UNKNOWN STEP	2026-09-26T02:54:44.1385964Z Worker ID: {3e9919eb-1f66-494e-871b-83eb7e43f44b}
+build	UNKNOWN STEP	2026-09-26T02:54:44.1386667Z Azure Region: centralus
+build	UNKNOWN STEP	2026-09-26T02:54:44.1387072Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:44.1388083Z ##[group]Operating System
+build	UNKNOWN STEP	2026-09-26T02:54:44.1388525Z Ubuntu
+build	UNKNOWN STEP	2026-09-26T02:54:44.1388872Z 24.04.5
+build	UNKNOWN STEP	2026-09-26T02:54:44.1389225Z LTS
+build	UNKNOWN STEP	2026-09-26T02:54:44.1389561Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:44.1389912Z ##[group]Runner Image
+build	UNKNOWN STEP	2026-09-26T02:54:44.1390344Z Image: ubuntu-24.04
+build	UNKNOWN STEP	2026-09-26T02:54:44.1390722Z Version: 20260920.314.1
+build	UNKNOWN STEP	2026-09-26T02:54:44.1391580Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+build	UNKNOWN STEP	2026-09-26T02:54:44.1392649Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+build	UNKNOWN STEP	2026-09-26T02:54:44.1393329Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:44.1394074Z ##[group]GITHUB_TOKEN Permissions
+build	UNKNOWN STEP	2026-09-26T02:54:44.1395541Z Contents: read
+build	UNKNOWN STEP	2026-09-26T02:54:44.1395954Z Metadata: read
+build	UNKNOWN STEP	2026-09-26T02:54:44.1396348Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:44.1398026Z Secret source: Actions
+build	UNKNOWN STEP	2026-09-26T02:54:44.1398649Z Cache mode: write
+build	UNKNOWN STEP	2026-09-26T02:54:44.1399114Z Prepare workflow directory
+build	UNKNOWN STEP	2026-09-26T02:54:44.1624079Z Prepare all required actions
+build	UNKNOWN STEP	2026-09-26T02:54:44.1672414Z Getting action download info
+build	UNKNOWN STEP	2026-09-26T02:54:44.3814835Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+build	UNKNOWN STEP	2026-09-26T02:54:44.5193197Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+build	UNKNOWN STEP	2026-09-26T02:54:44.7820173Z Complete job name: build
+build	UNKNOWN STEP	2026-09-26T02:54:44.8296991Z ##[group]Run actions/checkout@v7
+build	UNKNOWN STEP	2026-09-26T02:54:44.8297731Z with:
+build	UNKNOWN STEP	2026-09-26T02:54:44.8298120Z   persist-credentials: false
+build	UNKNOWN STEP	2026-09-26T02:54:44.8298630Z   repository: linksplatform/Interfaces
+build	UNKNOWN STEP	2026-09-26T02:54:44.8301238Z   token: ***
+build	UNKNOWN STEP	2026-09-26T02:54:44.8301574Z   ssh-strict: true
+build	UNKNOWN STEP	2026-09-26T02:54:44.8301956Z   ssh-user: git
+build	UNKNOWN STEP	2026-09-26T02:54:44.8302298Z   clean: true
+build	UNKNOWN STEP	2026-09-26T02:54:44.8302692Z   sparse-checkout-cone-mode: true
+build	UNKNOWN STEP	2026-09-26T02:54:44.8303115Z   fetch-depth: 1
+build	UNKNOWN STEP	2026-09-26T02:54:44.8303452Z   fetch-tags: false
+build	UNKNOWN STEP	2026-09-26T02:54:44.8303830Z   show-progress: true
+build	UNKNOWN STEP	2026-09-26T02:54:44.8304188Z   lfs: false
+build	UNKNOWN STEP	2026-09-26T02:54:44.8304571Z   submodules: false
+build	UNKNOWN STEP	2026-09-26T02:54:44.8304953Z   set-safe-directory: true
+build	UNKNOWN STEP	2026-09-26T02:54:44.8305357Z   allow-unsafe-pr-checkout: false
+build	UNKNOWN STEP	2026-09-26T02:54:44.8305903Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:44.9067816Z Syncing repository: linksplatform/Interfaces
+build	UNKNOWN STEP	2026-09-26T02:54:44.9069236Z ##[group]Getting Git version info
+build	UNKNOWN STEP	2026-09-26T02:54:44.9069847Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+build	UNKNOWN STEP	2026-09-26T02:54:44.9070624Z [command]/usr/bin/git version
+build	UNKNOWN STEP	2026-09-26T02:54:45.1290780Z git version 2.55.0
+build	UNKNOWN STEP	2026-09-26T02:54:45.1304981Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:45.1313792Z Temporarily overriding HOME='/home/runner/work/_temp/c82bef6e-eaca-48ef-9593-2dbfdeac0d46' before making global git config changes
+build	UNKNOWN STEP	2026-09-26T02:54:45.1315427Z Adding repository directory to the temporary git global config as a safe directory
+build	UNKNOWN STEP	2026-09-26T02:54:45.1318539Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+build	UNKNOWN STEP	2026-09-26T02:54:45.1642012Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+build	UNKNOWN STEP	2026-09-26T02:54:45.1645686Z ##[group]Determining repository object format
+build	UNKNOWN STEP	2026-09-26T02:54:45.1647009Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:45.1647716Z ##[group]Initializing the repository
+build	UNKNOWN STEP	2026-09-26T02:54:45.1650997Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+build	UNKNOWN STEP	2026-09-26T02:54:45.2274668Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	UNKNOWN STEP	2026-09-26T02:54:45.2276224Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+build	UNKNOWN STEP	2026-09-26T02:54:45.2277354Z hint: to use in all of your new repositories, which will suppress this warning,
+build	UNKNOWN STEP	2026-09-26T02:54:45.2278063Z hint: call:
+build	UNKNOWN STEP	2026-09-26T02:54:45.2278439Z hint:
+build	UNKNOWN STEP	2026-09-26T02:54:45.2279045Z hint: 	git config --global init.defaultBranch <name>
+build	UNKNOWN STEP	2026-09-26T02:54:45.2279671Z hint:
+build	UNKNOWN STEP	2026-09-26T02:54:45.2280174Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	UNKNOWN STEP	2026-09-26T02:54:45.2280970Z hint: 'development'. The just-created branch can be renamed via this command:
+build	UNKNOWN STEP	2026-09-26T02:54:45.2281672Z hint:
+build	UNKNOWN STEP	2026-09-26T02:54:45.2282185Z hint: 	git branch -m <name>
+build	UNKNOWN STEP	2026-09-26T02:54:45.2282693Z hint:
+build	UNKNOWN STEP	2026-09-26T02:54:45.2283247Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	UNKNOWN STEP	2026-09-26T02:54:45.2284143Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+build	UNKNOWN STEP	2026-09-26T02:54:45.2285649Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+build	UNKNOWN STEP	2026-09-26T02:54:45.2605131Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:45.2606013Z ##[group]Disabling automatic garbage collection
+build	UNKNOWN STEP	2026-09-26T02:54:45.2606902Z [command]/usr/bin/git config --local gc.auto 0
+build	UNKNOWN STEP	2026-09-26T02:54:45.2633494Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:45.2634515Z ##[group]Setting up auth
+build	UNKNOWN STEP	2026-09-26T02:54:45.2634999Z Removing SSH command configuration
+build	UNKNOWN STEP	2026-09-26T02:54:45.2638290Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	UNKNOWN STEP	2026-09-26T02:54:45.2660330Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	UNKNOWN STEP	2026-09-26T02:54:45.4917299Z Removing HTTP extra header
+build	UNKNOWN STEP	2026-09-26T02:54:45.4920796Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	UNKNOWN STEP	2026-09-26T02:54:45.4941420Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	UNKNOWN STEP	2026-09-26T02:54:45.5083921Z Removing includeIf entries pointing to credentials config files
+build	UNKNOWN STEP	2026-09-26T02:54:45.5086812Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	UNKNOWN STEP	2026-09-26T02:54:45.5112006Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	UNKNOWN STEP	2026-09-26T02:54:45.5261806Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	UNKNOWN STEP	2026-09-26T02:54:45.5287000Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config
+build	UNKNOWN STEP	2026-09-26T02:54:45.5310046Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config
+build	UNKNOWN STEP	2026-09-26T02:54:45.5333519Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config
+build	UNKNOWN STEP	2026-09-26T02:54:45.5356261Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config
+build	UNKNOWN STEP	2026-09-26T02:54:45.5374331Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:45.5375036Z ##[group]Fetching the repository
+build	UNKNOWN STEP	2026-09-26T02:54:45.5379692Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3dfbee614c1276425f216d032580c052d94da4e8:refs/remotes/origin/main
+build	UNKNOWN STEP	2026-09-26T02:54:46.0925472Z From https://github.com/linksplatform/Interfaces
+build	UNKNOWN STEP	2026-09-26T02:54:46.0927745Z  * [new ref]         3dfbee614c1276425f216d032580c052d94da4e8 -> origin/main
+build	UNKNOWN STEP	2026-09-26T02:54:46.0933257Z [command]/usr/bin/git branch --list --remote origin/main
+build	UNKNOWN STEP	2026-09-26T02:54:46.0952291Z   origin/main
+build	UNKNOWN STEP	2026-09-26T02:54:46.0958468Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+build	UNKNOWN STEP	2026-09-26T02:54:46.0975947Z 3dfbee614c1276425f216d032580c052d94da4e8
+build	UNKNOWN STEP	2026-09-26T02:54:46.0979736Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:46.0981495Z ##[group]Determining the checkout info
+build	UNKNOWN STEP	2026-09-26T02:54:46.0983406Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:46.0984690Z [command]/usr/bin/git sparse-checkout disable
+build	UNKNOWN STEP	2026-09-26T02:54:46.1676137Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	UNKNOWN STEP	2026-09-26T02:54:46.1699229Z ##[group]Checking out the ref
+build	UNKNOWN STEP	2026-09-26T02:54:46.1701641Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+build	UNKNOWN STEP	2026-09-26T02:54:46.1771111Z Switched to a new branch 'main'
+build	UNKNOWN STEP	2026-09-26T02:54:46.1775548Z branch 'main' set up to track 'origin/main'.
+build	UNKNOWN STEP	2026-09-26T02:54:46.1779968Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:46.1807256Z [command]/usr/bin/git log -1 --format=%H
+build	UNKNOWN STEP	2026-09-26T02:54:46.1824145Z 3dfbee614c1276425f216d032580c052d94da4e8
+build	UNKNOWN STEP	2026-09-26T02:54:46.1830802Z ##[group]Removing auth
+build	UNKNOWN STEP	2026-09-26T02:54:46.1832134Z Removing SSH command configuration
+build	UNKNOWN STEP	2026-09-26T02:54:46.1834082Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	UNKNOWN STEP	2026-09-26T02:54:46.1856824Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	UNKNOWN STEP	2026-09-26T02:54:46.2003553Z Removing HTTP extra header
+build	UNKNOWN STEP	2026-09-26T02:54:46.2005364Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	UNKNOWN STEP	2026-09-26T02:54:46.2028148Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	UNKNOWN STEP	2026-09-26T02:54:46.2165284Z Removing includeIf entries pointing to credentials config files
+build	UNKNOWN STEP	2026-09-26T02:54:46.2167841Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	UNKNOWN STEP	2026-09-26T02:54:46.2213124Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+build	UNKNOWN STEP	2026-09-26T02:54:46.2215595Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+build	UNKNOWN STEP	2026-09-26T02:54:46.2218091Z includeif.gitdir:/github/workspace/.git.path
+build	UNKNOWN STEP	2026-09-26T02:54:46.2219810Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+build	UNKNOWN STEP	2026-09-26T02:54:46.2223826Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+build	UNKNOWN STEP	2026-09-26T02:54:46.2234356Z /home/runner/work/_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config
+build	UNKNOWN STEP	2026-09-26T02:54:46.2248647Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-7cb2daf5\-af53\-48c5\-b613\-93d8849bdf75\.config
+build	UNKNOWN STEP	2026-09-26T02:54:46.2272931Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+build	UNKNOWN STEP	2026-09-26T02:54:46.2288731Z /home/runner/work/_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config
+build	UNKNOWN STEP	2026-09-26T02:54:46.2295948Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-7cb2daf5\-af53\-48c5\-b613\-93d8849bdf75\.config
+build	UNKNOWN STEP	2026-09-26T02:54:46.2323572Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+build	UNKNOWN STEP	2026-09-26T02:54:46.2340130Z /github/runner_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config
+build	UNKNOWN STEP	2026-09-26T02:54:46.2369466Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-7cb2daf5\-af53\-48c5\-b613\-93d8849bdf75\.config
+build	UNKNOWN STEP	2026-09-26T02:54:46.2407085Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+build	UNKNOWN STEP	2026-09-26T02:54:46.2423021Z /github/runner_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config
+build	UNKNOWN STEP	2026-09-26T02:54:46.2427400Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-7cb2daf5\-af53\-48c5\-b613\-93d8849bdf75\.config
+build	UNKNOWN STEP	2026-09-26T02:54:46.2455955Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	UNKNOWN STEP	2026-09-26T02:54:46.2592143Z Removing credentials config '/home/runner/work/_temp/git-credentials-7cb2daf5-af53-48c5-b613-93d8849bdf75.config'
+build	UNKNOWN STEP	2026-09-26T02:54:46.2600275Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:46.2781651Z ##[group]Run sudo apt-get update
+build	UNKNOWN STEP	2026-09-26T02:54:46.2782608Z ^[[36;1msudo apt-get update^[[0m
+build	UNKNOWN STEP	2026-09-26T02:54:46.2783521Z ^[[36;1msudo apt-get install -y doxygen^[[0m
+build	UNKNOWN STEP	2026-09-26T02:54:46.5390450Z shell: /usr/bin/bash -e {0}
+build	UNKNOWN STEP	2026-09-26T02:54:46.5391094Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:54:46.6695876Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+build	UNKNOWN STEP	2026-09-26T02:54:46.6827076Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+build	UNKNOWN STEP	2026-09-26T02:54:46.7779228Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+build	UNKNOWN STEP	2026-09-26T02:54:46.7800937Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:46.7826889Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:46.7904836Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:46.9555254Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [498 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:46.9739080Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [446 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0394367Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1319 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0448810Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [299 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0464977Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0479961Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1698 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0538501Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [340 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0557594Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0577782Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1654 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0637647Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [377 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0655762Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+build	UNKNOWN STEP	2026-09-26T02:54:47.0749633Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1222761Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5796 B]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1231603Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1239970Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [18.6 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1247416Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1277452Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1053 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1297786Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [219 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1307959Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.3 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1315949Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1220 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1357968Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1371629Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1380171Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1535 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:47.1430216Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [353 kB]
+build	UNKNOWN STEP	2026-09-26T02:54:59.6938335Z Fetched 12.4 MB in 1s (9751 kB/s)
+build	UNKNOWN STEP	2026-09-26T02:55:00.2732496Z Reading package lists...
+build	UNKNOWN STEP	2026-09-26T02:55:00.2973608Z Reading package lists...
+build	UNKNOWN STEP	2026-09-26T02:55:00.4045462Z Building dependency tree...
+build	UNKNOWN STEP	2026-09-26T02:55:00.4051631Z Reading state information...
+build	UNKNOWN STEP	2026-09-26T02:55:00.5285086Z The following additional packages will be installed:
+build	UNKNOWN STEP	2026-09-26T02:55:00.5290394Z   libfmt9 libxapian30
+build	UNKNOWN STEP	2026-09-26T02:55:00.5298037Z Suggested packages:
+build	UNKNOWN STEP	2026-09-26T02:55:00.5298716Z   doxygen-latex doxygen-doc doxygen-gui graphviz xapian-tools
+build	UNKNOWN STEP	2026-09-26T02:55:00.5534109Z The following NEW packages will be installed:
+build	UNKNOWN STEP	2026-09-26T02:55:00.5539841Z   doxygen libfmt9 libxapian30
+build	UNKNOWN STEP	2026-09-26T02:55:00.5670487Z 0 upgraded, 3 newly installed, 0 to remove and 32 not upgraded.
+build	UNKNOWN STEP	2026-09-26T02:55:00.5671742Z Need to get 5979 kB of archives.
+build	UNKNOWN STEP	2026-09-26T02:55:00.5672203Z After this operation, 22.9 MB of additional disk space will be used.
+build	UNKNOWN STEP	2026-09-26T02:55:00.5672530Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+build	UNKNOWN STEP	2026-09-26T02:55:00.7277125Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libfmt9 amd64 9.1.0+ds1-2 [63.0 kB]
+build	UNKNOWN STEP	2026-09-26T02:55:00.7641720Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libxapian30 amd64 1.4.22-1build1 [716 kB]
+build	UNKNOWN STEP	2026-09-26T02:55:00.8071397Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 doxygen amd64 1.9.8+ds-2ubuntu0.1 [5200 kB]
+build	UNKNOWN STEP	2026-09-26T02:55:01.0933695Z Fetched 5979 kB in 0s (19.6 MB/s)
+build	UNKNOWN STEP	2026-09-26T02:55:01.1385093Z Selecting previously unselected package libfmt9:amd64.
+build	UNKNOWN STEP	2026-09-26T02:55:01.2563400Z (Reading database ... 
+build	UNKNOWN STEP	2026-09-26T02:55:01.2563898Z (Reading database ... 5%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2564171Z (Reading database ... 10%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2564463Z (Reading database ... 15%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2564747Z (Reading database ... 20%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2565019Z (Reading database ... 25%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2565333Z (Reading database ... 30%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2565635Z (Reading database ... 35%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2565905Z (Reading database ... 40%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2566183Z (Reading database ... 45%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2566753Z (Reading database ... 50%
+build	UNKNOWN STEP	2026-09-26T02:55:01.2675701Z (Reading database ... 55%
+build	UNKNOWN STEP	2026-09-26T02:55:01.8467359Z (Reading database ... 60%
+build	UNKNOWN STEP	2026-09-26T02:55:02.5517583Z (Reading database ... 65%
+build	UNKNOWN STEP	2026-09-26T02:55:03.3393841Z (Reading database ... 70%
+build	UNKNOWN STEP	2026-09-26T02:55:03.8406064Z (Reading database ... 75%
+build	UNKNOWN STEP	2026-09-26T02:55:04.8993578Z (Reading database ... 80%
+build	UNKNOWN STEP	2026-09-26T02:55:06.0578894Z (Reading database ... 85%
+build	UNKNOWN STEP	2026-09-26T02:55:07.0609406Z (Reading database ... 90%
+build	UNKNOWN STEP	2026-09-26T02:55:07.9691000Z (Reading database ... 95%
+build	UNKNOWN STEP	2026-09-26T02:55:07.9691654Z (Reading database ... 100%
+build	UNKNOWN STEP	2026-09-26T02:55:07.9692049Z (Reading database ... 202190 files and directories currently installed.)
+build	UNKNOWN STEP	2026-09-26T02:55:07.9730451Z Preparing to unpack .../libfmt9_9.1.0+ds1-2_amd64.deb ...
+build	UNKNOWN STEP	2026-09-26T02:55:07.9767234Z Unpacking libfmt9:amd64 (9.1.0+ds1-2) ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.0036844Z Selecting previously unselected package libxapian30:amd64.
+build	UNKNOWN STEP	2026-09-26T02:55:08.0119566Z Preparing to unpack .../libxapian30_1.4.22-1build1_amd64.deb ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.0128225Z Unpacking libxapian30:amd64 (1.4.22-1build1) ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.0435026Z Selecting previously unselected package doxygen.
+build	UNKNOWN STEP	2026-09-26T02:55:08.0511004Z Preparing to unpack .../doxygen_1.9.8+ds-2ubuntu0.1_amd64.deb ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.0624177Z Unpacking doxygen (1.9.8+ds-2ubuntu0.1) ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.2696276Z Setting up libxapian30:amd64 (1.4.22-1build1) ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.4064091Z Setting up libfmt9:amd64 (9.1.0+ds1-2) ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.4089121Z Setting up doxygen (1.9.8+ds-2ubuntu0.1) ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.4120928Z Processing triggers for man-db (2.12.0-4build2) ...
+build	UNKNOWN STEP	2026-09-26T02:55:08.4141966Z Not building database; man-db/auto-update is not 'true'.
+build	UNKNOWN STEP	2026-09-26T02:55:08.4155195Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+build	UNKNOWN STEP	2026-09-26T02:55:12.3025945Z 
+build	UNKNOWN STEP	2026-09-26T02:55:12.3027066Z Running kernel seems to be up-to-date.
+build	UNKNOWN STEP	2026-09-26T02:55:12.3027390Z 
+build	UNKNOWN STEP	2026-09-26T02:55:12.3027518Z No services need to be restarted.
+build	UNKNOWN STEP	2026-09-26T02:55:12.3027717Z 
+build	UNKNOWN STEP	2026-09-26T02:55:12.3027966Z No containers need to be restarted.
+build	UNKNOWN STEP	2026-09-26T02:55:12.3028192Z 
+build	UNKNOWN STEP	2026-09-26T02:55:12.3028626Z No user sessions are running outdated binaries.
+build	UNKNOWN STEP	2026-09-26T02:55:12.3028923Z 
+build	UNKNOWN STEP	2026-09-26T02:55:12.3029277Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+build	UNKNOWN STEP	2026-09-26T02:55:12.9270375Z ##[group]Run python3 .github/scripts/check-cpp-docs.test.py
+build	UNKNOWN STEP	2026-09-26T02:55:12.9270809Z ^[[36;1mpython3 .github/scripts/check-cpp-docs.test.py^[[0m
+build	UNKNOWN STEP	2026-09-26T02:55:12.9271134Z ^[[36;1mpython3 .github/scripts/check-cpp-docs.py^[[0m
+build	UNKNOWN STEP	2026-09-26T02:55:12.9306934Z shell: /usr/bin/bash -e {0}
+build	UNKNOWN STEP	2026-09-26T02:55:12.9307251Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:55:13.0173987Z ....
+build	UNKNOWN STEP	2026-09-26T02:55:13.0174357Z ----------------------------------------------------------------------
+build	UNKNOWN STEP	2026-09-26T02:55:13.0174796Z Ran 4 tests in 0.009s
+build	UNKNOWN STEP	2026-09-26T02:55:13.0175014Z 
+build	UNKNOWN STEP	2026-09-26T02:55:13.0175108Z OK
+build	UNKNOWN STEP	2026-09-26T02:55:13.0428276Z Bilingual documentation covers the public declarations in 39 C++ headers.
+build	UNKNOWN STEP	2026-09-26T02:55:13.0486762Z ##[group]Run doxygen cpp/Doxyfile
+build	UNKNOWN STEP	2026-09-26T02:55:13.0487091Z ^[[36;1mdoxygen cpp/Doxyfile^[[0m
+build	UNKNOWN STEP	2026-09-26T02:55:13.0487352Z ^[[36;1mtest -s cpp/docs/html/index.html^[[0m
+build	UNKNOWN STEP	2026-09-26T02:55:13.0487645Z ^[[36;1mtest -s cpp/docs/xml/index.xml^[[0m
+build	UNKNOWN STEP	2026-09-26T02:55:13.0517359Z shell: /usr/bin/bash -e {0}
+build	UNKNOWN STEP	2026-09-26T02:55:13.0517627Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:55:19.2373769Z ##[group]Run actions/upload-artifact@v4
+build	UNKNOWN STEP	2026-09-26T02:55:19.2374142Z with:
+build	UNKNOWN STEP	2026-09-26T02:55:19.2374393Z   name: cpp-api-documentation
+build	UNKNOWN STEP	2026-09-26T02:55:19.2374728Z   path: cpp/docs/html
+build	UNKNOWN STEP	cpp/docs/xml
+build	UNKNOWN STEP	
+build	UNKNOWN STEP	2026-09-26T02:55:19.2375029Z   if-no-files-found: warn
+build	UNKNOWN STEP	2026-09-26T02:55:19.2375270Z   compression-level: 6
+build	UNKNOWN STEP	2026-09-26T02:55:19.2375547Z   overwrite: false
+build	UNKNOWN STEP	2026-09-26T02:55:19.2375783Z   include-hidden-files: false
+build	UNKNOWN STEP	2026-09-26T02:55:19.2376047Z ##[endgroup]
+build	UNKNOWN STEP	2026-09-26T02:55:19.3523090Z (node:2592) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+build	UNKNOWN STEP	2026-09-26T02:55:19.3523639Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	UNKNOWN STEP	2026-09-26T02:55:19.3872734Z Multiple search paths detected. Calculating the least common ancestor of all paths
+build	UNKNOWN STEP	2026-09-26T02:55:19.3874591Z The least common ancestor is /home/runner/work/Interfaces/Interfaces/cpp/docs. This will be the root directory of the artifact
+build	UNKNOWN STEP	2026-09-26T02:55:19.3875781Z With the provided path, there will be 336 files uploaded
+build	UNKNOWN STEP	2026-09-26T02:55:19.3879401Z Artifact name is valid!
+build	UNKNOWN STEP	2026-09-26T02:55:19.3879892Z Root directory input is valid!
+build	UNKNOWN STEP	2026-09-26T02:55:19.6924402Z Beginning upload of artifact content to blob storage
+build	UNKNOWN STEP	2026-09-26T02:55:19.8891220Z (node:2592) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+build	UNKNOWN STEP	2026-09-26T02:55:20.1654020Z Uploaded bytes 568714
+build	UNKNOWN STEP	2026-09-26T02:55:20.2027189Z Finished uploading artifact content to blob storage!
+build	UNKNOWN STEP	2026-09-26T02:55:20.2028090Z SHA256 digest of uploaded artifact zip is 2cd579634d94a21fdfdc5cab891da80d518959fbce4d1abe47a9072795928f39
+build	UNKNOWN STEP	2026-09-26T02:55:20.2029656Z Finalizing artifact upload
+build	UNKNOWN STEP	2026-09-26T02:55:20.4029200Z Artifact cpp-api-documentation.zip successfully finalized. Artifact ID 10896531546
+build	UNKNOWN STEP	2026-09-26T02:55:20.4029956Z Artifact cpp-api-documentation has been successfully uploaded! Final size is 568714 bytes. Artifact ID is 10896531546
+build	UNKNOWN STEP	2026-09-26T02:55:20.4030878Z Artifact download URL: https://github.com/linksplatform/Interfaces/actions/runs/36213154870/artifacts/10896531546
+build	UNKNOWN STEP	2026-09-26T02:55:20.4186896Z Post job cleanup.
+build	UNKNOWN STEP	2026-09-26T02:55:20.4807440Z [command]/usr/bin/git version
+build	UNKNOWN STEP	2026-09-26T02:55:20.4840159Z git version 2.55.0
+build	UNKNOWN STEP	2026-09-26T02:55:20.4862946Z Temporarily overriding HOME='/home/runner/work/_temp/34b01287-23fd-478d-9a78-1cb3d623c0ff' before making global git config changes
+build	UNKNOWN STEP	2026-09-26T02:55:20.4865222Z Adding repository directory to the temporary git global config as a safe directory
+build	UNKNOWN STEP	2026-09-26T02:55:20.4867374Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+build	UNKNOWN STEP	2026-09-26T02:55:20.4889399Z Removing SSH command configuration
+build	UNKNOWN STEP	2026-09-26T02:55:20.4893193Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	UNKNOWN STEP	2026-09-26T02:55:20.4915813Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	UNKNOWN STEP	2026-09-26T02:55:20.5082925Z Removing HTTP extra header
+build	UNKNOWN STEP	2026-09-26T02:55:20.5087417Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	UNKNOWN STEP	2026-09-26T02:55:20.5110043Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	UNKNOWN STEP	2026-09-26T02:55:20.5258232Z Removing includeIf entries pointing to credentials config files
+build	UNKNOWN STEP	2026-09-26T02:55:20.5264603Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	UNKNOWN STEP	2026-09-26T02:55:20.5285632Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	UNKNOWN STEP	2026-09-26T02:55:20.5571286Z Cleaning up orphan processes
+build	UNKNOWN STEP	2026-09-26T02:55:20.5755808Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

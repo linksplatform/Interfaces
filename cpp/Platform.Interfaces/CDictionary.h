@@ -23,10 +23,10 @@ namespace Platform::Interfaces {
           { self[generic_key] } -> std::same_as<GenericValue&>;
           { self.find(generic_key) } -> std::forward_iterator;
           { self.contains(generic_key) } -> std::same_as<bool>;
-          {self.insert({generic_key, generic_value})};
+          { self.insert({generic_key, generic_value}) };
           { self.empty() } -> std::same_as<bool>;
           { self.size() } -> std::integral;
-          {self.clear()};
+          { self.clear() };
 
           requires std::ranges::forward_range<Self>;
         };
@@ -38,10 +38,10 @@ namespace Platform::Interfaces {
           { self[key] } -> std::same_as<GenericValue&>;
           { self.find(key) } -> std::forward_iterator;
           { self.contains(key) } -> std::same_as<bool>;
-          {self.insert({key, generic_value})};
+          { self.insert({key, generic_value}) };
           { self.empty() } -> std::same_as<bool>;
           { self.size() } -> std::integral;
-          {self.clear()};
+          { self.clear() };
 
           requires std::ranges::forward_range<Self>;
         };
@@ -53,10 +53,10 @@ namespace Platform::Interfaces {
           { self[key] } -> std::same_as<GenericValue&>;
           { self.find(key) } -> std::forward_iterator;
           { self.contains(key) } -> std::same_as<bool>;
-          {self.insert({key, value})};
+          { self.insert({key, value}) };
           { self.empty() } -> std::same_as<bool>;
           { self.size() } -> std::integral;
-          {self.clear()};
+          { self.clear() };
 
           requires std::ranges::forward_range<Self>;
         };
@@ -82,8 +82,7 @@ namespace Platform::Interfaces {
         };
       }
       if constexpr (sizeof...(TArgs) == 1) {
-        return requires(const Self& self, std::tuple<TArgs...> args,
-                        decltype(std::get<0>(args)) key) {
+        return requires(const Self& self, std::tuple<TArgs...> args, decltype(std::get<0>(args)) key) {
           { self.find(key) } -> std::forward_iterator;
           { self.contains(key) } -> std::same_as<bool>;
           { self.empty() } -> std::same_as<bool>;
@@ -93,8 +92,7 @@ namespace Platform::Interfaces {
         };
       }
       if constexpr (sizeof...(TArgs) == 2) {
-        return requires(const Self& self, std::tuple<TArgs...> args,
-                        decltype(std::get<0>(args)) key) {
+        return requires(const Self& self, std::tuple<TArgs...> args, decltype(std::get<0>(args)) key) {
           { self.find(key) } -> std::forward_iterator;
           { self.contains(key) } -> std::same_as<bool>;
           { self.empty() } -> std::same_as<bool>;

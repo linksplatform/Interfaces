@@ -2,15 +2,122 @@ name: Deploy new cpp version
 
 on:
   push:
-    branches: main 
+    branches: [main]
     paths:
       - 'cpp/**/*.nuspec'
+      - '.github/scripts/pack-cpp-nuget.mjs'
+      - '.github/scripts/preflight-nuget-release.mjs'
+      - '.github/scripts/push-nuget-package.sh'
+      - '.github/workflows/cpp-test.yml'
+      - '.github/workflows/deploy-cpp.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-cpp-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  GIT_CONFIG_COUNT: '1'
+  GIT_CONFIG_KEY_0: init.defaultBranch
+  GIT_CONFIG_VALUE_0: main
+
 jobs:
-  main:
-    uses: linksplatform/Workflows/.github/workflows/deploy-cpp.yml@main
-    with:
-      recipe_folder: "platform.interfaces"
-    secrets:
-        NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+  test:
+    uses: ./.github/workflows/cpp-test.yml
+
+  releasePreflight:
+    needs: test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      publishRequired: ${{ steps.preflight.outputs.publish_required }}
+      auth: ${{ steps.preflight.outputs.auth }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check release state and credentials
+        id: preflight
+        env:
+          PACKAGE_ID: ${{ needs.test.outputs.package_id }}
+          PACKAGE_VERSION: ${{ needs.test.outputs.version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+          NUGET_USER: ${{ vars.NUGET_USER }}
+        run: node .github/scripts/preflight-nuget-release.mjs
+
+  pushToNuget:
+    needs: [test, releasePreflight]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Download NuGet package
+        uses: actions/download-artifact@v8
+        with:
+          name: cpp-nuget-package
+          path: ${{ runner.temp }}/cpp-nuget
+
+      - name: Log in to NuGet with trusted publishing
+        id: nuget-login
+        if: ${{ needs.releasePreflight.outputs.auth == 'trusted-publishing' && needs.releasePreflight.outputs.publishRequired == 'true' }}
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: ${{ vars.NUGET_USER }}
+
+      - name: Push NuGet package to NuGet.org
+        env:
+          AUTH: ${{ needs.releasePreflight.outputs.auth }}
+          PUBLISH_REQUIRED: ${{ needs.releasePreflight.outputs.publishRequired }}
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY || secrets.NUGET_TOKEN }}
+        run: .github/scripts/push-nuget-package.sh "$RUNNER_TEMP/cpp-nuget"/*.nupkg
+
+  # Waits for the push: releases cpp_0.3.43-0.4.1 were created although their
+  # packages never reached nuget.org (issue #150).
+  publishRelease:
+    needs: [test, pushToNuget]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Download NuGet package
+        uses: actions/download-artifact@v8
+        with:
+          name: cpp-nuget-package
+          path: ${{ runner.temp }}/cpp-nuget
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGE_ID: ${{ needs.test.outputs.package_id }}
+          VERSION: ${{ needs.test.outputs.version }}
+        run: |
+          tag="cpp_${VERSION}"
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release ${tag} already exists."
+            exit 0
+          fi
+          archive="$RUNNER_TEMP/platform.interfaces_${VERSION}.zip"
+          (cd cpp && zip -q -r "$archive" Platform.Interfaces)
+          notes="https://www.nuget.org/packages/${PACKAGE_ID}/${VERSION}"$'\n\n'"$(cat "$RUNNER_TEMP/cpp-nuget/release-notes.md")"
+          gh release create "$tag" "$archive" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "[C++] ${VERSION}" --notes "$notes"

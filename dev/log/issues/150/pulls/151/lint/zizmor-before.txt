@@ -1,0 +1,393 @@
+ INFO zizmor: 🌈 zizmor v1.29.0
+ INFO audit: zizmor: 🌈 completed .github/dependabot.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/AutoMerge.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/codeql.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/cpp-docs.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/cpp-test.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/csharp.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/deploy-cpp.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/readme-badges.yml
+warning[dependabot-cooldown]: insufficient cooldown in Dependabot updates
+ --> .github/dependabot.yml:3:3
+  |
+3 | - package-ecosystem: nuget
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^ insufficient implicit default-days (less than 7)
+  |
+  = note: audit confidence → High
+  = note: this finding has an auto-fix
+  = help: audit documentation → https://docs.zizmor.sh/audits/#dependabot-cooldown
+
+warning[excessive-permissions]: overly broad permissions
+  --> .github/workflows/AutoMerge.yml:7:3
+   |
+ 7 | /   auto-merge:
+ 8 | |     if: ${{ github.actor == 'dependabot[bot]' }}
+ 9 | |     runs-on: ubuntu-latest
+10 | |     timeout-minutes: 5
+...  |
+14 | |           target: minor
+15 | |           github-token: ${{ secrets.DEPENDABOT_AUTO_MERGE_TOKEN }}
+   | |                                                                   ^
+   | |                                                                   |
+   | |___________________________________________________________________this job
+   |                                                                     default permissions used due to no permissions: block
+   |
+   = note: audit confidence → Medium
+   = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+error[dangerous-triggers]: use of fundamentally insecure workflow trigger
+ --> .github/workflows/AutoMerge.yml:3:1
+  |
+3 | / on:
+4 | |   pull_request_target:
+  | |______________________^ pull_request_target is almost always used insecurely
+  |
+  = note: audit confidence → Medium
+  = help: audit documentation → https://docs.zizmor.sh/audits/#dangerous-triggers
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/AutoMerge.yml:12:15
+   |
+12 |       - uses: ahmadnassri/action-dependabot-auto-merge@v2
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[bot-conditions]: spoofable bot actor check
+ --> .github/workflows/AutoMerge.yml:8:13
+  |
+7 |   auto-merge:
+  |   ---------- this job
+8 |     if: ${{ github.actor == 'dependabot[bot]' }}
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ actor context may be spoofable
+  |
+  = note: audit confidence → High
+  = note: this finding has an auto-fix
+  = help: audit documentation → https://docs.zizmor.sh/audits/#bot-conditions
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/codeql.yml:33:13
+   |
+33 |       uses: actions/checkout@v7
+   |             ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/codeql.yml:38:13
+   |
+38 |       uses: github/codeql-action/init@v4
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/codeql.yml:45:13
+   |
+45 |       uses: github/codeql-action/analyze@v4
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp-docs.yml:28:15
+   |
+28 |       - uses: actions/checkout@v7
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp-docs.yml:45:15
+   |
+45 |         uses: actions/upload-artifact@v4
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+warning[excessive-permissions]: overly broad permissions
+  --> .github/workflows/cpp-test.yml:24:3
+   |
+24 | /   main:
+25 | |     uses: linksplatform/Workflows/.github/workflows/cpp-test.yml@main
+   | |                                                                      ^
+   | |                                                                      |
+   | |______________________________________________________________________this job
+   |                                                                        default permissions used due to no permissions: block
+   |
+   = note: audit confidence → Medium
+   = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp-test.yml:25:11
+   |
+25 |     uses: linksplatform/Workflows/.github/workflows/cpp-test.yml@main
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+info[use-trusted-publishing]: prefer trusted publishing for authentication
+   --> .github/workflows/csharp.yml:101:14
+    |
+101 |         run: dotnet nuget push "$RUNNER_TEMP/github-packages"/*.nupkg --source GitHub --skip-duplicate
+    |         ---  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ this command
+    |         |
+    |         this step
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#use-trusted-publishing
+
+info[use-trusted-publishing]: prefer trusted publishing for authentication
+   --> .github/workflows/csharp.yml:125:14
+    |
+125 | ...   run: dotnet nuget push "$RUNNER_TEMP/nuget-packages"/*.nupkg --source https://api.nuget.org/v3/index.json --api-key "$NUGET_TOKEN" --skip-duplicate
+    |       ---  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ this command
+    |       |
+    |       this step
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#use-trusted-publishing
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/csharp.yml:37:15
+   |
+37 |       - uses: actions/checkout@v7
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/csharp.yml:43:15
+   |
+43 |         uses: actions/setup-dotnet@v6
+   |               ^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/csharp.yml:63:15
+   |
+63 |       - uses: actions/checkout@v7
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/csharp.yml:82:15
+   |
+82 |       - uses: actions/checkout@v7
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/csharp.yml:88:15
+   |
+88 |         uses: actions/setup-dotnet@v6
+   |               ^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:109:15
+    |
+109 |       - uses: actions/checkout@v7
+    |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:115:15
+    |
+115 |         uses: actions/setup-dotnet@v6
+    |               ^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:135:15
+    |
+135 |       - uses: actions/checkout@v7
+    |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:141:15
+    |
+141 |         uses: actions/setup-dotnet@v6
+    |               ^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:169:15
+    |
+169 |       - uses: actions/checkout@v7
+    |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:176:15
+    |
+176 |         uses: tj-actions/changed-files@v47
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:200:15
+    |
+200 |       - uses: actions/checkout@v7
+    |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:210:15
+    |
+210 |         uses: actions/upload-artifact@v7
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:223:15
+    |
+223 |       - uses: actions/checkout@v7
+    |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:229:15
+    |
+229 |         uses: actions/setup-dotnet@v6
+    |               ^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:244:15
+    |
+244 |         uses: actions/upload-artifact@v7
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:260:15
+    |
+260 |       - uses: actions/checkout@v7
+    |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/csharp.yml:297:15
+    |
+297 |       - uses: actions/checkout@v7
+    |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+warning[excessive-permissions]: overly broad permissions
+  --> .github/workflows/deploy-cpp.yml:11:3
+   |
+11 | /   main:
+12 | |     uses: linksplatform/Workflows/.github/workflows/deploy-cpp.yml@main
+13 | |     with:
+14 | |       recipe_folder: "platform.interfaces"
+15 | |     secrets:
+16 | |         NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+   | |                                                ^
+   | |                                                |
+   | |________________________________________________this job
+   |                                                  default permissions used due to no permissions: block
+   |
+   = note: audit confidence → Medium
+   = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/deploy-cpp.yml:12:11
+   |
+12 |     uses: linksplatform/Workflows/.github/workflows/deploy-cpp.yml@main
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+help[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/readme-badges.yml:23:9
+   |
+23 |       - uses: actions/checkout@v7
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+warning[excessive-permissions]: overly broad permissions
+  --> .github/workflows/readme-badges.yml:19:3
+   |
+19 | /   check:
+20 | |     runs-on: ubuntu-latest
+21 | |     timeout-minutes: 5
+22 | |     steps:
+...  |
+29 | |       - name: Check that README badges reference existing workflows
+30 | |         run: node .github/scripts/check-readme-badges.mjs --verbose
+   | |                                                                    ^
+   | |                                                                    |
+   | |____________________________________________________________________this job
+   |                                                                      default permissions used due to no permissions: block
+   |
+   = note: audit confidence → Medium
+   = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/readme-badges.yml:23:15
+   |
+23 |       - uses: actions/checkout@v7
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/readme-badges.yml:24:15
+   |
+24 |       - uses: actions/setup-node@v7
+   |               ^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+70 findings (32 suppressed, 2 safe fixes, 1 unsafe fixes): 2 informational, 1 low, 5 medium, 30 high
+zizmor exit=14

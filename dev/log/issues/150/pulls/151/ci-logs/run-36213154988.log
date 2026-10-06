@@ -1,0 +1,227 @@
+check	UNKNOWN STEP	﻿2026-09-26T02:54:44.4834292Z Current runner version: '2.337.0'
+check	UNKNOWN STEP	2026-09-26T02:54:44.4861467Z ##[group]Runner Image Provisioner
+check	UNKNOWN STEP	2026-09-26T02:54:44.4862289Z Hosted Compute Agent
+check	UNKNOWN STEP	2026-09-26T02:54:44.4862871Z Version: 20260828.587
+check	UNKNOWN STEP	2026-09-26T02:54:44.4863614Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+check	UNKNOWN STEP	2026-09-26T02:54:44.4864332Z Build Date: 2026-08-28T16:44:25Z
+check	UNKNOWN STEP	2026-09-26T02:54:44.4865054Z Worker ID: {36daade3-6c47-4787-a1b4-aa4202b4e362}
+check	UNKNOWN STEP	2026-09-26T02:54:44.4865781Z Azure Region: eastus2
+check	UNKNOWN STEP	2026-09-26T02:54:44.4866359Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:44.4867883Z ##[group]Operating System
+check	UNKNOWN STEP	2026-09-26T02:54:44.4868568Z Ubuntu
+check	UNKNOWN STEP	2026-09-26T02:54:44.4869151Z 24.04.5
+check	UNKNOWN STEP	2026-09-26T02:54:44.4869887Z LTS
+check	UNKNOWN STEP	2026-09-26T02:54:44.4870676Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:44.4871380Z ##[group]Runner Image
+check	UNKNOWN STEP	2026-09-26T02:54:44.4872038Z Image: ubuntu-24.04
+check	UNKNOWN STEP	2026-09-26T02:54:44.4872596Z Version: 20260920.314.1
+check	UNKNOWN STEP	2026-09-26T02:54:44.4873917Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+check	UNKNOWN STEP	2026-09-26T02:54:44.4875581Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+check	UNKNOWN STEP	2026-09-26T02:54:44.4876544Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:44.4879799Z ##[group]GITHUB_TOKEN Permissions
+check	UNKNOWN STEP	2026-09-26T02:54:44.4882189Z Actions: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4882964Z ArtifactMetadata: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4883623Z Attestations: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4884201Z Checks: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4884795Z CodeQuality: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4885361Z Contents: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4886015Z CopilotRequests: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4886616Z Deployments: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4887169Z Discussions: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4887777Z Drives: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4888303Z Issues: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4888853Z Metadata: read
+check	UNKNOWN STEP	2026-09-26T02:54:44.4889543Z Models: read
+check	UNKNOWN STEP	2026-09-26T02:54:44.4890494Z Packages: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4891155Z Pages: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4891757Z PullRequests: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4892367Z RepositoryProjects: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4893108Z SecurityEvents: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4893672Z Statuses: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4894259Z VulnerabilityAlerts: read
+check	UNKNOWN STEP	2026-09-26T02:54:44.4894856Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:44.4896912Z Secret source: Actions
+check	UNKNOWN STEP	2026-09-26T02:54:44.4898008Z Cache mode: write
+check	UNKNOWN STEP	2026-09-26T02:54:44.4898940Z Prepare workflow directory
+check	UNKNOWN STEP	2026-09-26T02:54:44.5226600Z Prepare all required actions
+check	UNKNOWN STEP	2026-09-26T02:54:44.5275825Z Getting action download info
+check	UNKNOWN STEP	2026-09-26T02:54:44.7685275Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+check	UNKNOWN STEP	2026-09-26T02:54:44.9262842Z Download action repository 'actions/setup-node@v7' (SHA:820762786026740c76f36085b0efc47a31fe5020)
+check	UNKNOWN STEP	2026-09-26T02:54:45.1587768Z Complete job name: check
+check	UNKNOWN STEP	2026-09-26T02:54:45.2333635Z ##[group]Run actions/checkout@v7
+check	UNKNOWN STEP	2026-09-26T02:54:45.2334490Z with:
+check	UNKNOWN STEP	2026-09-26T02:54:45.2334951Z   repository: linksplatform/Interfaces
+check	UNKNOWN STEP	2026-09-26T02:54:45.2338658Z   token: ***
+check	UNKNOWN STEP	2026-09-26T02:54:45.2339090Z   ssh-strict: true
+check	UNKNOWN STEP	2026-09-26T02:54:45.2339550Z   ssh-user: git
+check	UNKNOWN STEP	2026-09-26T02:54:45.2340250Z   persist-credentials: true
+check	UNKNOWN STEP	2026-09-26T02:54:45.2340735Z   clean: true
+check	UNKNOWN STEP	2026-09-26T02:54:45.2341172Z   sparse-checkout-cone-mode: true
+check	UNKNOWN STEP	2026-09-26T02:54:45.2341681Z   fetch-depth: 1
+check	UNKNOWN STEP	2026-09-26T02:54:45.2342103Z   fetch-tags: false
+check	UNKNOWN STEP	2026-09-26T02:54:45.2342542Z   show-progress: true
+check	UNKNOWN STEP	2026-09-26T02:54:45.2342975Z   lfs: false
+check	UNKNOWN STEP	2026-09-26T02:54:45.2343379Z   submodules: false
+check	UNKNOWN STEP	2026-09-26T02:54:45.2343833Z   set-safe-directory: true
+check	UNKNOWN STEP	2026-09-26T02:54:45.2344332Z   allow-unsafe-pr-checkout: false
+check	UNKNOWN STEP	2026-09-26T02:54:45.2345113Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.3351615Z Syncing repository: linksplatform/Interfaces
+check	UNKNOWN STEP	2026-09-26T02:54:45.3353468Z ##[group]Getting Git version info
+check	UNKNOWN STEP	2026-09-26T02:54:45.3354287Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+check	UNKNOWN STEP	2026-09-26T02:54:45.3355348Z [command]/usr/bin/git version
+check	UNKNOWN STEP	2026-09-26T02:54:45.3439200Z git version 2.55.0
+check	UNKNOWN STEP	2026-09-26T02:54:45.3464885Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.3478138Z Temporarily overriding HOME='/home/runner/work/_temp/7e3ad366-fc83-453e-a3d3-6c5342f2d069' before making global git config changes
+check	UNKNOWN STEP	2026-09-26T02:54:45.3481151Z Adding repository directory to the temporary git global config as a safe directory
+check	UNKNOWN STEP	2026-09-26T02:54:45.3485150Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+check	UNKNOWN STEP	2026-09-26T02:54:45.3539298Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+check	UNKNOWN STEP	2026-09-26T02:54:45.3543195Z ##[group]Determining repository object format
+check	UNKNOWN STEP	2026-09-26T02:54:45.3544693Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.3545524Z ##[group]Initializing the repository
+check	UNKNOWN STEP	2026-09-26T02:54:45.3550009Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+check	UNKNOWN STEP	2026-09-26T02:54:45.3666174Z hint: Using 'master' as the name for the initial branch. This default branch name
+check	UNKNOWN STEP	2026-09-26T02:54:45.3667828Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+check	UNKNOWN STEP	2026-09-26T02:54:45.3669450Z hint: to use in all of your new repositories, which will suppress this warning,
+check	UNKNOWN STEP	2026-09-26T02:54:45.3670989Z hint: call:
+check	UNKNOWN STEP	2026-09-26T02:54:45.3671656Z hint:
+check	UNKNOWN STEP	2026-09-26T02:54:45.3672446Z hint: 	git config --global init.defaultBranch <name>
+check	UNKNOWN STEP	2026-09-26T02:54:45.3673510Z hint:
+check	UNKNOWN STEP	2026-09-26T02:54:45.3674525Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+check	UNKNOWN STEP	2026-09-26T02:54:45.3676107Z hint: 'development'. The just-created branch can be renamed via this command:
+check	UNKNOWN STEP	2026-09-26T02:54:45.3677320Z hint:
+check	UNKNOWN STEP	2026-09-26T02:54:45.3677991Z hint: 	git branch -m <name>
+check	UNKNOWN STEP	2026-09-26T02:54:45.3678812Z hint:
+check	UNKNOWN STEP	2026-09-26T02:54:45.3680115Z hint: Disable this message with "git config set advice.defaultBranchName false"
+check	UNKNOWN STEP	2026-09-26T02:54:45.3681840Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+check	UNKNOWN STEP	2026-09-26T02:54:45.3686773Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+check	UNKNOWN STEP	2026-09-26T02:54:45.3743362Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.3744680Z ##[group]Disabling automatic garbage collection
+check	UNKNOWN STEP	2026-09-26T02:54:45.3747434Z [command]/usr/bin/git config --local gc.auto 0
+check	UNKNOWN STEP	2026-09-26T02:54:45.3783014Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.3784499Z ##[group]Setting up auth
+check	UNKNOWN STEP	2026-09-26T02:54:45.3785498Z Removing SSH command configuration
+check	UNKNOWN STEP	2026-09-26T02:54:45.3788436Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	UNKNOWN STEP	2026-09-26T02:54:45.3823442Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	UNKNOWN STEP	2026-09-26T02:54:45.4245712Z Removing HTTP extra header
+check	UNKNOWN STEP	2026-09-26T02:54:45.4252208Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	UNKNOWN STEP	2026-09-26T02:54:45.4290615Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	UNKNOWN STEP	2026-09-26T02:54:45.4514698Z Removing includeIf entries pointing to credentials config files
+check	UNKNOWN STEP	2026-09-26T02:54:45.4518958Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	UNKNOWN STEP	2026-09-26T02:54:45.4564403Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	UNKNOWN STEP	2026-09-26T02:54:45.4800666Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+check	UNKNOWN STEP	2026-09-26T02:54:45.4847350Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config
+check	UNKNOWN STEP	2026-09-26T02:54:45.4887034Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config
+check	UNKNOWN STEP	2026-09-26T02:54:45.4931616Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config
+check	UNKNOWN STEP	2026-09-26T02:54:45.4973301Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config
+check	UNKNOWN STEP	2026-09-26T02:54:45.5008034Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.5008801Z ##[group]Fetching the repository
+check	UNKNOWN STEP	2026-09-26T02:54:45.5018329Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3dfbee614c1276425f216d032580c052d94da4e8:refs/remotes/origin/main
+check	UNKNOWN STEP	2026-09-26T02:54:45.8015565Z From https://github.com/linksplatform/Interfaces
+check	UNKNOWN STEP	2026-09-26T02:54:45.8017434Z  * [new ref]         3dfbee614c1276425f216d032580c052d94da4e8 -> origin/main
+check	UNKNOWN STEP	2026-09-26T02:54:45.8026458Z [command]/usr/bin/git branch --list --remote origin/main
+check	UNKNOWN STEP	2026-09-26T02:54:45.8056230Z   origin/main
+check	UNKNOWN STEP	2026-09-26T02:54:45.8064187Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+check	UNKNOWN STEP	2026-09-26T02:54:45.8090748Z 3dfbee614c1276425f216d032580c052d94da4e8
+check	UNKNOWN STEP	2026-09-26T02:54:45.8096968Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.8098578Z ##[group]Determining the checkout info
+check	UNKNOWN STEP	2026-09-26T02:54:45.8100625Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.8104401Z [command]/usr/bin/git sparse-checkout disable
+check	UNKNOWN STEP	2026-09-26T02:54:45.8162787Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+check	UNKNOWN STEP	2026-09-26T02:54:45.8202698Z ##[group]Checking out the ref
+check	UNKNOWN STEP	2026-09-26T02:54:45.8204242Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+check	UNKNOWN STEP	2026-09-26T02:54:45.8316767Z Switched to a new branch 'main'
+check	UNKNOWN STEP	2026-09-26T02:54:45.8322092Z branch 'main' set up to track 'origin/main'.
+check	UNKNOWN STEP	2026-09-26T02:54:45.8328430Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:45.8373565Z [command]/usr/bin/git log -1 --format=%H
+check	UNKNOWN STEP	2026-09-26T02:54:45.8402803Z 3dfbee614c1276425f216d032580c052d94da4e8
+check	UNKNOWN STEP	2026-09-26T02:54:45.8773590Z ##[group]Run actions/setup-node@v7
+check	UNKNOWN STEP	2026-09-26T02:54:45.8774767Z with:
+check	UNKNOWN STEP	2026-09-26T02:54:45.8775621Z   node-version: 24
+check	UNKNOWN STEP	2026-09-26T02:54:45.8776542Z   check-latest: false
+check	UNKNOWN STEP	2026-09-26T02:54:45.8786783Z   token: ***
+check	UNKNOWN STEP	2026-09-26T02:54:45.8787698Z   package-manager-cache: true
+check	UNKNOWN STEP	2026-09-26T02:54:45.8788761Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:46.0098912Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+check	UNKNOWN STEP	2026-09-26T02:54:46.0105497Z ##[group]Environment details
+check	UNKNOWN STEP	2026-09-26T02:54:48.6348783Z node: v24.21.0
+check	UNKNOWN STEP	2026-09-26T02:54:48.6349466Z npm: 11.19.0
+check	UNKNOWN STEP	2026-09-26T02:54:48.6350340Z yarn: 1.22.22
+check	UNKNOWN STEP	2026-09-26T02:54:48.6351956Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:48.6493828Z ##[group]Run node --test .github/scripts/check-readme-badges.test.mjs
+check	UNKNOWN STEP	2026-09-26T02:54:48.6494470Z ^[[36;1mnode --test .github/scripts/check-readme-badges.test.mjs^[[0m
+check	UNKNOWN STEP	2026-09-26T02:54:48.6808256Z shell: /usr/bin/bash -e {0}
+check	UNKNOWN STEP	2026-09-26T02:54:48.6808701Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:49.1594316Z ✔ rejects the badge that broke in issue #141 (34.016241ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1595726Z ✔ accepts a badge naming an existing workflow (33.172029ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1597559Z ✔ accepts the actions/workflows badge form without truncating the file name (34.328294ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1599466Z ✔ accepts a plain actions/workflows link (36.350535ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1601451Z ✔ rejects a link to a workflow file that does not exist (35.332823ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1603020Z ✔ decodes + as a space in actions?workflow= links (33.304726ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1604841Z ✔ decodes %20 as a space in actions?workflow= links (36.136749ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1606017Z ✔ reads a quoted workflow name (35.459511ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1607069Z ✔ fails when README has no workflow badges at all (34.306011ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1608275Z ✔ the real README of this repository passes the check (32.13114ms)
+check	UNKNOWN STEP	2026-09-26T02:54:49.1704417Z ℹ tests 10
+check	UNKNOWN STEP	2026-09-26T02:54:49.1704896Z ℹ suites 0
+check	UNKNOWN STEP	2026-09-26T02:54:49.1705321Z ℹ pass 10
+check	UNKNOWN STEP	2026-09-26T02:54:49.1705733Z ℹ fail 0
+check	UNKNOWN STEP	2026-09-26T02:54:49.1706125Z ℹ cancelled 0
+check	UNKNOWN STEP	2026-09-26T02:54:49.1706563Z ℹ skipped 0
+check	UNKNOWN STEP	2026-09-26T02:54:49.1706960Z ℹ todo 0
+check	UNKNOWN STEP	2026-09-26T02:54:49.1707821Z ℹ duration_ms 429.926134
+check	UNKNOWN STEP	2026-09-26T02:54:49.1796189Z ##[group]Run node .github/scripts/check-readme-badges.mjs --verbose
+check	UNKNOWN STEP	2026-09-26T02:54:49.1796714Z ^[[36;1mnode .github/scripts/check-readme-badges.mjs --verbose^[[0m
+check	UNKNOWN STEP	2026-09-26T02:54:49.1863209Z shell: /usr/bin/bash -e {0}
+check	UNKNOWN STEP	2026-09-26T02:54:49.1863528Z ##[endgroup]
+check	UNKNOWN STEP	2026-09-26T02:54:49.2234590Z [trace] workflows directory: /home/runner/work/Interfaces/Interfaces/.github/workflows
+check	UNKNOWN STEP	2026-09-26T02:54:49.2237301Z [trace] workflow AutoMerge.yml -> name "auto-merge"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2238155Z [trace] workflow codeql.yml -> name "CodeQL"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2239059Z [trace] workflow cpp-docs.yml -> name "C++ documentation"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2240250Z [trace] workflow cpp-test.yml -> name "Test cpp"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2241072Z [trace] workflow csharp.yml -> name "csharp"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2242004Z [trace] workflow deploy-cpp.yml -> name "Deploy new cpp version"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2243143Z [trace] workflow readme-badges.yml -> name "Check README badges"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2244275Z [trace] found 8 workflow reference(s) in README.md
+check	UNKNOWN STEP	2026-09-26T02:54:49.2245198Z [trace] ok badge (workflow name) by name: "Test cpp"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2246018Z [trace] ok badge (workflow name) by name: "csharp"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2246834Z [trace] ok link (workflow name) by name: "Test cpp"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2250881Z [trace] ok link (workflow name) by name: "csharp"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2251764Z [trace] ok badge (workflow file) by file: "codeql.yml"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2252358Z [trace] ok link (workflow file) by file: "codeql.yml"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2252944Z [trace] ok link (workflow file) by file: "cpp-docs.yml"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2253525Z [trace] ok link (workflow file) by file: "csharp.yml"
+check	UNKNOWN STEP	2026-09-26T02:54:49.2254225Z All 8 workflow reference(s) in README.md resolve to existing workflows.
+check	UNKNOWN STEP	2026-09-26T02:54:49.2383179Z Post job cleanup.
+check	UNKNOWN STEP	2026-09-26T02:54:49.3617406Z Post job cleanup.
+check	UNKNOWN STEP	2026-09-26T02:54:49.4515428Z [command]/usr/bin/git version
+check	UNKNOWN STEP	2026-09-26T02:54:49.4564467Z git version 2.55.0
+check	UNKNOWN STEP	2026-09-26T02:54:49.4602630Z Temporarily overriding HOME='/home/runner/work/_temp/a4e5213d-b38d-4ac3-9dcb-d823ad385cc0' before making global git config changes
+check	UNKNOWN STEP	2026-09-26T02:54:49.4604519Z Adding repository directory to the temporary git global config as a safe directory
+check	UNKNOWN STEP	2026-09-26T02:54:49.4606207Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+check	UNKNOWN STEP	2026-09-26T02:54:49.4637610Z Removing SSH command configuration
+check	UNKNOWN STEP	2026-09-26T02:54:49.4644056Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	UNKNOWN STEP	2026-09-26T02:54:49.4680233Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	UNKNOWN STEP	2026-09-26T02:54:49.4973782Z Removing HTTP extra header
+check	UNKNOWN STEP	2026-09-26T02:54:49.4975521Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	UNKNOWN STEP	2026-09-26T02:54:49.5012876Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	UNKNOWN STEP	2026-09-26T02:54:49.5282124Z Removing includeIf entries pointing to credentials config files
+check	UNKNOWN STEP	2026-09-26T02:54:49.5292523Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	UNKNOWN STEP	2026-09-26T02:54:49.5334234Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+check	UNKNOWN STEP	2026-09-26T02:54:49.5336029Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+check	UNKNOWN STEP	2026-09-26T02:54:49.5337371Z includeif.gitdir:/github/workspace/.git.path
+check	UNKNOWN STEP	2026-09-26T02:54:49.5338600Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+check	UNKNOWN STEP	2026-09-26T02:54:49.5352786Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+check	UNKNOWN STEP	2026-09-26T02:54:49.5388650Z /home/runner/work/_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config
+check	UNKNOWN STEP	2026-09-26T02:54:49.5404163Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-dd633fab\-3041\-49fa\-af3c\-4444b0c22467\.config
+check	UNKNOWN STEP	2026-09-26T02:54:49.5457875Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+check	UNKNOWN STEP	2026-09-26T02:54:49.5484942Z /home/runner/work/_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config
+check	UNKNOWN STEP	2026-09-26T02:54:49.5502375Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-dd633fab\-3041\-49fa\-af3c\-4444b0c22467\.config
+check	UNKNOWN STEP	2026-09-26T02:54:49.5639119Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+check	UNKNOWN STEP	2026-09-26T02:54:49.5663779Z /github/runner_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config
+check	UNKNOWN STEP	2026-09-26T02:54:49.5685833Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-dd633fab\-3041\-49fa\-af3c\-4444b0c22467\.config
+check	UNKNOWN STEP	2026-09-26T02:54:49.5731901Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+check	UNKNOWN STEP	2026-09-26T02:54:49.5765569Z /github/runner_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config
+check	UNKNOWN STEP	2026-09-26T02:54:49.5782654Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-dd633fab\-3041\-49fa\-af3c\-4444b0c22467\.config
+check	UNKNOWN STEP	2026-09-26T02:54:49.5815484Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	UNKNOWN STEP	2026-09-26T02:54:49.6059552Z Removing credentials config '/home/runner/work/_temp/git-credentials-dd633fab-3041-49fa-af3c-4444b0c22467.config'
+check	UNKNOWN STEP	2026-09-26T02:54:49.6197412Z Cleaning up orphan processes

@@ -8,6 +8,15 @@ on:
   schedule:
     - cron: '43 3 * * 0'
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # Superseded pull request runs are cancelled; runs on main finish so a
+  # release or documentation push that already started is never interrupted.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 env:
   GIT_CONFIG_COUNT: '1'
   GIT_CONFIG_KEY_0: init.defaultBranch
@@ -26,7 +35,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'c-cpp', 'csharp' ]
+        language: [ 'actions', 'c-cpp', 'csharp' ]
 
     steps:
     - name: Checkout repository
@@ -41,7 +50,29 @@ jobs:
         build-mode: none
         queries: security-extended,security-and-quality
 
+    # The C# buildless restore warns "No NuGet feeds are reachable" whenever
+    # one of its feed sets is empty, although nuget.org, the only feed here,
+    # is reachable (github/codeql#22766). With the check off it restores from
+    # nuget.org directly. The variable is read only by the C# extractor.
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
+      env:
+        CODEQL_EXTRACTOR_CSHARP_BUILDLESS_NUGET_FEEDS_CHECK: 'false'
       with:
         category: "/language:${{ matrix.language }}"
+
+  dependency-review:
+    name: Dependency review
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+      with:
+        persist-credentials: false
+
+    - name: Review dependency changes
+      uses: actions/dependency-review-action@v5
+      with:
+        fail-on-severity: high

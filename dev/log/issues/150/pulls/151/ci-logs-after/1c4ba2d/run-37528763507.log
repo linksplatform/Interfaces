@@ -1,0 +1,325 @@
+build	Set up job	﻿2026-10-06T20:44:48.6971960Z Current runner version: '2.337.0'
+build	Set up job	2026-10-06T20:44:48.7011150Z ##[group]Runner Image Provisioner
+build	Set up job	2026-10-06T20:44:48.7012633Z Hosted Compute Agent
+build	Set up job	2026-10-06T20:44:48.7013681Z Version: 20260901.588
+build	Set up job	2026-10-06T20:44:48.7015000Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+build	Set up job	2026-10-06T20:44:48.7016310Z Build Date: 2026-09-01T19:56:44Z
+build	Set up job	2026-10-06T20:44:48.7017671Z Worker ID: {f6061019-dc87-469a-a374-3f9e3f973149}
+build	Set up job	2026-10-06T20:44:48.7019365Z Azure Region: eastus
+build	Set up job	2026-10-06T20:44:48.7020433Z ##[endgroup]
+build	Set up job	2026-10-06T20:44:48.7022794Z ##[group]Operating System
+build	Set up job	2026-10-06T20:44:48.7023926Z Ubuntu
+build	Set up job	2026-10-06T20:44:48.7024881Z 24.04.5
+build	Set up job	2026-10-06T20:44:48.7025920Z LTS
+build	Set up job	2026-10-06T20:44:48.7026844Z ##[endgroup]
+build	Set up job	2026-10-06T20:44:48.7028234Z ##[group]Runner Image
+build	Set up job	2026-10-06T20:44:48.7029412Z Image: ubuntu-24.04
+build	Set up job	2026-10-06T20:44:48.7030406Z Version: 20260927.320.1
+build	Set up job	2026-10-06T20:44:48.7032541Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+build	Set up job	2026-10-06T20:44:48.7035742Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+build	Set up job	2026-10-06T20:44:48.7037615Z ##[endgroup]
+build	Set up job	2026-10-06T20:44:48.7039789Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2026-10-06T20:44:48.7042690Z Contents: read
+build	Set up job	2026-10-06T20:44:48.7043846Z Metadata: read
+build	Set up job	2026-10-06T20:44:48.7044848Z ##[endgroup]
+build	Set up job	2026-10-06T20:44:48.7047617Z Secret source: Actions
+build	Set up job	2026-10-06T20:44:48.7049799Z Cache mode: write
+build	Set up job	2026-10-06T20:44:48.7051033Z Prepare workflow directory
+build	Set up job	2026-10-06T20:44:48.9319267Z Prepare all required actions
+build	Set up job	2026-10-06T20:44:48.9369735Z Getting action download info
+build	Set up job	2026-10-06T20:44:49.1403592Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+build	Set up job	2026-10-06T20:44:49.2670329Z Download action repository 'actions/upload-artifact@v7' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+build	Set up job	2026-10-06T20:44:49.6083774Z Complete job name: build
+build	Run actions/checkout@v7	﻿2026-10-06T20:44:50.1313679Z ##[group]Run actions/checkout@v7
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1314895Z with:
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1315500Z   persist-credentials: false
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1316346Z   repository: linksplatform/Interfaces
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1328543Z   token: ***
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1329131Z   ssh-strict: true
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1329701Z   ssh-user: git
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1330243Z   clean: true
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1330830Z   sparse-checkout-cone-mode: true
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1331622Z   fetch-depth: 1
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1332188Z   fetch-tags: false
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1332778Z   show-progress: true
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1333400Z   lfs: false
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1333927Z   submodules: false
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1334525Z   set-safe-directory: true
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1335265Z   allow-unsafe-pr-checkout: false
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1336356Z env:
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1336864Z   GIT_CONFIG_COUNT: 1
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1337525Z   GIT_CONFIG_KEY_0: init.defaultBranch
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1338534Z   GIT_CONFIG_VALUE_0: main
+build	Run actions/checkout@v7	2026-10-06T20:44:50.1339267Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2381269Z Syncing repository: linksplatform/Interfaces
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2384667Z ##[group]Getting Git version info
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2386483Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2389404Z [command]/usr/bin/git version
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2463306Z git version 2.55.0
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2489428Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2502413Z Temporarily overriding HOME='/home/runner/work/_temp/be51c38a-b88a-4c26-801c-4712db7b7ece' before making global git config changes
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2507474Z Adding repository directory to the temporary git global config as a safe directory
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2511698Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2566078Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2569866Z ##[group]Determining repository object format
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2572279Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2574057Z ##[group]Initializing the repository
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2577176Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2729558Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2742023Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2800261Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2802000Z ##[group]Disabling automatic garbage collection
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2803901Z [command]/usr/bin/git config --local gc.auto 0
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2844224Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2846143Z ##[group]Setting up auth
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2847592Z Removing SSH command configuration
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2850347Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Run actions/checkout@v7	2026-10-06T20:44:50.2888340Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3313241Z Removing HTTP extra header
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3319225Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3363413Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3581416Z Removing includeIf entries pointing to credentials config files
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3586562Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3622114Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3848208Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3886789Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3921425Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3962359Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.3997610Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.4028156Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.4029993Z ##[group]Fetching the repository
+build	Run actions/checkout@v7	2026-10-06T20:44:50.4038326Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3243ebb01c602081c3cd0d2a52403726a7a938ac:refs/remotes/pull/151/merge
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8352170Z From https://github.com/linksplatform/Interfaces
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8353787Z  * [new ref]         3243ebb01c602081c3cd0d2a52403726a7a938ac -> pull/151/merge
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8358135Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8359797Z ##[group]Determining the checkout info
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8361454Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8362751Z [command]/usr/bin/git sparse-checkout disable
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8421795Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8456591Z ##[group]Checking out the ref
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8459935Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/151/merge
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8784023Z Note: switching to 'refs/remotes/pull/151/merge'.
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8784974Z 
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8785628Z You are in 'detached HEAD' state. You can look around, make experimental
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8787341Z changes and commit them, and you can discard any commits you make in this
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8789416Z state without impacting any branches by switching back to a branch.
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8790439Z 
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8791048Z If you want to create a new branch to retain commits you create, you may
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8792542Z do so (now or later) by using -c with the switch command. Example:
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8793449Z 
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8793764Z   git switch -c <new-branch-name>
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8794326Z 
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8794608Z Or undo this operation with:
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8795119Z 
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8795536Z   git switch -
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8796171Z 
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8797166Z Turn off this advice by setting config variable advice.detachedHead to false
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8798636Z 
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8799903Z HEAD is now at 3243ebb Merge 1c4ba2d3dcb788c556a2cc8fdf83d9d33a898889 into 3dfbee614c1276425f216d032580c052d94da4e8
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8803504Z ##[endgroup]
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8846159Z [command]/usr/bin/git log -1 --format=%H
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8877064Z 3243ebb01c602081c3cd0d2a52403726a7a938ac
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8893287Z ##[group]Removing auth
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8894086Z Removing SSH command configuration
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8895471Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Run actions/checkout@v7	2026-10-06T20:44:50.8931479Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9162059Z Removing HTTP extra header
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9164780Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9202535Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9432435Z Removing includeIf entries pointing to credentials config files
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9435590Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9466812Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9469924Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9472334Z includeif.gitdir:/github/workspace/.git.path
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9473877Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9477529Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9502014Z /home/runner/work/_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9513843Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-6f0f9234\-86f8\-444c\-8a32\-062b968998fd\.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9560766Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9585419Z /home/runner/work/_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9594802Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-6f0f9234\-86f8\-444c\-8a32\-062b968998fd\.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9630105Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9657509Z /github/runner_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9666889Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-6f0f9234\-86f8\-444c\-8a32\-062b968998fd\.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9704729Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9731369Z /github/runner_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9784236Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-6f0f9234\-86f8\-444c\-8a32\-062b968998fd\.config
+build	Run actions/checkout@v7	2026-10-06T20:44:50.9836938Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Run actions/checkout@v7	2026-10-06T20:44:51.0063424Z Removing credentials config '/home/runner/work/_temp/git-credentials-6f0f9234-86f8-444c-8a32-062b968998fd.config'
+build	Run actions/checkout@v7	2026-10-06T20:44:51.0071727Z ##[endgroup]
+build	Install Doxygen	﻿2026-10-06T20:44:51.0986595Z ##[group]Run sudo apt-get update
+build	Install Doxygen	2026-10-06T20:44:51.0987552Z ^[[36;1msudo apt-get update^[[0m
+build	Install Doxygen	2026-10-06T20:44:51.0988586Z ^[[36;1msudo apt-get install -y doxygen^[[0m
+build	Install Doxygen	2026-10-06T20:44:51.1278656Z shell: /usr/bin/bash -e {0}
+build	Install Doxygen	2026-10-06T20:44:51.1279500Z env:
+build	Install Doxygen	2026-10-06T20:44:51.1280119Z   GIT_CONFIG_COUNT: 1
+build	Install Doxygen	2026-10-06T20:44:51.1280885Z   GIT_CONFIG_KEY_0: init.defaultBranch
+build	Install Doxygen	2026-10-06T20:44:51.1281840Z   GIT_CONFIG_VALUE_0: main
+build	Install Doxygen	2026-10-06T20:44:51.1282601Z ##[endgroup]
+build	Install Doxygen	2026-10-06T20:44:51.2756492Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+build	Install Doxygen	2026-10-06T20:44:51.3132791Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+build	Install Doxygen	2026-10-06T20:44:51.3136132Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+build	Install Doxygen	2026-10-06T20:44:51.3178809Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+build	Install Doxygen	2026-10-06T20:44:51.3233795Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+build	Install Doxygen	2026-10-06T20:44:51.3291476Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5027651Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.6 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5178302Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [463 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5266420Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [519 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5558753Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1373 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5631896Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5656738Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5672970Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1700 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5770970Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [341 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5800859Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5850270Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1730 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5964809Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [396 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5974620Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [13.3 kB]
+build	Install Doxygen	2026-10-06T20:44:51.5983275Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+build	Install Doxygen	2026-10-06T20:44:51.6526724Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5752 B]
+build	Install Doxygen	2026-10-06T20:44:51.6535187Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6636708Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1072 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6696881Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [222 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6715644Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.4 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6726440Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1217 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6780953Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6801017Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6813674Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1566 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6890295Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [361 kB]
+build	Install Doxygen	2026-10-06T20:44:51.6923775Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [11.6 kB]
+build	Install Doxygen	2026-10-06T20:44:58.3408799Z Fetched 12.6 MB in 1s (8672 kB/s)
+build	Install Doxygen	2026-10-06T20:44:59.1758372Z Reading package lists...
+build	Install Doxygen	2026-10-06T20:44:59.2270204Z Reading package lists...
+build	Install Doxygen	2026-10-06T20:44:59.4090023Z Building dependency tree...
+build	Install Doxygen	2026-10-06T20:44:59.4097261Z Reading state information...
+build	Install Doxygen	2026-10-06T20:44:59.5513729Z The following additional packages will be installed:
+build	Install Doxygen	2026-10-06T20:44:59.5519180Z   libfmt9 libxapian30
+build	Install Doxygen	2026-10-06T20:44:59.5525081Z Suggested packages:
+build	Install Doxygen	2026-10-06T20:44:59.5525813Z   doxygen-latex doxygen-doc doxygen-gui graphviz xapian-tools
+build	Install Doxygen	2026-10-06T20:44:59.5773236Z The following NEW packages will be installed:
+build	Install Doxygen	2026-10-06T20:44:59.5780514Z   doxygen libfmt9 libxapian30
+build	Install Doxygen	2026-10-06T20:44:59.5955526Z 0 upgraded, 3 newly installed, 0 to remove and 29 not upgraded.
+build	Install Doxygen	2026-10-06T20:44:59.5956579Z Need to get 5979 kB of archives.
+build	Install Doxygen	2026-10-06T20:44:59.5957236Z After this operation, 22.9 MB of additional disk space will be used.
+build	Install Doxygen	2026-10-06T20:44:59.5958332Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+build	Install Doxygen	2026-10-06T20:44:59.7121822Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libfmt9 amd64 9.1.0+ds1-2 [63.0 kB]
+build	Install Doxygen	2026-10-06T20:44:59.8120910Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libxapian30 amd64 1.4.22-1build1 [716 kB]
+build	Install Doxygen	2026-10-06T20:44:59.9320639Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 doxygen amd64 1.9.8+ds-2ubuntu0.1 [5200 kB]
+build	Install Doxygen	2026-10-06T20:45:00.4721182Z Fetched 5979 kB in 1s (11.8 MB/s)
+build	Install Doxygen	2026-10-06T20:45:00.5137419Z Selecting previously unselected package libfmt9:amd64.
+build	Install Doxygen	2026-10-06T20:45:00.5903717Z (Reading database ... 
+build	Install Doxygen	2026-10-06T20:45:00.5904437Z (Reading database ... 5%
+build	Install Doxygen	2026-10-06T20:45:00.5905167Z (Reading database ... 10%
+build	Install Doxygen	2026-10-06T20:45:00.5905778Z (Reading database ... 15%
+build	Install Doxygen	2026-10-06T20:45:00.5906671Z (Reading database ... 20%
+build	Install Doxygen	2026-10-06T20:45:00.5907187Z (Reading database ... 25%
+build	Install Doxygen	2026-10-06T20:45:00.5907994Z (Reading database ... 30%
+build	Install Doxygen	2026-10-06T20:45:00.5908562Z (Reading database ... 35%
+build	Install Doxygen	2026-10-06T20:45:00.5909071Z (Reading database ... 40%
+build	Install Doxygen	2026-10-06T20:45:00.5909606Z (Reading database ... 45%
+build	Install Doxygen	2026-10-06T20:45:00.5910195Z (Reading database ... 50%
+build	Install Doxygen	2026-10-06T20:45:00.6314912Z (Reading database ... 55%
+build	Install Doxygen	2026-10-06T20:45:01.2259347Z (Reading database ... 60%
+build	Install Doxygen	2026-10-06T20:45:01.4769225Z (Reading database ... 65%
+build	Install Doxygen	2026-10-06T20:45:01.7554702Z (Reading database ... 70%
+build	Install Doxygen	2026-10-06T20:45:02.0138392Z (Reading database ... 75%
+build	Install Doxygen	2026-10-06T20:45:02.3569556Z (Reading database ... 80%
+build	Install Doxygen	2026-10-06T20:45:02.8889243Z (Reading database ... 85%
+build	Install Doxygen	2026-10-06T20:45:03.4693310Z (Reading database ... 90%
+build	Install Doxygen	2026-10-06T20:45:04.0678611Z (Reading database ... 95%
+build	Install Doxygen	2026-10-06T20:45:04.0679458Z (Reading database ... 100%
+build	Install Doxygen	2026-10-06T20:45:04.0680026Z (Reading database ... 202296 files and directories currently installed.)
+build	Install Doxygen	2026-10-06T20:45:04.0722675Z Preparing to unpack .../libfmt9_9.1.0+ds1-2_amd64.deb ...
+build	Install Doxygen	2026-10-06T20:45:04.0762285Z Unpacking libfmt9:amd64 (9.1.0+ds1-2) ...
+build	Install Doxygen	2026-10-06T20:45:04.1024436Z Selecting previously unselected package libxapian30:amd64.
+build	Install Doxygen	2026-10-06T20:45:04.1149467Z Preparing to unpack .../libxapian30_1.4.22-1build1_amd64.deb ...
+build	Install Doxygen	2026-10-06T20:45:04.1158503Z Unpacking libxapian30:amd64 (1.4.22-1build1) ...
+build	Install Doxygen	2026-10-06T20:45:04.1442766Z Selecting previously unselected package doxygen.
+build	Install Doxygen	2026-10-06T20:45:04.1567362Z Preparing to unpack .../doxygen_1.9.8+ds-2ubuntu0.1_amd64.deb ...
+build	Install Doxygen	2026-10-06T20:45:04.1583556Z Unpacking doxygen (1.9.8+ds-2ubuntu0.1) ...
+build	Install Doxygen	2026-10-06T20:45:04.2903055Z Setting up libxapian30:amd64 (1.4.22-1build1) ...
+build	Install Doxygen	2026-10-06T20:45:04.2928227Z Setting up libfmt9:amd64 (9.1.0+ds1-2) ...
+build	Install Doxygen	2026-10-06T20:45:04.2955493Z Setting up doxygen (1.9.8+ds-2ubuntu0.1) ...
+build	Install Doxygen	2026-10-06T20:45:04.2982034Z Processing triggers for man-db (2.12.0-4build2) ...
+build	Install Doxygen	2026-10-06T20:45:04.3025652Z Not building database; man-db/auto-update is not 'true'.
+build	Install Doxygen	2026-10-06T20:45:04.3038143Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+build	Install Doxygen	2026-10-06T20:45:05.4830686Z 
+build	Install Doxygen	2026-10-06T20:45:05.4831447Z Running kernel seems to be up-to-date.
+build	Install Doxygen	2026-10-06T20:45:05.4831878Z 
+build	Install Doxygen	2026-10-06T20:45:05.4832055Z No services need to be restarted.
+build	Install Doxygen	2026-10-06T20:45:05.4832815Z 
+build	Install Doxygen	2026-10-06T20:45:05.4832995Z No containers need to be restarted.
+build	Install Doxygen	2026-10-06T20:45:05.4833304Z 
+build	Install Doxygen	2026-10-06T20:45:05.4833520Z No user sessions are running outdated binaries.
+build	Install Doxygen	2026-10-06T20:45:05.4833864Z 
+build	Install Doxygen	2026-10-06T20:45:05.4834400Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+build	Check documentation coverage	﻿2026-10-06T20:45:06.9340443Z ##[group]Run python3 .github/scripts/check-cpp-docs.test.py
+build	Check documentation coverage	2026-10-06T20:45:06.9341015Z ^[[36;1mpython3 .github/scripts/check-cpp-docs.test.py^[[0m
+build	Check documentation coverage	2026-10-06T20:45:06.9341423Z ^[[36;1mpython3 .github/scripts/check-cpp-docs.py^[[0m
+build	Check documentation coverage	2026-10-06T20:45:06.9408042Z shell: /usr/bin/bash -e {0}
+build	Check documentation coverage	2026-10-06T20:45:06.9408316Z env:
+build	Check documentation coverage	2026-10-06T20:45:06.9408522Z   GIT_CONFIG_COUNT: 1
+build	Check documentation coverage	2026-10-06T20:45:06.9408771Z   GIT_CONFIG_KEY_0: init.defaultBranch
+build	Check documentation coverage	2026-10-06T20:45:06.9409056Z   GIT_CONFIG_VALUE_0: main
+build	Check documentation coverage	2026-10-06T20:45:06.9409291Z ##[endgroup]
+build	Check documentation coverage	2026-10-06T20:45:07.3549130Z ....
+build	Check documentation coverage	2026-10-06T20:45:07.3549695Z ----------------------------------------------------------------------
+build	Check documentation coverage	2026-10-06T20:45:07.3550326Z Ran 4 tests in 0.007s
+build	Check documentation coverage	2026-10-06T20:45:07.3550561Z 
+build	Check documentation coverage	2026-10-06T20:45:07.3951272Z OK
+build	Check documentation coverage	2026-10-06T20:45:07.3952187Z Bilingual documentation covers the public declarations in 39 C++ headers.
+build	Generate documentation	﻿2026-10-06T20:45:07.4241306Z ##[group]Run doxygen cpp/Doxyfile
+build	Generate documentation	2026-10-06T20:45:07.4241672Z ^[[36;1mdoxygen cpp/Doxyfile^[[0m
+build	Generate documentation	2026-10-06T20:45:07.4241954Z ^[[36;1mtest -s cpp/docs/html/index.html^[[0m
+build	Generate documentation	2026-10-06T20:45:07.4242262Z ^[[36;1mtest -s cpp/docs/xml/index.xml^[[0m
+build	Generate documentation	2026-10-06T20:45:07.4304778Z shell: /usr/bin/bash -e {0}
+build	Generate documentation	2026-10-06T20:45:07.4305041Z env:
+build	Generate documentation	2026-10-06T20:45:07.4305249Z   GIT_CONFIG_COUNT: 1
+build	Generate documentation	2026-10-06T20:45:07.4305500Z   GIT_CONFIG_KEY_0: init.defaultBranch
+build	Generate documentation	2026-10-06T20:45:07.4305781Z   GIT_CONFIG_VALUE_0: main
+build	Generate documentation	2026-10-06T20:45:07.4306013Z ##[endgroup]
+build	Upload HTML and XML documentation	﻿2026-10-06T20:45:08.3457512Z ##[group]Run actions/upload-artifact@v7
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3458067Z with:
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3458298Z   name: cpp-api-documentation
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3458579Z   path: cpp/docs/html
+build	Upload HTML and XML documentation	cpp/docs/xml
+build	Upload HTML and XML documentation	
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3458863Z   if-no-files-found: error
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3459110Z   compression-level: 6
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3459340Z   overwrite: false
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3459577Z   include-hidden-files: false
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3459816Z   archive: true
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3460030Z env:
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3460220Z   GIT_CONFIG_COUNT: 1
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3460454Z   GIT_CONFIG_KEY_0: init.defaultBranch
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3460727Z   GIT_CONFIG_VALUE_0: main
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.3460954Z ##[endgroup]
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.5508813Z Multiple search paths detected. Calculating the least common ancestor of all paths
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.5511994Z The least common ancestor is /home/runner/work/Interfaces/Interfaces/cpp/docs. This will be the root directory of the artifact
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.5513236Z With the provided path, there will be 336 files uploaded
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.5514543Z Artifact name is valid!
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.5515005Z Root directory input is valid!
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.7840380Z Uploading artifact: cpp-api-documentation.zip
+build	Upload HTML and XML documentation	2026-10-06T20:45:08.7882193Z Beginning upload of artifact content to blob storage
+build	Upload HTML and XML documentation	2026-10-06T20:45:09.1190013Z Uploaded bytes 568678
+build	Upload HTML and XML documentation	2026-10-06T20:45:09.1324411Z Finished uploading artifact content to blob storage!
+build	Upload HTML and XML documentation	2026-10-06T20:45:09.1326024Z SHA256 digest of uploaded artifact is cf1549ab0e32d656a8c58d249f3447324b3dabefb172b68564d08ab9acae4dd0
+build	Upload HTML and XML documentation	2026-10-06T20:45:09.1327154Z Finalizing artifact upload
+build	Upload HTML and XML documentation	2026-10-06T20:45:09.3725741Z Artifact cpp-api-documentation successfully finalized. Artifact ID 11443596788
+build	Upload HTML and XML documentation	2026-10-06T20:45:09.3726793Z Artifact cpp-api-documentation has been successfully uploaded! Final size is 568678 bytes. Artifact ID is 11443596788
+build	Upload HTML and XML documentation	2026-10-06T20:45:09.3730399Z Artifact download URL: https://github.com/linksplatform/Interfaces/actions/runs/37528763507/artifacts/11443596788
+build	Post Run actions/checkout@v7	﻿2026-10-06T20:45:09.5040646Z Post job cleanup.
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.5906905Z [command]/usr/bin/git version
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.5953546Z git version 2.55.0
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.5994832Z Temporarily overriding HOME='/home/runner/work/_temp/82e62ddb-b765-45fd-9ee4-b4084fdc7206' before making global git config changes
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.5996189Z Adding repository directory to the temporary git global config as a safe directory
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6001130Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6032512Z Removing SSH command configuration
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6039729Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6075034Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6317565Z Removing HTTP extra header
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6324234Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6363681Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6656875Z Removing includeIf entries pointing to credentials config files
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6678710Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Post Run actions/checkout@v7	2026-10-06T20:45:09.6738979Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Complete job	﻿2026-10-06T20:45:09.7132549Z Cleaning up orphan processes

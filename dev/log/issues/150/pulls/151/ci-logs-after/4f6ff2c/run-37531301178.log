@@ -1,0 +1,191 @@
+Scan for committed secrets	Set up job	﻿2026-10-06T21:05:09.7993010Z Current runner version: '2.337.0'
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8021374Z ##[group]Runner Image Provisioner
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8022416Z Hosted Compute Agent
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8023187Z Version: 20260901.588
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8023964Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8024921Z Build Date: 2026-09-01T19:56:44Z
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8025763Z Worker ID: {33d341e5-c147-4f90-b688-8b59bc03d08a}
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8026751Z Azure Region: eastus
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8027664Z ##[endgroup]
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8029368Z ##[group]Operating System
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8030231Z Ubuntu
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8030903Z 24.04.5
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8031616Z LTS
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8032283Z ##[endgroup]
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8032992Z ##[group]Runner Image
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8033806Z Image: ubuntu-24.04
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8034520Z Version: 20260927.320.1
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8035971Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8038324Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8039614Z ##[endgroup]
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8041024Z ##[group]GITHUB_TOKEN Permissions
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8043114Z Contents: read
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8043946Z Metadata: read
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8044658Z ##[endgroup]
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8046942Z Secret source: Actions
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8048306Z Cache mode: write
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8049205Z Prepare workflow directory
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8767776Z Prepare all required actions
+Scan for committed secrets	Set up job	2026-10-06T21:05:09.8823023Z Getting action download info
+Scan for committed secrets	Set up job	2026-10-06T21:05:10.0893009Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Scan for committed secrets	Set up job	2026-10-06T21:05:10.4791741Z Download action repository 'actions/setup-node@v7' (SHA:820762786026740c76f36085b0efc47a31fe5020)
+Scan for committed secrets	Set up job	2026-10-06T21:05:11.3205709Z Complete job name: Scan for committed secrets
+Scan for committed secrets	Run actions/checkout@v7	﻿2026-10-06T21:05:11.3887687Z ##[group]Run actions/checkout@v7
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3888497Z with:
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3888900Z   persist-credentials: false
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3889377Z   repository: linksplatform/Interfaces
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3892655Z   token: ***
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3893042Z   ssh-strict: true
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3893431Z   ssh-user: git
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3893793Z   clean: true
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3894180Z   sparse-checkout-cone-mode: true
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3894626Z   fetch-depth: 1
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3894995Z   fetch-tags: false
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3895378Z   show-progress: true
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3895788Z   lfs: false
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3896161Z   submodules: false
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3896574Z   set-safe-directory: true
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3897147Z   allow-unsafe-pr-checkout: false
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3897803Z env:
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3898162Z   GIT_CONFIG_COUNT: 1
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3898578Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3899054Z   GIT_CONFIG_VALUE_0: main
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.3899511Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4761267Z Syncing repository: linksplatform/Interfaces
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4763777Z ##[group]Getting Git version info
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4764777Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4766153Z [command]/usr/bin/git version
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4896219Z git version 2.55.0
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4913547Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4923711Z Temporarily overriding HOME='/home/runner/work/_temp/248875ad-d9be-4e7c-a07b-845c9e44dad3' before making global git config changes
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4925746Z Adding repository directory to the temporary git global config as a safe directory
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4929560Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4974986Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4978274Z ##[group]Determining repository object format
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4979989Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4981107Z ##[group]Initializing the repository
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.4984378Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5082386Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5092276Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5141419Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5142148Z ##[group]Disabling automatic garbage collection
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5144465Z [command]/usr/bin/git config --local gc.auto 0
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5176968Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5178193Z ##[group]Setting up auth
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5178772Z Removing SSH command configuration
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5183321Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5216992Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5942990Z Removing HTTP extra header
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5948196Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.5981610Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6169894Z Removing includeIf entries pointing to credentials config files
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6174628Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6205532Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6400920Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6461377Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6472084Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6508099Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6540358Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6569759Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6570729Z ##[group]Fetching the repository
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:11.6575089Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +84801c0251caf17c4145cf41c35abb471a2ca1e5:refs/remotes/pull/151/merge
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2721040Z From https://github.com/linksplatform/Interfaces
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2723847Z  * [new ref]         84801c0251caf17c4145cf41c35abb471a2ca1e5 -> pull/151/merge
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2728345Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2729834Z ##[group]Determining the checkout info
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2731130Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2731875Z [command]/usr/bin/git sparse-checkout disable
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2784692Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2814249Z ##[group]Checking out the ref
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.2817366Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/151/merge
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3176183Z Note: switching to 'refs/remotes/pull/151/merge'.
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3177596Z 
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3178564Z You are in 'detached HEAD' state. You can look around, make experimental
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3180513Z changes and commit them, and you can discard any commits you make in this
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3182704Z state without impacting any branches by switching back to a branch.
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3183806Z 
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3184549Z If you want to create a new branch to retain commits you create, you may
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3186262Z do so (now or later) by using -c with the switch command. Example:
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3187445Z 
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3187890Z   git switch -c <new-branch-name>
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3188565Z 
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3188988Z Or undo this operation with:
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3189621Z 
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3190012Z   git switch -
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3190497Z 
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3191290Z Turn off this advice by setting config variable advice.detachedHead to false
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3192433Z 
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3193694Z HEAD is now at 84801c0 Merge 4f6ff2c0214f4b0add67f582380477df66de54c2 into 3dfbee614c1276425f216d032580c052d94da4e8
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3211423Z ##[endgroup]
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3251547Z [command]/usr/bin/git log -1 --format=%H
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3276472Z 84801c0251caf17c4145cf41c35abb471a2ca1e5
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3285973Z ##[group]Removing auth
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3287796Z Removing SSH command configuration
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3292904Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3324441Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3515291Z Removing HTTP extra header
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3518168Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3551383Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3743231Z Removing includeIf entries pointing to credentials config files
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3745044Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3769404Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3771398Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3773024Z includeif.gitdir:/github/workspace/.git.path
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3774298Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3777869Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3801418Z /home/runner/work/_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3811254Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-3754f3e4\-ccf7\-4108\-98e8\-c09029d43beb\.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3845041Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3868820Z /home/runner/work/_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3876194Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-3754f3e4\-ccf7\-4108\-98e8\-c09029d43beb\.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3907862Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3932004Z /github/runner_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3939852Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-3754f3e4\-ccf7\-4108\-98e8\-c09029d43beb\.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3970913Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.3994858Z /github/runner_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.4031926Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-3754f3e4\-ccf7\-4108\-98e8\-c09029d43beb\.config
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.4071726Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.4273015Z Removing credentials config '/home/runner/work/_temp/git-credentials-3754f3e4-ccf7-4108-98e8-c09029d43beb.config'
+Scan for committed secrets	Run actions/checkout@v7	2026-10-06T21:05:12.4277489Z ##[endgroup]
+Scan for committed secrets	Run actions/setup-node@v7	﻿2026-10-06T21:05:12.4641653Z ##[group]Run actions/setup-node@v7
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4642576Z with:
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4643243Z   node-version: 24
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4643963Z   check-latest: false
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4651082Z   token: ***
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4651814Z   package-manager-cache: true
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4652646Z env:
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4653300Z   GIT_CONFIG_COUNT: 1
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4654107Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4655018Z   GIT_CONFIG_VALUE_0: main
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.4655796Z ##[endgroup]
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.5884089Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:12.5886474Z ##[group]Environment details
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:13.1417870Z node: v24.21.0
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:13.1419242Z npm: 11.19.0
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:13.1420233Z yarn: 1.22.22
+Scan for committed secrets	Run actions/setup-node@v7	2026-10-06T21:05:13.1422159Z ##[endgroup]
+Scan for committed secrets	Check for secrets	﻿2026-10-06T21:05:13.1609863Z ##[group]Run npx --yes -p secretlint@13.0.7 -p @secretlint/secretlint-rule-preset-recommend@13.0.7 secretlint "**/*"
+Scan for committed secrets	Check for secrets	2026-10-06T21:05:13.1611949Z ^[[36;1mnpx --yes -p secretlint@13.0.7 -p @secretlint/secretlint-rule-preset-recommend@13.0.7 secretlint "**/*"^[[0m
+Scan for committed secrets	Check for secrets	2026-10-06T21:05:13.1988832Z shell: /usr/bin/bash -e {0}
+Scan for committed secrets	Check for secrets	2026-10-06T21:05:13.1989670Z env:
+Scan for committed secrets	Check for secrets	2026-10-06T21:05:13.1990327Z   GIT_CONFIG_COUNT: 1
+Scan for committed secrets	Check for secrets	2026-10-06T21:05:13.1991100Z   GIT_CONFIG_KEY_0: init.defaultBranch
+Scan for committed secrets	Check for secrets	2026-10-06T21:05:13.1991951Z   GIT_CONFIG_VALUE_0: main
+Scan for committed secrets	Check for secrets	2026-10-06T21:05:13.1992710Z ##[endgroup]
+Scan for committed secrets	Post Run actions/setup-node@v7	﻿2026-10-06T21:05:16.6782474Z Post job cleanup.
+Scan for committed secrets	Post Run actions/checkout@v7	﻿2026-10-06T21:05:16.7893511Z Post job cleanup.
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.8584567Z [command]/usr/bin/git version
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.8613738Z git version 2.55.0
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.8641768Z Temporarily overriding HOME='/home/runner/work/_temp/117966ab-937e-4978-89d7-a405406ca649' before making global git config changes
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.8643026Z Adding repository directory to the temporary git global config as a safe directory
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.8655394Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9230930Z Removing SSH command configuration
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9237756Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9278956Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9475304Z Removing HTTP extra header
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9479800Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9510576Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9694322Z Removing includeIf entries pointing to credentials config files
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9718583Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Scan for committed secrets	Post Run actions/checkout@v7	2026-10-06T21:05:16.9732090Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Scan for committed secrets	Complete job	﻿2026-10-06T21:05:17.0062077Z Cleaning up orphan processes

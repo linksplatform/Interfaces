@@ -13,7 +13,9 @@ namespace Platform::Interfaces {
   namespace Internal {
     template <typename TSelf, typename... TItems>
     consteval bool CArrayHelpFunction() {
-      constexpr bool member_indexator = requires(TSelf self, std::size_t index) { {self[index]} /*-> std::same_as<typename Enumerable<TSelf>::ItemReference>*/; };
+      constexpr bool member_indexator = requires(TSelf self, std::size_t index) {
+        { self[index] } /*-> std::same_as<typename Enumerable<TSelf>::ItemReference>*/;
+      };
 
       if constexpr (sizeof...(TItems) == 1) {
         using SelfItem = typename Enumerable<TSelf>::Item;
