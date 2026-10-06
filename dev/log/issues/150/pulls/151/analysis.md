@@ -46,6 +46,7 @@ Everything cited below lives in this folder:
 | 2026-10-06 20:46 | `1c4ba2d`: all green. Two log-only warnings are left: pipx's DeprecationWarning in the new format job, and CodeQL's "No NuGet feeds are reachable" | `ci-logs-after/1c4ba2d/` |
 | 2026-10-06 20:59 | `35f8162`: the pipx warning is gone. The root `nuget.config` (`83d7023`) did not remove CodeQL's feed warning | `ci-logs-after/35f8162/run-37530537674.log` |
 | 2026-10-06 21:05 | `4f6ff2c`: the CodeQL feed check is off and its warning is gone. A scan of all logs for `warn`, `deprecat` and `error` finds Conan's `profile detect` advice (row 29) and zizmor's offline fallback (row 30) | `ci-logs-after/4f6ff2c/` |
+| 2026-10-06 21:16 | `d269d46`: all 7 workflows green, all 5 C++ jobs pass the 8 tests. The same scan finds no warnings left; the only annotation is the macOS notice (row 26) | `ci-logs-after/d269d46/` |
 
 ## Inventory of problems
 

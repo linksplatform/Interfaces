@@ -1,0 +1,237 @@
+check	Set up job	﻿2026-10-06T21:14:32.5246738Z Current runner version: '2.337.0'
+check	Set up job	2026-10-06T21:14:32.5266184Z ##[group]Runner Image Provisioner
+check	Set up job	2026-10-06T21:14:32.5266735Z Hosted Compute Agent
+check	Set up job	2026-10-06T21:14:32.5267213Z Version: 20260901.588
+check	Set up job	2026-10-06T21:14:32.5267889Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+check	Set up job	2026-10-06T21:14:32.5268372Z Build Date: 2026-09-01T19:56:44Z
+check	Set up job	2026-10-06T21:14:32.5268803Z Worker ID: {21d79ea3-61c6-461f-94e7-92d0d986cf8e}
+check	Set up job	2026-10-06T21:14:32.5269293Z Azure Region: centralus
+check	Set up job	2026-10-06T21:14:32.5269722Z ##[endgroup]
+check	Set up job	2026-10-06T21:14:32.5270536Z ##[group]Operating System
+check	Set up job	2026-10-06T21:14:32.5270901Z Ubuntu
+check	Set up job	2026-10-06T21:14:32.5271276Z 24.04.5
+check	Set up job	2026-10-06T21:14:32.5271592Z LTS
+check	Set up job	2026-10-06T21:14:32.5271978Z ##[endgroup]
+check	Set up job	2026-10-06T21:14:32.5272355Z ##[group]Runner Image
+check	Set up job	2026-10-06T21:14:32.5272712Z Image: ubuntu-24.04
+check	Set up job	2026-10-06T21:14:32.5273095Z Version: 20260927.320.1
+check	Set up job	2026-10-06T21:14:32.5273765Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+check	Set up job	2026-10-06T21:14:32.5274913Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+check	Set up job	2026-10-06T21:14:32.5275499Z ##[endgroup]
+check	Set up job	2026-10-06T21:14:32.5276227Z ##[group]GITHUB_TOKEN Permissions
+check	Set up job	2026-10-06T21:14:32.5277556Z Contents: read
+check	Set up job	2026-10-06T21:14:32.5277972Z Metadata: read
+check	Set up job	2026-10-06T21:14:32.5278319Z ##[endgroup]
+check	Set up job	2026-10-06T21:14:32.5279714Z Secret source: Actions
+check	Set up job	2026-10-06T21:14:32.5280308Z Cache mode: write
+check	Set up job	2026-10-06T21:14:32.5280799Z Prepare workflow directory
+check	Set up job	2026-10-06T21:14:32.5540384Z Prepare all required actions
+check	Set up job	2026-10-06T21:14:32.5581506Z Getting action download info
+check	Set up job	2026-10-06T21:14:32.8029193Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+check	Set up job	2026-10-06T21:14:32.8986910Z Download action repository 'actions/setup-node@v7' (SHA:820762786026740c76f36085b0efc47a31fe5020)
+check	Set up job	2026-10-06T21:14:33.0467237Z Complete job name: check
+check	Run actions/checkout@v7	﻿2026-10-06T21:14:33.0991325Z ##[group]Run actions/checkout@v7
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0991790Z with:
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0992061Z   persist-credentials: false
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0992355Z   repository: linksplatform/Interfaces
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0994726Z   token: ***
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0994961Z   ssh-strict: true
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0995204Z   ssh-user: git
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0995438Z   clean: true
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0995682Z   sparse-checkout-cone-mode: true
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0995966Z   fetch-depth: 1
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0996206Z   fetch-tags: false
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0996451Z   show-progress: true
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0996697Z   lfs: false
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0996924Z   submodules: false
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0997171Z   set-safe-directory: true
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0997578Z   allow-unsafe-pr-checkout: false
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0997934Z env:
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0998162Z   GIT_CONFIG_COUNT: 1
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0998428Z   GIT_CONFIG_KEY_0: init.defaultBranch
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0998724Z   GIT_CONFIG_VALUE_0: main
+check	Run actions/checkout@v7	2026-10-06T21:14:33.0999012Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1697069Z Syncing repository: linksplatform/Interfaces
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1699081Z ##[group]Getting Git version info
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1699733Z Working directory is '/home/runner/work/Interfaces/Interfaces'
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1700689Z [command]/usr/bin/git version
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1758551Z git version 2.55.0
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1779015Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1784906Z Temporarily overriding HOME='/home/runner/work/_temp/411a64c4-b618-4fab-acb6-4e7af1b65586' before making global git config changes
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1786046Z Adding repository directory to the temporary git global config as a safe directory
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1786803Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1832586Z Deleting the contents of '/home/runner/work/Interfaces/Interfaces'
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1840407Z ##[group]Determining repository object format
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1841612Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1842335Z ##[group]Initializing the repository
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1844450Z [command]/usr/bin/git init /home/runner/work/Interfaces/Interfaces
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1937105Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1949549Z [command]/usr/bin/git remote add origin https://github.com/linksplatform/Interfaces
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1991567Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1992175Z ##[group]Disabling automatic garbage collection
+check	Run actions/checkout@v7	2026-10-06T21:14:33.1994608Z [command]/usr/bin/git config --local gc.auto 0
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2028792Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2029457Z ##[group]Setting up auth
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2029881Z Removing SSH command configuration
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2034349Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2066506Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2350537Z Removing HTTP extra header
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2355431Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2392595Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2567160Z Removing includeIf entries pointing to credentials config files
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2572480Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2601467Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2779462Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2811502Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path /home/runner/work/_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2840223Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2871227Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2899475Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2924718Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2925345Z ##[group]Fetching the repository
+check	Run actions/checkout@v7	2026-10-06T21:14:33.2929589Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1b76d8f887d2d067c8afebe9ad76c7e9d583705a:refs/remotes/pull/151/merge
+check	Run actions/checkout@v7	2026-10-06T21:14:34.0961725Z From https://github.com/linksplatform/Interfaces
+check	Run actions/checkout@v7	2026-10-06T21:14:34.0963236Z  * [new ref]         1b76d8f887d2d067c8afebe9ad76c7e9d583705a -> pull/151/merge
+check	Run actions/checkout@v7	2026-10-06T21:14:34.0966251Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:34.0967335Z ##[group]Determining the checkout info
+check	Run actions/checkout@v7	2026-10-06T21:14:34.0969315Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:34.0970619Z [command]/usr/bin/git sparse-checkout disable
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1016306Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1044726Z ##[group]Checking out the ref
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1047189Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/151/merge
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1480101Z Note: switching to 'refs/remotes/pull/151/merge'.
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1481169Z 
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1481827Z You are in 'detached HEAD' state. You can look around, make experimental
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1483497Z changes and commit them, and you can discard any commits you make in this
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1485306Z state without impacting any branches by switching back to a branch.
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1486317Z 
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1486960Z If you want to create a new branch to retain commits you create, you may
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1488510Z do so (now or later) by using -c with the switch command. Example:
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1489276Z 
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1489582Z   git switch -c <new-branch-name>
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1490034Z 
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1490334Z Or undo this operation with:
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1490825Z 
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1491143Z   git switch -
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1491569Z 
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1492170Z Turn off this advice by setting config variable advice.detachedHead to false
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1493031Z 
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1493987Z HEAD is now at 1b76d8f Merge d269d46ac708e4b097723e87a5065da1db8b7d0d into 3dfbee614c1276425f216d032580c052d94da4e8
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1497999Z ##[endgroup]
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1612160Z [command]/usr/bin/git log -1 --format=%H
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1636982Z 1b76d8f887d2d067c8afebe9ad76c7e9d583705a
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1645921Z ##[group]Removing auth
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1647117Z Removing SSH command configuration
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1649148Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1679201Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1858575Z Removing HTTP extra header
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1860807Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	Run actions/checkout@v7	2026-10-06T21:14:34.1891873Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2076935Z Removing includeIf entries pointing to credentials config files
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2079740Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2106821Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2108629Z includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2110052Z includeif.gitdir:/github/workspace/.git.path
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2111136Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2114874Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2137632Z /home/runner/work/_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2148309Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-da6c395e\-bdb2\-4bf5\-83d1\-12c905686347\.config
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2889554Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2920601Z /home/runner/work/_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2929269Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Interfaces/Interfaces/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-da6c395e\-bdb2\-4bf5\-83d1\-12c905686347\.config
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2959509Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2983935Z /github/runner_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config
+check	Run actions/checkout@v7	2026-10-06T21:14:34.2993489Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-da6c395e\-bdb2\-4bf5\-83d1\-12c905686347\.config
+check	Run actions/checkout@v7	2026-10-06T21:14:34.3033994Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+check	Run actions/checkout@v7	2026-10-06T21:14:34.3066764Z /github/runner_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config
+check	Run actions/checkout@v7	2026-10-06T21:14:34.3081128Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-da6c395e\-bdb2\-4bf5\-83d1\-12c905686347\.config
+check	Run actions/checkout@v7	2026-10-06T21:14:34.3120324Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	Run actions/checkout@v7	2026-10-06T21:14:34.3309732Z Removing credentials config '/home/runner/work/_temp/git-credentials-da6c395e-bdb2-4bf5-83d1-12c905686347.config'
+check	Run actions/checkout@v7	2026-10-06T21:14:34.3317086Z ##[endgroup]
+check	Run actions/setup-node@v7	﻿2026-10-06T21:14:34.3639807Z ##[group]Run actions/setup-node@v7
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3640531Z with:
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3641034Z   node-version: 24
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3641588Z   check-latest: false
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3647249Z   token: ***
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3648026Z   package-manager-cache: true
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3648669Z env:
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3649165Z   GIT_CONFIG_COUNT: 1
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3649765Z   GIT_CONFIG_KEY_0: init.defaultBranch
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3650453Z   GIT_CONFIG_VALUE_0: main
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.3651035Z ##[endgroup]
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.4528912Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.4530835Z ##[group]Environment details
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.7618232Z node: v24.21.0
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.7618959Z npm: 11.19.0
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.7619196Z yarn: 1.22.22
+check	Run actions/setup-node@v7	2026-10-06T21:14:34.7620637Z ##[endgroup]
+check	Test the badge check	﻿2026-10-06T21:14:34.7748613Z ##[group]Run node --test .github/scripts/check-readme-badges.test.mjs
+check	Test the badge check	2026-10-06T21:14:34.7749058Z ^[[36;1mnode --test .github/scripts/check-readme-badges.test.mjs^[[0m
+check	Test the badge check	2026-10-06T21:14:34.7954672Z shell: /usr/bin/bash -e {0}
+check	Test the badge check	2026-10-06T21:14:34.7954927Z env:
+check	Test the badge check	2026-10-06T21:14:34.7955097Z   GIT_CONFIG_COUNT: 1
+check	Test the badge check	2026-10-06T21:14:34.7955275Z   GIT_CONFIG_KEY_0: init.defaultBranch
+check	Test the badge check	2026-10-06T21:14:34.7955470Z   GIT_CONFIG_VALUE_0: main
+check	Test the badge check	2026-10-06T21:14:34.7955667Z ##[endgroup]
+check	Test the badge check	2026-10-06T21:14:35.1233478Z ✔ rejects the badge that broke in issue #141 (27.36313ms)
+check	Test the badge check	2026-10-06T21:14:35.1234481Z ✔ accepts a badge naming an existing workflow (26.740892ms)
+check	Test the badge check	2026-10-06T21:14:35.1238382Z ✔ accepts the actions/workflows badge form without truncating the file name (24.726818ms)
+check	Test the badge check	2026-10-06T21:14:35.1239262Z ✔ accepts a plain actions/workflows link (25.140853ms)
+check	Test the badge check	2026-10-06T21:14:35.1239894Z ✔ rejects a link to a workflow file that does not exist (25.667034ms)
+check	Test the badge check	2026-10-06T21:14:35.1240530Z ✔ decodes + as a space in actions?workflow= links (24.246948ms)
+check	Test the badge check	2026-10-06T21:14:35.1241314Z ✔ decodes %20 as a space in actions?workflow= links (24.622441ms)
+check	Test the badge check	2026-10-06T21:14:35.1241885Z ✔ reads a quoted workflow name (24.234778ms)
+check	Test the badge check	2026-10-06T21:14:35.1242419Z ✔ fails when README has no workflow badges at all (24.204452ms)
+check	Test the badge check	2026-10-06T21:14:35.1244831Z ✔ the real README of this repository passes the check (24.326105ms)
+check	Test the badge check	2026-10-06T21:14:35.1330507Z ℹ tests 10
+check	Test the badge check	2026-10-06T21:14:35.1330808Z ℹ suites 0
+check	Test the badge check	2026-10-06T21:14:35.1330982Z ℹ pass 10
+check	Test the badge check	2026-10-06T21:14:35.1331143Z ℹ fail 0
+check	Test the badge check	2026-10-06T21:14:35.1331331Z ℹ cancelled 0
+check	Test the badge check	2026-10-06T21:14:35.1338054Z ℹ skipped 0
+check	Test the badge check	2026-10-06T21:14:35.1338265Z ℹ todo 0
+check	Test the badge check	2026-10-06T21:14:35.1338500Z ℹ duration_ms 304.819107
+check	Check that README badges reference existing workflows	﻿2026-10-06T21:14:35.1415094Z ##[group]Run node .github/scripts/check-readme-badges.mjs --verbose
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1415455Z ^[[36;1mnode .github/scripts/check-readme-badges.mjs --verbose^[[0m
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1470163Z shell: /usr/bin/bash -e {0}
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1470365Z env:
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1470516Z   GIT_CONFIG_COUNT: 1
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1470688Z   GIT_CONFIG_KEY_0: init.defaultBranch
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1470882Z   GIT_CONFIG_VALUE_0: main
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1471052Z ##[endgroup]
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1752780Z [trace] workflows directory: /home/runner/work/Interfaces/Interfaces/.github/workflows
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1753610Z [trace] workflow AutoMerge.yml -> name "auto-merge"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1754086Z [trace] workflow codeql.yml -> name "CodeQL"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1755213Z [trace] workflow cpp-docs.yml -> name "C++ documentation"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1755720Z [trace] workflow cpp-test.yml -> name "Test cpp"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1756177Z [trace] workflow csharp.yml -> name "csharp"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1767023Z [trace] workflow deploy-cpp.yml -> name "Deploy new cpp version"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1768066Z [trace] workflow readme-badges.yml -> name "Check README badges"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1768730Z [trace] workflow secrets.yml -> name "Secrets"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1769128Z [trace] workflow workflows.yml -> name "Workflows"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1769625Z [trace] found 8 workflow reference(s) in README.md
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1770165Z [trace] ok badge (workflow name) by name: "Test cpp"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1770591Z [trace] ok badge (workflow name) by name: "csharp"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1770939Z [trace] ok link (workflow name) by name: "Test cpp"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1771211Z [trace] ok link (workflow name) by name: "csharp"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1771512Z [trace] ok badge (workflow file) by file: "codeql.yml"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1771798Z [trace] ok link (workflow file) by file: "codeql.yml"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1772087Z [trace] ok link (workflow file) by file: "cpp-docs.yml"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1772372Z [trace] ok link (workflow file) by file: "csharp.yml"
+check	Check that README badges reference existing workflows	2026-10-06T21:14:35.1772720Z All 8 workflow reference(s) in README.md resolve to existing workflows.
+check	Post Run actions/setup-node@v7	﻿2026-10-06T21:14:35.1873866Z Post job cleanup.
+check	Post Run actions/checkout@v7	﻿2026-10-06T21:14:35.2844951Z Post job cleanup.
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3497012Z [command]/usr/bin/git version
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3531178Z git version 2.55.0
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3554672Z Temporarily overriding HOME='/home/runner/work/_temp/53e404ac-a0d6-42a1-84ce-7b1229e7ac10' before making global git config changes
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3555768Z Adding repository directory to the temporary git global config as a safe directory
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3558107Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Interfaces/Interfaces
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3593624Z Removing SSH command configuration
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3598877Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3633818Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3842416Z Removing HTTP extra header
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3852448Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.3905939Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.4117725Z Removing includeIf entries pointing to credentials config files
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.4123434Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	Post Run actions/checkout@v7	2026-10-06T21:14:35.4156033Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	Complete job	﻿2026-10-06T21:14:35.4501170Z Cleaning up orphan processes
