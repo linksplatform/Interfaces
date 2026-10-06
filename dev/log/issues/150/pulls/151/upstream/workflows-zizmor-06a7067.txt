@@ -1,0 +1,1004 @@
+Unable to find image 'ghcr.io/zizmorcore/zizmor:1.29.0' locally
+1.29.0: Pulling from zizmorcore/zizmor
+a66283bef834: Pulling fs layer
+f1dc41da0ac6: Pulling fs layer
+2e3139e176fe: Pulling fs layer
+c920184a3208: Pulling fs layer
+9201e51fe8c1: Pulling fs layer
+69cbafd2417b: Pulling fs layer
+7fc117d2446a: Pulling fs layer
+8d99fd8fea9c: Pulling fs layer
+5f460b97a17e: Pulling fs layer
+cdea145aa115: Pulling fs layer
+b92857818105: Pulling fs layer
+c621f68b4dc2: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+c920184a3208: Waiting
+9201e51fe8c1: Waiting
+69cbafd2417b: Waiting
+7fc117d2446a: Waiting
+8d99fd8fea9c: Waiting
+5f460b97a17e: Waiting
+c621f68b4dc2: Waiting
+4f4fb700ef54: Waiting
+cdea145aa115: Waiting
+b92857818105: Waiting
+2e3139e176fe: Verifying Checksum
+2e3139e176fe: Download complete
+a66283bef834: Verifying Checksum
+a66283bef834: Download complete
+f1dc41da0ac6: Verifying Checksum
+f1dc41da0ac6: Download complete
+c920184a3208: Verifying Checksum
+c920184a3208: Download complete
+9201e51fe8c1: Download complete
+69cbafd2417b: Verifying Checksum
+69cbafd2417b: Download complete
+7fc117d2446a: Verifying Checksum
+7fc117d2446a: Download complete
+8d99fd8fea9c: Verifying Checksum
+8d99fd8fea9c: Download complete
+5f460b97a17e: Verifying Checksum
+5f460b97a17e: Download complete
+a66283bef834: Pull complete
+cdea145aa115: Download complete
+b92857818105: Verifying Checksum
+b92857818105: Download complete
+4f4fb700ef54: Verifying Checksum
+4f4fb700ef54: Download complete
+f1dc41da0ac6: Pull complete
+c621f68b4dc2: Verifying Checksum
+c621f68b4dc2: Download complete
+2e3139e176fe: Pull complete
+c920184a3208: Pull complete
+9201e51fe8c1: Pull complete
+69cbafd2417b: Pull complete
+7fc117d2446a: Pull complete
+8d99fd8fea9c: Pull complete
+5f460b97a17e: Pull complete
+cdea145aa115: Pull complete
+b92857818105: Pull complete
+c621f68b4dc2: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:863026d54f91271b10b60b67ad8054cb37120167e162482597db102b3026a284
+Status: Downloaded newer image for ghcr.io/zizmorcore/zizmor:1.29.0
+ INFO zizmor: 🌈 zizmor v1.29.0
+ WARN collect_inputs: zizmor::registry::input: failed to validate file://.github/workflows/csharp.yml as workflow: input does not match expected validation schema
+ INFO audit: zizmor: 🌈 completed .github/workflows/build-csharp.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/cpp-test.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/cpp.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/deploy-cpp.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/get-cpp-conan-package-info.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/get-cpp-package-info.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/publish-to-conan.yml
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/build-csharp.yml:14:9
+   |
+14 |       - uses: actions/checkout@v3
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/build-csharp.yml:14:15
+   |
+14 |       - uses: actions/checkout@v3
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/build-csharp.yml:16:15
+   |
+16 |         uses: actions/setup-dotnet@v3
+   |               ^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/cpp-test.yml:17:9
+   |
+17 |         - uses: actions/checkout@v1
+   |  _________^
+18 | |         with:
+19 | |           submodules: true
+   | |__________________________^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp-test.yml:17:15
+   |
+17 |       - uses: actions/checkout@v1
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp-test.yml:21:15
+   |
+21 |         uses: egor-tensin/setup-gcc@v1
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/cpp.yml:22:9
+   |
+22 |         - uses: actions/checkout@v1
+   |  _________^
+23 | |         with:
+24 | |           submodules: true
+   | |__________________________^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/cpp.yml:62:9
+   |
+62 |         - uses: actions/checkout@v3
+   |  _________^
+63 | |         with:
+64 | |          fetch-depth: 0
+   | |_______________________^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/cpp.yml:74:9
+   |
+74 |         - uses: actions/checkout@v1
+   |  _________^
+75 | |         with:
+76 | |           submodules: true
+   | |__________________________^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+   --> .github/workflows/cpp.yml:132:9
+    |
+132 |         - uses: actions/checkout@v1
+    |  _________^
+133 | |         with:
+134 | |           submodules: true
+    | |__________________________^ does not set persist-credentials: false
+    |
+    = note: audit confidence → Low
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+warning[excessive-permissions]: overly broad permissions
+  --> .github/workflows/cpp.yml:54:3
+   |
+54 | /   get_package_info:
+55 | |     uses: linksplatform/Workflows/.github/workflows/get-cpp-package-info.yml@main
+   | |                                                                                 ^
+   | |                                                                                 |
+   | |_________________________________________________________________________________this job
+   |                                                                                   default permissions used due to no permissions: block
+   |
+   = note: audit confidence → Medium
+   = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+warning[excessive-permissions]: overly broad permissions
+   --> .github/workflows/cpp.yml:125:3
+    |
+125 | /   get_conan_package_info:
+126 | |     uses: linksplatform/Workflows/.github/workflows/get-cpp-conan-package-info.yml@main
+    | |                                                                                       ^
+    | |                                                                                       |
+    | |_______________________________________________________________________________________this job
+    |                                                                                         default permissions used due to no permissions: block
+    |
+    = note: audit confidence → Medium
+    = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/cpp.yml:80:64
+   |
+78 |         run: |
+   |         --- this run block
+79 |           sudo apt-get install nuget
+80 |           echo "needs.get_package_info.outputs.nuspec_path: ${{needs.get_package_info.outputs.nuspec_path}}"
+   |                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/cpp.yml:81:17
+   |
+78 |         run: |
+   |         --- this run block
+...
+81 |           echo "env.NUSPEC_PATH: ${{env.NUSPEC_PATH}}"
+   |                 ^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/cpp.yml:82:17
+   |
+78 |         run: |
+   |         --- this run block
+...
+82 |           echo "needs.get_package_info.outputs.name: ${{needs.get_package_info.outputs.name}}"
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/cpp.yml:83:17
+   |
+78 |         run: |
+   |         --- this run block
+...
+83 |           echo "needs.get_package_info.outputs.version: ${{needs.get_package_info.outputs.version}}"
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/cpp.yml:84:41
+   |
+78 |         run: |
+   |         --- this run block
+...
+84 |           nuspec_direction=$(dirname ${{env.NUSPEC_PATH}})
+   |                                         ^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/cpp.yml:88:77
+   |
+78 |         run: |
+   |         --- this run block
+...
+88 |           NuGetPackageUrl="https://globalcdn.nuget.org/packages/Platform.${{github.event.repository.name}}.TemplateLibrary.${{needs....
+   |                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/cpp.yml:88:127
+   |
+78 | ...   run: |
+   |       --- this run block
+...
+88 | ...     NuGetPackageUrl="https://globalcdn.nuget.org/packages/Platform.${{github.event.repository.name}}.TemplateLibrary.${{needs.get_package_info.outputs.version}}....
+   |                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:101:50
+    |
+ 78 | ...   run: |
+    |       --- this run block
+...
+101 | ...     wget -O "$nuspec_direction/Platform.${{github.event.repository.name}}.TemplateLibrary.targets" https://raw.githubuserconten...
+    |                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → High
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:106:24
+    |
+ 78 |         run: |
+    |         --- this run block
+...
+106 |           filename="${{env.NUSPEC_PATH}}"
+    |                        ^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → High
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:111:47
+    |
+ 78 | ...   run: |
+    |       --- this run block
+...
+111 | ...     file+=("    <file src=\"Platform.${{github.event.repository.name}}.TemplateLibrary.targets\" target=\"build\native\Platform...
+    |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → High
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:111:47
+    |
+ 78 | ...   run: |
+    |       --- this run block
+...
+111 | ...     file+=("    <file src=\"Platform.${{github.event.repository.name}}.TemplateLibrary.targets\" target=\"build\native\Platform...
+    |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → High
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:121:26
+    |
+ 78 |         run: |
+    |         --- this run block
+...
+121 |           nuget pack "${{env.NUSPEC_PATH}}"
+    |                          ^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → High
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:137:22
+    |
+136 | ...   run: | 
+    |       --- this run block
+137 | ...     zip -r "${{needs.get_conan_package_info.outputs.name}}_${{needs.get_package_info.outputs.version}}.zip" "${{ format('Platfo...
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → Low
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:137:69
+    |
+136 |         run: | 
+    |         --- this run block
+137 |           zip -r "${{needs.get_conan_package_info.outputs.name}}_${{needs.get_package_info.outputs.version}}.zip" "${{ format('Plat...
+    |                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → Low
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:137:143
+    |
+136 | ...   run: | 
+    |       --- this run block
+137 | ...     zip -r "${{needs.get_conan_package_info.outputs.name}}_${{needs.get_package_info.outputs.version}}.zip" "${{ format('Platform.{0}', github.event.repository.name) }}"
+    |                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:141:38
+    |
+136 |         run: | 
+    |         --- this run block
+...
+141 |           echo "Artifact pattern: ${{needs.get_conan_package_info.outputs.name}}_${{needs.get_package_info.outputs.version}}.zip"
+    |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → Low
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:141:85
+    |
+136 |         run: | 
+    |         --- this run block
+...
+141 |           echo "Artifact pattern: ${{needs.get_conan_package_info.outputs.name}}_${{needs.get_package_info.outputs.version}}.zip"
+    |                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → Low
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:157:19
+    |
+156 |         run: |
+    |         --- this run block
+157 |           echo ${{steps.create_release.outputs.id}}
+    |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → Low
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:158:19
+    |
+156 |         run: |
+    |         --- this run block
+157 |           echo ${{steps.create_release.outputs.id}}
+158 |           echo ${{steps.create_release.outputs.html_url}}
+    |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → Low
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+   --> .github/workflows/cpp.yml:159:19
+    |
+156 |         run: |
+    |         --- this run block
+...
+159 |           echo ${{steps.create_release.outputs.upload_url}}
+    |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+    |
+    = note: audit confidence → Low
+    = note: this finding has an auto-fix
+    = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp.yml:22:15
+   |
+22 |       - uses: actions/checkout@v1
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp.yml:26:15
+   |
+26 |         uses: egor-tensin/setup-gcc@v1
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp.yml:55:11
+   |
+55 |     uses: linksplatform/Workflows/.github/workflows/get-cpp-package-info.yml@main
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp.yml:62:15
+   |
+62 |       - uses: actions/checkout@v3
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp.yml:66:15
+   |
+66 |         uses: tj-actions/changed-files@v21
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/cpp.yml:74:15
+   |
+74 |       - uses: actions/checkout@v1
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/cpp.yml:126:11
+    |
+126 |     uses: linksplatform/Workflows/.github/workflows/get-cpp-conan-package-info.yml@main
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/cpp.yml:132:15
+    |
+132 |       - uses: actions/checkout@v1
+    |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/cpp.yml:144:15
+    |
+144 |         uses: ncipollo/release-action@v1.11.2
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+info[superfluous-actions]: action functionality is already included by the runner
+   --> .github/workflows/cpp.yml:144:15
+    |
+142 |       - name: Create Release
+    |         -------------------- this step
+143 |         id: create_release
+144 |         uses: ncipollo/release-action@v1.11.2
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ use `gh release` in a script step
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#superfluous-actions
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/deploy-cpp.yml:29:9
+   |
+29 |         - uses: actions/checkout@v1
+   |  _________^
+30 | |         with:
+31 | |           submodules: true
+   | |__________________________^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/deploy-cpp.yml:92:9
+   |
+92 |         - uses: actions/checkout@v1
+   |  _________^
+93 | |         with:
+94 | |           submodules: true
+   | |__________________________^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+warning[excessive-permissions]: overly broad permissions
+  --> .github/workflows/deploy-cpp.yml:19:3
+   |
+19 | /   test:
+20 | |     uses: linksplatform/Workflows/.github/workflows/cpp-test.yml@main
+   | |                                                                     ^
+   | |                                                                     |
+   | |_____________________________________________________________________this job
+   |                                                                       default permissions used due to no permissions: block
+   |
+   = note: audit confidence → Medium
+   = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+warning[excessive-permissions]: overly broad permissions
+  --> .github/workflows/deploy-cpp.yml:21:3
+   |
+21 | /   get_package_info:
+22 | |     uses: linksplatform/Workflows/.github/workflows/get-cpp-package-info.yml@main
+   | |                                                                                 ^
+   | |                                                                                 |
+   | |_________________________________________________________________________________this job
+   |                                                                                   default permissions used due to no permissions: block
+   |
+   = note: audit confidence → Medium
+   = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+warning[excessive-permissions]: overly broad permissions
+  --> .github/workflows/deploy-cpp.yml:80:3
+   |
+80 | /   get_conan_package_info:
+81 | |     uses: linksplatform/Workflows/.github/workflows/get-cpp-conan-package-info.yml@main
+   | |                                                                                       ^
+   | |                                                                                       |
+   | |_______________________________________________________________________________________this job
+   |                                                                                         default permissions used due to no permissions: block
+   |
+   = note: audit confidence → Medium
+   = help: audit documentation → https://docs.zizmor.sh/audits/#excessive-permissions
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:35:64
+   |
+33 |         run: |
+   |         --- this run block
+34 |           sudo apt-get install nuget
+35 |           echo "needs.get_package_info.outputs.nuspec_path: ${{needs.get_package_info.outputs.nuspec_path}}"
+   |                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:36:17
+   |
+33 |         run: |
+   |         --- this run block
+...
+36 |           echo "env.NUSPEC_PATH: ${{env.NUSPEC_PATH}}"
+   |                 ^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:37:17
+   |
+33 |         run: |
+   |         --- this run block
+...
+37 |           echo "needs.get_package_info.outputs.name: ${{needs.get_package_info.outputs.name}}"
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:38:17
+   |
+33 |         run: |
+   |         --- this run block
+...
+38 |           echo "needs.get_package_info.outputs.version: ${{needs.get_package_info.outputs.version}}"
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:39:41
+   |
+33 |         run: |
+   |         --- this run block
+...
+39 |           nuspec_direction=$(dirname ${{env.NUSPEC_PATH}})
+   |                                         ^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:43:77
+   |
+33 |         run: |
+   |         --- this run block
+...
+43 |           NuGetPackageUrl="https://globalcdn.nuget.org/packages/Platform.${{github.event.repository.name}}.TemplateLibrary.${{needs....
+   |                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:43:127
+   |
+33 | ...   run: |
+   |       --- this run block
+...
+43 | ...     NuGetPackageUrl="https://globalcdn.nuget.org/packages/Platform.${{github.event.repository.name}}.TemplateLibrary.${{needs.get_package_info.outputs.version}}....
+   |                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:56:50
+   |
+33 | ...   run: |
+   |       --- this run block
+...
+56 | ...     wget -O "$nuspec_direction/Platform.${{github.event.repository.name}}.TemplateLibrary.targets" https://raw.githubusercontent...
+   |                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:61:24
+   |
+33 |         run: |
+   |         --- this run block
+...
+61 |           filename="${{env.NUSPEC_PATH}}"
+   |                        ^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:66:47
+   |
+33 | ...   run: |
+   |       --- this run block
+...
+66 | ...     file+=("    <file src=\"Platform.${{github.event.repository.name}}.TemplateLibrary.targets\" target=\"build\native\Platform....
+   |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:66:47
+   |
+33 | ...   run: |
+   |       --- this run block
+...
+66 | ...     file+=("    <file src=\"Platform.${{github.event.repository.name}}.TemplateLibrary.targets\" target=\"build\native\Platform....
+   |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:76:26
+   |
+33 |         run: |
+   |         --- this run block
+...
+76 |           nuget pack "${{env.NUSPEC_PATH}}"
+   |                          ^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:98:22
+   |
+97 |         run: | 
+   |         --- this run block
+98 |           zip -r "${{env.artifact_file_name}}" "${{ format('Platform.{0}', github.event.repository.name) }}"
+   |                      ^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:98:76
+   |
+97 |         run: | 
+   |         --- this run block
+98 |           zip -r "${{env.artifact_file_name}}" "${{ format('Platform.{0}', github.event.repository.name) }}"
+   |                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/deploy-cpp.yml:99:43
+   |
+97 |         run: | 
+   |         --- this run block
+98 |           zip -r "${{env.artifact_file_name}}" "${{ format('Platform.{0}', github.event.repository.name) }}"
+99 |           artifact_sha256=$(sha256sum "${{env.artifact_file_name}}" | cut -d " " -f 1)
+   |                                           ^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/deploy-cpp.yml:20:11
+   |
+20 |     uses: linksplatform/Workflows/.github/workflows/cpp-test.yml@main
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/deploy-cpp.yml:22:11
+   |
+22 |     uses: linksplatform/Workflows/.github/workflows/get-cpp-package-info.yml@main
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/deploy-cpp.yml:29:15
+   |
+29 |       - uses: actions/checkout@v1
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/deploy-cpp.yml:81:11
+   |
+81 |     uses: linksplatform/Workflows/.github/workflows/get-cpp-conan-package-info.yml@main
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/deploy-cpp.yml:92:15
+   |
+92 |       - uses: actions/checkout@v1
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+   --> .github/workflows/deploy-cpp.yml:103:15
+    |
+103 |         uses: ncipollo/release-action@v1.11.2
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+info[superfluous-actions]: action functionality is already included by the runner
+   --> .github/workflows/deploy-cpp.yml:103:15
+    |
+101 |       - name: Create Release
+    |         -------------------- this step
+102 |         id: create_release
+103 |         uses: ncipollo/release-action@v1.11.2
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ use `gh release` in a script step
+    |
+    = note: audit confidence → High
+    = help: audit documentation → https://docs.zizmor.sh/audits/#superfluous-actions
+
+error[template-injection]: code injection via template expansion
+  --> .github/workflows/get-cpp-conan-package-info.yml:17:42
+   |
+16 |         run: |
+   |         --- this run block
+17 |           echo "name=platform.$(echo ${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+   |                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/get-cpp-package-info.yml:25:9
+   |
+25 |         - uses: actions/checkout@v1
+   |  _________^
+26 | |         with:
+27 | |           submodules: true
+   | |__________________________^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/get-cpp-package-info.yml:31:40
+   |
+30 |         run: |
+   |         --- this run block
+31 |           nuspec_path="cpp/Platform.${{env.REPOSITORY_NAME}}/Platform.${{env.REPOSITORY_NAME}}.TemplateLibrary.nuspec"
+   |                                        ^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+help[template-injection]: code injection via template expansion
+  --> .github/workflows/get-cpp-package-info.yml:31:74
+   |
+30 |         run: |
+   |         --- this run block
+31 |           nuspec_path="cpp/Platform.${{env.REPOSITORY_NAME}}/Platform.${{env.REPOSITORY_NAME}}.TemplateLibrary.nuspec"
+   |                                                                          ^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → High
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/get-cpp-package-info.yml:37:63
+   |
+36 |         run: |
+   |         --- this run block
+37 |           version=$(grep -Pzo "<version>[^<>]+</version>" "${{steps.get_nuspec_path.outputs.nuspec_path}}" | sed -e 's/<.\?[a-zA-Z]\...
+   |                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+info[template-injection]: code injection via template expansion
+  --> .github/workflows/get-cpp-package-info.yml:45:79
+   |
+44 |         run: |
+   |         --- this run block
+45 |           release_notes=$(grep -Pzo "<releaseNotes>[^<>]+</releaseNotes>" "${{steps.get_nuspec_path.outputs.nuspec_path}}" | sed -e ...
+   |                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ may expand into attacker-controllable code
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#template-injection
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/get-cpp-package-info.yml:25:15
+   |
+25 |       - uses: actions/checkout@v1
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+warning[artipacked]: credential persistence through GitHub Actions artifacts
+  --> .github/workflows/publish-to-conan.yml:12:9
+   |
+12 |         - uses: actions/checkout@v1
+   |  _________^
+13 | |         with:
+14 | |           submodules: true
+   | |__________________________^ does not set persist-credentials: false
+   |
+   = note: audit confidence → Low
+   = note: this finding has an auto-fix
+   = help: audit documentation → https://docs.zizmor.sh/audits/#artipacked
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/publish-to-conan.yml:12:15
+   |
+12 |       - uses: actions/checkout@v1
+   |               ^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/publish-to-conan.yml:16:15
+   |
+16 |         uses: Minimonium/conan-request-action@master
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+error[unpinned-uses]: unpinned action reference
+  --> .github/workflows/publish-to-conan.yml:21:15
+   |
+21 |         uses: Minimonium/conan-request-action@master
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ action is not pinned to a hash (required by blanket policy)
+   |
+   = note: audit confidence → High
+   = help: audit documentation → https://docs.zizmor.sh/audits/#unpinned-uses
+
+114 findings (34 suppressed, 48 unsafe fixes): 19 informational, 12 low, 15 medium, 34 high
