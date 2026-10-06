@@ -10,6 +10,7 @@ import {
   fetchPublished,
   readCsproj,
   run,
+  verifyApiKey,
   versionIndexUrl,
 } from "./preflight-nuget-release.mjs";
 
@@ -77,7 +78,142 @@ test("still publishes with --skip-duplicate when nuget.org is unreachable", () =
   assert.equal(result.passed, true);
   assert.equal(result.publishRequired, true);
   assert.equal(result.auth, "api-key");
-  assert.equal(result.warnings.length, 1);
+  assert.equal(result.warnings.length, 2);
+  assert.match(result.warnings[1], /could not verify the NUGET_TOKEN/);
+});
+
+// Answers each request from a "METHOD url" -> [status, body] table and records the calls.
+const gallery = (routes) => {
+  const calls = [];
+  const fetchImpl = async (url, options = {}) => {
+    const request = `${options.method ?? "GET"} ${url}`;
+    calls.push({ request, key: options.headers?.["X-NuGet-ApiKey"] });
+    const route = routes[request];
+    if (!route) {
+      throw new Error(`unexpected ${request}`);
+    }
+    return respond(...route)();
+  };
+  return { calls, fetchImpl };
+};
+const createUrl = "POST https://www.nuget.org/api/v2/package/create-verification-key/Platform.Interfaces";
+const verifyUrl = "GET https://www.nuget.org/api/v2/verifykey/Platform.Interfaces/0.5.0";
+
+test("verifies an API key in two steps without publishing", async () => {
+  const { calls, fetchImpl } = gallery({
+    [createUrl]: [200, { Key: "one-time", Expires: "2026-10-07T00:00:00Z" }],
+    [verifyUrl]: [200],
+  });
+  const result = await verifyApiKey({
+    packageId: "Platform.Interfaces",
+    publishedVersion: "0.5.0",
+    apiKey: "secret",
+    fetchImpl,
+  });
+  assert.equal(result.valid, true);
+  assert.deepEqual(calls, [
+    { request: createUrl, key: "secret" },
+    { request: verifyUrl, key: "one-time" },
+  ]);
+});
+
+test("rejects an invalid or expired API key (issue #150)", async () => {
+  for (const status of [401, 403]) {
+    const { calls, fetchImpl } = gallery({ [createUrl]: [status] });
+    const result = await verifyApiKey({
+      packageId: "Platform.Interfaces",
+      publishedVersion: "0.5.0",
+      apiKey: "expired",
+      fetchImpl,
+    });
+    assert.equal(result.valid, false);
+    assert.equal(calls.length, 1);
+  }
+});
+
+test("rejects an API key that is not scoped to the package", async () => {
+  const { fetchImpl } = gallery({
+    [createUrl]: [200, { Key: "one-time" }],
+    [verifyUrl]: [403],
+  });
+  const result = await verifyApiKey({
+    packageId: "Platform.Interfaces",
+    publishedVersion: "0.5.0",
+    apiKey: "other-glob",
+    fetchImpl,
+  });
+  assert.equal(result.valid, false);
+});
+
+test("checks only the key itself for a package that was never published", async () => {
+  const { calls, fetchImpl } = gallery({ [createUrl]: [200, { Key: "one-time" }] });
+  const result = await verifyApiKey({ packageId: "Platform.Interfaces", apiKey: "k", fetchImpl });
+  assert.equal(result.valid, true);
+  assert.match(result.detail, /no published version/);
+  assert.equal(calls.length, 1);
+});
+
+test("reports an unknown key state when nuget.org cannot answer", async () => {
+  const verify = (fetchImpl) =>
+    verifyApiKey({ packageId: "Platform.Interfaces", publishedVersion: "0.5.0", apiKey: "k", fetchImpl });
+  assert.equal((await verify(gallery({ [createUrl]: [503] }).fetchImpl)).valid, undefined);
+  assert.equal((await verify(gallery({ [createUrl]: [200, {}] }).fetchImpl)).valid, undefined);
+  assert.equal(
+    (await verify(gallery({ [createUrl]: [200, { Key: "one-time" }], [verifyUrl]: [500] }).fetchImpl)).valid,
+    undefined,
+  );
+  assert.equal((await verify(gallery({}).fetchImpl)).valid, undefined);
+});
+
+test("fails before pushing when nuget.org rejects NUGET_TOKEN", () => {
+  const result = evaluateRelease({
+    published: false,
+    githubToken: "g",
+    nugetToken: "expired",
+    nugetUser: "",
+    keyValid: false,
+  });
+  assert.equal(result.passed, false);
+  assert.match(result.failures[0], /rejected the NUGET_TOKEN secret/);
+});
+
+test("does not verify NUGET_TOKEN when nothing has to be published", async () => {
+  const { calls, fetchImpl } = gallery({
+    "GET https://api.nuget.org/v3-flatcontainer/platform.interfaces/index.json": [200, { versions: ["0.5.0"] }],
+  });
+  const exitCode = await run(
+    { PACKAGE_ID: "Platform.Interfaces", PACKAGE_VERSION: "0.5.0", GITHUB_TOKEN: "g", NUGET_TOKEN: "expired" },
+    fetchImpl,
+  );
+  assert.equal(exitCode, 0);
+  assert.equal(calls.length, 1);
+});
+
+test("fails the preflight with an expired NUGET_TOKEN for an unpublished version", async () => {
+  const { calls, fetchImpl } = gallery({
+    "GET https://api.nuget.org/v3-flatcontainer/platform.interfaces/index.json": [200, { versions: ["0.4.0", "0.5.0"] }],
+    [createUrl]: [403],
+  });
+  const exitCode = await run(
+    { PACKAGE_ID: "Platform.Interfaces", PACKAGE_VERSION: "0.6.1", GITHUB_TOKEN: "g", NUGET_TOKEN: "expired" },
+    fetchImpl,
+  );
+  assert.equal(exitCode, 1);
+  assert.equal(calls.length, 2);
+});
+
+test("verifies the package scope against the newest published version", async () => {
+  const { calls, fetchImpl } = gallery({
+    "GET https://api.nuget.org/v3-flatcontainer/platform.interfaces/index.json": [200, { versions: ["0.4.0", "0.5.0"] }],
+    [createUrl]: [200, { Key: "one-time" }],
+    [verifyUrl]: [200],
+  });
+  const exitCode = await run(
+    { PACKAGE_ID: "Platform.Interfaces", PACKAGE_VERSION: "0.6.1", GITHUB_TOKEN: "g", NUGET_TOKEN: "valid" },
+    fetchImpl,
+  );
+  assert.equal(exitCode, 0);
+  assert.equal(calls.at(-1).request, verifyUrl);
 });
 
 test("writes the decision to GITHUB_OUTPUT", async () => {

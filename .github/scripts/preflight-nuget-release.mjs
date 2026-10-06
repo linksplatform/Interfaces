@@ -11,20 +11,25 @@
  *     reported as such, and the C++ release was created anyway.
  *
  * The version check uses the public flat-container index, which needs no key.
- * nuget.org has no read-only endpoint that validates an API key, so an expired
- * key is still only detected by the push itself; push-nuget-package.sh turns
- * that 403 into actionable guidance. Trusted publishing (NUGET_USER) avoids
- * long-lived keys altogether.
+ * An API key is checked without publishing anything, through the same two
+ * calls that `nuget push` makes for symbol packages (NuGetGallery
+ * ApiController): POST /api/v2/package/create-verification-key/<id> rejects an
+ * invalid, expired or non-push key with 401/403, and GET
+ * /api/v2/verifykey/<id>/<published version> with the returned one-time key
+ * rejects a key whose glob or owner does not cover the package. The gallery
+ * deletes the one-time key after that call. Trusted publishing (NUGET_USER)
+ * avoids long-lived keys altogether.
  *
  * Environment: PACKAGE_ID, PACKAGE_VERSION (or CSPROJ to read both),
- * GITHUB_TOKEN, NUGET_TOKEN, NUGET_USER, NUGET_INDEX_URL (tests),
- * VERBOSE=1 or RUNNER_DEBUG=1 for diagnostic output.
+ * GITHUB_TOKEN, NUGET_TOKEN, NUGET_USER, NUGET_INDEX_URL and NUGET_GALLERY_URL
+ * (tests), VERBOSE=1 or RUNNER_DEBUG=1 for diagnostic output.
  * Outputs: publish_required=true|false, auth=trusted-publishing|api-key|none.
  */
 
 import { appendFileSync, readFileSync } from "node:fs";
 
 const defaultIndexUrl = "https://api.nuget.org/v3-flatcontainer";
+const defaultGalleryUrl = "https://www.nuget.org";
 
 export const readCsproj = (source) => {
   const read = (name) => new RegExp(`<${name}>([^<]+)</${name}>`).exec(source)?.[1]?.trim();
@@ -38,8 +43,9 @@ export const versionIndexUrl = (packageId, indexUrl = defaultIndexUrl) =>
   `${indexUrl}/${packageId.toLowerCase()}/index.json`;
 
 /**
- * @returns {Promise<{ published: boolean | undefined, detail: string }>}
- * `published` is undefined when nuget.org could not be queried.
+ * @returns {Promise<{ published: boolean | undefined, latest?: string, detail: string }>}
+ * `published` is undefined when nuget.org could not be queried; `latest` is
+ * the newest published version, if any.
  */
 export const fetchPublished = async ({ packageId, version, indexUrl, fetchImpl = fetch }) => {
   const url = versionIndexUrl(packageId, indexUrl);
@@ -54,6 +60,7 @@ export const fetchPublished = async ({ packageId, version, indexUrl, fetchImpl =
     const { versions = [] } = await response.json();
     return {
       published: versions.includes(version.toLowerCase()),
+      latest: versions.at(-1),
       detail: `${url} lists ${versions.length} versions`,
     };
   } catch (error) {
@@ -61,7 +68,64 @@ export const fetchPublished = async ({ packageId, version, indexUrl, fetchImpl =
   }
 };
 
-export const evaluateRelease = ({ published, githubToken, nugetToken, nugetUser }) => {
+/**
+ * @returns {Promise<{ valid: boolean | undefined, detail: string }>}
+ * `valid` is undefined when nuget.org could not answer. Without a published
+ * version only the key itself is checked, not its package scope.
+ */
+export const verifyApiKey = async ({
+  packageId,
+  publishedVersion,
+  apiKey,
+  galleryUrl = defaultGalleryUrl,
+  fetchImpl = fetch,
+}) => {
+  const id = encodeURIComponent(packageId);
+  const createUrl = `${galleryUrl}/api/v2/package/create-verification-key/${id}`;
+  let key;
+  try {
+    const response = await fetchImpl(createUrl, {
+      method: "POST",
+      headers: { "X-NuGet-ApiKey": apiKey },
+      body: "",
+      signal: AbortSignal.timeout(30_000),
+    });
+    if (response.status === 401 || response.status === 403) {
+      return { valid: false, detail: `${createUrl} returned ${response.status}` };
+    }
+    if (!response.ok) {
+      return { valid: undefined, detail: `${createUrl} returned ${response.status}` };
+    }
+    key = (await response.json()).Key;
+  } catch (error) {
+    return { valid: undefined, detail: `${createUrl} failed: ${error.message}` };
+  }
+  if (!key) {
+    return { valid: undefined, detail: `${createUrl} returned no verification key` };
+  }
+  if (!publishedVersion) {
+    return { valid: true, detail: `${createUrl} accepted the key; no published version to check its package scope` };
+  }
+
+  const verifyUrl = `${galleryUrl}/api/v2/verifykey/${id}/${encodeURIComponent(publishedVersion)}`;
+  try {
+    const response = await fetchImpl(verifyUrl, {
+      headers: { "X-NuGet-ApiKey": key },
+      signal: AbortSignal.timeout(30_000),
+    });
+    if (response.status === 401 || response.status === 403) {
+      return { valid: false, detail: `${verifyUrl} returned ${response.status}` };
+    }
+    return {
+      valid: response.ok ? true : undefined,
+      detail: `${verifyUrl} returned ${response.status}`,
+    };
+  } catch (error) {
+    return { valid: undefined, detail: `${verifyUrl} failed: ${error.message}` };
+  }
+};
+
+export const evaluateRelease = ({ published, githubToken, nugetToken, nugetUser, keyValid }) => {
   const failures = [];
   const warnings = [];
 
@@ -86,6 +150,15 @@ export const evaluateRelease = ({ published, githubToken, nugetToken, nugetUser 
     failures.push(
       "The version is not on nuget.org but neither the NUGET_USER variable (trusted publishing) nor the NUGET_TOKEN secret is configured",
     );
+  }
+  if (publishRequired && auth === "api-key") {
+    if (keyValid === false) {
+      failures.push(
+        "nuget.org rejected the NUGET_TOKEN secret: it is invalid, expired, or not scoped to push this package. Create a new key at https://www.nuget.org/account/apikeys with push scope for the package and store it as the NUGET_TOKEN repository secret, or configure trusted publishing (https://learn.microsoft.com/nuget/nuget-org/trusted-publishing) and set the NUGET_USER repository variable",
+      );
+    } else if (keyValid === undefined) {
+      warnings.push("nuget.org could not verify the NUGET_TOKEN secret; the push will show whether it is accepted");
+    }
   }
 
   return { passed: failures.length === 0, publishRequired, auth, failures, warnings };
@@ -112,7 +185,7 @@ export const run = async (environment = process.env, fetchImpl = fetch) => {
     return 1;
   }
 
-  const { published, detail } = await fetchPublished({
+  const { published, latest, detail } = await fetchPublished({
     packageId,
     version,
     indexUrl: environment.NUGET_INDEX_URL || defaultIndexUrl,
@@ -122,11 +195,29 @@ export const run = async (environment = process.env, fetchImpl = fetch) => {
     console.log(`Version index: ${detail}`);
   }
 
+  const nugetToken = environment.NUGET_TOKEN ?? "";
+  const nugetUser = environment.NUGET_USER ?? "";
+  let keyValid;
+  if (published !== true && nugetToken && !nugetUser) {
+    const verification = await verifyApiKey({
+      packageId,
+      publishedVersion: latest,
+      apiKey: nugetToken,
+      galleryUrl: environment.NUGET_GALLERY_URL || defaultGalleryUrl,
+      fetchImpl,
+    });
+    keyValid = verification.valid;
+    if (verbose) {
+      console.log(`API key verification: ${verification.detail}`);
+    }
+  }
+
   const result = evaluateRelease({
     published,
     githubToken: environment.GITHUB_TOKEN ?? "",
-    nugetToken: environment.NUGET_TOKEN ?? "",
-    nugetUser: environment.NUGET_USER ?? "",
+    nugetToken,
+    nugetUser,
+    keyValid,
   });
 
   for (const warning of result.warnings) {
@@ -138,10 +229,8 @@ export const run = async (environment = process.env, fetchImpl = fetch) => {
 
   if (result.publishRequired) {
     console.log(`${packageId} ${version} is not on nuget.org yet; it will be published using ${result.auth}.`);
-    if (result.auth === "api-key") {
-      console.log(
-        "NUGET_TOKEN presence is verified; nuget.org exposes no read-only endpoint for validating expiry or package scope.",
-      );
+    if (result.auth === "api-key" && keyValid) {
+      console.log("nuget.org accepted NUGET_TOKEN for pushing this package.");
     }
   } else {
     console.log(`${packageId} ${version} is already on nuget.org; publishing will be skipped.`);
