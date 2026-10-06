@@ -10,8 +10,8 @@ namespace Platform::Interfaces {
 /// <para>Создаёт четыре метода доступа с квалификаторами ссылки, приводящие объект к обёрнутому типу.</para>
 /// </summary>
 #define THIS_REFERENCE_WRAPPER_METHODS(MethodName, TWrapped)                           \
-  constexpr auto&& MethodName()& { return static_cast<TWrapped&>(*this); }             \
-  constexpr auto&& MethodName()&& { return static_cast<TWrapped&&>(*this); }           \
+  constexpr auto&& MethodName() & { return static_cast<TWrapped&>(*this); }            \
+  constexpr auto&& MethodName() && { return static_cast<TWrapped&&>(*this); }          \
   constexpr auto&& MethodName() const& { return static_cast<const TWrapped&>(*this); } \
   constexpr auto&& MethodName() const&& { return static_cast<const TWrapped&&>(*this); }
 
@@ -20,8 +20,8 @@ namespace Platform::Interfaces {
 /// <para>Создаёт четыре метода доступа с квалификаторами ссылки для поля.</para>
 /// </summary>
 #define VARIABLE_WRAPPER_METHODS(MethodName, VariableName)      \
-  constexpr auto&& MethodName()& { return VariableName; }       \
-  constexpr auto&& MethodName()&& { return VariableName; }      \
+  constexpr auto&& MethodName() & { return VariableName; }      \
+  constexpr auto&& MethodName() && { return VariableName; }     \
   constexpr auto&& MethodName() const& { return VariableName; } \
   constexpr auto&& MethodName() const&& { return VariableName; }
 
