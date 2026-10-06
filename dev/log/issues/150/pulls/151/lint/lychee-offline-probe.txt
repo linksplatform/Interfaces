@@ -1,0 +1,7 @@
+$ git ls-files '*.md' '*.html' | grep -v ^dev/log
+MIGRATION_SUMMARY.md
+README.md
+$ lychee 0.24.2 --offline --include-fragments './**/*.md'
+🔍 52 Total (in 17ms) 🔗 48 Unique ✅ 0 OK 🚫 0 Errors 👻 52 Excluded
+
+exit=0
