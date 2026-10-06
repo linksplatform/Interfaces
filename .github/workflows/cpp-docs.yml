@@ -18,6 +18,14 @@ on:
       - '.github/scripts/check-cpp-docs.test.py'
       - '.github/workflows/cpp-docs.yml'
 
+permissions:
+  contents: read
+
+env:
+  GIT_CONFIG_COUNT: '1'
+  GIT_CONFIG_KEY_0: init.defaultBranch
+  GIT_CONFIG_VALUE_0: main
+
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -42,9 +50,10 @@ jobs:
           test -s cpp/docs/html/index.html
           test -s cpp/docs/xml/index.xml
       - name: Upload HTML and XML documentation
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: cpp-api-documentation
           path: |
             cpp/docs/html
             cpp/docs/xml
+          if-no-files-found: error

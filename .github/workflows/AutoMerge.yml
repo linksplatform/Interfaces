@@ -1,15 +1,42 @@
 name: auto-merge
 
+# pull_request_target is required because DEPENDABOT_AUTO_MERGE_TOKEN is an
+# Actions secret, and Dependabot's pull_request runs only receive Dependabot
+# secrets. No step checks out or executes code from the pull request.
 on:
-  pull_request_target:
+  pull_request_target:  # zizmor: ignore[dangerous-triggers]
+
+permissions: {}
 
 jobs:
   auto-merge:
-    if: ${{ github.actor == 'dependabot[bot]' }}
-    runs-on: ubuntu-latest
+    # The pull request author cannot be spoofed by re-running or commenting,
+    # unlike github.actor.
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
-        with:
-          target: minor
-          github-token: ${{ secrets.DEPENDABOT_AUTO_MERGE_TOKEN }}
+      - name: Read Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+
+      # The previous action posted "@dependabot merge" comments, which GitHub
+      # removed on 2026-01-27, so it succeeded without merging (issue #150).
+      - name: Enable auto-merge for patch and minor updates
+        if: ${{ steps.metadata.outputs.update-type != 'version-update:semver-major' }}
+        env:
+          GH_TOKEN: ${{ secrets.DEPENDABOT_AUTO_MERGE_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error title=Auto-merge token missing::Configure the DEPENDABOT_AUTO_MERGE_TOKEN Actions secret with a token that can merge pull requests."
+            exit 1
+          fi
+          if [ "$(gh api "repos/$GITHUB_REPOSITORY" --jq .allow_auto_merge)" != true ]; then
+            echo "::error title=Auto-merge is disabled::Enable 'Allow auto-merge' in Settings > General > Pull Requests, otherwise Dependabot pull requests are never merged."
+            exit 1
+          fi
+          gh pr merge --auto --merge "$PR_URL"

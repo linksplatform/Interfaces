@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: '43 3 * * 0'
 
+permissions:
+  contents: read
+
 env:
   GIT_CONFIG_COUNT: '1'
   GIT_CONFIG_KEY_0: init.defaultBranch
@@ -26,7 +29,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'c-cpp', 'csharp' ]
+        language: [ 'actions', 'c-cpp', 'csharp' ]
 
     steps:
     - name: Checkout repository
@@ -45,3 +48,19 @@ jobs:
       uses: github/codeql-action/analyze@v4
       with:
         category: "/language:${{ matrix.language }}"
+
+  dependency-review:
+    name: Dependency review
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+      with:
+        persist-credentials: false
+
+    - name: Review dependency changes
+      uses: actions/dependency-review-action@v5
+      with:
+        fail-on-severity: high

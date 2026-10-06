@@ -8,7 +8,7 @@ const workflowPath = new URL("../workflows/codeql.yml", import.meta.url);
 const workflow = readFileSync(workflowPath, "utf8");
 
 test("uses current CodeQL language identifiers and build-free extraction", () => {
-  assert.match(workflow, /language: \[ 'c-cpp', 'csharp' \]/);
+  assert.match(workflow, /language: \[ 'actions', 'c-cpp', 'csharp' \]/);
   assert.match(workflow, /build-mode: none/);
   assert.doesNotMatch(workflow, /language: \[ 'cpp'/);
   assert.doesNotMatch(workflow, /build-mode: manual/);
@@ -37,4 +37,9 @@ test("prevents checkout's default-branch warning", () => {
   assert.match(workflow, /GIT_CONFIG_COUNT: '1'/);
   assert.match(workflow, /GIT_CONFIG_KEY_0: init\.defaultBranch/);
   assert.match(workflow, /GIT_CONFIG_VALUE_0: main/);
+});
+
+test("reviews dependency changes on pull requests", () => {
+  assert.match(workflow, /actions\/dependency-review-action@v5/);
+  assert.match(workflow, /fail-on-severity: high/);
 });
