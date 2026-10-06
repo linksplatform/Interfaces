@@ -19,8 +19,17 @@ cd "$(dirname "$0")"
 build_dir="${BUILD_DIR:-build}"
 build_type="${BUILD_TYPE:-Release}"
 
+# `conan profile detect` always ends with advisory warnings that the profile is
+# a guess (and, on macOS, that cppstd defaulted to gnu17). They are untagged,
+# so core:skip_warnings cannot skip them. The detected profile is printed above
+# them, and `conan install` below sets compiler.cppstd=20, so only those exact
+# lines are dropped; any other warning still reaches the log.
+detect_advice='^WARN: (This profile is a guess of your environment, please check it\.'
+detect_advice+="|Defaulted to cppstd='gnu17' for apple-clang\."
+detect_advice+='|The output of this command is not guaranteed to be stable and can change in future Conan versions\.'
+detect_advice+='|Use your own profile files for stability\.)$'
 if ! conan profile path default >/dev/null 2>&1; then
-  conan profile detect
+  conan profile detect 2> >(grep -vE "$detect_advice" >&2)
 fi
 
 conan install . --output-folder="$build_dir" --build=missing \

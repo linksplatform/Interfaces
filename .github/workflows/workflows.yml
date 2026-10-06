@@ -63,10 +63,12 @@ jobs:
           version: 1.29.0
 
       # Image pinning audits are pedantic-only; this pass keeps them enforced
-      # without the stylistic findings of the full pedantic persona.
+      # without the stylistic findings of the full pedantic persona. The online
+      # audits already ran in the step above; --offline says so, instead of
+      # zizmor warning that it fell back to offline mode without a token.
       - name: Audit for pedantic-only high-severity findings
         run: |
-          pipx run zizmor==1.29.0 --config .github/zizmor.yml \
+          pipx run zizmor==1.29.0 --offline --config .github/zizmor.yml \
             --persona pedantic --min-severity high --min-confidence high \
             .github
 

@@ -138,3 +138,11 @@ test("scans the repository for committed secrets with a pinned scanner", () => {
   assert.match(secrets.source, /@secretlint\/secretlint-rule-preset-recommend@\d+\.\d+\.\d+/);
   assert.doesNotMatch(secrets.source, /\n    paths:/);
 });
+
+test("runs the extra zizmor pass offline on purpose, so it prints no fallback warning", () => {
+  const workflow = workflows.find(({ name }) => name === "workflows.yml").source;
+  // Without a token zizmor warns "running in offline mode by default"; the
+  // action step before it already runs the online audits.
+  assert.match(workflow, /uses: zizmorcore\/zizmor-action@/);
+  assert.match(workflow, /pipx run zizmor==[\d.]+ --offline /);
+});
