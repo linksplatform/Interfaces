@@ -8,7 +8,6 @@ set(LINKS_PLATFORM_TESTS TRUE)
 
 project(Platform.Interfaces CXX)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-find_package(GTest)
 
 # Set compiler flags for x86_64 architecture
 if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
@@ -29,9 +28,13 @@ add_library(${PROJECT_NAME}.Library INTERFACE)
 target_include_directories(${PROJECT_NAME}.Library INTERFACE ${PROJECT_NAME})
 
 if(${LINKS_PLATFORM_TESTS})
+    find_package(GTest REQUIRED)
+    enable_testing()
+    include(GoogleTest)
     add_executable(${PROJECT_NAME}.Tests ${PROJECT_NAME}.Tests/${PROJECT_NAME}.Tests.cpp)
     set_target_properties(${PROJECT_NAME}.Tests PROPERTIES CXX_STANDARD 20)
     target_link_libraries(${PROJECT_NAME}.Tests PRIVATE GTest::gtest)
     target_link_libraries(${PROJECT_NAME}.Tests PRIVATE GTest::gtest_main)
     target_link_libraries(${PROJECT_NAME}.Tests PRIVATE ${PROJECT_NAME}.Library)
+    gtest_discover_tests(${PROJECT_NAME}.Tests)
 endif()

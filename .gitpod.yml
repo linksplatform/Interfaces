@@ -2,8 +2,8 @@ image: gitpod/workspace-dotnet
 
 tasks:
   - name: Setup C++ Environment
-    init: sh ./cpp/setup-gitpod.sh
-    command: sh ./cpp/run-tests-gitpod.sh
+    init: bash ./cpp/setup-gitpod.sh
+    command: bash ./cpp/run-tests-gitpod.sh
   - name: Setup .NET Environment  
     init: |
       cd csharp
