@@ -1,0 +1,1190 @@
+main / test	UNKNOWN STEP	﻿2026-09-26T02:54:45.6622022Z Current runner version: '2.337.0'
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6647536Z ##[group]Runner Image Provisioner
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6648542Z Hosted Compute Agent
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6649292Z Version: 20260828.587
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6650030Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6650776Z Build Date: 2026-08-28T16:44:25Z
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6651564Z Worker ID: {abc4a2d3-042e-4740-a3f7-53a565426dff}
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6652290Z Azure Region: westus
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6652930Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6654495Z ##[group]Operating System
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6655161Z Ubuntu
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6655783Z 24.04.5
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6656313Z LTS
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6657132Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6657758Z ##[group]Runner Image
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6658383Z Image: ubuntu-24.04
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6659007Z Version: 20260920.314.1
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6660277Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6661899Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6662876Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6666020Z ##[group]GITHUB_TOKEN Permissions
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6668342Z Actions: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6669148Z ArtifactMetadata: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6669784Z Attestations: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6670438Z Checks: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6671028Z CodeQuality: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6671596Z Contents: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6672242Z CopilotRequests: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6672842Z Deployments: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6673396Z Discussions: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6674026Z Drives: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6674568Z Issues: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6675259Z Metadata: read
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6675927Z Models: read
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6676475Z Packages: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6677487Z Pages: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6678071Z PullRequests: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6678776Z RepositoryProjects: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6679442Z SecurityEvents: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6680031Z Statuses: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6680696Z VulnerabilityAlerts: read
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6681325Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6684034Z Secret source: Actions
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6685076Z Cache mode: write
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.6685785Z Prepare workflow directory
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.7170701Z Prepare all required actions
+main / test	UNKNOWN STEP	2026-09-26T02:54:45.7221788Z Getting action download info
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.0928286Z Download action repository 'actions/checkout@v1' (SHA:50fbc622fc4ef5163becd7fab6573eac35f8462e)
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.3747651Z Download action repository 'egor-tensin/setup-gcc@v1' (SHA:eaa888eb19115a521fa72b65cd94fe1f25bbcaac)
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.7351074Z Uses: linksplatform/Workflows/.github/workflows/cpp-test.yml@refs/heads/main (06a7067ca2f68b088cc4a016313243f1b2a419cd)
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.7357185Z Complete job name: main / test
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.8157477Z ##[group]Run actions/checkout@v1
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.8158918Z with:
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.8159718Z   submodules: true
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.8160542Z   clean: true
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.8161540Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.8162301Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:54:46.8163178Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.0605875Z Syncing repository: linksplatform/Interfaces
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.0635972Z ##[command]git version
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.0825426Z git version 2.55.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.1015846Z ##[command]git lfs version
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7680896Z git-lfs/3.8.0 (GitHub; linux amd64; go 1.27.0)
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7802344Z ##[command]git init "/home/runner/work/Interfaces/Interfaces"
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7900697Z hint: Using 'master' as the name for the initial branch. This default branch name
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7901697Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7902599Z hint: to use in all of your new repositories, which will suppress this warning,
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7903296Z hint: call:
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7903751Z hint:
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7904720Z hint: 	git config --global init.defaultBranch <name>
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7905327Z hint:
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7905918Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7907080Z hint: 'development'. The just-created branch can be renamed via this command:
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7907805Z hint:
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7908319Z hint: 	git branch -m <name>
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7908839Z hint:
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7909515Z hint: Disable this message with "git config set advice.defaultBranchName false"
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7928104Z Initialized empty Git repository in /home/runner/work/Interfaces/Interfaces/.git/
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7940854Z ##[command]git remote add origin https://github.com/linksplatform/Interfaces
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.7987486Z ##[command]git config gc.auto 0
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.8018086Z ##[command]git config --get-all http.https://github.com/linksplatform/Interfaces.extraheader
+main / test	UNKNOWN STEP	2026-09-26T02:54:47.8066085Z ##[command]git -c http.extraheader="AUTHORIZATION: basic ***" fetch --tags --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/*
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2285543Z remote: Enumerating objects: 9811, done.        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2287512Z remote: Counting objects:   0% (1/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2289704Z remote: Counting objects:   1% (11/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2291331Z remote: Counting objects:   2% (22/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2292791Z remote: Counting objects:   3% (32/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2294243Z remote: Counting objects:   4% (43/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2295734Z remote: Counting objects:   5% (54/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2297358Z remote: Counting objects:   6% (64/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2298900Z remote: Counting objects:   7% (75/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2300252Z remote: Counting objects:   8% (85/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2301814Z remote: Counting objects:   9% (96/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2303234Z remote: Counting objects:  10% (107/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2304799Z remote: Counting objects:  11% (117/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2306138Z remote: Counting objects:  12% (128/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2307852Z remote: Counting objects:  13% (138/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2309196Z remote: Counting objects:  14% (149/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2310585Z remote: Counting objects:  15% (160/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2311857Z remote: Counting objects:  16% (170/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2313206Z remote: Counting objects:  17% (181/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2314467Z remote: Counting objects:  18% (191/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2315811Z remote: Counting objects:  19% (202/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2317362Z remote: Counting objects:  20% (213/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2318737Z remote: Counting objects:  21% (223/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2320587Z remote: Counting objects:  22% (234/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2322072Z remote: Counting objects:  23% (245/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2323417Z remote: Counting objects:  24% (255/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2324926Z remote: Counting objects:  25% (266/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2326317Z remote: Counting objects:  26% (276/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2328119Z remote: Counting objects:  27% (287/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2329512Z remote: Counting objects:  28% (298/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2330977Z remote: Counting objects:  29% (308/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2332275Z remote: Counting objects:  30% (319/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2333688Z remote: Counting objects:  31% (329/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2335021Z remote: Counting objects:  32% (340/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2336391Z remote: Counting objects:  33% (351/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2337993Z remote: Counting objects:  34% (361/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2339435Z remote: Counting objects:  35% (372/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2340695Z remote: Counting objects:  36% (382/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2342447Z remote: Counting objects:  37% (393/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2343693Z remote: Counting objects:  38% (404/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2345012Z remote: Counting objects:  39% (414/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2346318Z remote: Counting objects:  40% (425/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2347922Z remote: Counting objects:  41% (436/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2349141Z remote: Counting objects:  42% (446/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2350456Z remote: Counting objects:  43% (457/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2351647Z remote: Counting objects:  44% (467/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2352941Z remote: Counting objects:  45% (478/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2354133Z remote: Counting objects:  46% (489/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2355482Z remote: Counting objects:  47% (499/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2356958Z remote: Counting objects:  48% (510/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2358364Z remote: Counting objects:  49% (520/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2359667Z remote: Counting objects:  50% (531/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2361282Z remote: Counting objects:  51% (542/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2362739Z remote: Counting objects:  52% (552/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2364310Z remote: Counting objects:  53% (563/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2365686Z remote: Counting objects:  54% (573/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2367414Z remote: Counting objects:  55% (584/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2368696Z remote: Counting objects:  56% (595/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2370020Z remote: Counting objects:  57% (605/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2371224Z remote: Counting objects:  58% (616/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2372602Z remote: Counting objects:  59% (626/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2373961Z remote: Counting objects:  60% (637/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2375390Z remote: Counting objects:  61% (648/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2376941Z remote: Counting objects:  62% (658/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2378440Z remote: Counting objects:  63% (669/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2379727Z remote: Counting objects:  64% (680/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2381043Z remote: Counting objects:  65% (690/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2382228Z remote: Counting objects:  66% (701/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2383518Z remote: Counting objects:  67% (711/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2384706Z remote: Counting objects:  68% (722/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2385992Z remote: Counting objects:  69% (733/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2669949Z remote: Counting objects:  70% (743/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2671282Z remote: Counting objects:  71% (754/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2672646Z remote: Counting objects:  72% (764/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2673770Z remote: Counting objects:  73% (775/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2674692Z remote: Counting objects:  74% (786/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2675284Z remote: Counting objects:  75% (796/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2675874Z remote: Counting objects:  76% (807/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2676475Z remote: Counting objects:  77% (817/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2677283Z remote: Counting objects:  78% (828/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2677866Z remote: Counting objects:  79% (839/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2678440Z remote: Counting objects:  80% (849/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2679017Z remote: Counting objects:  81% (860/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2679609Z remote: Counting objects:  82% (871/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2680173Z remote: Counting objects:  83% (881/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2680742Z remote: Counting objects:  84% (892/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2681311Z remote: Counting objects:  85% (902/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2681878Z remote: Counting objects:  86% (913/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2682459Z remote: Counting objects:  87% (924/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2683032Z remote: Counting objects:  88% (934/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2683787Z remote: Counting objects:  89% (945/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2684357Z remote: Counting objects:  90% (955/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2684898Z remote: Counting objects:  91% (966/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2685451Z remote: Counting objects:  92% (977/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2685996Z remote: Counting objects:  93% (987/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2686676Z remote: Counting objects:  94% (998/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2687234Z remote: Counting objects:  95% (1008/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2687788Z remote: Counting objects:  96% (1019/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2688327Z remote: Counting objects:  97% (1030/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2688873Z remote: Counting objects:  98% (1040/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2689418Z remote: Counting objects:  99% (1051/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2689968Z remote: Counting objects: 100% (1061/1061)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2690545Z remote: Counting objects: 100% (1061/1061), done.        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.2691116Z remote: Compressing objects:   0% (1/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3056054Z remote: Compressing objects:   1% (5/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3057315Z remote: Compressing objects:   2% (10/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3058300Z remote: Compressing objects:   3% (14/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3059256Z remote: Compressing objects:   4% (19/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3060150Z remote: Compressing objects:   5% (24/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3060793Z remote: Compressing objects:   6% (28/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3061427Z remote: Compressing objects:   7% (33/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3062053Z remote: Compressing objects:   8% (38/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3062679Z remote: Compressing objects:   9% (42/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3870121Z remote: Compressing objects:  10% (47/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3871124Z remote: Compressing objects:  11% (52/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3871893Z remote: Compressing objects:  12% (56/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3872628Z remote: Compressing objects:  13% (61/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3873349Z remote: Compressing objects:  14% (66/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3874078Z remote: Compressing objects:  15% (70/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3874801Z remote: Compressing objects:  16% (75/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3875976Z remote: Compressing objects:  17% (80/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3877271Z remote: Compressing objects:  18% (84/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3878209Z remote: Compressing objects:  19% (89/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3879062Z remote: Compressing objects:  20% (93/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3879643Z remote: Compressing objects:  21% (98/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3880223Z remote: Compressing objects:  22% (103/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3881178Z remote: Compressing objects:  23% (107/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3881797Z remote: Compressing objects:  24% (112/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3882401Z remote: Compressing objects:  25% (117/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3882993Z remote: Compressing objects:  26% (121/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3883595Z remote: Compressing objects:  27% (126/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3884199Z remote: Compressing objects:  28% (131/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3884808Z remote: Compressing objects:  29% (135/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3885401Z remote: Compressing objects:  30% (140/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3886000Z remote: Compressing objects:  31% (145/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3886565Z remote: Compressing objects:  32% (149/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3887318Z remote: Compressing objects:  33% (154/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3887879Z remote: Compressing objects:  34% (159/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3888444Z remote: Compressing objects:  35% (163/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3889045Z remote: Compressing objects:  36% (168/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3889618Z remote: Compressing objects:  37% (173/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3890353Z remote: Compressing objects:  38% (177/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3890934Z remote: Compressing objects:  39% (182/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3891506Z remote: Compressing objects:  40% (186/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3892120Z remote: Compressing objects:  41% (191/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3892681Z remote: Compressing objects:  42% (196/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3893242Z remote: Compressing objects:  43% (200/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3893807Z remote: Compressing objects:  44% (205/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3894369Z remote: Compressing objects:  45% (210/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3894943Z remote: Compressing objects:  46% (214/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3895508Z remote: Compressing objects:  47% (219/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3896083Z remote: Compressing objects:  48% (224/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3896792Z remote: Compressing objects:  49% (228/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3897661Z remote: Compressing objects:  50% (233/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3898638Z remote: Compressing objects:  51% (238/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3899491Z remote: Compressing objects:  52% (242/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3900060Z remote: Compressing objects:  53% (247/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3900623Z remote: Compressing objects:  54% (252/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3901193Z remote: Compressing objects:  55% (256/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3901753Z remote: Compressing objects:  56% (261/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3902310Z remote: Compressing objects:  57% (266/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3902863Z remote: Compressing objects:  58% (270/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3903422Z remote: Compressing objects:  59% (275/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3903985Z remote: Compressing objects:  60% (279/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3904562Z remote: Compressing objects:  61% (284/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3905122Z remote: Compressing objects:  62% (289/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3905691Z remote: Compressing objects:  63% (293/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3906257Z remote: Compressing objects:  64% (298/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3906969Z remote: Compressing objects:  65% (303/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3907531Z remote: Compressing objects:  66% (307/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3908091Z remote: Compressing objects:  67% (312/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3908650Z remote: Compressing objects:  68% (317/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3909203Z remote: Compressing objects:  69% (321/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3909751Z remote: Compressing objects:  70% (326/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3910311Z remote: Compressing objects:  71% (331/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3910893Z remote: Compressing objects:  72% (335/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3911457Z remote: Compressing objects:  73% (340/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3912176Z remote: Compressing objects:  74% (345/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3912737Z remote: Compressing objects:  75% (349/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3913347Z remote: Compressing objects:  76% (354/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3913901Z remote: Compressing objects:  77% (359/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3919326Z remote: Compressing objects:  78% (363/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3921382Z remote: Compressing objects:  79% (368/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3923083Z remote: Compressing objects:  80% (372/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3924433Z remote: Compressing objects:  81% (377/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3925667Z remote: Compressing objects:  82% (382/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3926401Z remote: Compressing objects:  83% (386/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3927442Z remote: Compressing objects:  84% (391/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3928066Z remote: Compressing objects:  85% (396/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3928872Z remote: Compressing objects:  86% (400/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3929559Z remote: Compressing objects:  87% (405/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3930370Z remote: Compressing objects:  88% (410/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3930983Z remote: Compressing objects:  89% (414/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3931618Z remote: Compressing objects:  90% (419/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3932223Z remote: Compressing objects:  91% (424/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3932826Z remote: Compressing objects:  92% (428/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3933420Z remote: Compressing objects:  93% (433/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3934014Z remote: Compressing objects:  94% (438/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3934615Z remote: Compressing objects:  95% (442/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3935211Z remote: Compressing objects:  96% (447/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3935810Z remote: Compressing objects:  97% (452/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3936406Z remote: Compressing objects:  98% (456/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3937249Z remote: Compressing objects:  99% (461/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3937817Z remote: Compressing objects: 100% (465/465)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.3938419Z remote: Compressing objects: 100% (465/465), done.        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4087817Z Receiving objects:   0% (1/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4243730Z Receiving objects:   1% (99/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4250456Z Receiving objects:   2% (197/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4340085Z Receiving objects:   3% (295/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4390729Z Receiving objects:   4% (393/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4396897Z Receiving objects:   5% (491/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4403587Z Receiving objects:   6% (589/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4412250Z Receiving objects:   7% (687/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4527086Z Receiving objects:   8% (785/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4568843Z Receiving objects:   9% (883/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4574475Z Receiving objects:  10% (982/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4579591Z Receiving objects:  11% (1080/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4584757Z Receiving objects:  12% (1178/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4823899Z Receiving objects:  13% (1276/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4825825Z Receiving objects:  14% (1374/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4838114Z Receiving objects:  15% (1472/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4844699Z Receiving objects:  16% (1570/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4851453Z Receiving objects:  17% (1668/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.4862117Z Receiving objects:  18% (1766/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5155921Z Receiving objects:  19% (1865/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5282601Z Receiving objects:  20% (1963/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5528961Z Receiving objects:  21% (2061/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5539756Z Receiving objects:  22% (2159/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5541280Z Receiving objects:  23% (2257/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5592893Z Receiving objects:  24% (2355/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5599258Z Receiving objects:  25% (2453/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5619090Z Receiving objects:  26% (2551/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5638178Z Receiving objects:  27% (2649/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5640068Z Receiving objects:  28% (2748/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5640968Z Receiving objects:  29% (2846/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5747386Z Receiving objects:  30% (2944/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5765810Z Receiving objects:  31% (3042/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5766920Z Receiving objects:  32% (3140/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5767790Z Receiving objects:  33% (3238/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5768630Z Receiving objects:  34% (3336/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5822395Z Receiving objects:  35% (3434/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5824988Z Receiving objects:  36% (3532/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5837420Z Receiving objects:  37% (3631/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5838968Z Receiving objects:  38% (3729/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5840996Z Receiving objects:  39% (3827/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5843063Z Receiving objects:  40% (3925/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5850700Z Receiving objects:  41% (4023/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5854848Z Receiving objects:  42% (4121/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5869828Z Receiving objects:  43% (4219/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5878235Z Receiving objects:  44% (4317/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5898138Z Receiving objects:  45% (4415/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5908148Z Receiving objects:  46% (4514/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5909037Z Receiving objects:  47% (4612/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5909651Z Receiving objects:  48% (4710/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5910159Z Receiving objects:  49% (4808/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5910784Z Receiving objects:  50% (4906/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5911458Z Receiving objects:  51% (5004/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5911955Z Receiving objects:  52% (5102/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5912442Z Receiving objects:  53% (5200/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5912921Z Receiving objects:  54% (5298/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5913399Z Receiving objects:  55% (5397/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5913891Z Receiving objects:  56% (5495/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5920053Z Receiving objects:  57% (5593/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5928631Z Receiving objects:  58% (5691/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5929550Z Receiving objects:  59% (5789/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5930419Z Receiving objects:  60% (5887/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5931262Z Receiving objects:  61% (5985/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5936605Z Receiving objects:  62% (6083/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5940452Z Receiving objects:  63% (6181/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5941353Z Receiving objects:  64% (6280/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5942223Z Receiving objects:  65% (6378/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5949217Z Receiving objects:  66% (6476/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5952818Z Receiving objects:  67% (6574/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5954248Z Receiving objects:  68% (6672/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5955771Z Receiving objects:  69% (6770/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5960281Z Receiving objects:  70% (6868/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5961672Z Receiving objects:  71% (6966/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5962787Z Receiving objects:  72% (7064/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5964794Z Receiving objects:  73% (7163/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5977145Z Receiving objects:  74% (7261/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5981183Z Receiving objects:  75% (7359/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5988616Z Receiving objects:  76% (7457/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5989999Z Receiving objects:  77% (7555/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5992150Z Receiving objects:  78% (7653/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5994522Z Receiving objects:  79% (7751/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.5998087Z Receiving objects:  80% (7849/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6018154Z Receiving objects:  81% (7947/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6028417Z Receiving objects:  82% (8046/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6029886Z Receiving objects:  83% (8144/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6031112Z Receiving objects:  84% (8242/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6032267Z Receiving objects:  85% (8340/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6033332Z Receiving objects:  86% (8438/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6034375Z Receiving objects:  87% (8536/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6035202Z Receiving objects:  88% (8634/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6036021Z Receiving objects:  89% (8732/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6037006Z Receiving objects:  90% (8830/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6038103Z Receiving objects:  91% (8929/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6038678Z Receiving objects:  92% (9027/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6039211Z Receiving objects:  93% (9125/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6039743Z Receiving objects:  94% (9223/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6058156Z Receiving objects:  95% (9321/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6149514Z Receiving objects:  96% (9419/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.6544473Z Receiving objects:  97% (9517/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.7177647Z Receiving objects:  98% (9615/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8309620Z Receiving objects:  99% (9713/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8311506Z remote: Total 9811 (delta 700), reused 876 (delta 593), pack-reused 8750 (from 1)        
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8337401Z Receiving objects: 100% (9811/9811)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8338545Z Receiving objects: 100% (9811/9811), 13.60 MiB | 31.08 MiB/s, done.
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8352184Z Resolving deltas:   0% (0/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8360037Z Resolving deltas:   1% (71/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8373910Z Resolving deltas:   2% (141/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8375309Z Resolving deltas:   3% (211/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8377186Z Resolving deltas:   4% (281/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8378987Z Resolving deltas:   5% (351/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8390544Z Resolving deltas:   6% (421/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8415412Z Resolving deltas:   7% (491/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8438489Z Resolving deltas:   8% (561/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8443834Z Resolving deltas:   9% (631/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8445527Z Resolving deltas:  10% (702/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8452805Z Resolving deltas:  11% (772/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8455855Z Resolving deltas:  12% (842/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8459907Z Resolving deltas:  13% (912/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8462705Z Resolving deltas:  14% (982/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8465685Z Resolving deltas:  15% (1052/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8470210Z Resolving deltas:  16% (1122/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8472040Z Resolving deltas:  17% (1192/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8474048Z Resolving deltas:  18% (1262/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8476150Z Resolving deltas:  19% (1333/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8486395Z Resolving deltas:  20% (1403/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8501437Z Resolving deltas:  21% (1473/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8513236Z Resolving deltas:  22% (1543/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8523539Z Resolving deltas:  23% (1613/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8558045Z Resolving deltas:  24% (1683/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8576623Z Resolving deltas:  25% (1753/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8607796Z Resolving deltas:  26% (1823/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8608916Z Resolving deltas:  27% (1893/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8609984Z Resolving deltas:  28% (1964/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8611102Z Resolving deltas:  29% (2034/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8612141Z Resolving deltas:  30% (2104/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8613185Z Resolving deltas:  31% (2174/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8621998Z Resolving deltas:  32% (2244/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8637821Z Resolving deltas:  33% (2314/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8675078Z Resolving deltas:  34% (2384/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8676097Z Resolving deltas:  35% (2454/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8677422Z Resolving deltas:  36% (2524/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8678550Z Resolving deltas:  37% (2595/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8679629Z Resolving deltas:  38% (2665/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8686994Z Resolving deltas:  39% (2735/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8688496Z Resolving deltas:  40% (2805/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8697594Z Resolving deltas:  41% (2875/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8718248Z Resolving deltas:  42% (2945/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8719667Z Resolving deltas:  43% (3015/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8727229Z Resolving deltas:  44% (3085/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8748255Z Resolving deltas:  45% (3155/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8749772Z Resolving deltas:  46% (3226/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8755460Z Resolving deltas:  47% (3296/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8767130Z Resolving deltas:  48% (3366/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8777943Z Resolving deltas:  49% (3436/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8788557Z Resolving deltas:  50% (3506/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8799817Z Resolving deltas:  51% (3576/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8808913Z Resolving deltas:  52% (3646/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8819903Z Resolving deltas:  53% (3716/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8830751Z Resolving deltas:  54% (3786/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8841224Z Resolving deltas:  55% (3857/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8852068Z Resolving deltas:  56% (3927/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8862537Z Resolving deltas:  57% (3997/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8873826Z Resolving deltas:  58% (4067/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8884893Z Resolving deltas:  59% (4137/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8895188Z Resolving deltas:  60% (4207/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8918218Z Resolving deltas:  61% (4277/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8919642Z Resolving deltas:  62% (4347/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8922160Z Resolving deltas:  63% (4417/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8929752Z Resolving deltas:  64% (4488/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8939575Z Resolving deltas:  65% (4558/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.8957914Z Resolving deltas:  66% (4628/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.9067807Z Resolving deltas:  67% (4698/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.9333454Z Resolving deltas:  68% (4768/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.9600756Z Resolving deltas:  69% (4838/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:48.9832332Z Resolving deltas:  70% (4908/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0034202Z Resolving deltas:  71% (4978/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0051350Z Resolving deltas:  72% (5048/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0057451Z Resolving deltas:  73% (5119/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0059244Z Resolving deltas:  74% (5189/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0069065Z Resolving deltas:  75% (5259/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0070859Z Resolving deltas:  76% (5329/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0072504Z Resolving deltas:  77% (5399/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0086452Z Resolving deltas:  78% (5469/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0096355Z Resolving deltas:  79% (5539/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0108275Z Resolving deltas:  80% (5609/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0112593Z Resolving deltas:  81% (5679/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0116065Z Resolving deltas:  82% (5750/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0118912Z Resolving deltas:  83% (5820/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0127541Z Resolving deltas:  84% (5890/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0129017Z Resolving deltas:  85% (5960/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0130243Z Resolving deltas:  86% (6030/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0131455Z Resolving deltas:  87% (6100/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0145863Z Resolving deltas:  88% (6170/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0147870Z Resolving deltas:  89% (6240/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0149465Z Resolving deltas:  90% (6310/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0150904Z Resolving deltas:  91% (6381/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0152389Z Resolving deltas:  92% (6451/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0153866Z Resolving deltas:  93% (6521/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0155345Z Resolving deltas:  94% (6591/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0159400Z Resolving deltas:  95% (6661/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0171907Z Resolving deltas:  96% (6731/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0218728Z Resolving deltas:  97% (6801/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0279778Z Resolving deltas:  98% (6871/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0545368Z Resolving deltas:  99% (6941/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0546320Z Resolving deltas: 100% (7011/7011)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.0547513Z Resolving deltas: 100% (7011/7011), done.
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1003548Z From https://github.com/linksplatform/Interfaces
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1005393Z  * [new branch]      cppwrite(norwend_like) -> origin/cppwrite(norwend_like)
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1007098Z  * [new branch]      cs/feature/add_icli    -> origin/cs/feature/add_icli
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1008920Z  * [new branch]      cursor/migrate-nuget-exe-to-dotnet-cli-26dd -> origin/cursor/migrate-nuget-exe-to-dotnet-cli-26dd
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1010190Z  * [new branch]      dependabot/add-v2-config-file -> origin/dependabot/add-v2-config-file
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1010987Z  * [new branch]      gh-pages               -> origin/gh-pages
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1011628Z  * [new branch]      iss53                  -> origin/iss53
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1012503Z  * [new branch]      issue-102-7b0ca1fc     -> origin/issue-102-7b0ca1fc
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1013251Z  * [new branch]      issue-103-d3460d7c     -> origin/issue-103-d3460d7c
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1014126Z  * [new branch]      issue-118-b9c376dd     -> origin/issue-118-b9c376dd
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1014856Z  * [new branch]      issue-12-4a822330      -> origin/issue-12-4a822330
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1015548Z  * [new branch]      issue-139-6bab94f7     -> origin/issue-139-6bab94f7
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1016308Z  * [new branch]      issue-140-e963e2c5     -> origin/issue-140-e963e2c5
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1023974Z  * [new branch]      issue-141-5d6d1428     -> origin/issue-141-5d6d1428
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1025350Z  * [new branch]      issue-142-b15af30d     -> origin/issue-142-b15af30d
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1026912Z  * [new branch]      issue-143-c347d836     -> origin/issue-143-c347d836
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1028131Z  * [new branch]      issue-18-74422c56      -> origin/issue-18-74422c56
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1029003Z  * [new branch]      issue-19-41288876      -> origin/issue-19-41288876
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1033610Z  * [new branch]      issue-24-035e07eb      -> origin/issue-24-035e07eb
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1035182Z  * [new branch]      issue-36-682afee2      -> origin/issue-36-682afee2
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1036422Z  * [new branch]      issue-43-773ee22d      -> origin/issue-43-773ee22d
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1037994Z  * [new branch]      issue-59-86a0170f      -> origin/issue-59-86a0170f
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1039236Z  * [new branch]      issue-78-e53f0780      -> origin/issue-78-e53f0780
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1040367Z  * [new branch]      issue-79-d339a8fc      -> origin/issue-79-d339a8fc
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1041477Z  * [new branch]      issue-82-4655482c      -> origin/issue-82-4655482c
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1042681Z  * [new branch]      issue-88-6ebf60d7      -> origin/issue-88-6ebf60d7
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1043766Z  * [new branch]      issue-9-082e6680       -> origin/issue-9-082e6680
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1044936Z  * [new branch]      issue-95-45bd7656      -> origin/issue-95-45bd7656
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1046069Z  * [new branch]      issue-99-0c25b77b      -> origin/issue-99-0c25b77b
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1047448Z  * [new branch]      main                   -> origin/main
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1048396Z  * [new branch]      master                 -> origin/master
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1049517Z  * [new branch]      nassipkali-patch-1     -> origin/nassipkali-patch-1
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1050746Z  * [new branch]      nassipkali-patch-2     -> origin/nassipkali-patch-2
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1051931Z  * [new branch]      nassipkali-patch-3     -> origin/nassipkali-patch-3
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1053288Z  * [new branch]      sweep/add-clinkaddress-concept -> origin/sweep/add-clinkaddress-concept
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1054712Z  * [new branch]      sweep/add-sweep-config -> origin/sweep/add-sweep-config
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1055865Z  * [new tag]         0.0.1                  -> 0.0.1
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1057260Z  * [new tag]         0.1.0                  -> 0.1.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1058219Z  * [new tag]         0.1.1                  -> 0.1.1
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1059047Z  * [new tag]         0.2.0                  -> 0.2.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1059877Z  * [new tag]         0.2.1                  -> 0.2.1
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1060760Z  * [new tag]         0.2.2                  -> 0.2.2
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1061672Z  * [new tag]         0.3.0                  -> 0.3.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1062534Z  * [new tag]         0.3.0_0.0.2            -> 0.3.0_0.0.2
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1063443Z  * [new tag]         0.3.0_0.0.3            -> 0.3.0_0.0.3
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1064402Z  * [new tag]         0.4.0_0.0.3            -> 0.4.0_0.0.3
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1065352Z  * [new tag]         0.4.0_0.1.0            -> 0.4.0_0.1.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1066257Z  * [new tag]         0.4.0_0.1.1            -> 0.4.0_0.1.1
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1067511Z  * [new tag]         0.4.0_0.1.2            -> 0.4.0_0.1.2
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1068691Z  * [new tag]         0.4.0_0.1.3            -> 0.4.0_0.1.3
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1069726Z  * [new tag]         0.4.0_0.1.4            -> 0.4.0_0.1.4
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1070469Z  * [new tag]         0.4.0_0.2.0            -> 0.4.0_0.2.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1071154Z  * [new tag]         0.4.0_0.2.1            -> 0.4.0_0.2.1
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1071817Z  * [new tag]         0.4.0_0.2.2            -> 0.4.0_0.2.2
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1072507Z  * [new tag]         0.4.0_0.2.3            -> 0.4.0_0.2.3
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1073221Z  * [new tag]         0.4.0_0.2.4            -> 0.4.0_0.2.4
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1073924Z  * [new tag]         0.4.0_0.2.5            -> 0.4.0_0.2.5
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1074617Z  * [new tag]         0.4.1_0.2.5            -> 0.4.1_0.2.5
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1075313Z  * [new tag]         0.4.2_0.2.5            -> 0.4.2_0.2.5
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1075999Z  * [new tag]         cpp_                   -> cpp_
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1076965Z  * [new tag]         cpp_0.2.6              -> cpp_0.2.6
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1077690Z  * [new tag]         cpp_0.2.7              -> cpp_0.2.7
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1078412Z  * [new tag]         cpp_0.3.0              -> cpp_0.3.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1079137Z  * [new tag]         cpp_0.3.10             -> cpp_0.3.10
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1080112Z  * [new tag]         cpp_0.3.11             -> cpp_0.3.11
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1080821Z  * [new tag]         cpp_0.3.12             -> cpp_0.3.12
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1081531Z  * [new tag]         cpp_0.3.13             -> cpp_0.3.13
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1082211Z  * [new tag]         cpp_0.3.14             -> cpp_0.3.14
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1082912Z  * [new tag]         cpp_0.3.15             -> cpp_0.3.15
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1083645Z  * [new tag]         cpp_0.3.16             -> cpp_0.3.16
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1084353Z  * [new tag]         cpp_0.3.17             -> cpp_0.3.17
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1085042Z  * [new tag]         cpp_0.3.18             -> cpp_0.3.18
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1085722Z  * [new tag]         cpp_0.3.19             -> cpp_0.3.19
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1086407Z  * [new tag]         cpp_0.3.21             -> cpp_0.3.21
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1087439Z  * [new tag]         cpp_0.3.22             -> cpp_0.3.22
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1088189Z  * [new tag]         cpp_0.3.23             -> cpp_0.3.23
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1088919Z  * [new tag]         cpp_0.3.24             -> cpp_0.3.24
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1089664Z  * [new tag]         cpp_0.3.25             -> cpp_0.3.25
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1090403Z  * [new tag]         cpp_0.3.28             -> cpp_0.3.28
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1091132Z  * [new tag]         cpp_0.3.29             -> cpp_0.3.29
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1091842Z  * [new tag]         cpp_0.3.30             -> cpp_0.3.30
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1092545Z  * [new tag]         cpp_0.3.35             -> cpp_0.3.35
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1093267Z  * [new tag]         cpp_0.3.36             -> cpp_0.3.36
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1094065Z  * [new tag]         cpp_0.3.37             -> cpp_0.3.37
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1094759Z  * [new tag]         cpp_0.3.38             -> cpp_0.3.38
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1095470Z  * [new tag]         cpp_0.3.39             -> cpp_0.3.39
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1096200Z  * [new tag]         cpp_0.3.40             -> cpp_0.3.40
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1097364Z  * [new tag]         cpp_0.3.41             -> cpp_0.3.41
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1098067Z  * [new tag]         cpp_0.3.43             -> cpp_0.3.43
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1098759Z  * [new tag]         cpp_0.3.9              -> cpp_0.3.9
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1099448Z  * [new tag]         cpp_0.4.0              -> cpp_0.4.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1100145Z  * [new tag]         cpp_test1              -> cpp_test1
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1100868Z  * [new tag]         cpp_test10             -> cpp_test10
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1101597Z  * [new tag]         cpp_test11             -> cpp_test11
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1102311Z  * [new tag]         cpp_test12             -> cpp_test12
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1103020Z  * [new tag]         cpp_test13             -> cpp_test13
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1103722Z  * [new tag]         cpp_test14             -> cpp_test14
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1104683Z  * [new tag]         cpp_test2              -> cpp_test2
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1105470Z  * [new tag]         cpp_test4              -> cpp_test4
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1106207Z  * [new tag]         cpp_test5              -> cpp_test5
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1107216Z  * [new tag]         cpp_test6              -> cpp_test6
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1107922Z  * [new tag]         cpp_test7              -> cpp_test7
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1108638Z  * [new tag]         cpp_test8              -> cpp_test8
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1109385Z  * [new tag]         csharp_0.4.4           -> csharp_0.4.4
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1110131Z  * [new tag]         csharp_0.4.5           -> csharp_0.4.5
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1110871Z  * [new tag]         csharp_0.5.0           -> csharp_0.5.0
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1111594Z  * [new tag]         csharp_0.5.1           -> csharp_0.5.1
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1112607Z ##[command]git checkout --progress --force 3dfbee614c1276425f216d032580c052d94da4e8
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1161982Z Note: switching to '3dfbee614c1276425f216d032580c052d94da4e8'.
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1162558Z 
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1163900Z You are in 'detached HEAD' state. You can look around, make experimental
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1165361Z changes and commit them, and you can discard any commits you make in this
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1166491Z state without impacting any branches by switching back to a branch.
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1167949Z 
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1169768Z If you want to create a new branch to retain commits you create, you may
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1170831Z do so (now or later) by using -c with the switch command. Example:
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1171427Z 
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1171699Z   git switch -c <new-branch-name>
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1172077Z 
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1172301Z Or undo this operation with:
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1172714Z 
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1172917Z   git switch -
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1173213Z 
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1173708Z Turn off this advice by setting config variable advice.detachedHead to false
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1174336Z 
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1174878Z HEAD is now at 3dfbee6 Merge pull request #137 from linksplatform/issue-12-4a822330
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1187614Z ##[command]git submodule sync
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1484111Z ##[command]git -c http.https://github.com.extraheader="AUTHORIZATION: basic ***" submodule update --init --force
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1707854Z Submodule 'Scripts' (https://github.com/linksplatform/Scripts) registered for path 'Scripts'
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1714273Z Submodule 'Settings' (https://github.com/linksplatform/Settings.git) registered for path 'Settings'
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.1739378Z Cloning into '/home/runner/work/Interfaces/Interfaces/Scripts'...
+main / test	UNKNOWN STEP	2026-09-26T02:54:49.7890870Z Cloning into '/home/runner/work/Interfaces/Interfaces/Settings'...
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3230673Z Submodule path 'Scripts': checked out '1b43e20609fc0cc7063611ede820413671a2e4ab'
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3300378Z Submodule path 'Settings': checked out '72c74e2f15e0d122e2e35cef1f752ce962085dec'
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3603329Z ##[group]Run egor-tensin/setup-gcc@v1
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3603653Z with:
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3603853Z   version: latest
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3604065Z   platform: x64
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3604287Z   cygwin: 0
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3604465Z   cc: 1
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3604639Z   hardlinks: 0
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3604827Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3605017Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3605247Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3712661Z ##[start-action display=Run New-Variable os -Value 'Linux' -Option Constant;id=__egor-tensin_setup-gcc.install]
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3755677Z ##[group]Run New-Variable os -Value 'Linux' -Option Constant
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3756242Z ^[[36;1mNew-Variable os -Value 'Linux' -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3756832Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3757383Z ^[[36;1mNew-Variable linux_host -Value ($os -eq 'Linux') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3757889Z ^[[36;1mNew-Variable cygwin_host -Value ('0' -eq '1') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3758480Z ^[[36;1mNew-Variable windows_host -Value ($os -eq 'Windows' -and !$cygwin_host) -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3758967Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3759240Z ^[[36;1mNew-Variable version -Value ('latest') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3759716Z ^[[36;1mNew-Variable latest -Value ($version -eq 'latest') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3760188Z ^[[36;1mNew-Variable x64 -Value ('x64' -eq 'x64') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3760524Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3760724Z ^[[36;1mfunction Locate-Choco {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3761072Z ^[[36;1m    $path = Get-Command 'choco' -ErrorAction SilentlyContinue^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3761429Z ^[[36;1m    if ($path) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3761673Z ^[[36;1m        $path.Path^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3761921Z ^[[36;1m    } else {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3762252Z ^[[36;1m        Join-Path ${env:ProgramData} 'chocolatey' 'bin' 'choco'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3762590Z ^[[36;1m    }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3762781Z ^[[36;1m}^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3762962Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3763165Z ^[[36;1mfunction Enable-TestingPPA {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3763572Z ^[[36;1m    sudo add-apt-repository --yes --update ppa:ubuntu-toolchain-r/test^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3764153Z ^[[36;1m}^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3764332Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3764543Z ^[[36;1mfunction Install-Package {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3764800Z ^[[36;1m    param(^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3765138Z ^[[36;1m        [Parameter(Mandatory=$true, ValueFromRemainingArguments=$true)]^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3765536Z ^[[36;1m        [string[]] $Packages^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3765788Z ^[[36;1m    )^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3765975Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3766172Z ^[[36;1m    if ($script:linux_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3766445Z ^[[36;1m        sudo apt-get update^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3767095Z ^[[36;1m        sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends $Packages^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3767600Z ^[[36;1m    } elseif ($script:cygwin_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3767894Z ^[[36;1m        $choco = Locate-Choco^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3768247Z ^[[36;1m        & $choco install $Packages -y --no-progress --source=cygwin^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3768637Z ^[[36;1m    } elseif ($script:windows_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3768921Z ^[[36;1m        $choco = Locate-Choco^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3769270Z ^[[36;1m        & $choco upgrade $Packages -y --no-progress --allow-downgrade^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3769624Z ^[[36;1m    } else {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3769943Z ^[[36;1m        throw "Sorry, installing packages is unsupported on $script:os"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3770305Z ^[[36;1m    }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3770488Z ^[[36;1m}^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3770671Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3770860Z ^[[36;1mif ($linux_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3771107Z ^[[36;1m    $pkg = 'g++'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3771329Z ^[[36;1m    $gcc = 'gcc'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3771545Z ^[[36;1m    $gxx = 'g++'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3771933Z ^[[36;1m    if (!$latest) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3772188Z ^[[36;1m        Enable-TestingPPA^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3772452Z ^[[36;1m        $pkg += "-$version"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3772708Z ^[[36;1m        $gcc += "-$version"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3772963Z ^[[36;1m        $gxx += "-$version"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3773204Z ^[[36;1m    }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3773393Z ^[[36;1m    if (!$x64) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3773620Z ^[[36;1m        $pkg += '-multilib'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3773857Z ^[[36;1m    }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3774061Z ^[[36;1m    Install-Package $pkg^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3774314Z ^[[36;1m} elseif ($cygwin_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3774557Z ^[[36;1m    if (!$x64) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3774775Z ^[[36;1m        echo @'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3774993Z ^[[36;1m::warning ::^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3775333Z ^[[36;1m32-bit-targeting GCC is unstable and/or unmaintained on 64-bit Cygwin.^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3775746Z ^[[36;1mPlease use 32-bit Cygwin instead.^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3776114Z ^[[36;1mIf you _are_ using 32-bit Cygwin, you can ignore this message.^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3776468Z ^[[36;1m'@^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3776944Z ^[[36;1m    }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3777139Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3777334Z ^[[36;1m    $pkg = 'gcc-g++'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3777572Z ^[[36;1m    $gcc = 'gcc'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3777790Z ^[[36;1m    $gxx = 'g++'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3777996Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3778189Z ^[[36;1m    Install-Package $pkg^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3778451Z ^[[36;1m} elseif ($windows_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3778800Z ^[[36;1m    # TODO: use setup-mingw when calling composite actions within^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3779197Z ^[[36;1m    # composite actions is implemented.^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3779475Z ^[[36;1m    echo @'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3779679Z ^[[36;1m::error ::^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3780018Z ^[[36;1mPlease use the egor-tensin/setup-mingw action to install GCC on Windows.^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3780402Z ^[[36;1m'@^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3780595Z ^[[36;1m    exit 1^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3780792Z ^[[36;1m} else {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3781066Z ^[[36;1m    throw "Sorry, installing GCC is unsupported on $os"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3781381Z ^[[36;1m}^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3781699Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3781914Z ^[[36;1mecho "gcc=$gcc" >> $env:GITHUB_OUTPUT^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3782213Z ^[[36;1mecho "gxx=$gxx" >> $env:GITHUB_OUTPUT^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3812174Z shell: /usr/bin/pwsh -command ". '{0}'"
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3812479Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3812683Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:54:50.3812926Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.2740469Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.3100904Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.3102339Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.3122565Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.3140065Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.3175355Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.4537744Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [446 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.4679358Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [498 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5062583Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1319 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5144188Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [299 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5163450Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5188115Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1698 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5255460Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [340 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5299842Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5348001Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1654 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5421083Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [377 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5448099Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.5882354Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6324341Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5796 B]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6348036Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6374450Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [18.6 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6375983Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6515764Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1053 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6584456Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [219 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6598246Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.3 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6627799Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1220 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6687942Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6717694Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6727773Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1535 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:55.6803190Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [353 kB]
+main / test	UNKNOWN STEP	2026-09-26T02:54:59.9460599Z Fetched 12.4 MB in 1s (8848 kB/s)
+main / test	UNKNOWN STEP	2026-09-26T02:55:00.7705875Z Reading package lists...
+main / test	UNKNOWN STEP	2026-09-26T02:55:00.8113732Z Reading package lists...
+main / test	UNKNOWN STEP	2026-09-26T02:55:00.9990024Z Building dependency tree...
+main / test	UNKNOWN STEP	2026-09-26T02:55:00.9997684Z Reading state information...
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.1676822Z g++ is already the newest version (4:13.2.0-7ubuntu1).
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.1677665Z 0 upgraded, 0 newly installed, 0 to remove and 32 not upgraded.
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4261002Z ##[end-action id=__egor-tensin_setup-gcc.install;outcome=success;conclusion=success;duration_ms=11054]
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4289341Z ##[start-action display=Run New-Variable os -Value 'Linux' -Option Constant;id=__egor-tensin_setup-gcc.__run]
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4309711Z ##[group]Run New-Variable os -Value 'Linux' -Option Constant
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4310175Z ^[[36;1mNew-Variable os -Value 'Linux' -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4310489Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4310799Z ^[[36;1mNew-Variable linux_host -Value ($os -eq 'Linux') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4311286Z ^[[36;1mNew-Variable cygwin_host -Value ('0' -eq '1') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4311837Z ^[[36;1mNew-Variable windows_host -Value ($os -eq 'Windows' -and !$cygwin_host) -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4312269Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4312537Z ^[[36;1mNew-Variable cc -Value ('1' -eq '1') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4312856Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4313088Z ^[[36;1mNew-Variable gcc -Value 'gcc' -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4313441Z ^[[36;1mNew-Variable gxx -Value 'g++' -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4313730Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4313921Z ^[[36;1mfunction Link-Exe {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4314158Z ^[[36;1m    param(^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4314393Z ^[[36;1m        [Parameter(Mandatory=$true)]^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4314673Z ^[[36;1m        [string] $Exe,^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4315083Z ^[[36;1m        [Parameter(Mandatory=$true)]^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4315371Z ^[[36;1m        [string] $LinkName^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4315609Z ^[[36;1m    )^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4315797Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4316021Z ^[[36;1m    $exe_path = (Get-Command $Exe).Path^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4316501Z ^[[36;1m    $link_dir = if ($script:windows_host) { Split-Path $exe_path } else { '/usr/local/bin' }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4317346Z ^[[36;1m    $link_name = if ($script:windows_host) { "$LinkName.exe" } else { $LinkName }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4317945Z ^[[36;1m    $link_path = if ($script:cygwin_host) { "$link_dir/$link_name" } else { Join-Path $link_dir $link_name }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4318461Z ^[[36;1m    echo "Creating link $link_path -> $exe_path"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4318787Z ^[[36;1m    if ($script:linux_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4319080Z ^[[36;1m        sudo ln -f -s $exe_path $link_path^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4319387Z ^[[36;1m    } elseif ($script:cygwin_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4319701Z ^[[36;1m        ln.exe -f -s $exe_path $link_path^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4320007Z ^[[36;1m    } elseif ($script:windows_host) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4320450Z ^[[36;1m        New-Item -ItemType HardLink -Path $link_path -Value $exe_path -Force | Out-Null^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4320875Z ^[[36;1m    }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4321058Z ^[[36;1m}^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4321235Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4321418Z ^[[36;1mif ($cc) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4321625Z ^[[36;1m    Link-Exe $gcc cc^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4321861Z ^[[36;1m    if ($gcc -ne 'gcc') {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4322114Z ^[[36;1m        Link-Exe $gcc 'gcc'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4322352Z ^[[36;1m    }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4322548Z ^[[36;1m    Link-Exe $gxx c++^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4322788Z ^[[36;1m    if ($gxx -ne 'g++') {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4323036Z ^[[36;1m        Link-Exe $gxx 'g++'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4323274Z ^[[36;1m    }^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4323454Z ^[[36;1m}^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4347165Z shell: /usr/bin/pwsh -command ". '{0}'"
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4347459Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4347662Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:55:01.4347899Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.1928789Z Creating link /usr/local/bin/cc -> /usr/bin/gcc
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2264054Z Creating link /usr/local/bin/c++ -> /usr/bin/g++
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2859657Z ##[end-action id=__egor-tensin_setup-gcc.__run;outcome=success;conclusion=success;duration_ms=856]
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2870094Z ##[start-action display=Run New-Variable cygwin_host -Value ('0' -eq '1') -Option Constant;id=__egor-tensin_setup-gcc.__run_2]
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2888187Z ##[group]Run New-Variable cygwin_host -Value ('0' -eq '1') -Option Constant
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2888743Z ^[[36;1mNew-Variable cygwin_host -Value ('0' -eq '1') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2889207Z ^[[36;1mNew-Variable hardlinks -Value ('0' -eq '1') -Option Constant^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2889554Z ^[[36;1m^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2889769Z ^[[36;1mif ($cygwin_host -and $hardlinks) {^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2890056Z ^[[36;1m    echo @'^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2890298Z ^[[36;1mwhile IFS= read -d '' -r link_path; do^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2890705Z ^[[36;1m    dest_path="$( readlink --canonicalize-existing -- "$link_path" )"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2891103Z ^[[36;1m    dest_ext=".${dest_path##*.}"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2891422Z ^[[36;1m    [ "$dest_ext" == ".$dest_path" ] && dest_ext=^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2891731Z ^[[36;1m    link_ext=".${link_path##*.}"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2892031Z ^[[36;1m    [ "$link_ext" == ".$link_path" ] && link_ext=^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2892412Z ^[[36;1m    echo "Removing symlink $link_path" && rm -f -- "$link_path"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2892818Z ^[[36;1m    [ "$link_ext" != "$dest_ext" ] && echo "${PATHEXT//\;/^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2893315Z ^[[36;1m}" | grep -q --ignore-case --line-regexp -F -- "$dest_ext" && link_path="$link_path$dest_ext"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2893916Z ^[[36;1m    echo "Creating hardlink $link_path -> $dest_path" && ln -- "$dest_path" "$link_path"^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2894535Z ^[[36;1mdone < <( find /usr/local/bin /usr/bin \^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2894852Z ^[[36;1m               -type l '-(' \^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2895144Z ^[[36;1m               -path /usr/local/bin/cc -o \^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2895460Z ^[[36;1m               -path /usr/local/bin/c++ \^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2895750Z ^[[36;1m               '-)' -print0 )^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2896116Z ^[[36;1m'@ | & bash.exe --login -o errexit -o nounset -o pipefail -o igncr^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2896464Z ^[[36;1m}^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2920205Z shell: /usr/bin/pwsh -command ". '{0}'"
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2920490Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2920687Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:55:02.2920921Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:55:03.0629697Z ##[end-action id=__egor-tensin_setup-gcc.__run_2;outcome=success;conclusion=success;duration_ms=775]
+main / test	UNKNOWN STEP	2026-09-26T02:55:03.0680302Z ##[group]Run pip install conan
+main / test	UNKNOWN STEP	2026-09-26T02:55:03.0680620Z ^[[36;1mpip install conan^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:03.0743102Z shell: /usr/bin/bash -e {0}
+main / test	UNKNOWN STEP	2026-09-26T02:55:03.0743354Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:55:03.0743557Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:55:03.0743788Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:55:04.5029736Z Defaulting to user installation because normal site-packages is not writeable
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.3979883Z Collecting conan
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.4806724Z   Downloading conan-2.32.0-py3-none-any.whl.metadata (8.6 kB)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.5025100Z Requirement already satisfied: requests<3.0.0,>=2.25 in /usr/lib/python3/dist-packages (from conan) (2.31.0)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.5037285Z Requirement already satisfied: urllib3<3.0,>=1.26.6 in /usr/lib/python3/dist-packages (from conan) (2.0.7)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.5051910Z Requirement already satisfied: colorama<0.5.0,>=0.4.3 in /usr/lib/python3/dist-packages (from conan) (0.4.6)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.5061649Z Requirement already satisfied: PyYAML<7.0,>=6.0 in /usr/lib/python3/dist-packages (from conan) (6.0.1)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.5274674Z Collecting patch-ng<1.20,>=1.18.0 (from conan)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.5479425Z   Downloading patch_ng-1.19.1-py3-none-any.whl.metadata (3.2 kB)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.5760025Z Collecting fasteners>=0.15 (from conan)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.5962687Z   Downloading fasteners-0.20-py3-none-any.whl.metadata (4.8 kB)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.6009056Z Requirement already satisfied: Jinja2<4.0.0,>=3.0 in /usr/lib/python3/dist-packages (from conan) (3.1.2)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.6020634Z Requirement already satisfied: python-dateutil<3,>=2.8.0 in /usr/lib/python3/dist-packages (from conan) (2.8.2)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.6038546Z Requirement already satisfied: distro<2.0.0,>=1.4.0 in /usr/lib/python3/dist-packages (from conan) (1.9.0)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.6430397Z Downloading conan-2.32.0-py3-none-any.whl (742 kB)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.7425236Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 742.5/742.5 kB 7.7 MB/s eta 0:00:00
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.7634269Z Downloading fasteners-0.20-py3-none-any.whl (18 kB)
+main / test	UNKNOWN STEP	2026-09-26T02:55:05.7872984Z Downloading patch_ng-1.19.1-py3-none-any.whl (17 kB)
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.0705333Z Installing collected packages: patch-ng, fasteners, conan
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.5533168Z Successfully installed conan-2.32.0 fasteners-0.20 patch-ng-1.19.1
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.6121607Z ##[group]Run conan profile detect
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.6121970Z ^[[36;1mconan profile detect^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.6122250Z ^[[36;1msed -i '5d' ~/.conan2/profiles/default^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.6184229Z shell: /usr/bin/bash -e {0}
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.6184480Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.6184683Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.6184917Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.9938884Z detect_api: Found cc=gcc-13.3.0
+main / test	UNKNOWN STEP	2026-09-26T02:55:06.9939803Z detect_api: gcc>=5, using the major as version
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1786857Z detect_api: gcc C++ standard library: libstdc++11
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1787312Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1787661Z Detected profile:
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1788236Z WARN: This profile is a guess of your environment, please check it.
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1789221Z WARN: The output of this command is not guaranteed to be stable and can change in future Conan versions.
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1790168Z WARN: Use your own profile files for stability.
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1790930Z Saving detected profile to /home/runner/.conan2/profiles/default
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1793218Z [settings]
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1793534Z arch=x86_64
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1793860Z build_type=Release
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1794199Z compiler=gcc
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1794547Z compiler.cppstd=gnu17
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1794926Z compiler.libcxx=libstdc++11
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1795333Z compiler.version=13
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1795690Z os=Linux
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.1795860Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2170644Z ##[group]Run if [ -f "install-local-conan-dependencies.sh" ]; then
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2171175Z ^[[36;1mif [ -f "install-local-conan-dependencies.sh" ]; then^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2171603Z ^[[36;1m    echo "install-local-conan-dependencies.sh exists."^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2172006Z ^[[36;1m    chmod +x ./install-local-conan-dependencies.sh^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2172370Z ^[[36;1m    ./install-local-conan-dependencies.sh^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2172659Z ^[[36;1mfi^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2235174Z shell: /usr/bin/bash -e {0}
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2235428Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2235625Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2235869Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2349149Z ##[group]Run CXX=clang++
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2349440Z ^[[36;1mCXX=clang++^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2349677Z ^[[36;1mconan install . --build=missing^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2349939Z ^[[36;1mls^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2350395Z ^[[36;1mcmake . -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release -DLINKS_PLATFORM_TESTS=TRUE^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2350932Z ^[[36;1mcmake --build .^[[0m
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2411351Z shell: /usr/bin/bash -e {0}
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2411605Z env:
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2411806Z   PROFILE: linksplatform
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.2412038Z ##[endgroup]
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4895250Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4895855Z ======== Input profiles ========
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4896346Z Profile host:
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4900141Z [settings]
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4900905Z arch=x86_64
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4901531Z build_type=Release
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4902120Z compiler=gcc
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4902715Z compiler.libcxx=libstdc++11
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4903742Z compiler.version=13
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4904505Z os=Linux
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4904715Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4904863Z Profile build:
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4905199Z [settings]
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4905506Z arch=x86_64
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4905819Z build_type=Release
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4906160Z compiler=gcc
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4906506Z compiler.libcxx=libstdc++11
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4907175Z compiler.version=13
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4907528Z os=Linux
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4907701Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4981781Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4982263Z ======== Computing dependency graph ========
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4987929Z gtest/cci.20210126: Not found in local cache, looking in remotes...
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4988501Z gtest/cci.20210126: Checking remote: conancenter
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.4990225Z Connecting to remote 'conancenter' anonymously
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7320194Z gtest/cci.20210126: Downloaded recipe revision 7b8ec8c988c27b7f0769ca720054ad9f
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7359679Z Graph root
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7360313Z     conanfile.txt: /home/runner/work/Interfaces/Interfaces/cpp/conanfile.txt
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7360768Z Requirements
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7361146Z     gtest/cci.20210126#7b8ec8c988c27b7f0769ca720054ad9f - Downloaded (conancenter)
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7361524Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7361652Z ======== Computing necessary packages ========
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7499589Z Requirements
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7500294Z     gtest/cci.20210126#7b8ec8c988c27b7f0769ca720054ad9f:6f202f1c02964a5134b78b158f0c09a63c7c8fbb - Build
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7500987Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7501167Z ======== Installing packages ========
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7501535Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7501795Z -------- Installing package gtest/cci.20210126 (1 of 1) --------
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7502679Z Building from source gtest/cci.20210126:6f202f1c02964a5134b78b158f0c09a63c7c8fbb
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7503739Z gtest/cci.20210126: settings: os=Linux arch=x86_64 compiler=gcc compiler.libcxx=libstdc++11 compiler.version=13 build_type=Release
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7504656Z gtest/cci.20210126: options: build_gmock=True fPIC=True hide_symbols=False shared=False
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7505168Z >>> Source step
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7752563Z gtest/cci.20210126: Sources downloaded from 'conancenter'
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7758759Z Getting sources for gtest/cci.20210126
+main / test	UNKNOWN STEP	2026-09-26T02:55:07.7759449Z Calling source() in /home/runner/.conan2/p/gtest5b121e4b7503f/s/src
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.3634354Z Sources correctly downloaded from https://github.com/google/googletest/archive/273f8cb059a4e7b089731036392422b5ef489791.tar.gz
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.3635611Z Uncompressing 273f8cb059a4e7b089731036392422b5ef489791.tar.gz to .
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4164307Z Copying sources to build folder
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4442303Z Sources in /home/runner/.conan2/p/b/gtesta976d427c5619/b/src
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4443014Z >>> Generate step for gtest/cci.20210126
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4443781Z Generators folder: /home/runner/.conan2/p/b/gtesta976d427c5619/b/build/Release/generators
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4444516Z Calling generate() method in recipe
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4828109Z CMakeToolchain generated: conan_toolchain.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4833125Z CMakeToolchain generated: /home/runner/.conan2/p/b/gtesta976d427c5619/b/build/Release/generators/CMakePresets.json
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4834657Z CMakeToolchain generated: /home/runner/.conan2/p/b/gtesta976d427c5619/b/src/CMakeUserPresets.json
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4842863Z Generating aggregated env files
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4843501Z Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4844348Z Building your package in /home/runner/.conan2/p/b/gtesta976d427c5619/b
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4845025Z >>> Build step for gtest/cci.20210126
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4845507Z gtest/cci.20210126: Calling build()
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4846095Z gtest/cci.20210126: Apply patch (file): patches/gtest-1.10.0.patch
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4872132Z gtest/cci.20210126: Running CMake.configure()
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.4874529Z gtest/cci.20210126: RUN: cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE="generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="/home/runner/.conan2/p/b/gtesta976d427c5619/p" -DCMAKE_POLICY_DEFAULT_CMP0077="NEW" -DBUILD_GMOCK="ON" -Dgtest_hide_internal_symbols="OFF" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Release" "/home/runner/.conan2/p/b/gtesta976d427c5619/b/src"
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9782310Z CMake Deprecation Warning at CMakeLists.txt:4 (cmake_minimum_required):
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9783086Z   Compatibility with CMake < 3.10 will be removed from a future version of
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9783936Z   CMake.
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9784149Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9838539Z   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9839427Z   to tell CMake that the project requires at least <min> but has been updated
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9840195Z   to work with policies introduced by <max> or earlier.
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9840616Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:08.9840621Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:09.1336127Z -- Using Conan toolchain: /home/runner/.conan2/p/b/gtesta976d427c5619/b/build/Release/generators/conan_toolchain.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:09.1337922Z -- Conan toolchain: Setting CMAKE_POSITION_INDEPENDENT_CODE=ON (options.fPIC)
+main / test	UNKNOWN STEP	2026-09-26T02:55:09.1338759Z -- Conan toolchain: Defining architecture flag: -m64
+main / test	UNKNOWN STEP	2026-09-26T02:55:09.1446804Z -- Conan toolchain: Setting BUILD_SHARED_LIBS = OFF
+main / test	UNKNOWN STEP	2026-09-26T02:55:09.4794123Z -- The C compiler identification is GNU 13.3.0
+main / test	UNKNOWN STEP	2026-09-26T02:55:09.6099952Z -- The CXX compiler identification is GNU 13.3.0
+main / test	UNKNOWN STEP	2026-09-26T02:55:09.7103477Z -- Detecting C compiler ABI info
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.0837946Z -- Detecting C compiler ABI info - done
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.1026126Z -- Check for working C compiler: /usr/local/bin/cc - skipped
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.1115095Z -- Detecting C compile features
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.1174150Z -- Detecting C compile features - done
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.1766746Z -- Detecting CXX compiler ABI info
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.2671800Z -- Detecting CXX compiler ABI info - done
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.2866280Z -- Check for working CXX compiler: /usr/local/bin/c++ - skipped
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.2870002Z -- Detecting CXX compile features
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.2877866Z -- Detecting CXX compile features - done
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3177205Z CMake Deprecation Warning at googlemock/CMakeLists.txt:45 (cmake_minimum_required):
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3178218Z   Compatibility with CMake < 3.10 will be removed from a future version of
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3178881Z   CMake.
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3179067Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3179426Z   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3180301Z   to tell CMake that the project requires at least <min> but has been updated
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3181065Z   to work with policies introduced by <max> or earlier.
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3181454Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3181460Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3185935Z CMake Deprecation Warning at googletest/CMakeLists.txt:56 (cmake_minimum_required):
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3187148Z   Compatibility with CMake < 3.10 will be removed from a future version of
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3188110Z   CMake.
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3188299Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3188644Z   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3189473Z   to tell CMake that the project requires at least <min> but has been updated
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3190222Z   to work with policies introduced by <max> or earlier.
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3190598Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.3190604Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.8911655Z -- Found Python: /usr/bin/python3.12 (found version "3.12.3") found components: Interpreter
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.9180032Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.9864524Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+main / test	UNKNOWN STEP	2026-09-26T02:55:10.9875281Z -- Found Threads: TRUE
+main / test	UNKNOWN STEP	2026-09-26T02:55:11.0383080Z -- Configuring done (2.1s)
+main / test	UNKNOWN STEP	2026-09-26T02:55:11.0613553Z -- Generating done (0.0s)
+main / test	UNKNOWN STEP	2026-09-26T02:55:11.0617646Z -- Build files have been written to: /home/runner/.conan2/p/b/gtesta976d427c5619/b/build/Release
+main / test	UNKNOWN STEP	2026-09-26T02:55:11.0713265Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:11.0713548Z gtest/cci.20210126: Running CMake.build()
+main / test	UNKNOWN STEP	2026-09-26T02:55:11.0715921Z gtest/cci.20210126: RUN: cmake --build "/home/runner/.conan2/p/b/gtesta976d427c5619/b/build/Release" -- -j4
+main / test	UNKNOWN STEP	2026-09-26T02:55:11.0876096Z [ 12%] Building CXX object googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+main / test	UNKNOWN STEP	2026-09-26T02:55:18.3232052Z [ 25%] Linking CXX static library ../lib/libgtest.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:25.9440223Z [ 25%] Built target gtest
+main / test	UNKNOWN STEP	2026-09-26T02:55:25.9509477Z [ 37%] Building CXX object googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+main / test	UNKNOWN STEP	2026-09-26T02:55:25.9511445Z [ 50%] Building CXX object googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+main / test	UNKNOWN STEP	2026-09-26T02:55:26.6520805Z [ 62%] Linking CXX static library ../lib/libgtest_main.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:26.7359067Z [ 62%] Built target gtest_main
+main / test	UNKNOWN STEP	2026-09-26T02:55:28.5703951Z [ 75%] Linking CXX static library ../lib/libgmock.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:28.6531428Z [ 75%] Built target gmock
+main / test	UNKNOWN STEP	2026-09-26T02:55:28.6600373Z [ 87%] Building CXX object googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.5660313Z [100%] Linking CXX static library ../lib/libgmock_main.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6462320Z [100%] Built target gmock_main
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6500462Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6501056Z gtest/cci.20210126: Package '6f202f1c02964a5134b78b158f0c09a63c7c8fbb' built
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6501948Z gtest/cci.20210126: Build folder /home/runner/.conan2/p/b/gtesta976d427c5619/b/build/Release
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6504351Z >>> Package step for gtest/cci.20210126:6f202f1c02964a5134b78b158f0c09a63c7c8fbb
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6505196Z Packaging in folder /home/runner/.conan2/p/b/gtesta976d427c5619/p
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6505809Z Calling package()
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6526033Z Running CMake.install()
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6527593Z RUN: cmake --install "/home/runner/.conan2/p/b/gtesta976d427c5619/b/build/Release" --prefix "/home/runner/.conan2/p/b/gtesta976d427c5619/p"
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6552115Z -- Install configuration: "Release"
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6668029Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6677791Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6678839Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock-matchers.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6679718Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock-more-matchers.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6680454Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock-function-mocker.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6681601Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock-nice-strict.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6682336Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock-spec-builders.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6683470Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock-more-actions.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6684626Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock-cardinalities.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6685527Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock-actions.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6686826Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/gmock.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6688353Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6689421Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal/custom
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6690724Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal/custom/gmock-matchers.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6692431Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal/custom/gmock-port.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6693953Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal/custom/README.md
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6695674Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal/custom/gmock-generated-actions.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6697306Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal/gmock-pp.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6699270Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal/gmock-internal-utils.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6700887Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gmock/internal/gmock-port.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6703327Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/libgmock.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6707931Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/libgmock_main.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6710421Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/pkgconfig/gmock.pc
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6712454Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/pkgconfig/gmock_main.pc
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6717174Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/cmake/GTest/GTestTargets.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6719678Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/cmake/GTest/GTestTargets-release.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6721528Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/cmake/GTest/GTestConfigVersion.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6723058Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/cmake/GTest/GTestConfig.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6724858Z -- Up-to-date: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6725644Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6726810Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest-test-part.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6728461Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest_prod.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6730045Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest-typed-test.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6731633Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6734334Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest-spi.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6735869Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest_pred_impl.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6737849Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest-printers.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6739938Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest-matchers.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6741695Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest-param-test.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6743496Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest-death-test.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6745064Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6746198Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/custom
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6747666Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/custom/gtest.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6749227Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/custom/gtest-port.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6750793Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/custom/gtest-printers.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6752268Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/custom/README.md
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6753866Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/gtest-type-util.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6755564Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/gtest-filepath.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6757313Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/gtest-port.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6759966Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/gtest-port-arch.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6761375Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/gtest-string.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6763048Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/gtest-death-test-internal.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6764726Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/gtest-param-util.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6766770Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/internal/gtest-internal.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6769332Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/include/gtest/gtest-message.h
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6771277Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/libgtest.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6782562Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/libgtest_main.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6784516Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/pkgconfig/gtest.pc
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6786549Z -- Installing: /home/runner/.conan2/p/b/gtesta976d427c5619/p/lib/pkgconfig/gtest_main.pc
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6796328Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6853889Z package(): Packaged 4 '.a' files: libgmock.a, libgtest.a, libgtest_main.a, libgmock_main.a
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6854515Z package(): Packaged 1 file: LICENSE
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6854816Z package(): Packaged 37 '.h' files
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6855136Z package(): Packaged 2 '.md' files: README.md, README.md
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6855518Z Created package revision 3d90aeb883bc89cee36a5cbfa0ea9fb1
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6855895Z Package '6f202f1c02964a5134b78b158f0c09a63c7c8fbb' created
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6857042Z Full package reference: gtest/cci.20210126#7b8ec8c988c27b7f0769ca720054ad9f:6f202f1c02964a5134b78b158f0c09a63c7c8fbb#3d90aeb883bc89cee36a5cbfa0ea9fb1
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6883008Z Package folder /home/runner/.conan2/p/b/gtesta976d427c5619/p
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6885636Z WARN: deprecated: Usage of deprecated Conan 1.X features that will be removed in Conan 2.X:
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6886553Z WARN: deprecated:     'cpp_info.names' used in: gtest/cci.20210126
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6887286Z 
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6887530Z ======== Finalizing install (deploy, generators) ========
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6887887Z >>> Generate step for conanfile.txt
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6888254Z Generators folder: /home/runner/work/Interfaces/Interfaces/cpp
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.6903557Z Generator 'CMakeDeps' calling 'generate()'
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7457834Z CMakeDeps necessary find_package() and targets for your CMakeLists.txt
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7458721Z     find_package(GTest)
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7459293Z     target_link_libraries(... gtest::gtest)
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7477189Z Generator 'CMakeToolchain' calling 'generate()'
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7777099Z CMakeToolchain generated: conan_toolchain.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7780706Z CMakeToolchain: Preset 'conan-release' added to CMakePresets.json.
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7781407Z     (cmake>=3.23) cmake --preset conan-release
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7781813Z     (cmake<3.23) cmake <path> -G "Unix Makefiles"
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7782515Z                  -DCMAKE_TOOLCHAIN_FILE=<output_folder>/conan_toolchain.cmake 
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7783268Z                  -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Release
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7784185Z CMakeToolchain generated: /home/runner/work/Interfaces/Interfaces/cpp/CMakePresets.json
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7790959Z Generating aggregated env files
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7791758Z Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.7792177Z Install finished successfully
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8152995Z CMakeLists.txt
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8153444Z CMakePresets.json
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8153788Z Doxyfile
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8154041Z FindGTest.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8154290Z GTest-Target-release.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8154585Z GTest-release-x86_64-data.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8154860Z GTestConfig.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8155099Z GTestConfigVersion.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8155354Z GTestTargets.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8155588Z Platform.Interfaces
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8156162Z Platform.Interfaces.Tests
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8156428Z cmakedeps_macros.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8156912Z conan_toolchain.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8157150Z conanbuild.sh
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8157385Z conanbuildenv-release-x86_64.sh
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8157668Z conandeps_legacy.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8157903Z conanfile.txt
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8158115Z conanrun.sh
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8158337Z conanrunenv-release-x86_64.sh
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8158612Z deactivate_conanbuild.sh
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8158867Z deactivate_conanrun.sh
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8159130Z module-GTest-Target-release.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8159443Z module-GTest-release-x86_64-data.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8159751Z module-GTestTargets.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8160011Z run-tests-gitpod.sh
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8160240Z setup-gitpod.sh
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8207807Z -- Using Conan toolchain: /home/runner/work/Interfaces/Interfaces/cpp/conan_toolchain.cmake
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8208452Z -- Conan toolchain: Defining architecture flag: -m64
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8699466Z -- The CXX compiler identification is GNU 13.3.0
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.8788706Z -- Detecting CXX compiler ABI info
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9389536Z -- Detecting CXX compiler ABI info - done
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9566405Z -- Check for working CXX compiler: /usr/local/bin/c++ - skipped
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9570213Z -- Detecting CXX compile features
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9576557Z -- Detecting CXX compile features - done
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9668657Z -- Conan: Component target declared 'GTest::gtest'
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9677715Z -- Conan: Component target declared 'GTest::gtest_main'
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9678140Z -- Conan: Component target declared 'GTest::gmock'
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9678513Z -- Conan: Component target declared 'GTest::gmock_main'
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9678898Z -- Conan: Target declared 'gtest::gtest'
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9746492Z -- Configuring done (0.2s)
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9782837Z -- Generating done (0.0s)
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9786515Z -- Build files have been written to: /home/runner/work/Interfaces/Interfaces/cpp
+main / test	UNKNOWN STEP	2026-09-26T02:55:29.9949517Z [ 50%] Building CXX object CMakeFiles/Platform.Interfaces.Tests.dir/Platform.Interfaces.Tests/Platform.Interfaces.Tests.cpp.o
+main / test	UNKNOWN STEP	2026-09-26T02:55:31.1556095Z [100%] Linking CXX executable bin/Platform.Interfaces.Tests
+main / test	UNKNOWN STEP	2026-09-26T02:55:31.2140327Z [100%] Built target Platform.Interfaces.Tests
+main / test	UNKNOWN STEP	2026-09-26T02:55:31.2285136Z Cleaning up orphan processes

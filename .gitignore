@@ -23,11 +23,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
-# CI investigation evidence (issue #150) is kept under dev/log.
-!dev/log/
-
 # Conan/CMake build directory created by cpp/build-and-test.sh
 cpp/build/
+cpp/CMakeUserPresets.json
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -355,3 +353,7 @@ cpp/docs/
 *.[0-9][0-9].rule.txt
 *.[0-9][0-9][0-9].rule.txt
 *.[0-9][0-9][0-9][0-9].rule.txt
+
+# CI investigation evidence (issue #150) is kept under dev/log.
+!dev/log/
+!dev/log/**

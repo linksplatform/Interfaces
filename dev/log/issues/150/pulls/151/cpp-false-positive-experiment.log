@@ -1,0 +1,74 @@
+== Old shared workflow command (build only)
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=20
+compiler.libcxx=libstdc++11
+compiler.version=13
+os=Linux
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=20
+compiler.libcxx=libstdc++11
+compiler.version=13
+os=Linux
+
+
+======== Computing dependency graph ========
+Graph root
+    conanfile.txt: /tmp/tmp.Djfns0t0sl/cpp/conanfile.txt
+Requirements
+    gtest/1.18.0#e2507fc4efe2ec9e2db9e5c91eefab9f - Cache
+Build requirements
+    cmake/4.4.4#fec9c7048fae91e03c31e59977cd9c12 - Cache
+Resolved version ranges
+    cmake/[>=3.16]: cmake/4.4.4
+
+======== Computing necessary packages ========
+Requirements
+    gtest/1.18.0#e2507fc4efe2ec9e2db9e5c91eefab9f:c961d8c62795395aeeebf1696bec18f00505c7ea#6b3591be5962ce75db8bb089d87df5f4 - Cache
+Build requirements
+Skipped build binaries
+    cmake/4.4.4
+
+======== Installing packages ========
+gtest/1.18.0: Already installed! (1 of 1)
+
+======== Finalizing install (deploy, generators) ========
+>>> Generate step for conanfile.txt
+Generators folder: /tmp/tmp.Djfns0t0sl/cpp/old
+Generator 'CMakeDeps' calling 'generate()'
+CMakeDeps necessary find_package() and targets for your CMakeLists.txt
+    find_package(GTest)
+    target_link_libraries(... gtest::gtest)
+Generator 'CMakeToolchain' calling 'generate()'
+CMakeToolchain generated: conan_toolchain.cmake
+CMakeToolchain: Preset 'conan-release' added to CMakePresets.json.
+    (cmake>=3.23) cmake --preset conan-release
+    (cmake<3.23) cmake <path> -G "Unix Makefiles"
+                 -DCMAKE_TOOLCHAIN_FILE=<output_folder>/conan_toolchain.cmake 
+                 -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Release
+CMakeToolchain generated: /tmp/tmp.Djfns0t0sl/cpp/old/CMakePresets.json
+CMakeToolchain generated: /tmp/tmp.Djfns0t0sl/cpp/CMakeUserPresets.json
+Generating aggregated env files
+Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+Install finished successfully
+old command: PASSED (false positive)
+== New cpp/build-and-test.sh
+    Start 9: Issue150.AlwaysFails
+9/9 Test #9: Issue150.AlwaysFails .............***Failed    0.01 sec
+Note: Google Test filter = Issue150.AlwaysFails
+[ RUN      ] Issue150.AlwaysFails
+[  FAILED  ] Issue150.AlwaysFails (0 ms)
+[  FAILED  ] Issue150.AlwaysFails
+89% tests passed, 1 tests failed out of 9
+	  9 - Issue150.AlwaysFails (Failed)
+new script: FAILED as expected
