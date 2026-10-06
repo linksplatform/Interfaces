@@ -1,0 +1,21 @@
+# grep -n "Using 'master'" in the latest main runs of the csharp and python templates (fetched 2026-10-06)
+== csharp-docs.yml-35580680196.log
+72:Build documentation	UNKNOWN STEP	2026-09-21T08:58:26.4325229Z hint: Using 'master' as the name for the initial branch. This default branch name
+== csharp-security.yml-34455449315.log
+65:CodeQL (actions)	UNKNOWN STEP	2026-09-10T08:29:40.9608988Z hint: Using 'master' as the name for the initial branch. This default branch name
+1746:CodeQL (csharp)	UNKNOWN STEP	2026-09-10T08:29:39.4525419Z hint: Using 'master' as the name for the initial branch. This default branch name
+== csharp-workflows.yml-35580680054.log
+86:Lint Workflows	UNKNOWN STEP	2026-09-21T08:58:22.6013695Z hint: Using 'master' as the name for the initial branch. This default branch name
+255:zizmor	UNKNOWN STEP	2026-09-21T08:58:21.5253785Z hint: Using 'master' as the name for the initial branch. This default branch name
+== python-docs.yml-37294585301.log
+70:Build docs	UNKNOWN STEP	2026-10-05T10:08:08.0275478Z hint: Using 'master' as the name for the initial branch. This default branch name
+477:Pipeline Status	UNKNOWN STEP	2026-10-05T10:08:29.0267237Z hint: Using 'master' as the name for the initial branch. This default branch name
+== python-security.yml-37314932499.log
+65:CodeQL (python)	UNKNOWN STEP	2026-10-05T13:11:49.1181903Z hint: Using 'master' as the name for the initial branch. This default branch name
+1623:Audit Resolved Python Dependencies	UNKNOWN STEP	2026-10-05T13:11:48.1868584Z hint: Using 'master' as the name for the initial branch. This default branch n
+2131:CodeQL (actions)	UNKNOWN STEP	2026-10-05T13:11:49.6370136Z hint: Using 'master' as the name for the initial branch. This default branch name
+3803:Pipeline Status	UNKNOWN STEP	2026-10-05T13:12:57.5814458Z hint: Using 'master' as the name for the initial branch. This default branch name
+== python-workflows.yml-37294585398.log
+66:Audit Workflows	UNKNOWN STEP	2026-10-05T10:08:08.1887718Z hint: Using 'master' as the name for the initial branch. This default branch name
+374:Lint Workflows	UNKNOWN STEP	2026-10-05T10:08:15.1654931Z hint: Using 'master' as the name for the initial branch. This default branch name
+540:Pipeline Status	UNKNOWN STEP	2026-10-05T10:08:25.5460250Z hint: Using 'master' as the name for the initial branch. This default branch name
