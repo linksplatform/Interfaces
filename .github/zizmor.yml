@@ -1,0 +1,14 @@
+# zizmor configuration — https://docs.zizmor.sh/configuration/
+# Adopted from link-foundation/csharp-ai-driven-development-pipeline-template.
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        # These publishers are trusted at tag granularity. Everything else
+        # must be pinned to a full commit hash (issue #150 replaced
+        # tj-actions/changed-files, compromised through a mutable tag in
+        # CVE-2025-30066).
+        actions/*: ref-pin
+        github/*: ref-pin
+        zizmorcore/*: ref-pin
+        '*': hash-pin
